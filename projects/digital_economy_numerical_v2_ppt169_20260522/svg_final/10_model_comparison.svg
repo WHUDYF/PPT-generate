@@ -13,7 +13,7 @@
     
     <g id="page-header">
         <rect x="60" y="30" width="4" height="36" fill="#1A3A5C" />
-        <text x="80" y="55" font-family="Georgia, KaiTi, serif" font-size="30" font-weight="bold" fill="#1A3A5C">模型比较：分段线性更适合冲击型社会数据</text>
+        <text x="80" y="55" font-family="Georgia, KaiTi, serif" font-size="30" font-weight="bold" fill="#1A3A5C">模型比较：分段最小二乘更适合冲击型社会数据</text>
         <text x="80" y="78" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">用 RMSE 和留一误差比较模型，说明分段低次最小二乘更稳。</text>
     </g>
     
@@ -24,7 +24,7 @@
         <text x="195" y="26" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">模型误差比较（RMSE）</text>
         
         <text x="20" y="65" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#6B7280">指标</text>
-        <text x="210" y="65" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#6B7280">分段线性</text>
+        <text x="210" y="65" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#6B7280">分段最小二乘</text>
         <text x="345" y="65" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#6B7280">全周期线性</text>
         <line x1="10" y1="78" x2="380" y2="78" stroke="#E2E8F0" stroke-width="1" />
         

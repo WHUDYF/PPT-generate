@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <defs>
+        <linearGradient id="titleAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#1A3A5C"/>
+            <stop offset="100%" stop-color="#2E6B8F"/>
+        </linearGradient>
+        <radialGradient id="bgDecor" cx="85%" cy="15%" r="45%">
+            <stop offset="0%" stop-color="#1A3A5C" stop-opacity="0.06"/>
+            <stop offset="100%" stop-color="#1A3A5C" stop-opacity="0"/>
+        </radialGradient>
+        <linearGradient id="accentBar" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#C8963E"/>
+            <stop offset="100%" stop-color="#D4A857"/>
+        </linearGradient>
+    </defs>
+    <!-- Background -->
+    <rect width="1280" height="720" fill="#FAFAFA"/>
+    <circle cx="1000" cy="200" r="300" fill="url(#bgDecor)"/>
+    <!-- Left accent bar -->
+    <rect x="0" y="0" width="6" height="720" fill="url(#accentBar)"/>
+    <!-- Title block -->
+    <g id="cover-title">
+        <text x="640" y="230" text-anchor="middle" font-family="Georgia, KaiTi, serif" font-size="60" font-weight="bold" fill="#1A3A5C">数值技术课程结课汇报</text>
+        <text x="640" y="310" text-anchor="middle" font-family="Georgia, KaiTi, serif" font-size="36" font-weight="bold" fill="#2E6B8F">数字经济背景下</text>
+        <text x="640" y="360" text-anchor="middle" font-family="Georgia, KaiTi, serif" font-size="36" font-weight="bold" fill="#2E6B8F">博物馆增长与文旅复苏</text>
+        <!-- Decorative divider -->
+        <rect x="490" y="390" width="300" height="2" rx="1" fill="#C8963E"/>
+        <text x="640" y="435" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#6B7280">文化供给、数字化连接与消费转化的数值分析</text>
+    </g>
+    <!-- Info block -->
+    <g id="cover-info">
+        <rect x="310" y="480" width="660" height="100" rx="10" fill="#F0F4F8"/>
+        <use data-icon="phosphor-duotone/buildings" x="340" y="505" width="24" height="24" fill="#1A3A5C"/>
+        <text x="370" y="522" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">研究对象</text>
+        <text x="500" y="522" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" fill="#6B7280">2014-2023 年度序列</text>
+        <use data-icon="phosphor-duotone/chart-line-up" x="340" y="533" width="24" height="24" fill="#1A3A5C"/>
+        <text x="370" y="550" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">核心指标</text>
+        <text x="500" y="550" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" fill="#6B7280">3 个国家统计指标</text>
+        <use data-icon="phosphor-duotone/graduation-cap" x="700" y="505" width="24" height="24" fill="#1A3A5C"/>
+        <text x="730" y="522" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">汇报时间</text>
+        <text x="860" y="522" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" fill="#6B7280">5 分钟以内</text>
+    </g>
+    <!-- Footer -->
+    <g id="cover-footer">
+        <text x="640" y="660" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#9CA3AF">数据来源：国家统计局国家数据与《中国统计年鉴》公开指标；文化机构数按全国备案博物馆口径整理</text>
+        <text x="1220" y="695" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#9CA3AF">01 / 12</text>
+    </g>
+</svg>
