@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <defs>
+        <linearGradient id="titleAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#1A3A5C" />
+            <stop offset="100%" stop-color="#2E6B8F" />
+        </linearGradient>
+        <radialGradient id="bgDecor" cx="85%" cy="15%" r="45%">
+            <stop offset="0%" stop-color="#1A3A5C" stop-opacity="0.06" />
+            <stop offset="100%" stop-color="#1A3A5C" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient id="accentBar" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#C8963E" />
+            <stop offset="100%" stop-color="#D4A857" />
+        </linearGradient>
+    </defs>
+    
+    <rect width="1280" height="720" fill="#FAFAFA" />
+    <circle cx="1000" cy="200" r="300" fill="url(#bgDecor)" />
+    
+    <rect x="0" y="0" width="6" height="720" fill="url(#accentBar)" />
+    
+    <g id="cover-title">
+        <text x="640" y="230" text-anchor="middle" font-family="Georgia, KaiTi, serif" font-size="60" font-weight="bold" fill="#1A3A5C">数值技术课程结课汇报</text>
+        <text x="640" y="310" text-anchor="middle" font-family="Georgia, KaiTi, serif" font-size="36" font-weight="bold" fill="#2E6B8F">数字经济背景下</text>
+        <text x="640" y="360" text-anchor="middle" font-family="Georgia, KaiTi, serif" font-size="36" font-weight="bold" fill="#2E6B8F">博物馆增长与文旅复苏</text>
+        
+        <path fill="#C8963E" d="M491,390 H789 A1,1 0 0 1 790,391 V391 A1,1 0 0 1 789,392 H491 A1,1 0 0 1 490,391 V391 A1,1 0 0 1 491,390 Z" />
+        <text x="640" y="435" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="20" fill="#6B7280">文化供给、数字化连接与消费转化的数值分析</text>
+    </g>
+    
+    <g id="cover-info">
+        <path fill="#F0F4F8" d="M320,480 H960 A10,10 0 0 1 970,490 V570 A10,10 0 0 1 960,580 H320 A10,10 0 0 1 310,570 V490 A10,10 0 0 1 320,480 Z" />
+        
+  <g transform="translate(340.0, 505.0) scale(0.09375)" fill="#1A3A5C">
+    <path d="M136,32V216H40V85.35a8,8,0,0,1,3.56-6.66l80-53.33A8,8,0,0,1,136,32Z" opacity="0.2" />
+    <path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z" />
+  </g>
+        <text x="370" y="522" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">研究对象</text>
+        <text x="500" y="522" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" fill="#6B7280">2014-2023 年度序列</text>
+        
+  <g transform="translate(340.0, 533.0) scale(0.09375)" fill="#1A3A5C">
+    <path d="M224,56V208H32V48H216A8,8,0,0,1,224,56Z" opacity="0.2" />
+    <path d="M232,208a8,8,0,0,1-8,8H32a8,8,0,0,1-8-8V48a8,8,0,0,1,16,0V156.69l50.34-50.35a8,8,0,0,1,11.32,0L128,132.69,180.69,80H160a8,8,0,0,1,0-16h40a8,8,0,0,1,8,8v40a8,8,0,0,1-16,0V91.31l-58.34,58.35a8,8,0,0,1-11.32,0L96,123.31l-56,56V200H224A8,8,0,0,1,232,208Z" />
+  </g>
+        <text x="370" y="550" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">核心指标</text>
+        <text x="500" y="550" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" fill="#6B7280">3 个国家统计指标</text>
+        
+  <g transform="translate(700.0, 505.0) scale(0.09375)" fill="#1A3A5C">
+    <path d="M216,113.07v53.22a8,8,0,0,1-2,5.31c-11.3,12.59-38.9,36.4-86,36.4s-74.68-23.81-86-36.4a8,8,0,0,1-2-5.31V113.07L128,160Z" opacity="0.2" />
+    <path d="M251.76,88.94l-120-64a8,8,0,0,0-7.52,0l-120,64a8,8,0,0,0,0,14.12L32,117.87v48.42a15.91,15.91,0,0,0,4.06,10.65C49.16,191.53,78.51,216,128,216a130,130,0,0,0,48-8.76V240a8,8,0,0,0,16,0V199.51a115.63,115.63,0,0,0,27.94-22.57A15.91,15.91,0,0,0,224,166.29V117.87l27.76-14.81a8,8,0,0,0,0-14.12ZM128,200c-43.27,0-68.72-21.14-80-33.71V126.4l76.24,40.66a8,8,0,0,0,7.52,0L176,143.47v46.34C163.4,195.69,147.52,200,128,200Zm80-33.75a97.83,97.83,0,0,1-16,14.25V134.93l16-8.53ZM188,118.94l-.22-.13-56-29.87a8,8,0,0,0-7.52,14.12L171,128l-43,22.93L25,96,128,41.07,231,96Z" />
+  </g>
+        <text x="730" y="522" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">汇报时间</text>
+        <text x="860" y="522" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" fill="#6B7280">5 分钟以内</text>
+    </g>
+    
+    <g id="cover-footer">
+        <text x="640" y="660" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#9CA3AF">数据来源：国家统计局国家数据与《中国统计年鉴》公开指标；文化机构数按全国备案博物馆口径整理</text>
+        <text x="1220" y="695" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#9CA3AF">01 / 12</text>
+    </g>
+</svg>

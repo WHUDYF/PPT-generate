@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <defs>
+        <linearGradient id="lineGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#1A3A5C" />
+            <stop offset="40%" stop-color="#2E6B8F" />
+            <stop offset="100%" stop-color="#C8963E" />
+        </linearGradient>
+    </defs>
+    
+    <rect width="1280" height="720" fill="#FAFAFA" />
+    
+    <circle cx="1100" cy="150" r="250" fill="#1A3A5C" fill-opacity="0.03" />
+    
+    <g id="page-header">
+        <text x="640" y="80" text-anchor="middle" font-family="Georgia, KaiTi, serif" font-size="40" font-weight="bold" fill="#1A3A5C">结论：数字经济提升文化供给的消费转化效率</text>
+        <path fill="#C8963E" d="M441,100 H839 A1,1 0 0 1 840,101 V101 A1,1 0 0 1 839,102 H441 A1,1 0 0 1 440,101 V101 A1,1 0 0 1 441,100 Z" />
+        <text x="640" y="135" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" fill="#6B7280">博物馆数量增长提供供给基础，数字化连接决定转化效率</text>
+    </g>
+    
+    <line x1="180" y1="175" x2="180" y2="570" stroke="url(#lineGrad)" stroke-width="4" stroke-linecap="round" />
+    <polygon points="180,580 170,568 190,568" fill="#C8963E" />
+    
+    <g id="conclusion-1">
+        <circle cx="180" cy="215" r="26" fill="#1A3A5C" fill-opacity="0.12" />
+        <circle cx="180" cy="215" r="16" fill="#1A3A5C" />
+        <text x="180" y="220" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">01</text>
+        <line x1="206" y1="215" x2="250" y2="215" stroke="#1A3A5C" stroke-width="2" stroke-dasharray="4,3" />
+        <text x="260" y="208" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A3A5C">数据结论</text>
+        <text x="260" y="236" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#1A1A2E">博物馆数量 2014-2023 年增长 <tspan font-weight="bold" fill="#1A3A5C">86.8%</tspan>，供给侧保持长期扩张。</text>
+        <text x="260" y="258" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">文化设施供给持续增长，为文旅消费转化提供基础条件。</text>
+    </g>
+    
+    <g id="conclusion-2">
+        <circle cx="180" cy="340" r="26" fill="#2E6B8F" fill-opacity="0.12" />
+        <circle cx="180" cy="340" r="16" fill="#2E6B8F" />
+        <text x="180" y="345" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">02</text>
+        <line x1="206" y1="340" x2="250" y2="340" stroke="#2E6B8F" stroke-width="2" stroke-dasharray="4,3" />
+        <text x="260" y="333" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#2E6B8F">算法结论</text>
+        <text x="260" y="361" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#1A1A2E">三点差分识别冲击，分段最小二乘比较模型，反事实缺口衡量恢复。</text>
+        <text x="260" y="383" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">数值方法有效提取年度序列中的趋势、冲击和阶段性特征。</text>
+    </g>
+    
+    <g id="conclusion-3">
+        <circle cx="180" cy="465" r="26" fill="#C8963E" fill-opacity="0.12" />
+        <circle cx="180" cy="465" r="16" fill="#C8963E" />
+        <text x="180" y="470" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">03</text>
+        <line x1="206" y1="465" x2="250" y2="465" stroke="#C8963E" stroke-width="2" stroke-dasharray="4,3" />
+        <text x="260" y="458" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#C8963E">政策结论</text>
+        <text x="260" y="486" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#1A1A2E">线上预约、智慧导览与数字展陈提升连接效率，推动消费转化。</text>
+        <text x="260" y="508" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">数字技术连接文化供给与文旅消费，提升转化效率是关键。</text>
+    </g>
+    
+    <g id="highlight">
+        <path fill="#1A3A5C" fill-opacity="0.06" d="M268,540 H1212 A8,8 0 0 1 1220,548 V580 A8,8 0 0 1 1212,588 H268 A8,8 0 0 1 260,580 V548 A8,8 0 0 1 268,540 Z" />
+        
+  <g transform="translate(285.0, 562.0) scale(0.078125)" fill="#C8963E">
+    <path d="M208,104a79.86,79.86,0,0,1-30.59,62.92A24.29,24.29,0,0,0,168,186v6a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8v-6a24.11,24.11,0,0,0-9.3-19A79.87,79.87,0,0,1,48,104.45C47.76,61.09,82.72,25,126.07,24A80,80,0,0,1,208,104Z" opacity="0.2" />
+    <path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z" />
+  </g>
+        <text x="315" y="570" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A3A5C">汇报亮点：用数值方法解释"文化供给扩张 — 数字化连接 — 文旅消费转化"的链条。</text>
+    </g>
+    
+    <g id="page-footer">
+        <text x="60" y="695" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#9CA3AF">Source: 团队综合分析</text>
+        <text x="1220" y="695" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#9CA3AF">12 / 12</text>
+    </g>
+</svg>

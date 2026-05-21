@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <defs>
+        <linearGradient id="titleAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#1A3A5C" />
+            <stop offset="100%" stop-color="#2E6B8F" />
+        </linearGradient>
+        <filter id="cardShadow" x="-15%" y="-15%" width="130%" height="130%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+            <feOffset dx="0" dy="2" result="offsetBlur" />
+            <feFlood flood-color="#0F172A" flood-opacity="0.06" result="shadowColor" />
+            <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow" />
+            <feMerge><feMergeNode in="shadow" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <marker id="arrowMain" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto">
+            <path d="M 0,0 L 10,5 L 0,10 Z" fill="#1A3A5C" />
+        </marker>
+    </defs>
+    
+    <rect width="1280" height="720" fill="#FAFAFA" />
+    
+    <g id="page-header">
+        <rect x="60" y="30" width="4" height="36" fill="#1A3A5C" />
+        <text x="80" y="55" font-family="Georgia, KaiTi, serif" font-size="30" font-weight="bold" fill="#1A3A5C">选题价值：数字经济连接文化供给与文旅消费</text>
+        
+        <path fill="#1A3A5C" fill-opacity="0.06" d="M66,75 H1214 A6,6 0 0 1 1220,81 V105 A6,6 0 0 1 1214,111 H66 A6,6 0 0 1 60,105 V81 A6,6 0 0 1 66,75 Z" />
+        <text x="80" y="98" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#2E6B8F">博物馆是文化资源入口，数字化连接决定其向游客流量和文旅消费的转化效率。</text>
+    </g>
+    
+    <g id="pillars">
+        
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)" d="M68,135 H422 A8,8 0 0 1 430,143 V207 A8,8 0 0 1 422,215 H68 A8,8 0 0 1 60,207 V143 A8,8 0 0 1 68,135 Z" />
+        <path fill="#1A3A5C" d="M62,135 H62 A2,2 0 0 1 64,137 V213 A2,2 0 0 1 62,215 H62 A2,2 0 0 1 60,213 V137 A2,2 0 0 1 62,135 Z" />
+        
+  <g transform="translate(85.0, 160.0) scale(0.09375)" fill="#1A3A5C">
+    <path d="M136,32V216H40V85.35a8,8,0,0,1,3.56-6.66l80-53.33A8,8,0,0,1,136,32Z" opacity="0.2" />
+    <path d="M240,208H224V96a16,16,0,0,0-16-16H144V32a16,16,0,0,0-24.88-13.32L39.12,72A16,16,0,0,0,32,85.34V208H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM208,96V208H144V96ZM48,85.34,128,32V208H48ZM112,112v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm-32,0v16a8,8,0,0,1-16,0V112a8,8,0,1,1,16,0Zm0,56v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Zm32,0v16a8,8,0,0,1-16,0V168a8,8,0,0,1,16,0Z" />
+  </g>
+        <text x="120" y="168" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E">国家战略</text>
+        <text x="120" y="190" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">文化数字化战略推动馆藏资源线上化、沉浸式展示和智慧文旅服务。</text>
+        
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)" d="M463,135 H817 A8,8 0 0 1 825,143 V207 A8,8 0 0 1 817,215 H463 A8,8 0 0 1 455,207 V143 A8,8 0 0 1 463,135 Z" />
+        <path fill="#1A3A5C" d="M457,135 H457 A2,2 0 0 1 459,137 V213 A2,2 0 0 1 457,215 H457 A2,2 0 0 1 455,213 V137 A2,2 0 0 1 457,135 Z" />
+        
+  <g transform="translate(480.0, 160.0) scale(0.09375)" fill="#1A3A5C">
+    <path d="M136,108A52,52,0,1,1,84,56,52,52,0,0,1,136,108Z" opacity="0.2" />
+    <path d="M117.25,157.92a60,60,0,1,0-66.5,0A95.83,95.83,0,0,0,3.53,195.63a8,8,0,1,0,13.4,8.74,80,80,0,0,1,134.14,0,8,8,0,0,0,13.4-8.74A95.83,95.83,0,0,0,117.25,157.92ZM40,108a44,44,0,1,1,44,44A44.05,44.05,0,0,1,40,108Zm210.14,98.7a8,8,0,0,1-11.07-2.33A79.83,79.83,0,0,0,172,168a8,8,0,0,1,0-16,44,44,0,1,0-16.34-84.87,8,8,0,1,1-5.94-14.85,60,60,0,0,1,55.53,105.64,95.83,95.83,0,0,1,47.22,37.71A8,8,0,0,1,250.14,206.7Z" />
+  </g>
+        <text x="515" y="168" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E">民生改善</text>
+        <text x="515" y="190" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">博物馆数量增长意味着公共文化服务覆盖面扩大，也形成周边消费场景。</text>
+        
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)" d="M858,135 H1212 A8,8 0 0 1 1220,143 V207 A8,8 0 0 1 1212,215 H858 A8,8 0 0 1 850,207 V143 A8,8 0 0 1 858,135 Z" />
+        <path fill="#1A3A5C" d="M852,135 H852 A2,2 0 0 1 854,137 V213 A2,2 0 0 1 852,215 H852 A2,2 0 0 1 850,213 V137 A2,2 0 0 1 852,135 Z" />
+        
+  <g transform="translate(875.0, 160.0) scale(0.09375)" fill="#1A3A5C">
+    <path d="M176,64v48H80V64Z" opacity="0.2" />
+    <path d="M80,120h96a8,8,0,0,0,8-8V64a8,8,0,0,0-8-8H80a8,8,0,0,0-8,8v48A8,8,0,0,0,80,120Zm8-48h80v32H88ZM200,24H56A16,16,0,0,0,40,40V216a16,16,0,0,0,16,16H200a16,16,0,0,0,16-16V40A16,16,0,0,0,200,24Zm0,192H56V40H200ZM100,148a12,12,0,1,1-12-12A12,12,0,0,1,100,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,148Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,148Zm-80,40a12,12,0,1,1-12-12A12,12,0,0,1,100,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,140,188Zm40,0a12,12,0,1,1-12-12A12,12,0,0,1,180,188Z" />
+  </g>
+        <text x="910" y="168" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E">数值方法适配</text>
+        <text x="910" y="190" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">年度序列具有趋势、冲击和恢复三类特征，适合微分、拟合与相关性分析。</text>
+    </g>
+    
+    <g id="process-flow">
+        
+        <path fill="#1A3A5C" filter="url(#cardShadow)" d="M70,280 H390 A10,10 0 0 1 400,290 V400 A10,10 0 0 1 390,410 H70 A10,10 0 0 1 60,400 V290 A10,10 0 0 1 70,280 Z" />
+        <text x="230" y="325" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">供给层</text>
+        <text x="230" y="355" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#F0F4F8">博物馆数量增长</text>
+        <text x="230" y="380" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#D1D5DB">公共文化设施供给规模扩张</text>
+        
+        <line x1="400" y1="345" x2="470" y2="345" stroke="#1A3A5C" stroke-width="3" marker-end="url(#arrowMain)" />
+        <text x="435" y="335" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#C8963E">→</text>
+        
+        <path fill="#2E6B8F" filter="url(#cardShadow)" d="M485,280 H795 A10,10 0 0 1 805,290 V400 A10,10 0 0 1 795,410 H485 A10,10 0 0 1 475,400 V290 A10,10 0 0 1 485,280 Z" />
+        <text x="640" y="325" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">数字化连接层</text>
+        <text x="640" y="355" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#F0F4F8">预约 / 导览 / 展陈 / 文创</text>
+        <text x="640" y="380" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#D1D5DB">数字技术提升文化服务可及性</text>
+        
+        <line x1="805" y1="345" x2="875" y2="345" stroke="#1A3A5C" stroke-width="3" marker-end="url(#arrowMain)" />
+        <text x="840" y="335" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#C8963E">→</text>
+        
+        <path fill="#C8963E" filter="url(#cardShadow)" d="M890,280 H1210 A10,10 0 0 1 1220,290 V400 A10,10 0 0 1 1210,410 H890 A10,10 0 0 1 880,400 V290 A10,10 0 0 1 890,280 Z" />
+        <text x="1050" y="325" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="22" font-weight="bold" fill="#FFFFFF">转化层</text>
+        <text x="1050" y="355" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" fill="#F0F4F8">游客恢复 + 消费支出</text>
+        <text x="1050" y="380" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#D1D5DB">文化供给向文旅消费的经济转化</text>
+    </g>
+    
+    <g id="flow-labels">
+        
+  <g transform="translate(200.0, 430.0) scale(0.078125)" fill="#6B7280">
+    <path d="M209.94,113.94l-96,96a48,48,0,0,1-67.88-67.88l96-96a48,48,0,0,1,67.88,67.88Z" opacity="0.2" />
+    <path d="M165.66,90.34a8,8,0,0,1,0,11.32l-64,64a8,8,0,0,1-11.32-11.32l64-64A8,8,0,0,1,165.66,90.34ZM215.6,40.4a56,56,0,0,0-79.2,0L106.34,70.45a8,8,0,0,0,11.32,11.32l30.06-30a40,40,0,0,1,56.57,56.56l-30.07,30.06a8,8,0,0,0,11.31,11.32L215.6,119.6a56,56,0,0,0,0-79.2ZM138.34,174.22l-30.06,30.06a40,40,0,1,1-56.56-56.57l30.05-30.05a8,8,0,0,0-11.32-11.32L40.4,136.4a56,56,0,0,0,79.2,79.2l30.06-30.07a8,8,0,0,0-11.32-11.31Z" />
+  </g>
+        <text x="225" y="445" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">数字经济机制</text>
+    </g>
+    
+    <g id="research-question">
+        <path fill="#FFFFFF" stroke="#C8963E" stroke-width="2" filter="url(#cardShadow)" d="M70,480 H1210 A10,10 0 0 1 1220,490 V526 A10,10 0 0 1 1210,536 H70 A10,10 0 0 1 60,526 V490 A10,10 0 0 1 70,480 Z" />
+        
+  <g transform="translate(95.0, 503.0) scale(0.09375)" fill="#C8963E">
+    <path d="M208,104a79.86,79.86,0,0,1-30.59,62.92A24.29,24.29,0,0,0,168,186v6a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8v-6a24.11,24.11,0,0,0-9.3-19A79.87,79.87,0,0,1,48,104.45C47.76,61.09,82.72,25,126.07,24A80,80,0,0,1,208,104Z" opacity="0.2" />
+    <path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z" />
+  </g>
+        <text x="130" y="515" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1A3A5C">本报告的问题：数字经济背景下，文化供给扩张能否重新转化为游客恢复和文旅消费？</text>
+    </g>
+    
+    <g id="page-footer">
+        <text x="60" y="695" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#9CA3AF">Source: 国家统计局国家数据、中国统计年鉴；团队计算</text>
+        <text x="1220" y="695" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#9CA3AF">02 / 12</text>
+    </g>
+</svg>

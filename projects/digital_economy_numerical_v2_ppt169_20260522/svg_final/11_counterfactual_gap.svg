@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <defs>
+        <filter id="barShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="2" />
+            <feOffset dx="0" dy="1" result="offsetBlur" />
+            <feFlood flood-color="#0F172A" flood-opacity="0.12" result="shadowColor" />
+            <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow" />
+            <feMerge><feMergeNode in="shadow" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+    </defs>
+    
+    <rect width="1280" height="720" fill="#FAFAFA" />
+    
+    <g id="page-header">
+        <rect x="60" y="30" width="4" height="36" fill="#1A3A5C" />
+        <text x="80" y="55" font-family="Georgia, KaiTi, serif" font-size="30" font-weight="bold" fill="#1A3A5C">反事实缺口：衡量文旅需求相对正常趋势的恢复程度</text>
+        <text x="80" y="78" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">以 2014-2019 年平稳增长趋势作为无冲击基准，对比 2020-2023 年真实游客与消费水平。</text>
+    </g>
+    
+    <g id="gap-chart" transform="translate(60, 115)">
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#barShadow)" d="M8,0 H722 A8,8 0 0 1 730,8 V292 A8,8 0 0 1 722,300 H8 A8,8 0 0 1 0,292 V8 A8,8 0 0 1 8,0 Z" />
+        
+        <line x1="100" y1="260" x2="700" y2="260" stroke="#E2E8F0" stroke-width="1" />
+        <line x1="100" y1="200" x2="700" y2="200" stroke="#F1F5F9" stroke-width="0.5" />
+        <line x1="100" y1="140" x2="700" y2="140" stroke="#F1F5F9" stroke-width="0.5" />
+        <line x1="100" y1="80" x2="700" y2="80" stroke="#F1F5F9" stroke-width="0.5" />
+        <line x1="100" y1="20" x2="700" y2="20" stroke="#E2E8F0" stroke-width="1" />
+        
+        <text x="85" y="265" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#6B7280">0%</text>
+        <text x="85" y="205" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#6B7280">25%</text>
+        <text x="85" y="145" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#6B7280">50%</text>
+        <text x="85" y="85" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#6B7280">75%</text>
+        <text x="85" y="25" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#6B7280">100%</text>
+        <text x="380" y="285" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#6B7280">实际值 / 2014-2019 平稳趋势</text>
+        
+        <line x1="100" y1="20" x2="700" y2="20" stroke="#9CA3AF" stroke-width="1.5" stroke-dasharray="6,3" />
+        <text x="710" y="22" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" font-weight="bold" fill="#9CA3AF">100% 趋势线</text>
+        
+        
+        
+        <path fill="#C62828" fill-opacity="0.8" filter="url(#barShadow)" d="M134,143 H196 A4,4 0 0 1 200,147 V256 A4,4 0 0 1 196,260 H134 A4,4 0 0 1 130,256 V147 A4,4 0 0 1 134,143 Z" />
+        <text x="165" y="135" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#C62828">44.4%</text>
+        <text x="165" y="278" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#1A1A2E">国内游客 2020</text>
+        
+        <path fill="#C8963E" fill-opacity="0.7" filter="url(#barShadow)" d="M234,102 H296 A4,4 0 0 1 300,106 V256 A4,4 0 0 1 296,260 H234 A4,4 0 0 1 230,256 V106 A4,4 0 0 1 234,102 Z" />
+        <text x="265" y="93" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#C8963E">61.5%</text>
+        <text x="265" y="278" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#1A1A2E">国内游客 2023</text>
+        
+        <path fill="#C62828" fill-opacity="0.8" filter="url(#barShadow)" d="M364,167 H426 A4,4 0 0 1 430,171 V256 A4,4 0 0 1 426,260 H364 A4,4 0 0 1 360,256 V171 A4,4 0 0 1 364,167 Z" />
+        <text x="395" y="159" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#C62828">35.8%</text>
+        <text x="395" y="278" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#1A1A2E">旅游消费 2020</text>
+        
+        <path fill="#C8963E" fill-opacity="0.7" filter="url(#barShadow)" d="M464,98 H526 A4,4 0 0 1 530,102 V256 A4,4 0 0 1 526,260 H464 A4,4 0 0 1 460,256 V102 A4,4 0 0 1 464,98 Z" />
+        <text x="495" y="89" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#C8963E">62.4%</text>
+        <text x="495" y="278" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#1A1A2E">旅游消费 2023</text>
+        
+        <text x="165" y="150" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#C62828">缺口 -3602.5 百万人次</text>
+        
+        <text x="395" y="174" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#C62828">缺口 -39949.8 亿元</text>
+        
+        <path fill="#C62828" fill-opacity="0.8" d="M573,60 H581 A3,3 0 0 1 584,63 V71 A3,3 0 0 1 581,74 H573 A3,3 0 0 1 570,71 V63 A3,3 0 0 1 573,60 Z" />
+        <text x="590" y="72" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#1A1A2E">2020 年</text>
+        <path fill="#C8963E" fill-opacity="0.7" d="M643,60 H651 A3,3 0 0 1 654,63 V71 A3,3 0 0 1 651,74 H643 A3,3 0 0 1 640,71 V63 A3,3 0 0 1 643,60 Z" />
+        <text x="660" y="72" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#1A1A2E">2023 年</text>
+    </g>
+    
+    <g id="right-panel" transform="translate(820, 115)">
+        
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#barShadow)" d="M8,0 H412 A8,8 0 0 1 420,8 V172 A8,8 0 0 1 412,180 H8 A8,8 0 0 1 0,172 V8 A8,8 0 0 1 8,0 Z" />
+        <path fill="#2E6B8F" d="M8,0 H412 A8,8 0 0 1 420,8 V26 A8,8 0 0 1 412,34 H8 A8,8 0 0 1 0,26 V8 A8,8 0 0 1 8,0 Z" />
+        <rect x="0" y="17" width="420" height="17" fill="#2E6B8F" />
+        <text x="210" y="22" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">2024-2026 年短期情景</text>
+        
+        <text x="15" y="58" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1A3A5C">年份</text>
+        <text x="95" y="58" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1A3A5C">博物馆数</text>
+        <text x="205" y="58" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1A3A5C">游客</text>
+        <text x="340" y="58" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1A3A5C">消费（亿元）</text>
+        <line x1="5" y1="68" x2="415" y2="68" stroke="#E2E8F0" stroke-width="0.5" />
+        
+        <rect x="0" y="68" width="420" height="30" fill="#F0F4F8" fill-opacity="0.5" />
+        <text x="15" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E6B8F">2024</text>
+        <text x="95" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#1A1A2E">7392.5</text>
+        <text x="205" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#1A1A2E">4716.5</text>
+        <text x="340" y="88" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#1A1A2E">48211.9</text>
+        
+        <line x1="5" y1="98" x2="415" y2="98" stroke="#E2E8F0" stroke-width="0.5" />
+        <text x="15" y="118" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E6B8F">2025</text>
+        <text x="95" y="118" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#1A1A2E">7887.9</text>
+        <text x="205" y="118" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#1A1A2E">5248.5</text>
+        <text x="340" y="118" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#1A1A2E">55391.3</text>
+        
+        <line x1="5" y1="128" x2="415" y2="128" stroke="#E2E8F0" stroke-width="0.5" />
+        <rect x="0" y="128" width="420" height="30" fill="#F0F4F8" fill-opacity="0.5" />
+        <text x="15" y="148" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E6B8F">2026</text>
+        <text x="95" y="148" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#1A1A2E">8383.3</text>
+        <text x="205" y="148" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#1A1A2E">5780.5</text>
+        <text x="340" y="148" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#1A1A2E">62570.6</text>
+        
+        <text x="210" y="172" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#9CA3AF">模型：y = ax + b，仅使用 2020-2023 恢复段</text>
+    </g>
+    
+    <g id="error-note" transform="translate(820, 310)">
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" d="M8,0 H412 A8,8 0 0 1 420,8 V97 A8,8 0 0 1 412,105 H8 A8,8 0 0 1 0,97 V8 A8,8 0 0 1 8,0 Z" />
+        <path fill="#C8963E" d="M2,0 H2 A2,2 0 0 1 4,2 V103 A2,2 0 0 1 2,105 H2 A2,2 0 0 1 0,103 V2 A2,2 0 0 1 2,0 Z" />
+        <text x="20" y="22" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1A3A5C">误差来源与边界</text>
+        <text x="20" y="45" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">年度采样间隔较大（仅 10 点）</text>
+        <text x="20" y="65" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">平稳趋势本身也有模型误差</text>
+        <text x="20" y="85" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">外生冲击和政策变化会改变恢复速度</text>
+    </g>
+    
+    <g id="bottom-conclusion">
+        <path fill="#1A3A5C" fill-opacity="0.06" d="M66,450 H1214 A6,6 0 0 1 1220,456 V484 A6,6 0 0 1 1214,490 H66 A6,6 0 0 1 60,484 V456 A6,6 0 0 1 66,450 Z" />
+        
+  <g transform="translate(85.0, 473.0) scale(0.078125)" fill="#1A3A5C">
+    <path d="M176,128a48,48,0,1,1-48-48A48,48,0,0,1,176,128Z" opacity="0.2" />
+    <path d="M221.87,83.16A104.1,104.1,0,1,1,195.67,49l22.67-22.68a8,8,0,0,1,11.32,11.32l-96,96a8,8,0,0,1-11.32-11.32l27.72-27.72a40,40,0,1,0,17.87,31.09,8,8,0,1,1,16-.9,56,56,0,1,1-22.38-41.65L184.3,60.39a87.88,87.88,0,1,0,23.13,29.67,8,8,0,0,1,14.44-6.9Z" />
+  </g>
+        <text x="115" y="476" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1A3A5C">结论：分段拟合用于解释结构变化，反事实缺口用于衡量恢复程度；两者都不替代正式统计预测。</text>
+    </g>
+    
+    <g id="page-footer">
+        <text x="60" y="695" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#9CA3AF">Source: 团队最小二乘拟合与误差分析</text>
+        <text x="1220" y="695" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#9CA3AF">11 / 12</text>
+    </g>
+</svg>

@@ -9,6 +9,11 @@ Generated presentation materials and supporting documents.
 - `presentations/group_meeting_mechanism_attribution_2026_05_16_20260519_114907.pptx`
 - `presentations/digital_economy_numerical_20260519_113555.pptx`
 - `presentations/digital_economy_numerical_segmented_20260521.pptx`
+- `presentations/digital_economy_numerical_corrected_20260522.pptx`
+
+### PPT Master Projects
+
+- `projects/digital_economy_numerical_v2_ppt169_20260522/`
 
 ### Documents
 

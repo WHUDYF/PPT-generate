@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <defs>
+        <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+            <feOffset dx="0" dy="2" result="offsetBlur" />
+            <feFlood flood-color="#0F172A" flood-opacity="0.06" result="shadowColor" />
+            <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow" />
+            <feMerge><feMergeNode in="shadow" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+    </defs>
+    
+    <rect width="1280" height="720" fill="#FAFAFA" />
+    
+    <g id="page-header">
+        <rect x="60" y="30" width="4" height="36" fill="#1A3A5C" />
+        <text x="80" y="55" font-family="Georgia, KaiTi, serif" font-size="30" font-weight="bold" fill="#1A3A5C">算法二：分段最小二乘避免冲击期扭曲</text>
+        
+        <path fill="#F0F4F8" d="M66,72 H1214 A6,6 0 0 1 1220,78 V98 A6,6 0 0 1 1214,104 H66 A6,6 0 0 1 60,98 V78 A6,6 0 0 1 66,72 Z" />
+        <text x="640" y="93" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="16" font-weight="bold" fill="#1A3A5C">目标：最小化残差平方和  S = Σ[y_i - (a x_i + b)]²</text>
+    </g>
+    
+    <g id="full-cycle" transform="translate(60, 130)">
+        <path fill="#C62828" fill-opacity="0.08" d="M8,0 H552 A8,8 0 0 1 560,8 V36 A8,8 0 0 1 552,44 H8 A8,8 0 0 1 0,36 V8 A8,8 0 0 1 8,0 Z" />
+        <text x="280" y="28" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="17" font-weight="bold" fill="#C62828">全周期线性 / 二次模型</text>
+        
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)" d="M8,55 H552 A8,8 0 0 1 560,63 V167 A8,8 0 0 1 552,175 H8 A8,8 0 0 1 0,167 V63 A8,8 0 0 1 8,55 Z" />
+        <line x1="8" y1="75" x2="8" y2="155" stroke="#2E7D32" stroke-width="5" stroke-linecap="round" />
+        <circle cx="40" cy="95" r="16" fill="#D1FAE5" />
+        <text x="40" y="100" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E7D32">✓</text>
+        <text x="65" y="90" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E">优点：公式简单，易于解释</text>
+        <text x="65" y="115" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">线性 y = a x + b；二次 y = a x² + b x + c</text>
+        <text x="65" y="140" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">拟合全部 10 个样本点，数学形式直观</text>
+        
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)" d="M8,190 H552 A8,8 0 0 1 560,198 V302 A8,8 0 0 1 552,310 H8 A8,8 0 0 1 0,302 V198 A8,8 0 0 1 8,190 Z" />
+        <line x1="8" y1="210" x2="8" y2="290" stroke="#C62828" stroke-width="5" stroke-linecap="round" />
+        <circle cx="40" cy="230" r="16" fill="#FFE4E6" />
+        <text x="40" y="235" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#C62828">✗</text>
+        <text x="65" y="225" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E">缺点：把冲击和长期趋势混在同一模型</text>
+        <text x="65" y="250" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">2020 年外生冲击拉偏全周期拟合线</text>
+        <text x="65" y="275" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">二次模型留一误差更高 → 小样本下过拟合风险</text>
+    </g>
+    
+    <g id="piecewise" transform="translate(660, 130)">
+        <path fill="#2E7D32" fill-opacity="0.08" d="M8,0 H552 A8,8 0 0 1 560,8 V36 A8,8 0 0 1 552,44 H8 A8,8 0 0 1 0,36 V8 A8,8 0 0 1 8,0 Z" />
+        <text x="280" y="28" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="17" font-weight="bold" fill="#2E7D32">分段低次模型（本报告采用）</text>
+        
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)" d="M8,55 H552 A8,8 0 0 1 560,63 V167 A8,8 0 0 1 552,175 H8 A8,8 0 0 1 0,167 V63 A8,8 0 0 1 8,55 Z" />
+        <line x1="8" y1="75" x2="8" y2="155" stroke="#2E7D32" stroke-width="5" stroke-linecap="round" />
+        <circle cx="40" cy="95" r="16" fill="#D1FAE5" />
+        <text x="40" y="100" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E7D32">✓</text>
+        <text x="65" y="90" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E">优点：分别解释平稳增长和冲击后恢复</text>
+        <text x="65" y="115" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">2014-2019 年：平稳增长段</text>
+        <text x="65" y="140" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">2020-2023 年：冲击后恢复段</text>
+        
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)" d="M8,190 H552 A8,8 0 0 1 560,198 V302 A8,8 0 0 1 552,310 H8 A8,8 0 0 1 0,302 V198 A8,8 0 0 1 8,190 Z" />
+        <line x1="8" y1="210" x2="8" y2="290" stroke="#2E7D32" stroke-width="5" stroke-linecap="round" />
+        <circle cx="40" cy="230" r="16" fill="#D1FAE5" />
+        <text x="40" y="235" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#2E7D32">✓</text>
+        <text x="65" y="225" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E">优点：符合课程分段低次思想，RMSE 更小</text>
+        <text x="65" y="250" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">平稳趋势可构造反事实基准</text>
+        <text x="65" y="275" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">2024-2026 年短期外推仅用于看方向</text>
+    </g>
+    
+    <g id="recommendation">
+        <path fill="#FFFFFF" stroke="#C8963E" stroke-width="1.5" filter="url(#cardShadow)" d="M68,460 H1212 A8,8 0 0 1 1220,468 V512 A8,8 0 0 1 1212,520 H68 A8,8 0 0 1 60,512 V468 A8,8 0 0 1 68,460 Z" />
+        
+  <g transform="translate(90.0, 488.0) scale(0.078125)" fill="#C8963E">
+    <path d="M208,104a79.86,79.86,0,0,1-30.59,62.92A24.29,24.29,0,0,0,168,186v6a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8v-6a24.11,24.11,0,0,0-9.3-19A79.87,79.87,0,0,1,48,104.45C47.76,61.09,82.72,25,126.07,24A80,80,0,0,1,208,104Z" opacity="0.2" />
+    <path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z" />
+  </g>
+        <text x="120" y="485" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A3A5C">误差意识</text>
+        <text x="220" y="485" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" fill="#6B7280">二次模型样本内 RMSE 略好但留一误差更差，因此不采用高阶外推。分段低次最小二乘更稳。</text>
+        <text x="220" y="505" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#9CA3AF">课程对应：函数逼近 + 最小二乘残差平方和 + 分段低次思想</text>
+    </g>
+    
+    <g id="page-footer">
+        <text x="60" y="695" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#9CA3AF">Source: 最小二乘法；团队 Python 实现</text>
+        <text x="1220" y="695" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#9CA3AF">07 / 12</text>
+    </g>
+</svg>

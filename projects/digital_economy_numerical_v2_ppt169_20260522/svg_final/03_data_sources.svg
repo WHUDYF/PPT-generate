@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <defs>
+        <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="4" />
+            <feOffset dx="0" dy="2" result="offsetBlur" />
+            <feFlood flood-color="#0F172A" flood-opacity="0.05" result="shadowColor" />
+            <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow" />
+            <feMerge><feMergeNode in="shadow" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+    </defs>
+    
+    <rect width="1280" height="720" fill="#FAFAFA" />
+    
+    <g id="page-header">
+        <rect x="60" y="30" width="4" height="36" fill="#1A3A5C" />
+        <text x="80" y="55" font-family="Georgia, KaiTi, serif" font-size="30" font-weight="bold" fill="#1A3A5C">数据来源与指标口径：构造 2014-2023 年离散点集</text>
+        <text x="80" y="78" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">所有指标统一为年度全国数据；旅游指标来自国家统计局公开年鉴/数据平台，博物馆数按全国备案博物馆口径整理。</text>
+    </g>
+    
+    <g id="indicator-table" transform="translate(60, 115)">
+        
+        <path fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1.5" filter="url(#cardShadow)" d="M6,0 H1154 A6,6 0 0 1 1160,6 V264 A6,6 0 0 1 1154,270 H6 A6,6 0 0 1 0,264 V6 A6,6 0 0 1 6,0 Z" />
+        
+        <path fill="#1A3A5C" d="M6,0 H1154 A6,6 0 0 1 1160,6 V42 A6,6 0 0 1 1154,48 H6 A6,6 0 0 1 0,42 V6 A6,6 0 0 1 6,0 Z" />
+        <rect x="0" y="24" width="1160" height="24" fill="#1A3A5C" />
+        <text x="20" y="30" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">指标</text>
+        <text x="200" y="30" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">单位</text>
+        <text x="330" y="30" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">社会含义</text>
+        <text x="820" y="30" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">处理链路</text>
+        <text x="1110" y="30" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">序号</text>
+        
+        <line x1="0" y1="48" x2="1160" y2="48" stroke="#D1D5DB" stroke-width="1" />
+        
+        <rect x="0" y="48" width="1160" height="74" fill="#FAFAFA" />
+        <text x="20" y="72" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A3A5C">博物馆数量</text>
+        <text x="200" y="72" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" fill="#1A1A2E">个</text>
+        <text x="330" y="72" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">公共文化设施供给规模，反映文化服务基础和文旅场景扩张。</text>
+        <text x="820" y="72" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#2E6B8F">统一年度与单位</text>
+        <text x="1120" y="72" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1A3A5C">1</text>
+        <line x1="0" y1="122" x2="1160" y2="122" stroke="#E2E8F0" stroke-width="1" />
+        
+        <rect x="0" y="122" width="1160" height="74" fill="#FFFFFF" />
+        <text x="20" y="146" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A3A5C">国内游客</text>
+        <text x="200" y="146" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" fill="#1A1A2E">百万人次</text>
+        <text x="330" y="146" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">文旅需求侧规模，受居民出行意愿、交通条件和公共卫生冲击影响。</text>
+        <text x="820" y="146" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#2E6B8F">标注 2020 年冲击</text>
+        <text x="1120" y="146" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1A3A5C">2</text>
+        <line x1="0" y1="196" x2="1160" y2="196" stroke="#E2E8F0" stroke-width="1" />
+        
+        <rect x="0" y="196" width="1160" height="74" fill="#FAFAFA" />
+        <text x="20" y="220" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A3A5C">国内旅游总花费</text>
+        <text x="200" y="220" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" fill="#1A1A2E">亿元</text>
+        <text x="330" y="220" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">文旅消费强度，体现需求恢复是否能够转化为经济活动。</text>
+        <text x="820" y="220" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#2E6B8F">形成可计算序列</text>
+        <text x="1120" y="220" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1A3A5C">3</text>
+    </g>
+    
+    <g id="modeling-note">
+        <path fill="#F0F4F8" d="M66,410 H1214 A6,6 0 0 1 1220,416 V452 A6,6 0 0 1 1214,458 H66 A6,6 0 0 1 60,452 V416 A6,6 0 0 1 66,410 Z" />
+        
+  <g transform="translate(85.0, 435.0) scale(0.078125)" fill="#1A3A5C">
+    <path d="M184,48V208a8,8,0,0,1-8,8H80a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8h96A8,8,0,0,1,184,48Z" opacity="0.2" />
+    <path d="M208,40a8,8,0,0,1-8,8H170.71a24,24,0,0,0-23.62,19.71L137.59,120H184a8,8,0,0,1,0,16H134.68l-10,55.16A40,40,0,0,1,85.29,224H56a8,8,0,0,1,0-16H85.29a24,24,0,0,0,23.62-19.71l9.5-52.29H72a8,8,0,0,1,0-16h49.32l10-55.16A40,40,0,0,1,170.71,32H200A8,8,0,0,1,208,40Z" />
+  </g>
+        <text x="115" y="440" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1A3A5C">建模选择：</text>
+        <text x="230" y="440" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">对年度离散点直接做数值微分和拟合，不人为插入月度数据，避免制造虚假精度。</text>
+    </g>
+    
+    <g id="page-footer">
+        <text x="60" y="695" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#9CA3AF">Source: 国家统计局国家数据、中国统计年鉴；团队整理</text>
+        <text x="1220" y="695" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#9CA3AF">03 / 12</text>
+    </g>
+</svg>

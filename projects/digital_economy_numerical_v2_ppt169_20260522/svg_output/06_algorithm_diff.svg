@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <defs>
+        <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+            <feOffset dx="0" dy="2" result="offsetBlur"/>
+            <feFlood flood-color="#0F172A" flood-opacity="0.06" result="shadowColor"/>
+            <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow"/>
+            <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+    </defs>
+    <!-- Background -->
+    <rect width="1280" height="720" fill="#FAFAFA"/>
+    <!-- Header -->
+    <g id="page-header">
+        <rect x="60" y="30" width="4" height="36" fill="#1A3A5C"/>
+        <text x="80" y="55" font-family="Georgia, KaiTi, serif" font-size="30" font-weight="bold" fill="#1A3A5C">算法一：三点公式把"趋势"转化为年度边际变化</text>
+        <text x="80" y="80" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">年度间隔 h=1，中心差分近似导数；端点用单侧差分，避免丢失首尾年份。</text>
+    </g>
+    <!-- Left column: Core formula -->
+    <g id="formula-column" transform="translate(60, 120)">
+        <text x="0" y="20" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A3A5C">核心公式</text>
+        <!-- Center difference box -->
+        <rect x="0" y="40" width="560" height="110" rx="8" fill="#FFFFFF" stroke="#1A3A5C" stroke-width="1.5" filter="url(#cardShadow)"/>
+        <rect x="0" y="40" width="560" height="6" rx="3" fill="#1A3A5C"/>
+        <text x="280" y="80" text-anchor="middle" font-family="Consolas, Courier New, monospace" font-size="22" font-weight="bold" fill="#1A1A2E">f'(x_i) ≈ [f(x_{i+1}) - f(x_{i-1})] / 2h</text>
+        <text x="280" y="110" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">中心差分 · 二阶精度 · h=1 时直接解释为"每年边际变化"</text>
+        <!-- Endpoint formula box -->
+        <rect x="0" y="175" width="560" height="80" rx="8" fill="#F0F4F8" stroke="#D1D5DB" stroke-width="1"/>
+        <text x="20" y="200" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#2E6B8F">端点处理：</text>
+        <text x="150" y="200" font-family="Consolas, Courier New, monospace" font-size="16" fill="#1A1A2E">f'(x_0) ≈ f(x_1) - f(x_0)</text>
+        <text x="150" y="228" font-family="Consolas, Courier New, monospace" font-size="16" fill="#1A1A2E">f'(x_n) ≈ f(x_n) - f(x_{n-1})</text>
+        <text x="20" y="228" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">首尾点用单侧差分</text>
+        <!-- Physical meaning -->
+        <rect x="0" y="280" width="560" height="60" rx="8" fill="#1A3A5C" fill-opacity="0.06"/>
+        <use data-icon="phosphor-duotone/lightbulb" x="20" y="310" width="20" height="20" fill="#C8963E"/>
+        <text x="50" y="318" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1A3A5C">物理/社会意义：</text>
+        <text x="220" y="318" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">差分值越大，说明该指标在该年度附近扩张或恢复越快。</text>
+    </g>
+    <!-- Right column: Calculation steps -->
+    <g id="steps-column" transform="translate(670, 120)">
+        <text x="0" y="20" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A3A5C">计算流程</text>
+        <!-- Step 1 -->
+        <g transform="translate(0, 40)">
+            <rect x="0" y="0" width="550" height="62" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+            <circle cx="30" cy="31" r="16" fill="#1A3A5C"/>
+            <text x="30" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">1</text>
+            <text x="60" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">读取年度序列 f(x)</text>
+            <text x="60" y="48" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">输入：2014-2023 年共 10 个离散点</text>
+        </g>
+        <!-- Step 2 -->
+        <g transform="translate(0, 117)">
+            <rect x="0" y="0" width="550" height="62" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+            <circle cx="30" cy="31" r="16" fill="#2E6B8F"/>
+            <text x="30" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">2</text>
+            <text x="60" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">内部点用中心差分</text>
+            <text x="60" y="48" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">i = 1..n-1: (f[i+1] - f[i-1]) / 2</text>
+        </g>
+        <!-- Step 3 -->
+        <g transform="translate(0, 194)">
+            <rect x="0" y="0" width="550" height="62" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+            <circle cx="30" cy="31" r="16" fill="#C8963E"/>
+            <text x="30" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">3</text>
+            <text x="60" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">首尾点用单侧差分</text>
+            <text x="60" y="48" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">前端：f[1]-f[0]；末端：f[n]-f[n-1]</text>
+        </g>
+        <!-- Step 4 -->
+        <g transform="translate(0, 271)">
+            <rect x="0" y="0" width="550" height="62" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+            <circle cx="30" cy="31" r="16" fill="#2E7D32"/>
+            <text x="30" y="36" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">4</text>
+            <text x="60" y="28" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">比较变化率，定位拐点</text>
+            <text x="60" y="48" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">输出：各年度边际变化序列，识别最大正/负差分</text>
+        </g>
+    </g>
+    <!-- Footer -->
+    <g id="page-footer">
+        <text x="60" y="695" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#9CA3AF">Source: 课程数值微分公式；团队 Python 实现</text>
+        <text x="1220" y="695" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#9CA3AF">06 / 12</text>
+    </g>
+</svg>

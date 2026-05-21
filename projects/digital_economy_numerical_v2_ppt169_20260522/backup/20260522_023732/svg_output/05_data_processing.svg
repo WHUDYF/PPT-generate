@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+    <defs>
+        <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+            <feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+            <feOffset dx="0" dy="2" result="offsetBlur"/>
+            <feFlood flood-color="#0F172A" flood-opacity="0.06" result="shadowColor"/>
+            <feComposite in="shadowColor" in2="offsetBlur" operator="in" result="shadow"/>
+            <feMerge><feMergeNode in="shadow"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+            <path d="M 0 1 L 8 5 L 0 9 Z" fill="#9CA3AF"/>
+        </marker>
+    </defs>
+    <!-- Background -->
+    <rect width="1280" height="720" fill="#FAFAFA"/>
+    <!-- Header -->
+    <g id="page-header">
+        <rect x="60" y="30" width="4" height="36" fill="#1A3A5C"/>
+        <text x="80" y="55" font-family="Georgia, KaiTi, serif" font-size="30" font-weight="bold" fill="#1A3A5C">数据处理：从原始指标到可计算特征</text>
+        <text x="80" y="80" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">原始数据虽少，但可通过口径统一、指数化和转化效率指标形成可计算时间序列。</text>
+    </g>
+    <!-- Five steps -->
+    <g id="process-steps" transform="translate(60, 115)">
+        <!-- Step 1 -->
+        <rect x="0" y="0" width="200" height="80" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+        <circle cx="45" cy="40" r="20" fill="#1A3A5C"/>
+        <text x="45" y="46" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">1</text>
+        <text x="80" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">统一口径</text>
+        <text x="80" y="56" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#6B7280">年份对齐；统一单位</text>
+        <!-- Arrow -->
+        <line x1="200" y1="40" x2="230" y2="40" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+        <!-- Step 2 -->
+        <rect x="235" y="0" width="200" height="80" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+        <circle cx="280" cy="40" r="20" fill="#2E6B8F"/>
+        <text x="280" y="46" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">2</text>
+        <text x="315" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">指数化</text>
+        <text x="315" y="56" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#6B7280">2014=100；同尺度比较</text>
+        <!-- Arrow -->
+        <line x1="435" y1="40" x2="465" y2="40" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+        <!-- Step 3 -->
+        <rect x="470" y="0" width="200" height="80" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+        <circle cx="515" cy="40" r="20" fill="#C8963E"/>
+        <text x="515" y="46" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">3</text>
+        <text x="550" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">转化指标</text>
+        <text x="550" y="56" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#6B7280">单馆游客；人均消费</text>
+        <!-- Arrow -->
+        <line x1="670" y1="40" x2="700" y2="40" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+        <!-- Step 4 -->
+        <rect x="705" y="0" width="200" height="80" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+        <circle cx="750" cy="40" r="20" fill="#1A3A5C"/>
+        <text x="750" y="46" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">4</text>
+        <text x="785" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">阶段标注</text>
+        <text x="785" y="56" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#6B7280">增长、冲击、修复、恢复</text>
+        <!-- Arrow -->
+        <line x1="905" y1="40" x2="935" y2="40" stroke="#9CA3AF" stroke-width="2" marker-end="url(#arrow)"/>
+        <!-- Step 5 -->
+        <rect x="940" y="0" width="200" height="80" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+        <circle cx="985" cy="40" r="20" fill="#2E7D32"/>
+        <text x="985" y="46" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">5</text>
+        <text x="1020" y="36" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E">模型输入</text>
+        <text x="1020" y="56" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#6B7280">差分 / 拟合 / 缺口</text>
+    </g>
+    <!-- Derived indicators -->
+    <g id="derived-indicators" transform="translate(60, 235)">
+        <text x="0" y="20" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#6B7280">派生指标示例</text>
+        <!-- Card 1: Per-museum visitors -->
+        <rect x="0" y="40" width="370" height="130" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+        <rect x="0" y="40" width="4" height="130" rx="2" fill="#1A3A5C"/>
+        <use data-icon="phosphor-duotone/users" x="25" y="70" width="24" height="24" fill="#1A3A5C"/>
+        <text x="60" y="80" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E">单馆游客量</text>
+        <text x="60" y="105" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#C62828">1.170 → 0.716</text>
+        <text x="60" y="130" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">2019 到 2023，百万人次/馆</text>
+        <text x="60" y="155" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#9CA3AF">供给扩张，但单馆游客未回 2019</text>
+        <!-- Card 2: Per-capita spending -->
+        <rect x="395" y="40" width="370" height="130" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+        <rect x="395" y="40" width="4" height="130" rx="2" fill="#2E6B8F"/>
+        <use data-icon="phosphor-duotone/currency-circle-dollar" x="420" y="70" width="24" height="24" fill="#2E6B8F"/>
+        <text x="455" y="80" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E">人均旅游消费</text>
+        <text x="455" y="105" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#2E7D32">953.2 → 1004.6</text>
+        <text x="455" y="130" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">2019 到 2023，元/人</text>
+        <text x="455" y="155" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#9CA3AF">人均消费更快恢复，体现转化效率</text>
+        <!-- Card 3: Museum index -->
+        <rect x="790" y="40" width="370" height="130" rx="8" fill="#FFFFFF" stroke="#D1D5DB" stroke-width="1" filter="url(#cardShadow)"/>
+        <rect x="790" y="40" width="4" height="130" rx="2" fill="#C8963E"/>
+        <use data-icon="phosphor-duotone/chart-line-up" x="815" y="70" width="24" height="24" fill="#C8963E"/>
+        <text x="850" y="80" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E">博物馆指数</text>
+        <text x="850" y="105" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="28" font-weight="bold" fill="#C8963E">100 → 186.8</text>
+        <text x="850" y="130" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="13" fill="#6B7280">2014 到 2023，2014=100</text>
+        <text x="850" y="155" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#9CA3AF">十年供给接近翻番</text>
+    </g>
+    <!-- Output files -->
+    <g id="output-files">
+        <rect x="60" y="425" width="1160" height="40" rx="6" fill="#F0F4F8"/>
+        <use data-icon="phosphor-duotone/database" x="85" y="448" width="18" height="18" fill="#1A3A5C"/>
+        <text x="110" y="450" font-family="Consolas, Courier New, monospace" font-size="13" fill="#6B7280">输出：processed_features.csv + diff_results.csv + model_comparison.csv + counterfactual_gap.csv</text>
+    </g>
+    <!-- Principle note -->
+    <g id="principle-note">
+        <text x="60" y="500" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1A3A5C">预处理原则</text>
+        <text x="60" y="525" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="14" fill="#6B7280">年度采样间隔 h = 1，因此三点差分可直接解释为"每年边际变化"；但政策与疫情冲击会放大端点误差。</text>
+    </g>
+    <!-- Footer -->
+    <g id="page-footer">
+        <text x="60" y="695" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="12" fill="#9CA3AF">Source: 团队预处理规则与 Python 计算</text>
+        <text x="1220" y="695" text-anchor="end" font-family="Microsoft YaHei, PingFang SC, Arial, sans-serif" font-size="11" fill="#9CA3AF">05 / 12</text>
+    </g>
+</svg>
