@@ -1,0 +1,4 @@
+__pycache__/
+*.py[cod]
+.course_text/
+online_preview/
