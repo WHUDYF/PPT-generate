@@ -20,6 +20,9 @@
 | L1 | `sources/03-its-top.drawio` | `rtl/src/its_top.v` | 12 个 slot 的 pc / lane_state / bx / splinter / fire_retire，selected 输出，redirect |
 | L1 | `sources/04-exec-pipe-top.drawio` | `rtl/src/exec_pipe_top.v` | dispatch、各执行单元、reuse cache、pending、可变写回源、`exec_wb_arb` |
 | L1 | `sources/05-rf-bank-top.drawio` | `rtl/src/rf_bank_top.v` | GPR / URF / P-file / uniform predicate、两个初始化 walker、tensor URF 读 |
+| 专题 | `sources/06-scoreboard-loop.drawio` | `sched_sbx_scoreboard.v`、`sched_warp_ctrl.v`、`sched_completion_event_lane_decode.v` | scoreboard 依赖环：issue 占用、计数器阵列、gen 过滤、事件 lane、eligible 条件 |
+| 专题 | `sources/07-rd-event-lane.drawio` | `subcore_top.v:3510-3550` | rd 事件共用 lane：mem / CBU / tensor / async 的优先级与 async 单项挂起槽 |
+| 专题 | `sources/08-slot-lifecycle.drawio` | `sched_warp_ctrl.v`、`sched_sbx_scoreboard.v` | warp slot 生命周期中计数器的变化，launch / EXIT / retire 与 gen 回绕 |
 
 `rtl/src/subcore_top.v` 中的实例行号：`u_decode` 1362，`u_sched` 1461，`u_exec_pipe` 1983，`u_issue_rd_arb` 2447，`u_exec_mem_issue` 3550，`u_exec_cbu_issue` 3631，`u_its` 4055，`u_rf_bank` 4741。
 
@@ -49,6 +52,10 @@ done
 ## 校验范围
 
 生成后只做了几何层面的检查：XML 可解析，方块无重叠，文字高度不超框，所有边的折线（按显式出入口和折点计算）不穿过无关方块。没有在 drawio 里目视过，打开后若个别连线或标签位置不理想，直接手动拖动调整即可。
+
+## 专题图的依据
+
+06 到 08 的信号名、位宽和条件取自上表所列 RTL 文件，不变量、时序契约与待核实问题的整理见 curryGPU 仓库 `docs/design/ai-rtl-study/scoreboard-loop-contract.md`。07 中挂起槽被新值替换的情形、08 中非 EXIT 退休后计数器是否残留，都是待验证场景，没有仿真证据。
 
 ## 来源与未核实项
 
