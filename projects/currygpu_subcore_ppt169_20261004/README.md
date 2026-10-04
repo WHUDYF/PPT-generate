@@ -32,7 +32,7 @@
 | ⑥ | Write back | 00、04 | 按写口仲裁 |
 | ⑦ | Release | 00、06 | 按 warp slot（scoreboard 计数器） |
 
-00 底部的七段条上方框区分"按 warp slot 保持状态"与"在功能单元里流动"，每段下面一行是吞吐或延迟。已核实的只有：IB 到 head 为 1 拍（时钟沿写入）、调度链为组合逻辑、VALU 与 SALU 各 4 级、SFU 18、完成事件在 t 周期到达则计数器在 t+1 更新。④ 的段间寄存器边界标红色 `?`，未核实。
+00 底部的七段条上方框区分"按 warp slot 保持状态"与"在功能单元里流动"，每段下面一行是吞吐或延迟。这些数字是读 RTL 推出来的，没有仿真，依据和行号见 curryGPU 仓库 `docs/design/ai-rtl-study/subcore-pipeline-from-rtl.md`。要点：发射路径上只有 IB → head 一处寄存器，head 之后到功能单元入口全是组合；换 warp 有 1 拍气泡；VALU 读 RF 收集操作数为 +0/+1/+2 拍；VALU 完成级（tap）1 到 4；完成事件在 t 拍则计数器在 t+1 更新。
 
 01 底部的子段表给出 ②a/②b/②c 各自保存的状态、吞吐和延迟。02 中 ③a 到 ③c 在同一拍内由寄存器状态组合得出，不是三个时钟周期。
 
@@ -65,8 +65,8 @@ done
 
 ## 未核实项
 
-1. 00 中 Decode、Scheduler、ITS、Execute 之间有没有流水寄存器、一条指令各段花几拍，没有核实，七段流水视图只表达先后关系和状态归属。
-2. 04 中的 RTL 级数（VALU 4、SALU 4、SFU 18）与性能模型的延迟类别不是同一个量，尚未对齐。
+1. 各周期由读 RTL 推出，没有波形验证。RF 读请求在 issue 当拍是否一定被授权、SALU / SFU / Xlane / LSU / CBU 的入口与完成拍数、性能模型的换 warp 气泡取值，列在 `subcore-pipeline-from-rtl.md` 第 7 节。
+2. 04 中 VALU 的 tap 与性能模型的延迟类别（int add 6、int mul 4、fp 4）不是同一个量，尚未对齐。
 3. 03 的 slot 内部连接（lane 表、splinter 表、BX 表）按功能归纳，没有逐端口核对。
 4. 07 的两个验证场景和 08 中"不经过 EXIT 的退休之后计数器是否为 0"都没有仿真结论。
 5. 00 中分支重定向画为从 ITS 回到取指，分支结果由 Branch / Reconverge 产生；RTL 里这部分状态机分布在 `subcore_top`、`its_top` 和 `sm_top`，图中做了合并。
