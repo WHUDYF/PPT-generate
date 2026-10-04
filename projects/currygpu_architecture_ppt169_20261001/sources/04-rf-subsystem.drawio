@@ -112,19 +112,19 @@
         <mxCell id="latch_ra" value="Ra" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;verticalAlign=top;align=center;spacingTop=2;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="158" y="506" width="124" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="latch_ra_tag" value="tag        |        v" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#6C8EBF;" vertex="1" parent="1">
+        <mxCell id="latch_ra_tag" value="tag        |        v" style="text;html=0;align=center;verticalAlign=middle;fontSize=9;fontColor=#6C8EBF;" vertex="1" parent="1">
           <mxGeometry x="158" y="534" width="124" height="20" as="geometry" />
         </mxCell>
         <mxCell id="latch_rb" value="Rb" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;verticalAlign=top;align=center;spacingTop=2;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="288" y="506" width="124" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="latch_rb_tag" value="tag        |        v" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#6C8EBF;" vertex="1" parent="1">
+        <mxCell id="latch_rb_tag" value="tag        |        v" style="text;html=0;align=center;verticalAlign=middle;fontSize=9;fontColor=#6C8EBF;" vertex="1" parent="1">
           <mxGeometry x="288" y="534" width="124" height="20" as="geometry" />
         </mxCell>
         <mxCell id="latch_rc" value="Rc" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6C8EBF;verticalAlign=top;align=center;spacingTop=2;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="418" y="506" width="124" height="52" as="geometry" />
         </mxCell>
-        <mxCell id="latch_rc_tag" value="tag        |        v" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#6C8EBF;" vertex="1" parent="1">
+        <mxCell id="latch_rc_tag" value="tag        |        v" style="text;html=0;align=center;verticalAlign=middle;fontSize=9;fontColor=#6C8EBF;" vertex="1" parent="1">
           <mxGeometry x="418" y="534" width="124" height="20" as="geometry" />
         </mxCell>
         <mxCell id="latch_note" value="hit · no bank read · full rate" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#4A6E99;" vertex="1" parent="1">
@@ -174,8 +174,20 @@
         <mxCell id="sched" value="scheduling contract" style="rounded=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#999999;dashed=1;verticalAlign=top;align=center;spacingTop=16;fontSize=16;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="1330" y="720" width="380" height="200" as="geometry" />
         </mxCell>
-        <mxCell id="sched_hdr" value="c0            c1            c2            c3            c4" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#999999;" vertex="1" parent="1">
-          <mxGeometry x="1430" y="762" width="270" height="16" as="geometry" />
+        <mxCell id="sched_hdr" value="c0" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1430" y="762" width="52" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="sched_hdr1" value="c1" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1486" y="762" width="52" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="sched_hdr2" value="c2" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1542" y="762" width="52" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="sched_hdr3" value="c3" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1598" y="762" width="52" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="sched_hdr4" value="c4" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#999999;" vertex="1" parent="1">
+          <mxGeometry x="1654" y="762" width="52" height="16" as="geometry" />
         </mxCell>
         <mxCell id="sched_lbl1" value="no conflict" style="text;html=1;align=right;verticalAlign=middle;fontSize=9;fontColor=#666666;" vertex="1" parent="1">
           <mxGeometry x="1344" y="782" width="80" height="24" as="geometry" />
@@ -212,40 +224,40 @@
         <mxCell id="e_req_alloc" value="" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="rail_req" target="alloc">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_alloc_r1" value="" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="alloc" target="r1">
+        <mxCell id="e_alloc_r1" value="" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.425;" edge="1" parent="1" source="alloc" target="r1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_r1_r2" value="" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;exitX=1;exitY=0.4;entryX=0;entryY=0.4;" edge="1" parent="1" source="r1" target="r2">
+        <mxCell id="e_r1_r2" value="" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;exitX=1;exitY=0.4;entryX=0;entryY=0.3478;" edge="1" parent="1" source="r1" target="r2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_alloc_latch" value="reuse hint · tag compare" style="endArrow=classic;html=1;strokeColor=#D79B00;strokeWidth=2;fontSize=11;fontColor=#B07000;exitX=0.3;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="alloc" target="latch">
+        <mxCell id="e_alloc_latch" value="reuse hint · tag compare" style="endArrow=classic;html=1;strokeColor=#D79B00;strokeWidth=2;fontSize=11;fontColor=#B07000;exitX=0.3;exitY=1;entryX=0.1929;entryY=0;" edge="1" parent="1" source="alloc" target="latch">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_r2_r3" value="" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="r2" target="r3">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_r3_latch" value="read return" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;fontSize=11;fontColor=#2D5F9A;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="r3" target="latch">
+        <mxCell id="e_r3_latch" value="read return" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;fontSize=11;fontColor=#2D5F9A;exitX=0;exitY=0.5588;entryX=1;entryY=0.5;" edge="1" parent="1" source="r3" target="latch">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_latch_ops" value="" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="latch" target="rail_ops">
+        <mxCell id="e_latch_ops" value="" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;exitX=0;exitY=0.5;entryX=1;entryY=0.4474;" edge="1" parent="1" source="latch" target="rail_ops">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_wbsrc_wb" value="" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="rail_wb" target="wb">
+        <mxCell id="e_wbsrc_wb" value="" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;exitX=1;exitY=0.5526;entryX=0;entryY=0.5;" edge="1" parent="1" source="rail_wb" target="wb">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_wb_latch" value="write snoop · invalidate" style="endArrow=classic;html=1;dashed=1;strokeColor=#D79B00;strokeWidth=2;fontSize=11;fontColor=#B07000;exitX=0.3;exitY=0;entryX=0.3;entryY=1;" edge="1" parent="1" source="wb" target="latch">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_wb_r2" value="WR ×2 · lanemask" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;fontSize=11;fontColor=#2D5F9A;exitX=1;exitY=0.7;entryX=0.5;entryY=1;" edge="1" parent="1" source="wb" target="r2">
+        <mxCell id="e_wb_r2" value="WR ×2 · lanemask" style="endArrow=classic;html=1;strokeColor=#2D5F9A;strokeWidth=2;fontSize=11;fontColor=#2D5F9A;exitX=1;exitY=0.7;entryX=0.7838;entryY=1;" edge="1" parent="1" source="wb" target="r2">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1290" y="943" />
               <mxPoint x="1290" y="400" />
-              <mxPoint x="1075" y="400" />
+              <mxPoint x="1180" y="400" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e_walker_r2" value="" style="endArrow=classic;html=1;strokeColor=#9673A6;strokeWidth=2;exitX=0;exitY=0.5;entryX=1;entryY=0.4;" edge="1" parent="1" source="walker" target="r2">
+        <mxCell id="e_walker_r2" value="" style="endArrow=classic;html=1;strokeColor=#9673A6;strokeWidth=2;exitX=0;exitY=0.5;entryX=1;entryY=0.3043;" edge="1" parent="1" source="walker" target="r2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 

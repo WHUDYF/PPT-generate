@@ -99,13 +99,16 @@
         </mxCell>
 
         <!-- Panel A edges -->
-        <mxCell id="eA1" value="IF0 · kernel launch / doorbell" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="a_host" target="a_cp">
+        <mxCell id="eA1" value="" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="a_host" target="a_cp">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eA2" value="IF1 · CTA dispatch" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=0.3;exitY=1;entryX=0.45;entryY=0;" edge="1" parent="1" source="a_cp" target="a_smarray">
+        <mxCell id="eA1_lbl" value="IF0 · kernel launch / doorbell" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="190" y="38" width="220" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="eA2" value="IF1 · CTA dispatch" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=0.2143;exitY=1;entryX=0.5319;entryY=0;" edge="1" parent="1" source="a_cp" target="a_smarray">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eA3" value="retire credit" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0.75;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="a_smarray" target="a_cp">
+        <mxCell id="eA3" value="retire credit" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0.8723;exitY=0;entryX=0.7857;entryY=1;" edge="1" parent="1" source="a_smarray" target="a_cp">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eA4" value="IF2 · memory transactions" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=0.25;exitY=1;entryX=0.25;entryY=0;" edge="1" parent="1" source="a_smarray" target="a_noc">
@@ -210,10 +213,10 @@
           <mxGeometry x="1000" y="960" width="430" height="20" as="geometry" />
         </mxCell>
 
-        <mxCell id="eB1" value="IF11 · submit" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=0.3;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="b_sc0" target="b_exec">
+        <mxCell id="eB1" value="IF11 · submit" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=0.3;exitY=1;entryX=0.2797;entryY=0;" edge="1" parent="1" source="b_sc0" target="b_exec">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eB2" value="credit" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0.75;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="b_exec" target="b_sc0">
+        <mxCell id="eB2" value="credit" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0.7172;exitY=0;entryX=0.8;entryY=1;" edge="1" parent="1" source="b_exec" target="b_sc0">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eB3" value="IF14 · TMA → shared" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0.35;exitY=1;entryX=0.35;entryY=0;" edge="1" parent="1" source="b_exec" target="b_shmem">
@@ -316,8 +319,11 @@
         <mxCell id="c_iq_credits" value="credits 2 / 4" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="2360" y="632" width="190" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="c_iq_note" value="head                                              tail" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
-          <mxGeometry x="2068" y="666" width="260" height="14" as="geometry" />
+        <mxCell id="c_iq_note" value="head" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="2068" y="666" width="80" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="c_iq_tail" value="tail" style="text;html=1;align=right;verticalAlign=middle;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
+          <mxGeometry x="2158" y="666" width="100" height="14" as="geometry" />
         </mxCell>
 
         <mxCell id="c_mbar" value="mbarrier table" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;verticalAlign=top;align=center;spacingTop=6;fontSize=15;fontStyle=1;" vertex="1" parent="1">
@@ -409,50 +415,65 @@
         <mxCell id="eC4" value="wait-mask" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0.25;exitY=0;entryX=0.25;entryY=1;" edge="1" parent="1" source="c_sb" target="c_ws">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC5" value="coupled issue" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=1;exitY=0.4;entryX=0;entryY=0.5;" edge="1" parent="1" source="c_ws" target="c_rf">
+        <mxCell id="eC5" value="coupled issue" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=1;exitY=0.3667;entryX=0;entryY=0.5;" edge="1" parent="1" source="c_ws" target="c_rf">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eC6" value="decoupled issue" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0.2;exitY=1;entryX=0.2;entryY=0;" edge="1" parent="1" source="c_sb" target="c_iq">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC7" value="bypass → operand" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0.1;exitY=0;entryX=0.3;entryY=1;" edge="1" parent="1" source="c_valu" target="c_rf">
+        <mxCell id="eC7" value="bypass → operand" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0.2;exitY=0;entryX=0.0893;entryY=1;" edge="1" parent="1" source="c_valu" target="c_rf">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC8" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="c_valu" target="c_wb">
+        <mxCell id="eC8" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.2302;entryY=0;" edge="1" parent="1" source="c_valu" target="c_wb">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC9" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.8;entryY=0;" edge="1" parent="1" source="c_salu" target="c_wb">
+        <mxCell id="eC9" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.7855;entryY=0;" edge="1" parent="1" source="c_salu" target="c_wb">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC10" value="IF18 · release" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0;exitY=0.3;entryX=1;entryY=0.3;" edge="1" parent="1" source="c_wb" target="c_sb">
+        <mxCell id="eC10" value="IF18 · release" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0;exitY=0.2222;entryX=1;entryY=0.3;" edge="1" parent="1" source="c_wb" target="c_sb">
+          <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="2680" y="470" />
+            <mxPoint x="2680" y="369" />
+          </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eC11" value="completion → scoreboard release" style="endArrow=classic;html=1;dashed=1;strokeColor=#82B366;fontSize=10;fontColor=#555555;exitX=0;exitY=0.7778;entryX=1;entryY=0.8;" edge="1" parent="1" source="c_wb" target="c_sb">
+          <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="2640" y="520" />
+            <mxPoint x="2640" y="434" />
+          </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="eC12" value="IF11 · submit" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=1;exitY=0.3636;entryX=0;entryY=0.0851;" edge="1" parent="1" source="c_iq" target="c_sharedrail">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC11" value="completion → scoreboard release" style="endArrow=classic;html=1;dashed=1;strokeColor=#82B366;fontSize=10;fontColor=#555555;exitX=0;exitY=0.85;entryX=1;entryY=0.8;" edge="1" parent="1" source="c_wb" target="c_sb">
+        <mxCell id="eC13" value="credit return" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0;exitY=0.1702;entryX=1;entryY=0.7273;" edge="1" parent="1" source="c_sharedrail" target="c_iq">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC12" value="IF11 · submit" style="endArrow=classic;html=1;fontSize=10;fontColor=#555555;exitX=1;exitY=0.3;entryX=0;entryY=0.1;" edge="1" parent="1" source="c_iq" target="c_sharedrail">
+        <mxCell id="eC14" value="IF16 · arrive / complete-tx" style="endArrow=classic;startArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=1;exitY=0.6;entryX=0;entryY=0.5745;" edge="1" parent="1" source="c_mbar" target="c_sharedrail">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC13" value="credit return" style="endArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=0;exitY=0.2;entryX=1;entryY=0.7;" edge="1" parent="1" source="c_sharedrail" target="c_iq">
+        <mxCell id="eC15" value="" style="endArrow=classic;html=1;exitX=0.2232;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="c_rf" target="c_valu">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC14" value="IF16 · arrive / complete-tx" style="endArrow=classic;startArrow=classic;html=1;dashed=1;fontSize=10;fontColor=#555555;exitX=1;exitY=0.5;entryX=0;entryY=0.75;" edge="1" parent="1" source="c_mbar" target="c_sharedrail">
+        <mxCell id="eC16" value="" style="endArrow=classic;html=1;exitX=0.7607;exitY=1;entryX=0.4979;entryY=0;" edge="1" parent="1" source="c_rf" target="c_salu">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC15" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="c_rf" target="c_valu">
+        <mxCell id="eC17" value="" style="endArrow=classic;html=1;dashed=1;exitX=0.5157;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="c_wb" target="c_rf">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="eC16" value="" style="endArrow=classic;html=1;exitX=0.85;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="c_rf" target="c_salu">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="eC17" value="" style="endArrow=classic;html=1;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="c_wb" target="c_rf">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="eC18" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.6;" edge="1" parent="1" source="c_decode" target="c_iq">
+        <mxCell id="eC18" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.8636;entryX=0;entryY=0.1364;" edge="1" parent="1" source="c_decode" target="c_iq">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="eC19" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.2;entryX=0;entryY=0.8;" edge="1" parent="1" source="c_decode" target="c_ws">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="2005" y="542" />
+            <mxPoint x="2005" y="190" />
+          </Array>
+          </mxGeometry>
         </mxCell>
 
       </root>

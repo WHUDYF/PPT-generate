@@ -73,7 +73,7 @@
         <mxCell id="replay" value="replay buffer · 8 entries · H-07" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;verticalAlign=top;align=left;spacingLeft=12;spacingTop=6;fontSize=14;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="95" y="520" width="520" height="230" as="geometry" />
         </mxCell>
-        <mxCell id="replay_hdr" value="seq            age            lane / sector mask            payload" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6B656;fontSize=9;align=left;spacingLeft=8;" vertex="1" parent="1">
+        <mxCell id="replay_hdr" value="seq            age            lane / sector mask            payload" style="rounded=0;html=0;fillColor=#FFFFFF;strokeColor=#D6B656;fontSize=9;align=left;spacingLeft=8;fontFamily=Courier New;" vertex="1" parent="1">
           <mxGeometry x="112" y="554" width="487" height="24" as="geometry" />
         </mxCell>
         <mxCell id="replay_note1" value="self-held payload · no RF re-read · ordered reissue" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#8A7430;" vertex="1" parent="1">
@@ -96,9 +96,6 @@
         </mxCell>
         <mxCell id="replay_nack" value="← NACK →" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#B85450;" vertex="1" parent="1">
           <mxGeometry x="490" y="610" width="110" height="20" as="geometry" />
-        </mxCell>
-        <mxCell id="replay_tlb" value="TLB miss" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#D79B00;" vertex="1" parent="1">
-          <mxGeometry x="620" y="586" width="80" height="16" as="geometry" />
         </mxCell>
 
         <!-- ================= L5 resp_collect ================= -->
@@ -153,7 +150,7 @@
           <mxGeometry x="984" y="196" width="149" height="28" as="geometry" />
         </mxCell>
         <mxCell id="l1_note" value="address space resolved here · consumed by L4 steer" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
-          <mxGeometry x="660" y="268" width="400" height="14" as="geometry" />
+          <mxGeometry x="660" y="268" width="340" height="14" as="geometry" />
         </mxCell>
 
         <!-- ================= L2 coalescer ================= -->
@@ -290,7 +287,7 @@
         <mxCell id="l1d_cv" value="carveout tiers" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;verticalAlign=top;align=left;spacingLeft=12;spacingTop=6;fontSize=12;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="1580" y="340" width="330" height="110" as="geometry" />
         </mxCell>
-        <mxCell id="l1d_cv_tbl" value="ways    32   30   24   16    7&#10;rows     0    4   128  256  512  800" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;fontColor=#333333;" vertex="1" parent="1">
+        <mxCell id="l1d_cv_tbl" value="ways    32   30   24   16    7&#10;rows     0    4   128  256  512  800" style="text;html=0;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;fontColor=#333333;" vertex="1" parent="1">
           <mxGeometry x="1596" y="372" width="300" height="36" as="geometry" />
         </mxCell>
         <mxCell id="l1d_cv_note" value="every row count divides by 32" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#8A7430;" vertex="1" parent="1">
@@ -385,10 +382,10 @@
         <mxCell id="e_l0_l1" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.4;entryX=0;entryY=0.4;strokeColor=#6C8EBF;strokeWidth=2;" edge="1" parent="1" source="l0" target="l1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_l0_fence" value="" style="endArrow=classic;html=1;exitX=0.3;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="l0" target="fence">
+        <mxCell id="e_l0_fence" value="" style="endArrow=classic;html=1;exitX=0.6;exitY=1;entryX=0.6;entryY=0;" edge="1" parent="1" source="l0" target="fence">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_l1_l2" value="" style="endArrow=classic;html=1;exitX=0.4;exitY=1;entryX=0.4;entryY=0;strokeColor=#6C8EBF;strokeWidth=2;" edge="1" parent="1" source="l1" target="l2">
+        <mxCell id="e_l1_l2" value="" style="endArrow=classic;html=1;exitX=0.8;exitY=1;entryX=0.8;entryY=0;strokeColor=#6C8EBF;strokeWidth=2;" edge="1" parent="1" source="l1" target="l2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_l2_l3" value="" style="endArrow=classic;html=1;exitX=0.4;exitY=1;entryX=0.4;entryY=0;strokeColor=#6C8EBF;strokeWidth=2;" edge="1" parent="1" source="l2" target="l3">
@@ -397,32 +394,48 @@
         <mxCell id="e_l3_l4" value="" style="endArrow=classic;html=1;exitX=0.4;exitY=1;entryX=0.4;entryY=0;strokeColor=#6C8EBF;strokeWidth=2;" edge="1" parent="1" source="l3" target="l4">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_l3_replay" value="TLB miss" style="endArrow=classic;html=1;dashed=1;strokeColor=#D79B00;fontSize=9;fontColor=#D79B00;exitX=0;exitY=0.3;entryX=1;entryY=0.35;" edge="1" parent="1" source="l3" target="replay">
+        <mxCell id="e_l3_replay" value="TLB miss" style="endArrow=classic;html=1;dashed=1;strokeColor=#D79B00;fontSize=9;fontColor=#D79B00;exitX=0;exitY=0.3;entryX=1;entryY=0.2609;" edge="1" parent="1" source="l3" target="replay">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_replay_l4" value="reissue" style="endArrow=classic;html=1;dashed=1;strokeColor=#B85450;fontSize=9;fontColor=#B85450;exitX=1;exitY=0.8;entryX=0;entryY=0.3;" edge="1" parent="1" source="replay" target="l4">
+          <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="637" y="704" />
+            <mxPoint x="637" y="847" />
+          </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_l4_l5" value="Form S" style="endArrow=classic;html=1;fontSize=9;fontColor=#555555;exitX=0;exitY=0.5526;entryX=1;entryY=0.5;" edge="1" parent="1" source="l4" target="l5">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_l4_l5" value="Form S" style="endArrow=classic;html=1;fontSize=9;fontColor=#555555;exitX=0;exitY=0.7;entryX=1;entryY=0.5;" edge="1" parent="1" source="l4" target="l5">
+        <mxCell id="e_l4_l1d" value="global" style="endArrow=classic;html=1;fontSize=9;fontColor=#555555;exitX=1;exitY=0.2526;entryX=0;entryY=0.85;" edge="1" parent="1" source="l4" target="l1d">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_l4_l1d" value="global" style="endArrow=classic;html=1;fontSize=9;fontColor=#555555;exitX=1;exitY=0.35;entryX=0;entryY=0.85;" edge="1" parent="1" source="l4" target="l1d">
+        <mxCell id="e_l1_l1d" value="" style="endArrow=classic;html=1;dashed=1;exitX=1;exitY=0.6;entryX=0;entryY=0.1193;strokeColor=#6C8EBF;" edge="1" parent="1" source="l1" target="l1d">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_l1_l1d" value="" style="endArrow=classic;html=1;dashed=1;exitX=1;exitY=0.6;entryX=0;entryY=0.1;strokeColor=#6C8EBF;" edge="1" parent="1" source="l1" target="l1d">
+        <mxCell id="e_l1d_l5" value="L1D hit · Form L" style="endArrow=classic;html=1;dashed=1;fontSize=9;fontColor=#555555;exitX=0.05;exitY=1;entryX=0.779;entryY=1;" edge="1" parent="1" source="l1d" target="l5">
+          <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="1236" y="1008" />
+            <mxPoint x="500" y="1008" />
+          </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_l1d_if2" value="miss fill · write-through" style="endArrow=classic;html=1;dashed=1;fontSize=9;fontColor=#555555;exitX=0.85;exitY=1;entryX=0.6897;entryY=0;" edge="1" parent="1" source="l1d" target="bot_if2">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_l1d_l5" value="L1D hit · Form L" style="endArrow=classic;html=1;dashed=1;fontSize=9;fontColor=#555555;exitX=0;exitY=0.95;entryX=1;entryY=0.75;" edge="1" parent="1" source="l1d" target="l5">
+        <mxCell id="e_l4_bots" value="" style="endArrow=classic;html=1;exitX=0.3;exitY=1;entryX=0.2371;entryY=0;strokeColor=#82B366;" edge="1" parent="1" source="l4" target="bot_s">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_l1d_if2" value="miss fill · write-through" style="endArrow=classic;html=1;dashed=1;fontSize=9;fontColor=#555555;exitX=0.85;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="l1d" target="bot_if2">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e_l4_bots" value="" style="endArrow=classic;html=1;exitX=0.3;exitY=1;entryX=0.3;entryY=0;strokeColor=#82B366;" edge="1" parent="1" source="l4" target="bot_s">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e_l4_atomic" value="atomic · 1 lane / cycle" style="endArrow=classic;html=1;dashed=1;fontSize=9;fontColor=#555555;exitX=1;exitY=0.75;entryX=0;entryY=0.5;" edge="1" parent="1" source="l4" target="bot_if2">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="e_l4_atomic" value="atomic · 1 lane / cycle" style="endArrow=classic;html=1;dashed=1;fontSize=9;fontColor=#555555;exitX=1;exitY=0.75;entryX=0.1;entryY=0;" edge="1" parent="1" source="l4" target="bot_if2">
+          <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="1162" y="932" />
+            <mxPoint x="1162" y="995" />
+            <mxPoint x="1649" y="995" />
+          </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_fence_replay" value="" style="endArrow=classic;html=1;exitX=0.3;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="fence" target="replay">
           <mxGeometry relative="1" as="geometry" />

@@ -86,8 +86,8 @@
         <mxCell id="div_ex" value="divergence example · 8 of the 32 lanes" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontSize=11;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="90" y="500" width="454" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="div_tbl" value="lane     0         1         2         3         4         5         6         7&#10;pc       0x1c0  0x1c0  0x204  0x204  0x1c0    —         —       0x1c0&#10;state   act       act       act       act       act      exit     blk      act" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;fontColor=#333333;" vertex="1" parent="1">
-          <mxGeometry x="102" y="528" width="430" height="60" as="geometry" />
+        <mxCell id="div_tbl" value="lane     0         1         2         3         4         5         6         7&#10;pc       0x1c0  0x1c0  0x204  0x204  0x1c0    —         —       0x1c0&#10;state   act       act       act       act       act      exit     blk      act" style="text;html=0;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="96" y="528" width="444" height="60" as="geometry" />
         </mxCell>
         <mxCell id="div_note" value="one Bx · 16 = one splinter entry · 5 lanes exited · 6 blocked at a Bx" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
           <mxGeometry x="102" y="600" width="430" height="14" as="geometry" />
@@ -135,7 +135,7 @@
 
         <!-- ===== COLUMN 2 : control FSMs ===== -->
         <mxCell id="walker" value="rebuild walker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;verticalAlign=top;align=center;spacingTop=6;fontSize=13;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="620" y="100" width="330" height="140" as="geometry" />
+          <mxGeometry x="620" y="100" width="330" height="170" as="geometry" />
         </mxCell>
         <mxCell id="walker_fsm" value="IDLE 000  →  WALK 011  →  arr 101" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="636" y="134" width="298" height="26" as="geometry" />
@@ -151,7 +151,7 @@
         </mxCell>
 
         <mxCell id="fire" value="fire retire" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;verticalAlign=top;align=center;spacingTop=6;fontSize=13;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="980" y="100" width="330" height="140" as="geometry" />
+          <mxGeometry x="980" y="100" width="330" height="170" as="geometry" />
         </mxCell>
         <mxCell id="fire_part" value="participation" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#7A5C96;" vertex="1" parent="1">
           <mxGeometry x="996" y="128" width="120" height="14" as="geometry" />
@@ -182,19 +182,19 @@
         </mxCell>
 
         <mxCell id="cbu" value="branch split · CBU" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E1D5E7;strokeColor=#9673A6;verticalAlign=top;align=center;spacingTop=6;fontSize=13;fontStyle=1;" vertex="1" parent="1">
-          <mxGeometry x="1340" y="100" width="330" height="140" as="geometry" />
+          <mxGeometry x="1340" y="100" width="330" height="170" as="geometry" />
         </mxCell>
         <mxCell id="cbu_cur" value="current group" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="1356" y="150" width="130" height="30" as="geometry" />
         </mxCell>
         <mxCell id="cbu_a" value="successor A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="1520" y="132" width="120" height="26" as="geometry" />
+          <mxGeometry x="1520" y="132" width="110" height="26" as="geometry" />
         </mxCell>
         <mxCell id="cbu_b" value="successor B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#9673A6;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="1520" y="172" width="120" height="26" as="geometry" />
+          <mxGeometry x="1520" y="172" width="110" height="26" as="geometry" />
         </mxCell>
         <mxCell id="cbu_cy" value="1 cy" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#7A5C96;" vertex="1" parent="1">
-          <mxGeometry x="1640" y="150" width="34" height="30" as="geometry" />
+          <mxGeometry x="1634" y="150" width="32" height="30" as="geometry" />
         </mxCell>
         <mxCell id="cbu_note" value="the old entry dies as successor A is accepted" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
           <mxGeometry x="1340" y="244" width="330" height="14" as="geometry" />
@@ -204,7 +204,7 @@
           <mxGeometry x="620" y="300" width="1050" height="54" as="geometry" />
         </mxCell>
         <mxCell id="insert_note" value="eviction · empty probe · CE → re-walk" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
-          <mxGeometry x="620" y="358" width="400" height="14" as="geometry" />
+          <mxGeometry x="790" y="358" width="300" height="14" as="geometry" />
         </mxCell>
 
         <mxCell id="spl" value="splinter table · 8 · 75b · N_SPLINTER 4–16 registered as DSE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;verticalAlign=top;align=left;spacingLeft=10;spacingTop=6;fontSize=13;fontStyle=1;" vertex="1" parent="1">
@@ -222,7 +222,7 @@
         <mxCell id="spl_h4" value="p" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D6B656;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="1046" y="432" width="60" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="spl_rows" value="#0   pc 0x1c0   ·   mask 0x00000003   ·   y 0   ·   ready 1&#10;#1   pc 0x204   ·   mask 0x0000000c   ·   y 0   ·   ready 1&#10;#2   pc 0x290   ·   mask 0x00000040   ·   y 0   ·   ready 1&#10;#3   free&#10;#4   free&#10;#5   free&#10;#6   free&#10;#7   free" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;fontColor=#333333;" vertex="1" parent="1">
+        <mxCell id="spl_rows" value="#0   pc 0x1c0   ·   mask 0x00000003   ·   y 0   ·   ready 1&#10;#1   pc 0x204   ·   mask 0x0000000c   ·   y 0   ·   ready 1&#10;#2   pc 0x290   ·   mask 0x00000040   ·   y 0   ·   ready 1&#10;#3   free&#10;#4   free&#10;#5   free&#10;#6   free&#10;#7   free" style="text;html=0;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;fontColor=#333333;" vertex="1" parent="1">
           <mxGeometry x="634" y="460" width="472" height="150" as="geometry" />
         </mxCell>
         <mxCell id="spl_note" value="candidate · ready &gt; 0" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#8A7430;" vertex="1" parent="1">
@@ -326,14 +326,14 @@
         </mxCell>
 
         <!-- ===== COLUMN 3 : right side ===== -->
-        <mxCell id="cbu_rail" value="CBU · control-flow execution&#10;valid   ready" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;dashed=1;fontSize=10;" vertex="1" parent="1">
+        <mxCell id="cbu_rail" value="CBU · control-flow execution&#10;valid   ready" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#D5E8D4;strokeColor=#82B366;dashed=1;fontSize=10;" vertex="1" parent="1">
           <mxGeometry x="1710" y="90" width="330" height="54" as="geometry" />
         </mxCell>
 
         <mxCell id="prot" value="protection" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#999999;verticalAlign=top;align=center;spacingTop=6;fontSize=13;fontStyle=1;" vertex="1" parent="1">
           <mxGeometry x="1710" y="170" width="330" height="240" as="geometry" />
         </mxCell>
-        <mxCell id="prot_tbl" value="structure              code             on error&#10;per-lane PC          1b / lane        trap&#10;lane_state            1b / lane        trap&#10;Bx entry                1b / entry      trap&#10;splinter entry       1b / entry      rebuild&#10;walker / retire FSM   HD ≥ 2        trap" style="text;html=1;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;fontColor=#333333;" vertex="1" parent="1">
+        <mxCell id="prot_tbl" value="structure              code             on error&#10;per-lane PC          1b / lane        trap&#10;lane_state            1b / lane        trap&#10;Bx entry                1b / entry      trap&#10;splinter entry       1b / entry      rebuild&#10;walker / retire FSM   HD ≥ 2        trap" style="text;html=0;align=left;verticalAlign=top;fontSize=9;fontFamily=Courier New;fontColor=#333333;" vertex="1" parent="1">
           <mxGeometry x="1724" y="202" width="302" height="110" as="geometry" />
         </mxCell>
         <mxCell id="prot_lg1" value="inject" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontSize=8;" vertex="1" parent="1">
@@ -404,8 +404,8 @@
         <mxCell id="if11_badges" value="direct&#10;avail&#10;avail&#10;avail&#10;avail&#10;exec" style="text;html=1;align=center;verticalAlign=top;fontSize=9;fontColor=#5A8A3C;" vertex="1" parent="1">
           <mxGeometry x="1886" y="684" width="70" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="if11_sel" value="select one · 1 per cycle" style="text;html=1;align=left;verticalAlign=middle;fontSize=9;fontColor=#888888;" vertex="1" parent="1">
-          <mxGeometry x="1962" y="750" width="70" height="40" as="geometry" />
+        <mxCell id="if11_sel" value="select one · 1 per cycle" style="text;html=1;align=center;verticalAlign=middle;fontSize=9;fontColor=#888888;horizontal=0;" vertex="1" parent="1">
+          <mxGeometry x="1974" y="690" width="30" height="160" as="geometry" />
         </mxCell>
         <mxCell id="if11_p1" value="warp_slot 4b" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2D5F9A;strokeColor=#2D5F9A;fontColor=#FFFFFF;fontSize=9;" vertex="1" parent="1">
           <mxGeometry x="1724" y="870" width="100" height="22" as="geometry" />
@@ -439,24 +439,35 @@
 
         <!-- ===== edges ===== -->
         <mxCell id="e_pcarr_insert" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.2;strokeColor=#6C8EBF;" edge="1" parent="1" source="pc_arr" target="insert">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="605" y="204" />
+            <mxPoint x="605" y="311" />
+          </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_bx_fire" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0.2;entryY=1;strokeColor=#9673A6;" edge="1" parent="1" source="bx_arr" target="fire">
+          <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="585" y="440" />
+            <mxPoint x="585" y="285" />
+            <mxPoint x="1046" y="285" />
+          </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_walker_insert" value="" style="endArrow=classic;html=1;exitX=0.4;exitY=1;entryX=0.1257;entryY=0;" edge="1" parent="1" source="walker" target="insert">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_walker_insert" value="" style="endArrow=classic;html=1;exitX=0.4;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="walker" target="insert">
+        <mxCell id="e_fire_insert" value="" style="endArrow=classic;html=1;exitX=0.4;exitY=1;entryX=0.4686;entryY=0;" edge="1" parent="1" source="fire" target="insert">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_fire_insert" value="" style="endArrow=classic;html=1;exitX=0.4;exitY=1;entryX=0.45;entryY=0;" edge="1" parent="1" source="fire" target="insert">
+        <mxCell id="e_cbu_insert" value="" style="endArrow=classic;html=1;exitX=0.4;exitY=1;entryX=0.8114;entryY=0;" edge="1" parent="1" source="cbu" target="insert">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_cbu_insert" value="" style="endArrow=classic;html=1;exitX=0.4;exitY=1;entryX=0.8;entryY=0;" edge="1" parent="1" source="cbu" target="insert">
+        <mxCell id="e_insert_spl" value="" style="endArrow=classic;html=1;exitX=0.1429;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="insert" target="spl">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="e_insert_spl" value="" style="endArrow=classic;html=1;exitX=0.2;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="insert" target="spl">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="e_insert_union" value="" style="endArrow=classic;html=1;exitX=0.7;exitY=1;entryX=0.4;entryY=0;" edge="1" parent="1" source="insert" target="union">
+        <mxCell id="e_insert_union" value="" style="endArrow=classic;html=1;exitX=0.7086;exitY=1;entryX=0.4;entryY=0;" edge="1" parent="1" source="insert" target="union">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_spl_minpc" value="" style="endArrow=classic;html=1;exitX=0.3;exitY=1;entryX=0.3;entryY=0;" edge="1" parent="1" source="spl" target="minpc">
@@ -466,15 +477,29 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_interlock_if11" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.8;entryX=0;entryY=0.3;dashed=1;" edge="1" parent="1" source="interlock" target="if11">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="1410" y="852" />
+            <mxPoint x="1410" y="982" />
+            <mxPoint x="1700" y="982" />
+            <mxPoint x="1700" y="746" />
+          </Array>
+          </mxGeometry>
         </mxCell>
         <mxCell id="e_nopro_trt" value="" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;strokeColor=#B85450;" edge="1" parent="1" source="nopro" target="trt">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="e_minpc_fetch" value="" style="endArrow=classic;html=1;exitX=1;exitY=0.15;entryX=0;entryY=0.6;dashed=1;strokeColor=#6C8EBF;" edge="1" parent="1" source="minpc" target="fetchrd">
-          <mxGeometry relative="1" as="geometry" />
+          <mxGeometry relative="1" as="geometry">
+          <Array as="points">
+            <mxPoint x="1140" y="728" />
+            <mxPoint x="1140" y="975" />
+            <mxPoint x="1688" y="975" />
+            <mxPoint x="1688" y="552" />
+          </Array>
+          </mxGeometry>
         </mxCell>
-        <mxCell id="e_cbu_rail" value="" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.3;entryX=0;entryY=0.5;dashed=1;strokeColor=#82B366;" edge="1" parent="1" source="cbu" target="cbu_rail">
+        <mxCell id="e_cbu_rail" value="" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.1;entryX=0;entryY=0.5;dashed=1;strokeColor=#82B366;" edge="1" parent="1" source="cbu" target="cbu_rail">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
