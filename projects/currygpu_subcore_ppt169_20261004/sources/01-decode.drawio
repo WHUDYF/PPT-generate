@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="currygpu-subcore" version="24.7.17" type="device">
   <diagram id="dec" name="Decode">
-    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="720" math="0" shadow="0">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0"/>
         <mxCell id="1" parent="0"/>
@@ -51,7 +51,31 @@
     <mxCell id="e38" value="write head" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=11;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="dc" target="head"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell>
     <mxCell id="e39" value="head + ctrl bits" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=11;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="head" target="sch"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell>
     <mxCell id="e40" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#333333;fontSize=11;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="dc" target="trap"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell>
-    <mxCell id="t41" value="issue 之后该 slot 的 head 被清除，再由 Refill Pick 补充；launch / retire / EXIT / redirect 会让旧 head 失效。" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#444444;" vertex="1" parent="1"><mxGeometry x="30" y="660" width="1300" height="24" as="geometry"/></mxCell>
+    <mxCell id="in_b41" value="2a" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1F2933;strokeColor=#1F2933;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="314" y="134" width="34" height="26" as="geometry"/></mxCell>
+    <mxCell id="in_b42" value="2b" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1F2933;strokeColor=#1F2933;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="614" y="334" width="34" height="26" as="geometry"/></mxCell>
+    <mxCell id="in_b43" value="2c" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1F2933;strokeColor=#1F2933;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="614" y="484" width="34" height="26" as="geometry"/></mxCell>
+    <mxCell id="t44" value="issue 之后该 slot 的 head 被清除，再由 Refill Pick 补充；launch / retire / EXIT / redirect 会让旧 head 失效。" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#444444;" vertex="1" parent="1"><mxGeometry x="30" y="650" width="1300" height="24" as="geometry"/></mxCell>
+    <mxCell id="t45" value="子段与保存的状态" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontColor=#1F2933;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="30" y="690" width="400" height="24" as="geometry"/></mxCell>
+    <mxCell id="k46" value="子段" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="30" y="720" width="120" height="28" as="geometry"/></mxCell>
+    <mxCell id="k47" value="保存的状态" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="150" y="720" width="330" height="28" as="geometry"/></mxCell>
+    <mxCell id="k48" value="吞吐" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="480" y="720" width="280" height="28" as="geometry"/></mxCell>
+    <mxCell id="k49" value="延迟" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="760" y="720" width="320" height="28" as="geometry"/></mxCell>
+    <mxCell id="k50" value="依据" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EEEEEE;strokeColor=#666666;fontSize=11;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="1080" y="720" width="380" height="28" as="geometry"/></mxCell>
+    <mxCell id="k51" value="②a Refill Pick" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="30" y="748" width="120" height="28" as="geometry"/></mxCell>
+    <mxCell id="k52" value="round-robin 指针" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="150" y="748" width="330" height="28" as="geometry"/></mxCell>
+    <mxCell id="k53" value="1 warp / cycle" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="480" y="748" width="280" height="28" as="geometry"/></mxCell>
+    <mxCell id="k54" value="与 ②b 同拍（组合）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="760" y="748" width="320" height="28" as="geometry"/></mxCell>
+    <mxCell id="k55" value="subcore_decode.v refill 仲裁" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1080" y="748" width="380" height="28" as="geometry"/></mxCell>
+    <mxCell id="k56" value="②b Decode" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="30" y="776" width="120" height="28" as="geometry"/></mxCell>
+    <mxCell id="k57" value="无（纯组合）" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="150" y="776" width="330" height="28" as="geometry"/></mxCell>
+    <mxCell id="k58" value="随 ②a" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="480" y="776" width="280" height="28" as="geometry"/></mxCell>
+    <mxCell id="k59" value="与 ②a 同拍" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="760" y="776" width="320" height="28" as="geometry"/></mxCell>
+    <mxCell id="k60" value="同上" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1080" y="776" width="380" height="28" as="geometry"/></mxCell>
+    <mxCell id="k61" value="②c Head hold" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="30" y="804" width="120" height="28" as="geometry"/></mxCell>
+    <mxCell id="k62" value="12 个 head + valid 位" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="150" y="804" width="330" height="28" as="geometry"/></mxCell>
+    <mxCell id="k63" value="每 warp 1 个 head" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="480" y="804" width="280" height="28" as="geometry"/></mxCell>
+    <mxCell id="k64" value="IB → head 1 拍；之后保持到被 issue，不定长" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="760" y="804" width="320" height="28" as="geometry"/></mxCell>
+    <mxCell id="k65" value="head 在时钟沿写入，issue / flush 清除" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#666666;fontSize=11;" vertex="1" parent="1"><mxGeometry x="1080" y="804" width="380" height="28" as="geometry"/></mxCell>
       </root>
     </mxGraphModel>
   </diagram>

@@ -18,6 +18,24 @@
 
 06 到 08 的契约、不变量与待核实问题见 curryGPU 仓库 `docs/design/ai-rtl-study/scoreboard-loop-contract.md`。
 
+## 流水线标记
+
+全套图用同一组段号，黑色圆形徽标标在对应的框上：
+
+| 段号 | 名称 | 出现位置 | 状态在哪里 |
+|---|---|---|---|
+| ① | Fetch | 00 | 按 warp slot（Instr Buffer） |
+| ② | Decode | 00、01（子段 ②a Refill Pick、②b Decode、②c Head hold） | 按 warp slot（head ×12） |
+| ③ | Schedule | 00、02（子段 ③a Eligible、③b Pick、③c Allocate、③d Issue） | 按 warp slot（stall 计数、scoreboard 计数器） |
+| ④ | Group select | 00、03 | 按 warp slot（lane PC、splinter、BX） |
+| ⑤ | Execute | 00、04 | 按功能单元的级 |
+| ⑥ | Write back | 00、04 | 按写口仲裁 |
+| ⑦ | Release | 00、06 | 按 warp slot（scoreboard 计数器） |
+
+00 底部的七段条上方框区分"按 warp slot 保持状态"与"在功能单元里流动"，每段下面一行是吞吐或延迟。已核实的只有：IB 到 head 为 1 拍（时钟沿写入）、调度链为组合逻辑、VALU 与 SALU 各 4 级、SFU 18、完成事件在 t 周期到达则计数器在 t+1 更新。④ 的段间寄存器边界标红色 `?`，未核实。
+
+01 底部的子段表给出 ②a/②b/②c 各自保存的状态、吞吐和延迟。02 中 ③a 到 ③c 在同一拍内由寄存器状态组合得出，不是三个时钟周期。
+
 ## 配色约定
 
 沿用同仓库 `currygpu_architecture_ppt169_20261001` 的约定。

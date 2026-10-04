@@ -44,6 +44,11 @@
     <mxCell id="e29" value="−1 on completion" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeColor=#D79B00;fontSize=11;labelBackgroundColor=#FFFFFF;dashed=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="ev" target="sb"><mxGeometry relative="1" as="geometry"></mxGeometry></mxCell>
     <mxCell id="t30" value="固定延迟的依赖靠 stall count（issue 时载入，每拍减 1），不经过 Scoreboard。" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#444444;" vertex="1" parent="1"><mxGeometry x="330" y="640" width="1100" height="22" as="geometry"/></mxCell>
     <mxCell id="t31" value="EXIT 只允许在该 warp 没有未完成计数（drained）时发射。" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#444444;" vertex="1" parent="1"><mxGeometry x="330" y="668" width="1100" height="22" as="geometry"/></mxCell>
+    <mxCell id="in_b32" value="3a" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1F2933;strokeColor=#1F2933;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="334" y="104" width="34" height="26" as="geometry"/></mxCell>
+    <mxCell id="in_b33" value="3b" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1F2933;strokeColor=#1F2933;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="684" y="104" width="34" height="26" as="geometry"/></mxCell>
+    <mxCell id="in_b34" value="3c" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1F2933;strokeColor=#1F2933;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="684" y="304" width="34" height="26" as="geometry"/></mxCell>
+    <mxCell id="in_b35" value="3d" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1F2933;strokeColor=#1F2933;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="984" y="194" width="34" height="26" as="geometry"/></mxCell>
+    <mxCell id="t36" value="3a–3c 在同一拍内由寄存器状态组合得出（head、stall 计数、计数器均为寄存器），不是 3 个时钟周期。" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#444444;" vertex="1" parent="1"><mxGeometry x="330" y="696" width="1100" height="22" as="geometry"/></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
