@@ -50,7 +50,7 @@
     <mxCell id="in_b34" value="3c" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1F2933;strokeColor=#1F2933;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="684" y="304" width="34" height="26" as="geometry"/></mxCell>
     <mxCell id="in_b35" value="3d" style="ellipse;whiteSpace=wrap;html=1;fillColor=#1F2933;strokeColor=#1F2933;fontColor=#FFFFFF;fontSize=12;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="984" y="194" width="34" height="26" as="geometry"/></mxCell>
     <mxCell id="t36" value="3a–3d 在同一拍内由寄存器状态组合得出（head、stall 计数、计数器均为寄存器），不是 4 个时钟周期；寄存器边界见流水线视图 10。" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#444444;" vertex="1" parent="1"><mxGeometry x="330" y="696" width="1100" height="22" as="geometry"/></mxCell>
-    <mxCell id="t37" value="3b 选中的 warp 与上一拍不同（或上一拍无选择）时，当拍不发射，下一拍才发射：换 warp 有 1 拍气泡。连续发射同一个 warp 没有气泡。" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#444444;" vertex="1" parent="1"><mxGeometry x="330" y="722" width="1100" height="22" as="geometry"/></mxCell>
+    <mxCell id="t37" value="3b 换 warp 没有气泡：选中最老的 eligible warp 当拍即发射。上一拍发射的 warp 若 head 要读常量且 L0C 未命中，则停在该 warp 上等待，最多 grace = 4 拍，之后改选其他 warp。" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontColor=#444444;" vertex="1" parent="1"><mxGeometry x="330" y="722" width="1100" height="22" as="geometry"/></mxCell>
       </root>
     </mxGraphModel>
   </diagram>
