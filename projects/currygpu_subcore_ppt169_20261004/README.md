@@ -7,7 +7,7 @@
 | 视图 | 文件 | 回答的问题 | 排布 |
 |---|---|---|---|
 | 架构视图 | 00–08 | 有哪些模块、怎么连、各自保存什么状态 | 按功能排，反馈环往回画 |
-| 流水线视图 | 09、10 | 一条指令第几拍到哪里、寄存器边界在哪 | 按时间从左到右，竖条是时钟沿 |
+| 流水线视图 | 09、10（现状）、11（目标） | 一条指令第几拍到哪里、寄存器边界在哪 | 按时间从左到右，竖条是时钟沿 |
 
 两种视图用同一套模块名、段号和配色。段号 ①–⑦ 是逻辑步骤，不是时钟拍；拍数只在流水线视图里出现。
 
@@ -25,6 +25,7 @@
 | `sources/07-read-release-lane.drawio` | 读释放通道由四个来源共用，优先级与 async 的单项挂起槽，以及两个验证场景 | `subcore_top.v:3510-3550` |
 | `sources/08-slot-lifecycle.drawio` | warp slot 生命周期中计数器和 generation 的变化 | `sched_warp_ctrl.v`、`sched_sbx_scoreboard.v` |
 | `sources/10-pipeline-datapath.drawio` | 流水线数据通路：IB ‖ head ‖ t 拍发射组合区（Eligible → Pick → Allocate → ITS → Dispatch → RF 读地址）‖ RF 读出与操作数收集 ‖ VALU stage 0–5 与写回 ‖ RF 阵列与 scoreboard 计数器；两条下一拍可见的反馈、常量未命中时的保持、branch redirect | `subcore_top.v`、`sched_cggty_select.v`、`exec_pipe_top.v`、`exec_valu.v`、`exec_wb_arb.v`、`rf_sram_bank.v` |
+| `sources/11-target-pipeline.drawio` | **目标结构（未实现）**：大流水线套小流水线。7 个大级（`subcore_fetch` … `subcore_wb`）及各自的小流水线、大级边界寄存器、三段流控（S0→S2 寄存占用、S2 发射前预约、S3 之后不反压）、5 条已寄存的反向事件通道、各级拥有的状态 | 规范初稿：curryGPU 本地 `document/2026-10-05-subcore-rtl-structure-spec.md` |
 | `sources/09-cycle-timeline.drawio` | 时序图：一条 IntAdd 逐拍经过的单元与时钟沿锁存的状态、VALU 启动拍与操作数来源、换 warp 无气泡与常量未命中保持、VALU 完成拍 | `ifetch_ib.v`、`sched_cggty_select.v`、`exec_pipe_top.v`、`exec_valu.v`、`rf_sram_bank.v` |
 
 06 到 08 的契约、不变量与待核实问题见 curryGPU 仓库 `docs/design/ai-rtl-study/scoreboard-loop-contract.md`。
