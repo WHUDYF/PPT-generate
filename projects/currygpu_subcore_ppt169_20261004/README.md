@@ -36,7 +36,7 @@
 | 段号 | 名称 | 出现位置 | 状态在哪里 |
 |---|---|---|---|
 | ① | Fetch | 00、10 | 按 warp slot（Instr Buffer） |
-| ② | Decode | 00、01、09、10（子段 ②a Refill Pick、②b Decode、②c Head hold） | 按 warp slot（head ×12） |
+| ② | Decode | 00、01、09、10（子段 ②a Refill Pick、②b Decode、②c Head hold） | 按 warp slot（head ×16） |
 | ③ | Schedule | 00、02、09、10（子段 ③a Eligible、③b Pick、③c Allocate、③d Issue） | 按 warp slot（stall 计数、scoreboard 计数器） |
 | ④ | Group select | 00、03、09、10 | 按 warp slot（lane PC、splinter、BX） |
 | ⑤ | Execute | 00、04、09、10 | 按功能单元的级 |
