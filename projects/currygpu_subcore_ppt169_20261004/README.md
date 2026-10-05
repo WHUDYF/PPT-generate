@@ -43,7 +43,7 @@
 | ⑥ | Write back | 00、04、09、10 | 按写口仲裁 |
 | ⑦ | Release | 00、06、09、10 | 按 warp slot（scoreboard 计数器） |
 
-寄存器边界画在 10 上（粗竖条为发射路径上的时钟沿，细竖条为 VALU 级间寄存器），逐拍例子画在 09 上。这些拍数按 curryGPU `origin/main` `73534bd2` 的 RTL 读出，没有仿真。要点：发射路径上只有 IB → head 一处寄存器，head 之后到功能单元入口全是组合；换 warp 没有气泡，上一拍发射的 warp 常量未命中时最多保持 4 拍；VALU 读 RF 收集操作数为 +0/+1/+2 拍；VALU 6 级，IntAdd / BitLogic / Shift 的 tap 为 6，FpConvert 4（MIO 3），FpScalar / IntMul 4；完成事件在 t 拍则计数器在 t+1 更新。curryGPU 仓库中的 `docs/design/ai-rtl-study/subcore-pipeline-from-rtl.md` 基于 2026-09-14 的旧 RTL，其中的气泡与 tap 结论已过时。
+寄存器边界画在 10 上（粗竖条为发射路径上的时钟沿，细竖条为 VALU 级间寄存器），逐拍例子画在 09 上。这些拍数按 curryGPU `main` `73534bd2` 与 PR 38（`rtl-stevehxli-2`）的 RTL 读出，没有仿真。要点：取指授权到调度器看到 head 共 3 拍（L0I 响应寄存器、IB、head）；head 之后到功能单元入口全是组合；换 warp 没有气泡，同一 warp 每 2 拍最多发 1 条；常量未命中保持逻辑存在但 `head_const_tag_hit` 恒为 1，不会触发；VALU 读 RF 收集操作数为 +0/+1/+2 拍；VALU 6 级，IntAdd / BitLogic / Shift 的 tap 为 6，FpConvert 4（MIO 3），FpScalar / IntMul 4；scoreboard 的 release 在完成当拍即对 eligible 可见，计数器在沿上提交；每个 bank 1 个写口。curryGPU 仓库中的 `docs/design/ai-rtl-study/subcore-pipeline-from-rtl.md` 基于 2026-09-14 的旧 RTL，其中的气泡与 tap 结论已过时。
 
 01 底部的子段表给出 ②a/②b/②c 各自保存的状态、吞吐和延迟。02 中 ③a 到 ③d 外面的虚线框表示它们在同一拍内由寄存器状态组合得出，不是四个时钟周期。
 
@@ -76,7 +76,7 @@ done
 
 ## 未核实项
 
-1. 各周期由读 RTL 推出，没有波形验证。RF 读请求在 issue 当拍是否一定被授权、SALU / SFU / Xlane / LSU / CBU 的入口与完成拍数、常量未命中保持的确切拍数，均未核实。
+1. 各周期由读 RTL 推出，没有波形验证。RF 读请求在 issue 当拍是否一定被授权、SALU / SFU / Xlane / LSU / CBU 的入口与完成拍数、branch redirect 与 BSSY 等汇合指令的确切拍数，均未核实。
 2. IntAdd 的 tap 6 与性能模型 `int_add = 6` 数值一致；有新鲜源时 RTL 的启动推后 1 拍以上，性能模型如何计入这部分尚未核对。
 3. 03 的 slot 内部连接（lane 表、splinter 表、BX 表）按功能归纳，没有逐端口核对。
 4. 07 的两个验证场景和 08 中"不经过 EXIT 的退休之后计数器是否为 0"都没有仿真结论。
