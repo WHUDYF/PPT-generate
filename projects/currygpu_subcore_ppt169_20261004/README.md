@@ -25,7 +25,7 @@
 | `sources/07-read-release-lane.drawio` | 读释放通道由四个来源共用，优先级与 async 的单项挂起槽，以及两个验证场景 | `subcore_top.v:3510-3550` |
 | `sources/08-slot-lifecycle.drawio` | warp slot 生命周期中计数器和 generation 的变化 | `sched_warp_ctrl.v`、`sched_sbx_scoreboard.v` |
 | `sources/10-pipeline-datapath.drawio` | 流水线数据通路：IB ‖ head ‖ t 拍发射组合区（Eligible → Pick → Allocate → ITS → Dispatch → RF 读地址）‖ RF 读出与操作数收集 ‖ VALU stage 0–5 与写回 ‖ RF 阵列与 scoreboard 计数器；两条下一拍可见的反馈、常量未命中时的保持、branch redirect | `subcore_top.v`、`sched_cggty_select.v`、`exec_pipe_top.v`、`exec_valu.v`、`exec_wb_arb.v`、`rf_sram_bank.v` |
-| `sources/11-target-pipeline.drawio` | **目标结构（未实现）**：大流水线套小流水线。7 个大级（`subcore_fetch` … `subcore_wb`）及各自的小流水线、大级边界寄存器、流控（全流水线逐级组合握手，S2 发射 = 选中 & credit & rdy，本阶段不用 skid buffer）；写回结构：S1 head 为每 warp 2 项 FIFO，S3 按延迟分流（固定延迟进 S4、变长进单元队列），S4 allocate 查读口表和按写口（B0、B1、P）分的写回拍表并预约、读级固定 3 拍，SW 固定延迟按预约拍写回、不设结果队列，变长单元在队头申请下一拍读口并有防饿死保留；5 条已寄存的反向事件通道、各级拥有的状态 | 规范初稿：curryGPU 本地 `document/2026-10-05-subcore-rtl-structure-spec.md` |
+| `sources/11-target-pipeline.drawio` | **目标结构（未实现）**：大流水线套小流水线。7 个大级（`subcore_fetch` … `subcore_wb`）及各自的小流水线、大级边界寄存器、流控（全流水线逐级组合握手，S2 发射 = 选中 & credit & rdy，本阶段不用 skid buffer）；写回结构：S1 head 为每 warp 2 项 FIFO，ITS 状态与分支/汇合序列归 S2，S3 读 S2 已寄存的 ITS 状态取 lane mask 并按延迟分流（固定延迟进 S4、变长进单元队列），S4 allocate 查读口表和按写口（B0、B1、P）分的写回拍表并预约、读级固定 3 拍，SW 固定延迟按预约拍写回、不设结果队列，变长单元在队头申请下一拍读口并有防饿死保留；4 条已寄存的反向事件通道、各级拥有的状态 | 规范初稿：curryGPU 本地 `document/2026-10-05-subcore-rtl-structure-spec.md` |
 | `sources/09-cycle-timeline.drawio` | 时序图：一条 IntAdd 逐拍经过的单元与时钟沿锁存的状态、VALU 启动拍与操作数来源、换 warp 无气泡与常量未命中保持、VALU 完成拍 | `ifetch_ib.v`、`sched_cggty_select.v`、`exec_pipe_top.v`、`exec_valu.v`、`rf_sram_bank.v` |
 
 06 到 08 的契约、不变量与待核实问题见 curryGPU 仓库 `docs/design/ai-rtl-study/scoreboard-loop-contract.md`。
