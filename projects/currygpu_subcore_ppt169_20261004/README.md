@@ -6,7 +6,7 @@
 
 | 视图 | 文件 | 回答的问题 | 排布 |
 |---|---|---|---|
-| 架构视图 | 00–08 | 有哪些模块、怎么连、各自保存什么状态 | 按功能排，反馈环往回画 |
+| 架构视图 | 00–08、12（S0 取指细节） | 有哪些模块、怎么连、各自保存什么状态 | 按功能排，反馈环往回画 |
 | 流水线视图 | 09、10（现状）、11（目标） | 一条指令第几拍到哪里、寄存器边界在哪 | 按时间从左到右，竖条是时钟沿 |
 
 两种视图用同一套模块名、段号和配色。段号 ①–⑦ 是逻辑步骤，不是时钟拍；拍数只在流水线视图里出现。
@@ -26,6 +26,7 @@
 | `sources/08-slot-lifecycle.drawio` | warp slot 生命周期中计数器和 generation 的变化 | `sched_warp_ctrl.v`、`sched_sbx_scoreboard.v` |
 | `sources/10-pipeline-datapath.drawio` | 流水线数据通路：IB ‖ head ‖ t 拍发射组合区（Eligible → Pick → Allocate → ITS → Dispatch → RF 读地址）‖ RF 读出与操作数收集 ‖ VALU stage 0–5 与写回 ‖ RF 阵列与 scoreboard 计数器；两条下一拍可见的反馈、常量未命中时的保持、branch redirect | `subcore_top.v`、`sched_cggty_select.v`、`exec_pipe_top.v`、`exec_valu.v`、`exec_wb_arb.v`、`rf_sram_bank.v` |
 | `sources/11-target-pipeline.drawio` | **目标结构（未实现）**：大流水线套小流水线。7 个大级（`subcore_fetch` … `subcore_wb`）及各自的小流水线、大级边界寄存器、流控（全流水线逐级组合握手，S2 发射 = 选中 & credit & rdy，本阶段不用 skid buffer）；写回结构：S1 head 为每 warp 2 项 FIFO，ITS 状态与分支/汇合序列归 S2，S3 读 S2 已寄存的 ITS 状态取 lane mask 并按延迟分流（固定延迟进 S4、变长进单元队列），S4 allocate 查读口表和按写口（B0、B1、P）分的写回拍表并预约、读级固定 3 拍，SW 固定延迟按预约拍写回、不设结果队列，变长单元在队头申请下一拍读口并有防饿死保留；4 条已寄存的反向事件通道、各级拥有的状态 | 规范初稿：curryGPU 本地 `document/2026-10-05-subcore-rtl-structure-spec.md` |
+| `sources/12-s0-fetch.drawio` | S0 取指的现状三步：① arbitrate（eligible 条件、饿死 → deadline → IB 条数 → warp 号的选择顺序）与 ② L0I lookup（64 行全相联 tag 比较、读整行）同一拍组合完成，拍末寄存为 response reg；③ respond / IB write（epoch 作废、命中取 1–2 条写 2 bank 的 IB、未命中发 miss 并置 miss_wait）；L1I 回填、预取 hint、lookup_busy 使每 2 拍查一次、redirect；底部为 warp 3 命中、warp 5 未命中的逐拍例子 | `ifetch_frontend.v`、`ifetch_arb.v`、`ifetch_l0i.v`、`ifetch_ib.v`；讲解见 curryGPU 本地 `document/2026-10-08-s0-fetch-spec.md` |
 | `sources/09-cycle-timeline.drawio` | 时序图：一条 IntAdd 逐拍经过的单元与时钟沿锁存的状态、VALU 启动拍与操作数来源、换 warp 无气泡与常量未命中保持、VALU 完成拍 | `ifetch_ib.v`、`sched_cggty_select.v`、`exec_pipe_top.v`、`exec_valu.v`、`rf_sram_bank.v` |
 
 06 到 08 的契约、不变量与待核实问题见 curryGPU 仓库 `docs/design/ai-rtl-study/scoreboard-loop-contract.md`。
