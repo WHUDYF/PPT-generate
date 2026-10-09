@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="bg-decor">
+    <rect x="0" y="0" width="440" height="720" fill="#1F3A5F"/>
+    <rect x="440" y="0" width="8" height="720" fill="#E07A1F"/>
+    <rect x="72" y="150" width="56" height="56" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="2"/>
+    <rect x="140" y="150" width="56" height="56" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="2"/>
+    <rect x="72" y="218" width="56" height="56" rx="6" fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="2"/>
+    <rect x="140" y="218" width="56" height="56" rx="6" fill="#E07A1F" fill-opacity="0.9"/>
+    <text x="72" y="320" font-family="Consolas, monospace" font-size="14" fill="#FFFFFF" fill-opacity="0.7">SM · 4 × subcore · 16 warp slots</text>
+    <text x="72" y="610" font-family="Consolas, monospace" font-size="14" fill="#FFFFFF" fill-opacity="0.6">S0 → S1 → S2 → S3 → S4 → S5 → SW</text>
+  </g>
+  <g id="cover-title">
+    <text x="520" y="250" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" font-weight="bold" fill="#E07A1F">curryGPU · 组会汇报</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="52" font-weight="bold" fill="#1F3A5F">
+      <tspan x="520" y="330">subcore 流水线</tspan>
+      <tspan x="520" y="398">结构整理</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" fill="#666666">
+      <tspan x="520" y="462">从读 RTL 到可验证的重构，</tspan>
+      <tspan x="520" y="496">以及 AI 生成 RTL 的启示</tspan>
+    </text>
+  </g>
+  <g id="cover-info">
+    <line x1="520" y1="560" x2="1180" y2="560" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="520" y="600" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" fill="#222222">汇报人：dyf<tspan fill="#999999">　|　</tspan>2026-10-10</text>
+    <text x="520" y="630" font-family="Consolas, monospace" font-size="14" fill="#999999">branch: subcore-pipeline-structure</text>
+  </g>
+</svg>

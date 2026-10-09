@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arrowPrimary" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#1F3A5F"/>
+    </marker>
+  </defs>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">S4 allocate 一次预约，之后的拍数全部固定</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">读、启动、完成、写回都在放行时排定，stall 一直有效，不需要结果队列</text>
+  </g>
+  <g id="s3">
+    <rect x="56" y="128" width="560" height="96" rx="8" fill="#F4F6F9"/>
+    <text x="72" y="156" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">S3 dispatch · 一拍完成</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="72" y="182">payload 译码、取 lane mask、按延迟分流</tspan>
+      <tspan x="72" y="204">固定延迟 → S4；变长 → 单元队列（现状 exec_dispatch 与 S2 同拍组合）</tspan>
+    </text>
+  </g>
+  <g id="allocate-checks">
+    <text x="56" y="260" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">S4 allocate：每拍最多放行 1 条固定延迟指令</text>
+    <rect x="56" y="276" width="128" height="80" rx="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <text x="120" y="306" text-anchor="middle" font-family="Consolas, monospace" font-size="20" font-weight="bold" fill="#1F3A5F">①</text>
+    <text x="120" y="334" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">读级入口空闲</text>
+    <line x1="184" y1="316" x2="196" y2="316" stroke="#1F3A5F" stroke-width="1.5" marker-end="url(#arrowPrimary)"/>
+    <rect x="200" y="276" width="128" height="80" rx="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <text x="264" y="306" text-anchor="middle" font-family="Consolas, monospace" font-size="20" font-weight="bold" fill="#1F3A5F">②</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222" text-anchor="middle">
+      <tspan x="264" y="330">读口表：3 拍</tspan>
+      <tspan x="264" y="348">窗口内够用</tspan>
+    </text>
+    <line x1="328" y1="316" x2="340" y2="316" stroke="#1F3A5F" stroke-width="1.5" marker-end="url(#arrowPrimary)"/>
+    <rect x="344" y="276" width="128" height="80" rx="8" fill="#FFFFFF" stroke="#E07A1F" stroke-width="2"/>
+    <text x="408" y="306" text-anchor="middle" font-family="Consolas, monospace" font-size="20" font-weight="bold" fill="#E07A1F">③</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222" text-anchor="middle">
+      <tspan x="408" y="330">写回拍表：</tspan>
+      <tspan x="408" y="348">按写口 B0/B1/P</tspan>
+    </text>
+    <line x1="472" y1="316" x2="484" y2="316" stroke="#1F3A5F" stroke-width="1.5" marker-end="url(#arrowPrimary)"/>
+    <rect x="488" y="276" width="128" height="80" rx="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <text x="552" y="306" text-anchor="middle" font-family="Consolas, monospace" font-size="20" font-weight="bold" fill="#1F3A5F">④</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222" text-anchor="middle">
+      <tspan x="552" y="330">按需：执行单元</tspan>
+      <tspan x="552" y="348">完成拍表</tspan>
+    </text>
+  </g>
+  <g id="wb-table">
+    <rect x="56" y="372" width="560" height="92" rx="8" fill="#F4F6F9"/>
+    <text x="72" y="400" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">写回拍表 = 移位寄存器</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="72" y="426">放行时查 <tspan font-family="Consolas, monospace" fill="#222222">~wb_q[t][offset]</tspan> 并置位，每拍 <tspan font-family="Consolas, monospace" fill="#222222">&gt;&gt;1</tspan></tspan>
+      <tspan x="72" y="448">不通过就拉低 rdy；变长单元在队头申请下一拍读口，加防饿死保留</tspan>
+    </text>
+  </g>
+  <g id="vs-micro">
+    <rect x="56" y="480" width="560" height="164" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <use data-icon="tabler-outline/git-compare" x="72" y="496" width="22" height="22" fill="#2A7F9E" stroke-width="2"/>
+    <text x="102" y="513" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">为什么不用结果队列</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="72" y="542">MICRO 2025（Huerta 等）的模拟器用结果队列，写回拍不确定，</tspan>
+      <tspan x="72" y="564">依赖指令可能读到旧值，stall 计数就不再可靠。</tspan>
+      <tspan x="72" y="596">stall 规则（§11 第 15 条）：计数器只在当拍 <tspan font-family="Consolas, monospace" fill="#222222">ena_s4_0 = 1</tspan> 时减 1，</tspan>
+      <tspan x="72" y="618">先全局冻结。<tspan fill="#C62828">还没有用例验证。</tspan></tspan>
+    </text>
+  </g>
+  <g id="event-channels">
+    <text x="648" y="152" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">向后的事件通道：全部寄存，+1 拍</text>
+    <rect x="648" y="168" width="576" height="36" fill="#1F3A5F"/>
+    <text x="664" y="192" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">通道</text>
+    <text x="900" y="192" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">源 → 目的</text>
+    <text x="1024" y="192" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">现状</text>
+    <text x="664" y="236" font-family="Consolas, monospace" font-size="14" fill="#222222">ev_head_consumed</text>
+    <text x="900" y="236" font-family="Consolas, monospace" font-size="14" fill="#666666">S2 → S1</text>
+    <text x="1024" y="236" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#2E7D32">已寄存</text>
+    <line x1="648" y1="252" x2="1224" y2="252" stroke="#D8DEE6" stroke-width="1"/>
+    <rect x="648" y="253" width="576" height="64" fill="#C62828" fill-opacity="0.06"/>
+    <text x="664" y="282" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#222222">ev_complete</text>
+    <text x="900" y="282" font-family="Consolas, monospace" font-size="14" fill="#666666">SW → S2</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">
+      <tspan x="1024" y="282">同拍组合释放</tspan>
+      <tspan x="1024" y="304">目标 +1，代价待测</tspan>
+    </text>
+    <line x1="648" y1="317" x2="1224" y2="317" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="664" y="346" font-family="Consolas, monospace" font-size="14" fill="#222222">ev_credit_return</text>
+    <text x="900" y="346" font-family="Consolas, monospace" font-size="14" fill="#666666">S5 → S2</text>
+    <text x="1024" y="346" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#2E7D32">credit pool 已寄存</text>
+    <line x1="648" y1="362" x2="1224" y2="362" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="664" y="391" font-family="Consolas, monospace" font-size="14" fill="#222222">ev_redirect</text>
+    <text x="900" y="391" font-family="Consolas, monospace" font-size="14" fill="#666666">S2 → S0</text>
+    <text x="1024" y="391" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">走 BRA 状态机</text>
+    <line x1="648" y1="407" x2="1224" y2="407" stroke="#D8DEE6" stroke-width="1"/>
+    <rect x="648" y="408" width="576" height="64" fill="#C62828" fill-opacity="0.06"/>
+    <text x="664" y="437" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#222222">ev_*_done ×5</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="900" y="437">各单元 → S2</tspan>
+      <tspan x="900" y="459">清隐式 SB</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">
+      <tspan x="1024" y="437">多为组合往返</tspan>
+      <tspan x="1024" y="459">cctl 请求与完成同拍</tspan>
+    </text>
+    <line x1="648" y1="472" x2="1224" y2="472" stroke="#D8DEE6" stroke-width="1"/>
+  </g>
+  <g id="wb-rule">
+    <rect x="648" y="496" width="576" height="148" rx="8" fill="#F4F6F9"/>
+    <text x="664" y="526" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#1F3A5F">SW 写回</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="664" y="554">固定延迟结果在预约拍直接写入</tspan>
+      <tspan x="664" y="580">优先级：已预约 &gt; uniform &gt; 变长 &gt; SM 共享单元</tspan>
+      <tspan x="664" y="606">变长结果只能用当拍未被预约的写口</tspan>
+    </text>
+    <rect x="1088" y="512" width="120" height="22" rx="11" fill="#2A7F9E"/>
+    <text x="1148" y="528" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已定 · 未实现</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：structure-spec §3、§11；fig11-walkthrough</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">10</text>
+  </g>
+</svg>

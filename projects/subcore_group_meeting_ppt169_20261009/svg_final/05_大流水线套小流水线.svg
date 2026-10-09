@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#1F3A5F" />
+  <g id="bg-decor">
+    <text x="1224" y="660" text-anchor="end" font-family="Consolas, monospace" font-size="90" font-weight="bold" fill="#FFFFFF" fill-opacity="0.06">02</text>
+  </g>
+  <g id="chapter-title">
+    <text x="120" y="228" font-family="Consolas, monospace" font-size="18" fill="#E07A1F">PART 02 · subcore 目标结构</text>
+    <text x="120" y="310" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFFFFF">大流水线套小流水线</text>
+    <rect x="120" y="340" width="96" height="4" fill="#E07A1F" />
+  </g>
+  <g id="rules">
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" fill="#FFFFFF" x="120" y="410"><tspan><tspan fill="#E07A1F" font-weight="bold">向前</tspan>只走寄存器</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" fill="#FFFFFF" x="120" y="456"><tspan><tspan fill="#E07A1F" font-weight="bold">向后</tspan>只走已寄存的事件通道，晚 1 拍看到</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" fill="#FFFFFF" x="120" y="502"><tspan><tspan fill="#E07A1F" font-weight="bold">每份状态</tspan>只有一个主人，只有主人能写</tspan>
+    </text><text x="120" y="580" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#FFFFFF" fill-opacity="0.65">三条规则做到之后，跨级组合读取在结构上就写不出来</text>
+  </g>
+</svg>

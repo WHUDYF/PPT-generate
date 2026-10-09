@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">六天：从读懂 RTL 到第一批保持行为的改动</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">先研究框架与契约，再读 RTL 定结构，最后小步改 RTL 并逐步验证</text>
+  </g>
+  <g id="axis">
+    <line x1="152" y1="176" x2="1128" y2="176" stroke="#D8DEE6" stroke-width="4" stroke-linecap="round" />
+    <line x1="152" y1="176" x2="932" y2="176" stroke="#1F3A5F" stroke-width="4" stroke-linecap="round" />
+  </g>
+  <g id="m1">
+    <circle cx="152" cy="176" r="12" fill="#1F3A5F" />
+    <text x="152" y="152" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#1F3A5F">10-04</text>
+    <path fill="#F4F6F9" d="M64,208 H240 A8,8 0 0 1 248,216 V620 A8,8 0 0 1 240,628 H64 A8,8 0 0 1 56,620 V216 A8,8 0 0 1 64,208 Z" />
+    <rect x="56" y="208" width="192" height="4" fill="#1F3A5F" />
+    <text x="72" y="242" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">研究框架与契约</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="72" y="274">AI 生成 RTL 的实验 /</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="72" y="296">缺陷记录模板</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="72" y="328">scoreboard 依赖环契约</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="72" y="360">按旧 RTL 画图 00–08</text><text x="72" y="604" font-family="Consolas, monospace" font-size="13" fill="#E07A1F">13389eca5</text>
+  </g>
+  <g id="m2">
+    <circle cx="347" cy="176" r="12" fill="#1F3A5F" />
+    <text x="347" y="152" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#1F3A5F">10-05</text>
+    <path fill="#F4F6F9" d="M259,208 H435 A8,8 0 0 1 443,216 V620 A8,8 0 0 1 435,628 H259 A8,8 0 0 1 251,620 V216 A8,8 0 0 1 259,208 Z" />
+    <rect x="251" y="208" width="192" height="4" fill="#1F3A5F" />
+    <text x="267" y="242" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">读 RTL 定结构</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="267" y="274">读出流水线划分</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="267" y="306">本地 main 落后</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="267" y="328"><tspan><tspan fill="#C62828" font-weight="bold">1558</tspan> 个提交，同步后重读</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="267" y="360">调研 PR #38</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="267" y="392">结构规范初稿、11 号图</text><text x="267" y="604" font-family="Consolas, monospace" font-size="13" fill="#E07A1F">73534bd2f</text>
+  </g>
+  <g id="m3">
+    <circle cx="542" cy="176" r="12" fill="#1F3A5F" />
+    <text x="542" y="152" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#1F3A5F">10-06～07</text>
+    <path fill="#F4F6F9" d="M454,208 H630 A8,8 0 0 1 638,216 V620 A8,8 0 0 1 630,628 H454 A8,8 0 0 1 446,620 V216 A8,8 0 0 1 454,208 Z" />
+    <rect x="446" y="208" width="192" height="4" fill="#1F3A5F" />
+    <text x="462" y="242" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">环境与基线</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="462" y="274">11 号图补流控、写口</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="462" y="296">预约、ITS 归 S2</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="462" y="328">无 root 搭 EDA 环境：</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="462" y="350">Verilator 5.052</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="462" y="382">iadd3 基线波形</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="462" y="404"><tspan><tspan fill="#E07A1F" font-weight="bold">348,288</tspan> 拍</tspan>
+    </text></g>
+  <g id="m4">
+    <circle cx="737" cy="176" r="12" fill="#1F3A5F" />
+    <text x="737" y="152" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#1F3A5F">10-08</text>
+    <path fill="#F4F6F9" d="M649,208 H825 A8,8 0 0 1 833,216 V620 A8,8 0 0 1 825,628 H649 A8,8 0 0 1 641,620 V216 A8,8 0 0 1 649,208 Z" />
+    <rect x="641" y="208" width="192" height="4" fill="#E07A1F" />
+    <text x="657" y="242" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">Phase 2 落地</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="657" y="274">缓存统一 SRAM 三级</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="657" y="306">S0 取指规范、12 号图</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="657" y="338">S1、S2 保持行为的</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="657" y="360">整理：11 个文件</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="657" y="382">+3834 / −3747</text><text x="657" y="604" font-family="Consolas, monospace" font-size="13" fill="#E07A1F">0fe1c31d4</text>
+  </g>
+  <g id="m5">
+    <circle cx="932" cy="176" r="12" fill="#1F3A5F" />
+    <text x="932" y="152" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#1F3A5F">10-08～09</text>
+    <path fill="#F4F6F9" d="M844,208 H1020 A8,8 0 0 1 1028,216 V620 A8,8 0 0 1 1020,628 H844 A8,8 0 0 1 836,620 V216 A8,8 0 0 1 844,208 Z" />
+    <rect x="836" y="208" width="192" height="4" fill="#E07A1F" />
+    <text x="852" y="242" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">d1 与 lockstep</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="852" y="274">hold 位搬进新模块</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="852" y="296">subcore_issue_hold</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="852" y="328">发现 SoC 仿真不确定，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="852" y="350">加 lockstep 开关</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="852" y="382">6 个负载 A/B 比对</text><text x="852" y="604" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#2A7F9E">未提交</text>
+  </g>
+  <g id="m6">
+    <circle cx="1128" cy="176" r="12" fill="#FFFFFF" stroke="#2A7F9E" stroke-width="4" />
+    <text x="1128" y="152" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#2A7F9E">10-09</text>
+    <path fill="#F4F6F9" d="M1039,208 H1216 A8,8 0 0 1 1224,216 V620 A8,8 0 0 1 1216,628 H1039 A8,8 0 0 1 1031,620 V216 A8,8 0 0 1 1039,208 Z" />
+    <rect x="1031" y="208" width="193" height="4" fill="#2A7F9E" />
+    <text x="1047" y="242" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">发射条件定稿</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="1047" y="274">S1 head：每 warp</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="1047" y="296">2 项 FIFO</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="1047" y="328">S2：显式 SB + 隐式 SB</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="1047" y="350">作废"生命周期 + hold 表"</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="1047" y="382">更正 MEMBAR GPU</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="1047" y="404">范围的说法</text><text x="1047" y="604" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#2A7F9E">规范 §11</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">04</text>
+  </g>
+</svg>

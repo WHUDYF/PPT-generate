@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="40" fill="#1F3A5F" />
+    <text x="76" y="76" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">今天讲什么</text>
+    <path fill="#F4F6F9" d="M1048,40 H1216 A8,8 0 0 1 1224,48 V96 A8,8 0 0 1 1216,104 H1048 A8,8 0 0 1 1040,96 V48 A8,8 0 0 1 1048,40 Z" />
+    <text x="1132" y="72" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="28" font-weight="bold" fill="#E07A1F">≈22<tspan font-size="16" fill="#666666"> 分钟</tspan></text>
+    <text x="1132" y="94" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#666666">10-04 至 10-09 的工作</text>
+    <line x1="56" y1="128" x2="1224" y2="128" stroke="#D8DEE6" stroke-width="1" />
+  </g>
+  <g id="rail">
+    <line x1="112" y1="180" x2="112" y2="620" stroke="#D8DEE6" stroke-width="3" />
+  </g>
+  <g id="item-01">
+    <circle cx="112" cy="180" r="24" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="3" />
+    <text x="112" y="186" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#1F3A5F">01</text>
+    <text x="164" y="176" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222">背景与动机</text>
+    <text x="164" y="204" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">subcore 在哪里，现状 RTL 有什么结构问题，这一周做了什么</text>
+    <text x="1224" y="186" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#999999">3 分钟</text>
+  </g>
+  <g id="item-02">
+    <circle cx="112" cy="290" r="24" fill="#1F3A5F" />
+    <text x="112" y="296" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#FFFFFF">02</text>
+    <text x="164" y="286" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222">subcore 目标结构与实现</text>
+    <text x="164" y="314" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">大流水线套小流水线；S0 取指、S1/S2 发射、S3/S4 预约；已经落地的两步</text>
+    <text x="1224" y="296" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#E07A1F" font-weight="bold">9 分钟</text>
+  </g>
+  <g id="item-03">
+    <circle cx="112" cy="400" r="24" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="3" />
+    <text x="112" y="406" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#1F3A5F">03</text>
+    <text x="164" y="396" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222">验证</text>
+    <text x="164" y="424" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">逐信号波形比对、A/B 拍数比对，以及 SoC 仿真不确定性的处理</text>
+    <text x="1224" y="406" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#999999">3 分钟</text>
+  </g>
+  <g id="item-04">
+    <circle cx="112" cy="510" r="24" fill="#1F3A5F" />
+    <text x="112" y="516" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#FFFFFF">04</text>
+    <text x="164" y="506" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222">AI 生成 RTL 的观察与启示</text>
+    <text x="164" y="534" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">8 条带实例的观察，5 条有效做法，研究框架</text>
+    <text x="1224" y="516" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#E07A1F" font-weight="bold">5 分钟</text>
+  </g>
+  <g id="item-05">
+    <circle cx="112" cy="620" r="24" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="3" />
+    <text x="112" y="626" text-anchor="middle" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#1F3A5F">05</text>
+    <text x="164" y="616" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222222">下一步与待讨论</text>
+    <text x="164" y="644" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">保持行为的整理 → 改拍数的结构改动；想请大家一起判断的问题</text>
+    <text x="1224" y="626" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#999999">2 分钟</text>
+  </g>
+</svg>

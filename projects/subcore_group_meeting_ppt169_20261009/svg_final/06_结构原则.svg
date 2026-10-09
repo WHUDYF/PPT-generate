@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">一个握手模板 + 三条边界规则，S2 是唯一的单拍环</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">7 个大级每拍并行，各自处理不同 warp；大级内部照公司 DSP 设计 DSP.v 的任务流水线写法</text>
+  </g>
+  <g id="big-pipeline">
+    <path fill="#F4F6F9" d="M64,128 H1216 A8,8 0 0 1 1224,136 V176 A8,8 0 0 1 1216,184 H64 A8,8 0 0 1 56,176 V136 A8,8 0 0 1 64,128 Z" />
+    <path fill="#1F3A5F" d="M76,140 H206 A4,4 0 0 1 210,144 V168 A4,4 0 0 1 206,172 H76 A4,4 0 0 1 72,168 V144 A4,4 0 0 1 76,140 Z" />
+    <text x="141" y="162" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#FFFFFF">S0 fetch</text>
+    <path fill="#1F3A5F" d="M238,140 H368 A4,4 0 0 1 372,144 V168 A4,4 0 0 1 368,172 H238 A4,4 0 0 1 234,168 V144 A4,4 0 0 1 238,140 Z" />
+    <text x="303" y="162" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#FFFFFF">S1 decode</text>
+    <path fill="#E07A1F" d="M400,140 H530 A4,4 0 0 1 534,144 V168 A4,4 0 0 1 530,172 H400 A4,4 0 0 1 396,168 V144 A4,4 0 0 1 400,140 Z" />
+    <text x="465" y="162" text-anchor="middle" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#FFFFFF">S2 issue</text>
+    <path fill="#1F3A5F" d="M562,140 H692 A4,4 0 0 1 696,144 V168 A4,4 0 0 1 692,172 H562 A4,4 0 0 1 558,168 V144 A4,4 0 0 1 562,140 Z" />
+    <text x="627" y="162" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#FFFFFF">S3 dispatch</text>
+    <path fill="#1F3A5F" d="M724,140 H854 A4,4 0 0 1 858,144 V168 A4,4 0 0 1 854,172 H724 A4,4 0 0 1 720,168 V144 A4,4 0 0 1 724,140 Z" />
+    <text x="789" y="162" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#FFFFFF">S4 operand</text>
+    <path fill="#1F3A5F" d="M886,140 H1016 A4,4 0 0 1 1020,144 V168 A4,4 0 0 1 1016,172 H886 A4,4 0 0 1 882,168 V144 A4,4 0 0 1 886,140 Z" />
+    <text x="951" y="162" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#FFFFFF">S5 exe_&lt;unit&gt;</text>
+    <path fill="#1F3A5F" d="M1048,140 H1204 A4,4 0 0 1 1208,144 V168 A4,4 0 0 1 1204,172 H1048 A4,4 0 0 1 1044,168 V144 A4,4 0 0 1 1048,140 Z" />
+    <text x="1126" y="162" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#FFFFFF">SW wb</text>
+  </g>
+  <g id="handshake-template">
+    <text x="56" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F3A5F">小级握手模板（取自 DSP.v）</text>
+    <rect x="56" y="242" width="540" height="40" fill="#1F3A5F" />
+    <text x="76" y="268" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">信号</text>
+    <text x="276" y="268" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">定义</text>
+    <text x="76" y="314" font-family="Consolas, monospace" font-size="17" fill="#222222">rdy_sN</text>
+    <text x="276" y="314" font-family="Consolas, monospace" font-size="17" fill="#222222">ena_s(N+1)</text>
+    <line x1="56" y1="330" x2="596" y2="330" stroke="#D8DEE6" stroke-width="1" />
+    <text x="76" y="360" font-family="Consolas, monospace" font-size="17" fill="#222222">handshake_sN</text>
+    <text x="276" y="360" font-family="Consolas, monospace" font-size="17" fill="#222222">rdy &amp; vld</text>
+    <line x1="56" y1="376" x2="596" y2="376" stroke="#D8DEE6" stroke-width="1" />
+    <text x="76" y="406" font-family="Consolas, monospace" font-size="17" fill="#222222">ena_sN</text>
+    <text x="276" y="406" font-family="Consolas, monospace" font-size="17" fill="#222222">handshake | ~vld</text>
+    <line x1="56" y1="422" x2="596" y2="422" stroke="#D8DEE6" stroke-width="1" />
+    <text x="76" y="452" font-family="Consolas, monospace" font-size="17" fill="#222222">vld_sN</text>
+    <text x="276" y="452" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#222222">寄存器</text>
+    <line x1="56" y1="468" x2="596" y2="468" stroke="#D8DEE6" stroke-width="1" />
+    <text x="76" y="498" font-family="Consolas, monospace" font-size="17" fill="#222222">x_sN</text>
+    <text x="276" y="498" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#222222">在上游握手时采样</text>
+    <line x1="56" y1="514" x2="596" y2="514" stroke="#D8DEE6" stroke-width="1" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="56" y="548">与 DSP 的区别：DSP 外层是互斥的任务 FSM，subcore 外层没有。</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="56" y="572">FSM 只用在"一次做一件、要做多拍"的单元：SFU、XLANE、分支序列、上下文切换。</text><path fill="#F4F6F9" d="M64,596 H588 A8,8 0 0 1 596,604 V644 A8,8 0 0 1 588,652 H64 A8,8 0 0 1 56,644 V604 A8,8 0 0 1 64,596 Z" />
+    
+  <g transform="translate(72.0, 612.0)" fill="none" stroke="#1F3A5F" stroke-width="2">
+    <path d="M5 6a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1l0 -12" />
+    <path d="M9 9h6v6h-6l0 -6" />
+    <path d="M3 10h2" />
+    <path d="M3 14h2" />
+    <path d="M10 3v2" />
+    <path d="M14 3v2" />
+    <path d="M21 10h-2" />
+    <path d="M21 14h-2" />
+    <path d="M14 21v-2" />
+    <path d="M10 21v-2" />
+  </g>
+    <text x="108" y="630" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222"><tspan font-weight="bold">一大级一模块</tspan> subcore_&lt;级名&gt;，subcore_top 只做连接</text>
+  </g>
+  <g id="boundary-rules">
+    <text x="640" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F3A5F">三条边界规则</text>
+    <circle cx="656" cy="264" r="14" fill="#1F3A5F" />
+    <text x="656" y="269" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">1</text>
+    <text x="682" y="270" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#222222">向前只走寄存器（<tspan font-family="Consolas, monospace">vld</tspan> + 已寄存的 payload）</text>
+    <circle cx="656" cy="304" r="14" fill="#1F3A5F" />
+    <text x="656" y="309" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">2</text>
+    <text x="682" y="310" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#222222">向后只走已寄存的事件通道，目的级 <tspan fill="#E07A1F" font-weight="bold">+1 拍</tspan>看到</text>
+    <circle cx="656" cy="344" r="14" fill="#1F3A5F" />
+    <text x="656" y="349" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">3</text>
+    <text x="682" y="350" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" fill="#222222">每份状态只有一个主人，只有主人能写</text>
+  </g>
+  <g id="s2-loop">
+    <path fill="#FFFFFF" stroke="#E07A1F" stroke-width="2" d="M648,384 H1216 A8,8 0 0 1 1224,392 V644 A8,8 0 0 1 1216,652 H648 A8,8 0 0 1 640,644 V392 A8,8 0 0 1 648,384 Z" />
+    
+  <g transform="translate(660.0, 402.0)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6" />
+    <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+    <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+  </g>
+    <text x="694" y="421" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">S2 是唯一的单拍环：白名单只放在 S2</text>
+    <text x="660" y="452" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">发射沿上更新、下一拍选 warp 就要读到的状态</text>
+    <path fill="#F4F6F9" d="M678,472 H810 A18,18 0 0 1 828,490 V490 A18,18 0 0 1 810,508 H678 A18,18 0 0 1 660,490 V490 A18,18 0 0 1 678,472 Z" />
+    <text x="744" y="496" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">head 消耗</text>
+    <path fill="#F4F6F9" d="M858,472 H990 A18,18 0 0 1 1008,490 V490 A18,18 0 0 1 990,508 H858 A18,18 0 0 1 840,490 V490 A18,18 0 0 1 858,472 Z" />
+    <text x="924" y="496" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">stall 载入</text>
+    <path fill="#F4F6F9" d="M1038,472 H1186 A18,18 0 0 1 1204,490 V490 A18,18 0 0 1 1186,508 H1038 A18,18 0 0 1 1020,490 V490 A18,18 0 0 1 1038,472 Z" />
+    <text x="1112" y="496" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">SB +1</text>
+    <path fill="#F4F6F9" d="M678,520 H810 A18,18 0 0 1 828,538 V538 A18,18 0 0 1 810,556 H678 A18,18 0 0 1 660,538 V538 A18,18 0 0 1 678,520 Z" />
+    <text x="744" y="544" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">credit −1</text>
+    <path fill="#F4F6F9" d="M858,520 H990 A18,18 0 0 1 1008,538 V538 A18,18 0 0 1 990,556 H858 A18,18 0 0 1 840,538 V538 A18,18 0 0 1 858,520 Z" />
+    <text x="924" y="544" text-anchor="middle" font-family="Consolas, monospace" font-size="14" fill="#222222">last_issued / yield</text>
+    <path fill="#F4F6F9" d="M1038,520 H1186 A18,18 0 0 1 1204,538 V538 A18,18 0 0 1 1186,556 H1038 A18,18 0 0 1 1020,538 V538 A18,18 0 0 1 1038,520 Z" />
+    <text x="1112" y="544" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">隐式 SB 置位</text>
+    <path fill="#F4F6F9" d="M678,568 H810 A18,18 0 0 1 828,586 V586 A18,18 0 0 1 810,604 H678 A18,18 0 0 1 660,586 V586 A18,18 0 0 1 678,568 Z" />
+    <text x="744" y="592" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">ITS 状态更新</text>
+    <text x="840" y="592" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">其他级的状态都可以晚 1 拍看到</text>
+    <path fill="#2A7F9E" d="M671,618 H769 A11,11 0 0 1 780,629 V629 A11,11 0 0 1 769,640 H671 A11,11 0 0 1 660,629 V629 A11,11 0 0 1 671,618 Z" />
+    <text x="720" y="634" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#FFFFFF">已定 · 未实现</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：document/2026-10-05-subcore-rtl-structure-spec.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">06</text>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">目标结构：7 个大级，边界寄存，事件回传</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">黑横条是小级寄存器；同一拍完成的功能用灰色虚线框在一起；底部是已寄存的反向事件通道</text>
+  </g>
+  <g id="figure-target">
+    <rect x="52" y="116" width="948" height="520" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <image href="../images/fig11-target-pipeline.png" x="56" y="120" width="940" height="512" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+  <g id="lens-s2">
+    <rect x="308" y="144" width="148" height="272" rx="4" fill="none" stroke="#E07A1F" stroke-width="3"/>
+    <rect x="308" y="420" width="148" height="26" rx="4" fill="#E07A1F"/>
+    <text x="382" y="438" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">S2 · 唯一单拍环</text>
+  </g>
+  <g id="takeaway-1">
+    <rect x="1020" y="116" width="204" height="160" rx="8" fill="#F4F6F9"/>
+    <text x="1036" y="146" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">流控</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="1036" y="174">逐级组合握手：</tspan>
+      <tspan x="1036" y="196">vld 寄存，ena/rdy 组合</tspan>
+      <tspan x="1036" y="224">rdy 只能是下一级 ena、</tspan>
+      <tspan x="1036" y="246">常数 1 或外部寄存输出</tspan>
+    </text>
+  </g>
+  <g id="takeaway-2">
+    <rect x="1020" y="288" width="204" height="160" rx="8" fill="#F4F6F9"/>
+    <text x="1036" y="318" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">S2 → S3</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="1036" y="346">S2/S3 reg 只寄存</tspan>
+      <tspan x="1036" y="368">warp 号 + ITS 状态</tspan>
+      <tspan x="1036" y="396">255 位指令由 S1 按</tspan>
+      <tspan x="1036" y="418">warp 号直接送 S3</tspan>
+    </text>
+  </g>
+  <g id="takeaway-3">
+    <rect x="1020" y="460" width="204" height="176" rx="8" fill="#F4F6F9"/>
+    <text x="1036" y="490" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">事件通道</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="1036" y="518">每个来源一条，</tspan>
+      <tspan x="1036" y="540">不合并成总线</tspan>
+      <tspan x="1036" y="568">带 warp 号与</tspan>
+      <tspan x="1036" y="590"><tspan font-family="Consolas, monospace">wslot_gen</tspan>，</tspan>
+      <tspan x="1036" y="612">迟到的事件丢弃</tspan>
+    </text>
+  </g>
+  <g id="status-note">
+    <rect x="56" y="650" width="120" height="22" rx="11" fill="#2A7F9E"/>
+    <text x="116" y="666" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已定 · 未实现</text>
+    <text x="188" y="666" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">图 11　目标流水线（PPT-generate 8822eed，2026-10-09）</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">07</text>
+  </g>
+</svg>

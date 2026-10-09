@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">每一步都留下可重复的证据：0 差异、拍数不变</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">保持行为的步骤用逐信号比对；会改拍数的步骤只用端到端用例</text>
+  </g>
+  <g id="kpi-1">
+    <path fill="#F4F6F9" d="M64,128 H323 A8,8 0 0 1 331,136 V296 A8,8 0 0 1 323,304 H64 A8,8 0 0 1 56,296 V136 A8,8 0 0 1 64,128 Z" />
+    <rect x="56" y="128" width="4" height="176" fill="#2E7D32" />
+    
+  <g transform="translate(76.0, 146.0) scale(1.0833333333333333)" fill="none" stroke="#2E7D32" stroke-width="2">
+    <path d="M7 12l5 5l10 -10" />
+    <path d="M2 12l5 5m5 -5l5 -5" />
+  </g>
+    <text x="110" y="165" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">Phase 2 逐信号比对</text>
+    <text x="76" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="40" font-weight="bold" fill="#2E7D32">0<tspan font-size="18" fill="#222222"> 差异</tspan></text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666" x="76" y="258">100,158 个信号，无信号消失</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666" x="76" y="280">只多出 4 个新信号（vld_s0 等）</text></g>
+  <g id="kpi-2">
+    <path fill="#F4F6F9" d="M361,128 H620 A8,8 0 0 1 628,136 V296 A8,8 0 0 1 620,304 H361 A8,8 0 0 1 353,296 V136 A8,8 0 0 1 361,128 Z" />
+    <rect x="353" y="128" width="4" height="176" fill="#2E7D32" />
+    
+  <g transform="translate(373.0, 146.0) scale(1.0833333333333333)" fill="none" stroke="#2E7D32" stroke-width="2">
+    <path d="M9 3l6 0" />
+    <path d="M10 9l4 0" />
+    <path d="M10 3v6l-4 11a.7 .7 0 0 0 .5 1h11a.7 .7 0 0 0 .5 -1l-4 -11v-6" />
+  </g>
+    <text x="407" y="165" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">d1 A/B 比对</text>
+    <text x="373" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="40" font-weight="bold" fill="#2E7D32">5/5<tspan font-size="18" fill="#222222"> PASS</tspan></text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666" x="373" y="258">每个 kernel 的 PMU 行逐行相同</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666" x="373" y="280">含分支/ITS、MEMBAR、mbarrier</text></g>
+  <g id="kpi-3">
+    <path fill="#F4F6F9" d="M658,128 H917 A8,8 0 0 1 925,136 V296 A8,8 0 0 1 917,304 H658 A8,8 0 0 1 650,296 V136 A8,8 0 0 1 658,128 Z" />
+    <rect x="650" y="128" width="4" height="176" fill="#1F3A5F" />
+    
+  <g transform="translate(670.0, 146.0) scale(1.0833333333333333)" fill="none" stroke="#1F3A5F" stroke-width="2">
+    <path d="M5 4h14a1 1 0 0 1 1 1v5a1 1 0 0 1 -1 1h-7a1 1 0 0 0 -1 1v7a1 1 0 0 1 -1 1h-5a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1" />
+    <path d="M4 8l2 0" />
+    <path d="M4 12l3 0" />
+    <path d="M4 16l2 0" />
+    <path d="M8 4l0 2" />
+    <path d="M12 4l0 3" />
+    <path d="M16 4l0 2" />
+  </g>
+    <text x="704" y="165" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">iadd3 总拍数</text>
+    <text x="670" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#1F3A5F">348,288</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666" x="670" y="258">Phase 2 前后相同</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666" x="670" y="280">kernel 89,279 拍也相同</text></g>
+  <g id="kpi-4">
+    <path fill="#F4F6F9" d="M955,128 H1216 A8,8 0 0 1 1224,136 V296 A8,8 0 0 1 1216,304 H955 A8,8 0 0 1 947,296 V136 A8,8 0 0 1 955,128 Z" />
+    <rect x="947" y="128" width="4" height="176" fill="#E07A1F" />
+    
+  <g transform="translate(967.0, 146.0) scale(1.0833333333333333)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
+    <path d="M12 7v5l3 3" />
+  </g>
+    <text x="1001" y="165" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">lockstep 下单次运行</text>
+    <text x="967" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#E07A1F">35→17<tspan font-size="18" fill="#222222"> 分钟</tspan></text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666" x="967" y="258">结果稳定：349,783 / 89,228 拍</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666" x="967" y="280">拍数不能当性能结果用</text></g>
+  <g id="methods">
+    <text x="56" y="346" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">两种比对方法</text>
+    <path fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1" d="M64,362 H608 A8,8 0 0 1 616,370 V488 A8,8 0 0 1 608,496 H64 A8,8 0 0 1 56,488 V370 A8,8 0 0 1 64,362 Z" />
+    <text x="72" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">逐信号波形比对 <tspan font-family="Consolas, monospace" font-weight="normal" fill="#666666">wave_compare.py</tspan></text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="72" y="418">范围 u_subcore 约 10 万个信号，逐个比较变化序列</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="72" y="442">改名或新增的单列为 ONLY_BASE / ONLY_TEST</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="72" y="466">单次约 10 分钟；只适用于保持行为的步骤</text><path fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1" d="M64,508 H608 A8,8 0 0 1 616,516 V634 A8,8 0 0 1 608,642 H64 A8,8 0 0 1 56,634 V516 A8,8 0 0 1 64,508 Z" />
+    <text x="72" y="536" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">A/B 拍数比对 <tspan font-family="Consolas, monospace" font-weight="normal" fill="#666666">model_compare.sh</tspan></text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="72" y="564">参考与被测模型并行跑同一组端到端 CUDA 用例</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="72" y="588">比较每个 kernel 的 PMU 行和 PASS / FAIL</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="72" y="612">默认开 lockstep；设 TRACE_WINDOW 时同时抓波形</text></g>
+  <g id="nondeterminism">
+    <text x="648" y="346" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">意外发现：SoC 仿真本身不确定</text>
+    <path fill="#F4F6F9" d="M656,362 H1216 A8,8 0 0 1 1224,370 V536 A8,8 0 0 1 1216,544 H656 A8,8 0 0 1 648,536 V370 A8,8 0 0 1 656,362 Z" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222" x="664" y="392">同一个参考二进制跑两次，落在两条时间线之一：</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222" x="664" y="416"><tspan><tspan font-family="Consolas, monospace" fill="#C62828">18770 / 89279</tspan> 或 <tspan font-family="Consolas, monospace" fill="#C62828">20843 / 89251</tspan></tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222" x="664" y="448">原因在 runtime 而不在 RTL：引擎线程每片推进 4096 拍，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222" x="664" y="472">下一个 CUDA 请求落在哪一片边界取决于 OS 调度</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222" x="664" y="504"><tspan>处理：<tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">CURRYGPU_LOCKSTEP=1</tspan>，等待者自己推进模拟器</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222" x="664" y="528">补丁只留本地 document/patches/，不提交</text><path fill="#FFFFFF" stroke="#C62828" stroke-width="1.5" d="M656,556 H1216 A8,8 0 0 1 1224,564 V634 A8,8 0 0 1 1216,642 H656 A8,8 0 0 1 648,634 V564 A8,8 0 0 1 656,556 Z" />
+    
+  <g transform="translate(664.0, 570.0) scale(0.9166666666666666)" fill="none" stroke="#C62828" stroke-width="2">
+    <path d="M12 9v4" />
+    <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+    <path d="M12 16h.01" />
+  </g>
+    <text x="694" y="587" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">提交 d1 前待补</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="664" y="614">d1 的逐信号比对结论（两边已抓 trace.fst）</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="664" y="634">sm_context 往返测试（ctx 保存格式）的结果</text></g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">数据来源：2 SM 波形模型 curry2；.build/cmp-d1-iadd3、.build/cmp-d1-ls；document/2026-10-08-phase2-progress.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">12</text>
+  </g>
+</svg>

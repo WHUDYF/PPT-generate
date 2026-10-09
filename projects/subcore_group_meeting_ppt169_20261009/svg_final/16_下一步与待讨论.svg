@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">下一步：先做完保持行为的整理，再动拍数</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">会改拍数的结构改动只能用端到端用例验证，所以放在后面</text>
+  </g>
+  <g id="col-near">
+    <path fill="#F4F6F9" d="M64,128 H416 A8,8 0 0 1 424,136 V636 A8,8 0 0 1 416,644 H64 A8,8 0 0 1 56,636 V136 A8,8 0 0 1 64,128 Z" />
+    <rect x="56" y="128" width="368" height="4" fill="#E07A1F" />
+    
+  <g transform="translate(76.0, 150.0)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M7 12l5 5l10 -10" />
+    <path d="M2 12l5 5m5 -5l5 -5" />
+  </g>
+    <text x="108" y="169" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">近期 · 保持行为</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="76" y="214" font-weight="bold">1　提交 d1</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="100" y="238">补 wave_compare 与 sm_context，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="100" y="258">更新断言里的层级路径</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="76" y="300" font-weight="bold">2　d2</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="100" y="324">分支 / CONV 序列（约 1100 行）和</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="100" y="344">its_top 搬进 subcore_issue</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="76" y="386" font-weight="bold">3　定 ctx 保存格式</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="100" y="410">建议 A：按子模块各自拼接，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="100" y="430">用 sm_context 往返测试验证</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="76" y="472" font-weight="bold">4　S2-e</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="100" y="496">payload 译码挪到 S3；</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="100" y="516">端口按"源+目的"统一改名</text></g>
+  <g id="col-timing">
+    <path fill="#F4F6F9" d="M464,128 H816 A8,8 0 0 1 824,136 V636 A8,8 0 0 1 816,644 H464 A8,8 0 0 1 456,636 V136 A8,8 0 0 1 464,128 Z" />
+    <rect x="456" y="128" width="368" height="4" fill="#2A7F9E" />
+    
+  <g transform="translate(476.0, 150.0)" fill="none" stroke="#2A7F9E" stroke-width="2">
+    <path d="M4 16l6 -7l5 5l5 -6" />
+    <path d="M14 14a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+    <path d="M9 9a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+    <path d="M3 16a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+    <path d="M19 8a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+  </g>
+    <text x="508" y="169" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">之后 · 会改拍数</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="476" y="214" font-weight="bold">5　S2 到 S4 一起重构</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="500" y="238">两者必须同时做，否则会同拍</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="500" y="258">写同一写口</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="476" y="300" font-weight="bold">6　S1 改为 2 项 head FIFO</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="476" y="342" font-weight="bold">7　ev_complete 改为 +1 拍</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="500" y="366">在访存密集用例上量代价，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="500" y="386">同步改性能模型</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="476" y="428" font-weight="bold">8　MEMBAR 协议位拆到访存侧</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="500" y="452">代价：放行晚 1 拍</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="476" y="494" font-weight="bold">9　S0 三级、L0I 数据进 SRAM</text></g>
+  <g id="col-discuss">
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2" d="M864,128 H1216 A8,8 0 0 1 1224,136 V636 A8,8 0 0 1 1216,644 H864 A8,8 0 0 1 856,636 V136 A8,8 0 0 1 864,128 Z" />
+    
+  <g transform="translate(876.0, 150.0)" fill="none" stroke="#1F3A5F" stroke-width="2">
+    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+    <path d="M12 17l0 .01" />
+    <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
+  </g>
+    <text x="908" y="169" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F3A5F">想请大家一起判断</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="876" y="214" font-weight="bold">A　拉长流水线是否接受？</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="900" y="238">发射到写回变长，stall 数要加大，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="900" y="258">单 warp 依赖链会变慢（待定 F）</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="876" y="300" font-weight="bold">B　单 warp 取指 0.67 条/拍</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="900" y="324">要不要补？</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="876" y="366" font-weight="bold">C　分支 FSM 的粒度</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="900" y="390">整个 subcore 一个，还是每 warp 一个</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222" x="876" y="432" font-weight="bold">D　AI 实验的第一个模块</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="900" y="456">按四种条件生成，把今天的 8 条</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="900" y="476">观察补成 D 记录</text><path fill="#1F3A5F" d="M882,560 H1198 A6,6 0 0 1 1204,566 V618 A6,6 0 0 1 1198,624 H882 A6,6 0 0 1 876,618 V566 A6,6 0 0 1 882,560 Z" />
+    <text x="1040" y="588" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">谢谢，欢迎讨论</text>
+    <text x="1040" y="610" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#FFFFFF" fill-opacity="0.7">dyf · curryGPU</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">16</text>
+  </g>
+</svg>

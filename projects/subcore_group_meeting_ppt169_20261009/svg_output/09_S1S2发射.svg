@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">S1/S2：2 项 head FIFO，发射条件 = 显式 SB + 隐式 SB</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">机制与原版相同，只整理归属；同一 warp 可以每拍发射，与性能模型 max(1, stall) 对齐</text>
+  </g>
+  <g id="figure-s1s2">
+    <rect x="56" y="128" width="548" height="400" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <image href="../images/fig13-s1-s2-issue.png" x="60" y="132" width="540" height="367" preserveAspectRatio="xMidYMid meet"/>
+    <text x="64" y="518" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">图 13　S1 head FIFO 与 S2 单拍环、事件通道</text>
+  </g>
+  <g id="head-fifo">
+    <rect x="56" y="544" width="548" height="100" rx="8" fill="#F4F6F9"/>
+    <text x="72" y="572" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">S1 head：每 warp 2 项 FIFO（触发器）</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="72" y="598">16 × 2 × 255 位 ≈ <tspan fill="#E07A1F" font-weight="bold">1 KB</tspan>；S2 每拍同时读 16 个 warp 的第 0 项，SRAM 做不到</tspan>
+      <tspan x="72" y="620">按 ev_head_consumed 以 credit 补充：现有 + 未处理事件 ≤ 2</tspan>
+    </text>
+  </g>
+  <g id="issue-rule">
+    <rect x="628" y="128" width="596" height="64" rx="8" fill="#1F3A5F"/>
+    <text x="648" y="156" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#FFFFFF" fill-opacity="0.75">S2 发射（§11 第 14 条）</text>
+    <text x="648" y="180" font-family="Consolas, monospace" font-size="18" font-weight="bold" fill="#FFFFFF">issue = 选中 &amp; credit_ok &amp; rdy_s3</text>
+  </g>
+  <g id="moved-checks">
+    <text x="628" y="222" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan font-family="Consolas, monospace" fill="#222222">rd_ok / wb_ok / fu_ok</tspan> 移到 S4 allocate；<tspan font-family="Consolas, monospace" fill="#222222">const_ok</tspan> 是死逻辑，删除</text>
+  </g>
+  <g id="implicit-sb">
+    <text x="628" y="260" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">隐式 SB：硬件分配，每 warp 一位，挡住后续所有指令</text>
+    <rect x="628" y="274" width="596" height="32" fill="#F4F6F9"/>
+    <text x="644" y="295" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#222222">列</text>
+    <text x="824" y="295" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#222222">置位</text>
+    <text x="964" y="295" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#222222">清除</text>
+    <text x="644" y="332" font-family="Consolas, monospace" font-size="14" fill="#222222">MEMBAR</text>
+    <text x="824" y="332" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">发射</text>
+    <text x="964" y="332" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">屏障完成 &amp; (非 CTA 范围 | drained)</text>
+    <line x1="628" y1="344" x2="1224" y2="344" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="644" y="368" font-family="Consolas, monospace" font-size="14" fill="#222222">CCTL.IVALL</text>
+    <text x="824" y="368" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">发射</text>
+    <text x="964" y="368" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">L1 作废完成（正常挡 1 拍）</text>
+    <line x1="628" y1="380" x2="1224" y2="380" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="644" y="404" font-family="Consolas, monospace" font-size="14" fill="#222222">SETMAXREG</text>
+    <text x="824" y="404" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">发射</text>
+    <text x="964" y="404" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">SM 调整完成</text>
+    <line x1="628" y1="416" x2="1224" y2="416" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="644" y="440" font-family="Consolas, monospace" font-size="14" fill="#222222">ERRBAR</text>
+    <text x="824" y="440" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">发射，装入 29/92</text>
+    <text x="964" y="440" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">倒数到 0（实测值）</text>
+    <line x1="628" y1="452" x2="1224" y2="452" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="644" y="476" font-family="Consolas, monospace" font-size="14" fill="#222222">BRANCH</text>
+    <text x="824" y="476" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">分支 FSM 启动</text>
+    <text x="964" y="476" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">FSM 回到 Idle</text>
+    <line x1="628" y1="488" x2="1224" y2="488" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="644" y="512" font-family="Consolas, monospace" font-size="14" fill="#222222">INIT</text>
+    <text x="824" y="512" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">launch</text>
+    <text x="964" y="512" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">RF 清零 walker 完成</text>
+    <line x1="628" y1="524" x2="1224" y2="524" stroke="#D8DEE6" stroke-width="1"/>
+  </g>
+  <g id="explicit-sb">
+    <rect x="628" y="544" width="596" height="100" rx="8" fill="#FFFFFF" stroke="#E07A1F" stroke-width="2"/>
+    <use data-icon="tabler-outline/bulb" x="644" y="558" width="22" height="22" fill="#E07A1F" stroke-width="2"/>
+    <text x="674" y="575" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">原则：多步的功能状态归执行它的单元，S2 只留一位关卡</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="644" y="602">显式 SB：编译器分配，每 warp 6 个计数器，按 wait mask 等待</tspan>
+      <tspan x="644" y="624">原版只有 ACQBULK、ERRBAR 完全符合；MEMBAR 的 7 位协议状态待拆</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：document/2026-10-09-s1-s2-issue-conditions.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">09</text>
+  </g>
+</svg>

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">S0 取指：去掉全局锁，L0I 数据进 SRAM 分三级</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">现状平均每拍 ≤ 1 条正好等于发射上限；目标让多 warp 取指带宽到每拍 2 条</text>
+  </g>
+  <g id="compare-head">
+    <rect x="56" y="128" width="500" height="36" fill="#1F3A5F"/>
+    <text x="72" y="152" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">项</text>
+    <text x="150" y="152" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">现状（读 RTL）</text>
+    <text x="356" y="152" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">目标（10-08 定）</text>
+  </g>
+  <g id="row-stage">
+    <text x="72" y="196" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">小级</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="150" y="196">c0 一拍做完：仲裁、</tspan>
+      <tspan x="150" y="216">64 路 tag 比较、1024 位</tspan>
+      <tspan x="150" y="236">64 选 1</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="356" y="196">s0 选 warp + tag 比较</tspan>
+      <tspan x="356" y="216">s1 L0I 数据 SRAM 同步读</tspan>
+      <tspan x="356" y="236">s2 写 IB 或发 miss</tspan>
+    </text>
+    <line x1="56" y1="252" x2="556" y2="252" stroke="#D8DEE6" stroke-width="1"/>
+  </g>
+  <g id="row-throughput">
+    <rect x="56" y="253" width="500" height="88" fill="#E07A1F" fill-opacity="0.08"/>
+    <text x="72" y="282" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">吞吐</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="150" y="282">全局锁 lookup_busy：</tspan>
+      <tspan x="150" y="302"><tspan fill="#C62828" font-weight="bold">每 2 拍查一次</tspan>，</tspan>
+      <tspan x="150" y="322">每次最多 2 条</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="356" y="282">在途位<tspan fill="#E07A1F" font-weight="bold">按 warp</tspan> 设，不同</tspan>
+      <tspan x="356" y="302">warp 每拍都能查</tspan>
+      <tspan x="356" y="322">多 warp 时最多每拍 2 条</tspan>
+    </text>
+    <line x1="56" y1="341" x2="556" y2="341" stroke="#D8DEE6" stroke-width="1"/>
+  </g>
+  <g id="row-credit">
+    <text x="72" y="370" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">资格</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="150" y="370">IB 至少空 2 格</tspan>
+      <tspan x="150" y="390">（count ≤ 6）</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="356" y="370">IB 空位用 credit 预约：</tspan>
+      <tspan x="356" y="390">现有 + 在途 + 2 ≤ 8</tspan>
+    </text>
+    <line x1="56" y1="406" x2="556" y2="406" stroke="#D8DEE6" stroke-width="1"/>
+  </g>
+  <g id="row-backpressure">
+    <text x="72" y="435" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">反压</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="150" y="435">miss_rsp_pending_q</tspan>
+      <tspan x="150" y="455">停车位</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="356" y="435">逐级反压，L1I ready</tspan>
+      <tspan x="356" y="455">必须是寄存器输出</tspan>
+    </text>
+    <line x1="56" y1="471" x2="556" y2="471" stroke="#D8DEE6" stroke-width="1"/>
+  </g>
+  <g id="row-latency">
+    <text x="72" y="500" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">延迟</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="150" y="500">授权到 S2 见 head</tspan>
+      <tspan x="150" y="520">共 3 拍</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="356" y="500"><tspan fill="#C62828" font-weight="bold">共 4 拍</tspan>，只在分支</tspan>
+      <tspan x="356" y="520">跳转、IB 清空后显现</tspan>
+    </text>
+    <line x1="56" y1="536" x2="556" y2="536" stroke="#D8DEE6" stroke-width="1"/>
+  </g>
+  <g id="open-items">
+    <rect x="56" y="556" width="500" height="88" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/help" x="72" y="570" width="22" height="22" fill="#C62828" stroke-width="2"/>
+    <text x="102" y="587" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">待定</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="72" y="614">同一 warp 最快每 3 拍查一次（≈0.67 条/拍），要不要补？</tspan>
+      <tspan x="72" y="634">SRAM 为 1RW、回填写优先；回填频繁时是否改用 1R1W？</tspan>
+    </text>
+  </g>
+  <g id="figure-s0">
+    <rect x="580" y="128" width="644" height="434" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <image href="../images/fig12-s0-fetch.png" x="584" y="132" width="636" height="415" preserveAspectRatio="xMidYMid meet"/>
+    <text x="588" y="582" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">图 12　S0 目标三级取指，底部为命中与反压的逐拍例子</text>
+    <rect x="580" y="600" width="644" height="44" rx="8" fill="#1F3A5F"/>
+    <text x="600" y="628" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#FFFFFF">S0/S1 的大级边界就是 IB：<tspan font-family="Consolas, monospace">vld = count != 0</tspan>，S1 组合 pop 取队头</text>
+  </g>
+  <g id="footer">
+    <rect x="1104" y="40" width="120" height="22" rx="11" fill="#2A7F9E"/>
+    <text x="1164" y="56" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已定 · 未实现</text>
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：document/2026-10-08-s0-fetch-spec.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">08</text>
+  </g>
+</svg>

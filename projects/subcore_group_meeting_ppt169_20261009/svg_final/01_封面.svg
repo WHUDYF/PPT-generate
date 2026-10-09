@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="bg-decor">
+    <rect x="0" y="0" width="440" height="720" fill="#1F3A5F" />
+    <rect x="440" y="0" width="8" height="720" fill="#E07A1F" />
+    <path fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="2" d="M78,150 H122 A6,6 0 0 1 128,156 V200 A6,6 0 0 1 122,206 H78 A6,6 0 0 1 72,200 V156 A6,6 0 0 1 78,150 Z" />
+    <path fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="2" d="M146,150 H190 A6,6 0 0 1 196,156 V200 A6,6 0 0 1 190,206 H146 A6,6 0 0 1 140,200 V156 A6,6 0 0 1 146,150 Z" />
+    <path fill="none" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="2" d="M78,218 H122 A6,6 0 0 1 128,224 V268 A6,6 0 0 1 122,274 H78 A6,6 0 0 1 72,268 V224 A6,6 0 0 1 78,218 Z" />
+    <path fill="#E07A1F" fill-opacity="0.9" d="M146,218 H190 A6,6 0 0 1 196,224 V268 A6,6 0 0 1 190,274 H146 A6,6 0 0 1 140,268 V224 A6,6 0 0 1 146,218 Z" />
+    <text x="72" y="320" font-family="Consolas, monospace" font-size="14" fill="#FFFFFF" fill-opacity="0.7">SM · 4 × subcore · 16 warp slots</text>
+    <text x="72" y="610" font-family="Consolas, monospace" font-size="14" fill="#FFFFFF" fill-opacity="0.6">S0 → S1 → S2 → S3 → S4 → S5 → SW</text>
+  </g>
+  <g id="cover-title">
+    <text x="520" y="250" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="bold" fill="#E07A1F">curryGPU · 组会汇报</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="52" fill="#1F3A5F" font-weight="bold" x="520" y="330">subcore 流水线</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="52" fill="#1F3A5F" font-weight="bold" x="520" y="398">结构整理</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" fill="#666666" x="520" y="462">从读 RTL 到可验证的重构，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" fill="#666666" x="520" y="496">以及 AI 生成 RTL 的启示</text></g>
+  <g id="cover-info">
+    <line x1="520" y1="560" x2="1180" y2="560" stroke="#D8DEE6" stroke-width="1" />
+    <text x="520" y="600" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#222222">汇报人：dyf<tspan fill="#999999">　|　</tspan>2026-10-10</text>
+    <text x="520" y="630" font-family="Consolas, monospace" font-size="14" fill="#999999">branch: subcore-pipeline-structure</text>
+  </g>
+</svg>

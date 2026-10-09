@@ -1,0 +1,5 @@
+No,Filename,Width,Height,AspectRatio,PixelAspectRatio,RatioSource,UsageCount,DisplayRatioVariants,AssetKind,SvgRenderable,PptxNativeSupported,SizeKB,Category,ImageArea_SxS,TextArea_SxS
+1,fig10-pipeline-datapath.png,1964,945,2.08,2.08,pixel,1,,bitmap,True,True,250.9,Ultra-wide,812x391,328x600
+2,fig11-target-pipeline.png,1964,1070,1.84,1.84,pixel,1,,bitmap,True,True,466.7,Wide landscape,812x442,328x600
+3,fig12-s0-fetch.png,1581,1032,1.53,1.53,pixel,1,,bitmap,True,True,465.7,Wide landscape,812x530,328x600
+4,fig13-s1-s2-issue.png,1564,1064,1.47,1.47,pixel,1,,bitmap,True,True,520.7,Standard landscape,812x552,328x600

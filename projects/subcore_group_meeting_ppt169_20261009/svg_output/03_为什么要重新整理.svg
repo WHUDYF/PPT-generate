@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">现状 RTL 能跑通，但结构说不清楚</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">发射路径上只有 IB → head 一处寄存器边界，其余全在同一拍组合完成</text>
+  </g>
+  <g id="figure-current">
+    <rect x="56" y="128" width="748" height="376" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <image href="../images/fig10-pipeline-datapath.png" x="60" y="132" width="740" height="356" preserveAspectRatio="xMidYMid meet"/>
+    <text x="64" y="524" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">图 10　现状数据通路与寄存器边界（main 73534bd2，读 RTL 得出）</text>
+  </g>
+  <g id="position">
+    <text x="56" y="566" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#1F3A5F">subcore 的位置</text>
+    <rect x="56" y="580" width="96" height="40" rx="6" fill="#F4F6F9"/>
+    <text x="104" y="606" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#222222">GPU</text>
+    <text x="164" y="606" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#999999">→</text>
+    <rect x="176" y="580" width="96" height="40" rx="6" fill="#F4F6F9"/>
+    <text x="224" y="606" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#222222">GPC</text>
+    <text x="284" y="606" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#999999">→</text>
+    <rect x="296" y="580" width="96" height="40" rx="6" fill="#F4F6F9"/>
+    <text x="344" y="606" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#222222">TPC</text>
+    <text x="404" y="606" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#999999">→</text>
+    <rect x="416" y="580" width="96" height="40" rx="6" fill="#F4F6F9"/>
+    <text x="464" y="606" text-anchor="middle" font-family="Consolas, monospace" font-size="15" fill="#222222">SM</text>
+    <text x="524" y="606" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#999999">→</text>
+    <rect x="536" y="580" width="268" height="40" rx="6" fill="#1F3A5F"/>
+    <text x="670" y="606" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">4 × subcore · 各 16 warp slot</text>
+    <text x="56" y="646" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">取指前端（仲裁、L0I、IB）每个 subcore 一份；4 个 subcore 只共用 L1I、miss queue、TLB</text>
+  </g>
+  <g id="problem-1">
+    <rect x="828" y="128" width="396" height="116" rx="8" fill="#F4F6F9"/>
+    <rect x="828" y="128" width="4" height="116" fill="#C62828"/>
+    <use data-icon="tabler-outline/route" x="848" y="144" width="24" height="24" fill="#C62828" stroke-width="2"/>
+    <text x="882" y="163" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">发射是一条长组合链</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="848" y="192">eligible → 选择 → allocate → ITS → dispatch</tspan>
+      <tspan x="848" y="214">→ RF 读地址 → VALU 入口，同一拍完成</tspan>
+      <tspan x="848" y="236">估计 <tspan fill="#C62828" font-weight="bold">35–45 级</tspan>逻辑</tspan>
+    </text>
+  </g>
+  <g id="problem-2">
+    <rect x="828" y="256" width="396" height="116" rx="8" fill="#F4F6F9"/>
+    <rect x="828" y="256" width="4" height="116" fill="#C62828"/>
+    <use data-icon="tabler-outline/git-compare" x="848" y="272" width="24" height="24" fill="#C62828" stroke-width="2"/>
+    <text x="882" y="291" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">跨级组合读取</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="848" y="320">S2 组合读 exec 内部的 <tspan font-family="Consolas, monospace" fill="#222222">collect_fire</tspan>、</tspan>
+      <tspan x="848" y="342"><tspan font-family="Consolas, monospace" fill="#222222">rd_busy</tspan>，写口预约藏在调度器里</tspan>
+      <tspan x="848" y="364">scoreboard 在完成的同一拍组合释放</tspan>
+    </text>
+  </g>
+  <g id="problem-3">
+    <rect x="828" y="384" width="396" height="116" rx="8" fill="#F4F6F9"/>
+    <rect x="828" y="384" width="4" height="116" fill="#C62828"/>
+    <use data-icon="tabler-outline/stack-2" x="848" y="400" width="24" height="24" fill="#C62828" stroke-width="2"/>
+    <text x="882" y="419" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">挡发射的位散落各处</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="848" y="448">MEMBAR、CCTL、SETMAXREG、ERRBAR、分支……</tspan>
+      <tspan x="848" y="470">散在 <tspan fill="#C62828" font-weight="bold">6000+ 行</tspan>的 subcore_top 里</tspan>
+      <tspan x="848" y="492">全部 AND 进 head_valid，波形上看不出谁挡的</tspan>
+    </text>
+  </g>
+  <g id="problem-4">
+    <rect x="828" y="512" width="396" height="116" rx="8" fill="#F4F6F9"/>
+    <rect x="828" y="512" width="4" height="116" fill="#C62828"/>
+    <use data-icon="tabler-outline/bug" x="848" y="528" width="24" height="24" fill="#C62828" stroke-width="2"/>
+    <text x="882" y="547" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">死逻辑与隐式约定</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="848" y="576"><tspan font-family="Consolas, monospace" fill="#222222">hold_for_fill</tspan> 永远不触发</tspan>
+      <tspan x="848" y="598">单项 head 使同一 warp 隔拍发射：峰值 IPC <tspan fill="#C62828" font-weight="bold">0.5</tspan></tspan>
+      <tspan x="848" y="620">与性能模型 max(1, stall) 对不上</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="828" y="652" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">PR #38 用 30 个脚本统一了写法，没规定级怎么切</text>
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">03</text>
+  </g>
+</svg>
