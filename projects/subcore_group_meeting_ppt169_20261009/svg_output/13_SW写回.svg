@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">SW 写回：写口在 allocate 预约，SW 只按表写入</text>
+    <rect x="1104" y="40" width="120" height="22" rx="11" fill="#2A7F9E"/>
+    <text x="1164" y="56" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已定 · 未实现</text>
+  </g>
+  <g id="goal">
+    <rect x="56" y="96" width="1168" height="44" rx="8" fill="#F4F6F9"/>
+    <rect x="56" y="96" width="4" height="44" fill="#E07A1F"/>
+    <text x="76" y="124" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222"><tspan font-weight="bold" fill="#E07A1F">想做什么　</tspan>把结果写进寄存器堆，并告诉 S2 "这条做完了"；结构沿用原版 exec_wb_arb</text>
+  </g>
+  <g id="figure-sw">
+    <rect x="56" y="156" width="724" height="430" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <image href="../images/fig17-sw-wb.png" x="60" y="160" width="716" height="400" preserveAspectRatio="xMidYMid meet"/>
+    <text x="64" y="576" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">图 17　SW：左为固定延迟结果，中为写口选择，右为 RF 写口与完成事件</text>
+  </g>
+  <g id="steps">
+    <text x="808" y="176" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">内部做的三件事</text>
+    <circle cx="824" cy="212" r="13" fill="#1F3A5F"/>
+    <text x="824" y="217" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">1</text>
+    <text x="848" y="206" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">固定延迟结果：按预约直接写</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="228">S4 allocate 已占好写回拍的写口；</tspan>
+      <tspan x="848" y="248">fixed、fixed2 两路，不经过仲裁</tspan>
+    </text>
+    <circle cx="824" cy="284" r="13" fill="#1F3A5F"/>
+    <text x="824" y="289" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">2</text>
+    <text x="848" y="278" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">变长结果：只用当拍空着的口</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="300">抢不到就保持到下一拍；C07 让步</tspan>
+      <tspan x="848" y="320">（yield_q）保留，与性能模型一致</tspan>
+    </text>
+    <circle cx="824" cy="356" r="13" fill="#1F3A5F"/>
+    <text x="824" y="361" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">3</text>
+    <text x="848" y="350" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">发完成事件 ev_complete</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="372">寄存后送 S2，下一拍 scoreboard −1；</tspan>
+      <tspan x="848" y="392">带 wslot_gen，迟到的事件丢弃</tspan>
+    </text>
+    <rect x="800" y="416" width="424" height="170" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="816" y="442" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#1F3A5F">为什么不设结果队列</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="816" y="468">固定延迟指令靠编译器 stall 保护依赖，</tspan>
+      <tspan x="816" y="490">写回拍必须确定；结果队列会让写回变晚，</tspan>
+      <tspan x="816" y="512">后面的指令读到旧值</tspan>
+      <tspan x="816" y="540">所以写口冲突提前在 allocate 解决，</tspan>
+      <tspan x="816" y="562">SW 对固定延迟结果不需要仲裁</tspan>
+    </text>
+  </g>
+  <g id="rules">
+    <rect x="56" y="604" width="570" height="72" rx="8" fill="#F4F6F9"/>
+    <text x="72" y="630" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#1F3A5F">拥有的状态</text>
+    <text x="72" y="654" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">RF 阵列（2 bank）、P、URF、UP；其他级只能经写口访问</text>
+    <rect x="654" y="604" width="570" height="72" rx="8" fill="#FFFFFF" stroke="#C62828" stroke-width="1.5"/>
+    <text x="670" y="630" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#C62828">风险</text>
+    <text x="670" y="654" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">写口前是 1024 位多路选择；时序不够就加一拍，同步改编译器和性能模型</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：subcore-target-design-v1 §6–§7；规范 §11 第 19、22 条</text>
+    <text x="1224" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">13</text>
+  </g>
+</svg>

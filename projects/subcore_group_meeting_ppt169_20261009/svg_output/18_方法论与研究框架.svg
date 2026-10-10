@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">有效的做法：让违例写不出来，让每一步都可验证</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">左：本次验证有效的 5 条做法；右：准备用来量化 AI 生成 RTL 的研究框架</text>
+  </g>
+  <g id="track">
+    <line x1="84" y1="148" x2="84" y2="624" stroke="#D8DEE6" stroke-width="3"/>
+  </g>
+  <g id="item-1">
+    <circle cx="84" cy="160" r="18" fill="#1F3A5F"/>
+    <text x="84" y="166" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">01</text>
+    <text x="118" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">小步走、保持行为、每步留工件</text>
+    <text x="118" y="182" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">参考模型二进制 + lockstep 拍数 + 逐信号报告（0 差异）</text>
+  </g>
+  <g id="item-2">
+    <circle cx="84" cy="256" r="18" fill="#1F3A5F"/>
+    <text x="84" y="262" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">02</text>
+    <text x="118" y="254" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">"只改写法"与"改拍数"分开提交</text>
+    <text x="118" y="278" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">前者逐信号比，后者用端到端用例</text>
+  </g>
+  <g id="item-3">
+    <circle cx="84" cy="352" r="18" fill="#E07A1F"/>
+    <text x="84" y="358" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">03</text>
+    <text x="118" y="350" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">用模板和结构让违例写不出来</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="118" y="374">一大级一模块，端口只放寄存输出和事件通道；</tspan>
+      <tspan x="118" y="396">rdy 只能是下一级 ena；优先级只编码一次</tspan>
+    </text>
+  </g>
+  <g id="item-4">
+    <circle cx="84" cy="470" r="18" fill="#1F3A5F"/>
+    <text x="84" y="476" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">04</text>
+    <text x="118" y="468" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">每条决定写依据和"已定 / 待定"</text>
+    <text x="118" y="492" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">作废方案保留并用删除线标出，方便 AI 和人对齐上下文</text>
+  </g>
+  <g id="item-5">
+    <circle cx="84" cy="566" r="18" fill="#1F3A5F"/>
+    <text x="84" y="572" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">05</text>
+    <text x="118" y="564" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">讨论稿、图、代码分开</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="118" y="588">讨论稿放 git 排除的 document/；图由脚本生成，</tspan>
+      <tspan x="118" y="610">渲染成 PNG 目视检查后再推送</tspan>
+    </text>
+  </g>
+  <g id="framework">
+    <rect x="660" y="128" width="564" height="516" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/robot" x="680" y="148" width="26" height="26" fill="#1F3A5F" stroke-width="2"/>
+    <text x="716" y="168" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#1F3A5F">AI 生成 RTL 研究框架</text>
+    <text x="680" y="198" font-family="Consolas, monospace" font-size="13" fill="#666666">docs/design/ai-rtl-study/ · 13389eca5</text>
+    <text x="680" y="234" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">四种实验条件，逐级叠加输入做消融</text>
+    <rect x="680" y="250" width="524" height="40" rx="4" fill="#FFFFFF"/>
+    <rect x="680" y="250" width="131" height="40" rx="4" fill="#1F3A5F" fill-opacity="0.25"/>
+    <text x="696" y="276" font-family="Consolas, monospace" font-size="15" fill="#222222">nl</text>
+    <text x="830" y="276" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">只给自然语言</text>
+    <rect x="680" y="298" width="524" height="40" rx="4" fill="#FFFFFF"/>
+    <rect x="680" y="298" width="262" height="40" rx="4" fill="#1F3A5F" fill-opacity="0.45"/>
+    <text x="696" y="324" font-family="Consolas, monospace" font-size="15" fill="#FFFFFF">+ model</text>
+    <text x="960" y="324" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">加功能 / 性能模型代码</text>
+    <rect x="680" y="346" width="524" height="40" rx="4" fill="#FFFFFF"/>
+    <rect x="680" y="346" width="393" height="40" rx="4" fill="#1F3A5F" fill-opacity="0.7"/>
+    <text x="696" y="372" font-family="Consolas, monospace" font-size="15" fill="#FFFFFF">+ style</text>
+    <text x="1088" y="372" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">代码规范</text>
+    <rect x="680" y="394" width="524" height="40" rx="4" fill="#1F3A5F"/>
+    <text x="696" y="420" font-family="Consolas, monospace" font-size="15" fill="#FFFFFF">+ diagram</text>
+    <text x="1188" y="420" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#FFFFFF">流水线图</text>
+    <text x="680" y="470" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">缺陷记录：本应被哪一项挡住？</text>
+    <text font-family="Consolas, monospace" font-size="13" fill="#2A7F9E">
+      <tspan x="680" y="498">cycle-semantics · boundary · ordering · abstraction-gap</tspan>
+      <tspan x="680" y="520">structure · interface · style</tspan>
+    </text>
+    <text x="680" y="550" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">代价：轮数、token、人工干预次数与分钟数</text>
+    <rect x="680" y="574" width="524" height="50" rx="6" fill="#FFFFFF" stroke="#C62828" stroke-width="1.5"/>
+    <text x="696" y="605" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">现状：只有模板（E000 / D000），还没有任何实验实例</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">18</text>
+  </g>
+</svg>

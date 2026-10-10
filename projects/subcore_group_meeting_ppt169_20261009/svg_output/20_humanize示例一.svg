@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">示例一：从一句话到一份可验收的计划</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">左：PyTorchSim 上的 gen-idea 草稿（2026-07-20）；右：trace 压缩项目里按 gen-plan 格式写的计划（2026-05-08）</text>
+  </g>
+  <g id="idea">
+    <rect x="56" y="128" width="560" height="516" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/bulb" x="76" y="146" width="24" height="24" fill="#E07A1F" stroke-width="2"/>
+    <text x="110" y="164" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#1F3A5F">$humanize-gen-idea "&lt;想法&gt;"</text>
+    <text x="76" y="200" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#999999">输入（原话，一句）</text>
+    <rect x="76" y="210" width="520" height="56" rx="6" fill="#FFFFFF"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="92" y="234">"他们是如何将 Fusion / 模板选择纳入</tspan>
+      <tspan x="92" y="254">软硬件协同优化的？"</tspan>
+    </text>
+    <text x="76" y="296" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#999999">输出：150 行草稿，6 个方向，1 个主方案 + 5 个备选</text>
+    <rect x="76" y="306" width="520" height="94" rx="6" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <text x="92" y="330" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#1F3A5F">主方向：Hierarchical Joint Search</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="92" y="354">外层搜硬件 × Fusion × 模板，内层对每个组合求最优 mapping；</tspan>
+      <tspan x="92" y="376">对照 FAST、CASCO、HASCO 三篇的做法</tspan>
+    </text>
+    <text x="76" y="430" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#999999">每条判断都要落到仓库里的证据，例如</text>
+    <text font-family="Consolas, monospace" font-size="12" fill="#2A7F9E">
+      <tspan x="76" y="456">mlir_lowering.py:180-189</tspan>
+      <tspan x="76" y="500">route4_fusion_pilot/conv_codesign_analysis.json</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="76" y="476">按固定优先级只选一个 Conv 模板，没有比较周期</tspan>
+      <tspan x="76" y="520">Fusion 加速比随硬件在 4.83× 到 6.90× 之间变化</tspan>
+    </text>
+    <rect x="76" y="544" width="520" height="80" rx="6" fill="#FFFFFF" stroke="#E07A1F" stroke-width="1.5"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="92" y="570">规则：找不到证据就写 "exploratory, no concrete</tspan>
+      <tspan x="92" y="592">precedent"，不许编路径和数据；</tspan>
+      <tspan x="92" y="614">这一步只写草稿，不改任何代码</tspan>
+    </text>
+  </g>
+  <g id="arrow">
+    <path d="M622 386 L650 386" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M650 380 L660 386 L650 392 Z" fill="#1F3A5F"/>
+  </g>
+  <g id="plan">
+    <rect x="664" y="128" width="560" height="516" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/list-check" x="684" y="146" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="718" y="164" font-family="Consolas, monospace" font-size="16" font-weight="bold" fill="#1F3A5F">gen-plan --input draft --output plan</text>
+    <text x="684" y="200" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#999999">输出：A 线 PKA-M1 实施计划，523 行</text>
+    <rect x="684" y="210" width="520" height="36" fill="#1F3A5F"/>
+    <text x="700" y="234" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">章节</text>
+    <text x="900" y="234" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">作用</text>
+    <text x="700" y="272" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">Goal Description</text>
+    <text x="900" y="272" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">要做成什么，整条链路</text>
+    <line x1="684" y1="286" x2="1204" y2="286" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="700" y="312" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">硬约束</text>
+    <text x="900" y="312" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">哪些事绝对不能做</text>
+    <line x1="684" y1="326" x2="1204" y2="326" stroke="#D8DEE6" stroke-width="1"/>
+    <rect x="684" y="327" width="520" height="80" fill="#E07A1F" fill-opacity="0.08"/>
+    <text x="700" y="354" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#222222">AC-M1-1 … AC-M1-14</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="900" y="354">14 条验收标准，每条都有</tspan>
+      <tspan x="900" y="376">应当通过 / 应当失败的测试</tspan>
+      <tspan x="900" y="398">评审逐条对照它们</tspan>
+    </text>
+    <line x1="684" y1="407" x2="1204" y2="407" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="700" y="434" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">Path Boundaries</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="900" y="434">做到多少算够、最多做多少；</tspan>
+      <tspan x="900" y="456">能用 / 不能用的技术</tspan>
+    </text>
+    <line x1="684" y1="470" x2="1204" y2="470" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="700" y="496" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">里程碑</text>
+    <text x="900" y="496" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">先后顺序和依赖</text>
+    <line x1="684" y1="510" x2="1204" y2="510" stroke="#D8DEE6" stroke-width="1"/>
+    <rect x="684" y="530" width="520" height="94" rx="6" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="700" y="556">生成过程中，草稿有不清楚、前后矛盾的地方，</tspan>
+      <tspan x="700" y="578">AI 会停下来问人；有数字指标时问清是硬要求还是趋势</tspan>
+      <tspan x="700" y="606" fill="#222222">人的主要工作在这一步：把"做完"的标准写清楚</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：PyTorchSim/.humanize/ideas/fusion-template-codesign-20260720.md；trace-compression-industrial 的 RLCR plan.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">20</text>
+  </g>
+</svg>

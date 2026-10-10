@@ -3,7 +3,7 @@
   <g id="header">
     <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
     <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">S1/S2：2 项 head FIFO，发射条件 = 显式 SB + 隐式 SB</text>
-    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">机制与原版相同，只整理归属；同一 warp 可以每拍发射，与性能模型 max(1, stall) 对齐</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222"><tspan font-weight="bold" fill="#E07A1F">想做什么　</tspan>S1 从 IB 取队头并预译码；S2 每拍从 16 个 warp 里选一条能发的发出去</text>
   </g>
   <g id="figure-s1s2">
     <rect x="56" y="128" width="548" height="400" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>

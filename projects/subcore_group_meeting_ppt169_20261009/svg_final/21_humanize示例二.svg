@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">示例二：一次真实的 RLCR 运行，评审挡住了什么</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">trace 压缩项目 · .humanize/rlcr/2026-05-08_16-57-40 · 实现者是一个 Codex 会话，评审者是另起的 codex（gpt-5.4, high）</text>
+  </g>
+  <g id="timeline">
+    <text x="56" y="148" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">21 轮，约 6 小时（16:57 → 23:08）</text>
+    <path fill="#F4F6F9" d="M60,164 H1220 A4,4 0 0 1 1224,168 V200 A4,4 0 0 1 1220,204 H60 A4,4 0 0 1 56,200 V168 A4,4 0 0 1 60,164 Z" />
+    <path fill="#1F3A5F" d="M60,164 H441 A4,4 0 0 1 445,168 V200 A4,4 0 0 1 441,204 H60 A4,4 0 0 1 56,200 V168 A4,4 0 0 1 60,164 Z" />
+    <text x="250" y="190" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">实现阶段　第 0–6 轮</text>
+    <rect x="445" y="164" width="711" height="40" fill="#2A7F9E" />
+    <text x="800" y="190" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">代码审查阶段　第 7–20 轮</text>
+    <path fill="#2E7D32" d="M1160,164 H1220 A4,4 0 0 1 1224,168 V200 A4,4 0 0 1 1220,204 H1160 A4,4 0 0 1 1156,200 V168 A4,4 0 0 1 1160,164 Z" />
+    <text x="1190" y="190" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" font-weight="bold" fill="#FFFFFF">收尾</text>
+    <text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="56" y="228">第 0–5 轮评审都给出"阻塞"问题，第 6 轮评审写出 COMPLETE</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="445" y="228">每轮 1–4 条 [P1]/[P2] 意见，逐条修完再审</text></g>
+  <g id="cases">
+    <text x="56" y="276" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">评审意见原文摘录（翻译）</text>
+    <path fill="#FFFFFF" stroke="#C62828" stroke-width="1.5" d="M64,292 H420 A8,8 0 0 1 428,300 V520 A8,8 0 0 1 420,528 H64 A8,8 0 0 1 56,520 V300 A8,8 0 0 1 64,292 Z" />
+    <text x="72" y="320" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#C62828">第 0 轮 · 阻塞</text>
+    <text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="348">实现者只初始化了 goal tracker，</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="370">计划里的实现一项都没做。</text><text font-size="13" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="402">AI 常见的"先交一个壳"，</text><text font-size="13" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="424">被挡回去</text><path fill="#FFFFFF" stroke="#C62828" stroke-width="1.5" d="M462,292 H818 A8,8 0 0 1 826,300 V520 A8,8 0 0 1 818,528 H462 A8,8 0 0 1 454,520 V300 A8,8 0 0 1 462,292 Z" />
+    <text x="470" y="320" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#C62828">同项目另一次运行 · 第 0 轮</text>
+    <text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="470" y="348">实现者说"模拟器源码不在仓库"，把</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="470" y="370">3 项任务推迟；评审在本机找到了</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="470" y="392">这份源码，判定理由不成立。</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="470" y="414">还指出占位数据被标成"已测量"、</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="470" y="436">由占位数据推出了"GO"结论。</text><text font-size="13" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="470" y="468">挡住的是"编理由不做"和</text><text font-size="13" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="470" y="490">"假数据当真结果"</text><path fill="#FFFFFF" stroke="#E07A1F" stroke-width="1.5" d="M860,292 H1216 A8,8 0 0 1 1224,300 V520 A8,8 0 0 1 1216,528 H860 A8,8 0 0 1 852,520 V300 A8,8 0 0 1 860,292 Z" />
+    <text x="868" y="320" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#E07A1F">第 20 轮 · [P1]</text>
+    <text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="868" y="348">超时后 subprocess 只杀了外层 bash，</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="868" y="370">模拟器子进程还在跑，后续运行会</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="868" y="392">和泄漏的进程抢资源。</text><text font-size="13" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="868" y="424">测试全过也发现不了的</text><text font-size="13" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="868" y="446">运行时问题</text></g>
+  <g id="artifacts">
+    <path fill="#F4F6F9" d="M64,548 H1216 A8,8 0 0 1 1224,556 V636 A8,8 0 0 1 1216,644 H64 A8,8 0 0 1 56,636 V556 A8,8 0 0 1 64,548 Z" />
+    
+  <g transform="translate(76.0, 566.0)" fill="none" stroke="#1F3A5F" stroke-width="2">
+    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" />
+    <path d="M9 9l1 0" />
+    <path d="M9 13l6 0" />
+    <path d="M9 17l6 0" />
+  </g>
+    <text x="110" y="584" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">每轮都留下文件，事后可以逐轮复盘</text>
+    <text font-size="13" fill="#2A7F9E" font-family="Consolas, monospace" x="76" y="614">round-N-prompt.md · round-N-summary.md · round-N-review-result.md · goal-tracker.md · finalize-summary.md</text><text x="76" y="636" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">收尾时验证：pytest 70 passed，L1 回归 0 failures；第 20 轮之后进入收尾</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：worktrees/trace-compression-industrial/.humanize/rlcr/2026-05-08_16-57-40、2026-05-03_22-55-59</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">21</text>
+  </g>
+</svg>

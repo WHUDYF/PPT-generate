@@ -9,9 +9,9 @@
     <rect x="120" y="340" width="96" height="4" fill="#E07A1F" />
   </g>
   <g id="rules">
-    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" fill="#FFFFFF" x="120" y="410"><tspan><tspan fill="#E07A1F" font-weight="bold">向前</tspan>只走寄存器</tspan>
-      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" fill="#FFFFFF" x="120" y="456"><tspan><tspan fill="#E07A1F" font-weight="bold">向后</tspan>只走已寄存的事件通道，晚 1 拍看到</tspan>
-      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" fill="#FFFFFF" x="120" y="502"><tspan><tspan fill="#E07A1F" font-weight="bold">每份状态</tspan>只有一个主人，只有主人能写</tspan>
+    <text font-size="22" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="120" y="410"><tspan><tspan fill="#E07A1F" font-weight="bold">向前</tspan>只走寄存器</tspan>
+      </text><text font-size="22" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="120" y="456"><tspan><tspan fill="#E07A1F" font-weight="bold">向后</tspan>只走已寄存的事件通道，晚 1 拍看到</tspan>
+      </text><text font-size="22" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="120" y="502"><tspan><tspan fill="#E07A1F" font-weight="bold">每份状态</tspan>只有一个主人，只有主人能写</tspan>
     </text><text x="120" y="580" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#FFFFFF" fill-opacity="0.65">三条规则做到之后，跨级组合读取在结构上就写不出来</text>
   </g>
 </svg>

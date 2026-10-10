@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">S3 分发：把已发射的指令变成"可执行的命令"</text>
+    <rect x="1104" y="40" width="120" height="22" rx="11" fill="#2A7F9E"/>
+    <text x="1164" y="56" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已定 · 未实现</text>
+  </g>
+  <g id="goal">
+    <rect x="56" y="96" width="1168" height="44" rx="8" fill="#F4F6F9"/>
+    <rect x="56" y="96" width="4" height="44" fill="#E07A1F"/>
+    <text x="76" y="124" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222"><tspan font-weight="bold" fill="#E07A1F">想做什么　</tspan>译码、取 lane mask，并决定这条指令走固定延迟路径还是变长队列；一拍做完，不拥有持久状态</text>
+  </g>
+  <g id="figure-s3">
+    <rect x="56" y="156" width="724" height="430" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <image href="../images/fig14-s3-dispatch.png" x="60" y="160" width="716" height="422" preserveAspectRatio="xMidYMid meet"/>
+    <text x="64" y="608" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">图 14　S3 dispatch：三步同拍组合完成；变长指令直接推进级间队列（drawio 源文件 14-s3-dispatch）</text>
+  </g>
+  <g id="steps">
+    <text x="808" y="176" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">内部做的三件事（同一拍）</text>
+    <circle cx="824" cy="212" r="13" fill="#1F3A5F"/>
+    <text x="824" y="217" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">1</text>
+    <text x="848" y="206" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">payload 译码</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="228">完整指令由 S1 按寄存的 warp 号送来，</tspan>
+      <tspan x="848" y="248">不经过 S2；预译码字段直接取用</tspan>
+    </text>
+    <circle cx="824" cy="284" r="13" fill="#1F3A5F"/>
+    <text x="824" y="289" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">2</text>
+    <text x="848" y="278" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">取 lane mask</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="300">读 S2 寄存的 ITS 状态，选出当前组；</tspan>
+      <tspan x="848" y="320">只算不改，所以能放到环外</tspan>
+    </text>
+    <circle cx="824" cy="356" r="13" fill="#1F3A5F"/>
+    <text x="824" y="361" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">3</text>
+    <text x="848" y="350" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">分流</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="372">固定延迟 → dispatch reg → S4 allocate</tspan>
+      <tspan x="848" y="392">变长 → 各自的级间队列；credit 已在 S2 扣过，</tspan>
+      <tspan x="848" y="412">推入一定成功，不进反压链</tspan>
+    </text>
+    <rect x="800" y="436" width="424" height="150" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="816" y="462" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#1F3A5F">与原版的差别</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="816" y="488">原版 exec_dispatch 的分流和 its_top 的 channel</tspan>
+      <tspan x="816" y="508">过滤，都和 S2 在同一拍组合完成；</tspan>
+      <tspan x="816" y="528">现在独立成 1 拍，S2 不再做 255 位的 16 选 1</tspan>
+      <tspan x="816" y="556">队列是 S3 与前门之间的"桥"，不归任何一级</tspan>
+    </text>
+  </g>
+  <g id="credit-note">
+    <rect x="56" y="624" width="1168" height="52" rx="8" fill="#1F3A5F"/>
+    <text x="76" y="656" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#FFFFFF">credit 池：LSU 8 · AGU 2 · SFU/XLANE 18 · CBU 1 · 控制 1 · TQ 8 · async 2 · FP64 5 · valu_var 2；每个池等于对应队列深度，前门读完操作数的下一拍归还</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：subcore-target-design-v1 §2–§3；规范 §11 第 16、23、24 条</text>
+    <text x="1224" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">10</text>
+  </g>
+</svg>

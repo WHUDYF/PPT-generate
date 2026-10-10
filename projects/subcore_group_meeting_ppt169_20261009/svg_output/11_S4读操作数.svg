@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">S4 读操作数：allocate 一次订好，之后拍数全固定</text>
+    <rect x="1104" y="40" width="120" height="22" rx="11" fill="#2A7F9E"/>
+    <text x="1164" y="56" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已定 · 未实现</text>
+  </g>
+  <g id="goal">
+    <rect x="56" y="96" width="1168" height="44" rx="8" fill="#F4F6F9"/>
+    <rect x="56" y="96" width="4" height="44" fill="#E07A1F"/>
+    <text x="76" y="124" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222"><tspan font-weight="bold" fill="#E07A1F">想做什么　</tspan>替固定延迟指令一次订好读口和写回拍；过了这一级，读几拍、哪拍执行、哪拍写回都固定，不需要结果队列</text>
+  </g>
+  <g id="figure-s4">
+    <rect x="56" y="156" width="724" height="430" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <image href="../images/fig15-s4-operand.png" x="60" y="160" width="716" height="398" preserveAspectRatio="xMidYMid meet"/>
+    <text x="64" y="578" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">图 15　S4 allocate 与四张预约表；下方逐拍例子为 IADD3（tap 6）</text>
+  </g>
+  <g id="steps">
+    <text x="808" y="176" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">内部做的三件事</text>
+    <circle cx="824" cy="212" r="13" fill="#E07A1F"/>
+    <text x="824" y="217" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">1</text>
+    <text x="848" y="206" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">allocate：查四张表，每拍最多放行 1 条</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="228">读口表、写回拍表、VALU 出口计数、入口拍表；</tspan>
+      <tspan x="848" y="248">全部通过才占位放行，否则停在这里下一拍重试</tspan>
+    </text>
+    <circle cx="824" cy="284" r="13" fill="#1F3A5F"/>
+    <text x="824" y="289" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">2</text>
+    <text x="848" y="278" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">读 RF：rounds = 0 – 3 拍</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="300">按需，不固定 3 拍：编译器已按需算 stall；</tspan>
+      <tspan x="848" y="320">写回偏移 = tap + rounds，allocate 当拍相加</tspan>
+    </text>
+    <circle cx="824" cy="356" r="13" fill="#1F3A5F"/>
+    <text x="824" y="361" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">3</text>
+    <text x="848" y="350" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">reuse cache 保留原版</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="372">标签在 allocate 按序更新，数据读完后填入；</tspan>
+      <tspan x="848" y="392">命中的源不计入读次数</tspan>
+    </text>
+    <rect x="800" y="416" width="424" height="170" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="816" y="442" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#1F3A5F">变长前门也在这一级抢读口</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="816" y="468">队头每次申请下一拍的一个读口；allocate 先占位，</tspan>
+      <tspan x="816" y="488">多个前门之间轮询；某 bank 等满 N 拍（v1 取 8）</tspan>
+      <tspan x="816" y="508">就保留一格，防饿死</tspan>
+      <tspan x="816" y="536">S2 因此不再有 rd_busy：读不到口只会停在前门队头，</tspan>
+      <tspan x="816" y="556">前门队列满了由 credit 挡住 S2</tspan>
+    </text>
+  </g>
+  <g id="rules">
+    <rect x="56" y="604" width="570" height="72" rx="8" fill="#F4F6F9"/>
+    <text x="72" y="630" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#1F3A5F">拥有的状态</text>
+    <text x="72" y="654" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">读口表 · 写回拍表 · 出口计数 · 入口拍表 · reuse cache；表长 v1 取 16 格</text>
+    <rect x="654" y="604" width="570" height="72" rx="8" fill="#FFFFFF" stroke="#C62828" stroke-width="1.5"/>
+    <text x="670" y="630" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#C62828">还没验证的规则</text>
+    <text x="670" y="654" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">stall 只在 ena_s4_0 = 1 时减 1；要用依赖链加读口冲突的用例确认</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：subcore-target-design-v1 §4；规范 §11 第 13、15、17、18、20 条</text>
+    <text x="1224" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">11</text>
+  </g>
+</svg>

@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">目前的结果：第 1 步通过，第 2 步暴露了一个隐藏依赖</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">数据来自 2 SM 模型 curry2，lockstep 下运行；工件在 document/runs/G1、G2</text>
+  </g>
+  <g id="kpi-1">
+    <path fill="#F4F6F9" d="M64,128 H420 A8,8 0 0 1 428,136 V316 A8,8 0 0 1 420,324 H64 A8,8 0 0 1 56,316 V136 A8,8 0 0 1 64,128 Z" />
+    <rect x="56" y="128" width="4" height="196" fill="#2E7D32" />
+    
+  <g transform="translate(76.0, 146.0) scale(1.0833333333333333)" fill="none" stroke="#2E7D32" stroke-width="2">
+    <path d="M7 12l5 5l10 -10" />
+    <path d="M2 12l5 5m5 -5l5 -5" />
+  </g>
+    <text x="110" y="165" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">第 1 步　隐式 SB 搬出</text>
+    <text x="76" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="40" font-weight="bold" fill="#2E7D32">0<tspan font-size="18" fill="#222222"> 差异</tspan></text>
+    <text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="76" y="258">u_subcore 公共信号 100,031 个逐个相同</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="76" y="280">iadd3 总周期 349,783、kernel 89,228 不变</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="76" y="302">抢占用例 PASS；已提交 8c17f5d73</text></g>
+  <g id="kpi-2">
+    <path fill="#F4F6F9" d="M462,128 H818 A8,8 0 0 1 826,136 V316 A8,8 0 0 1 818,324 H462 A8,8 0 0 1 454,316 V136 A8,8 0 0 1 462,128 Z" />
+    <rect x="454" y="128" width="4" height="196" fill="#C62828" />
+    
+  <g transform="translate(474.0, 146.0) scale(1.0833333333333333)" fill="none" stroke="#C62828" stroke-width="2">
+    <path d="M9 9v-1a3 3 0 0 1 6 0v1" />
+    <path d="M8 9h8a6 6 0 0 1 1 3v3a5 5 0 0 1 -10 0v-3a6 6 0 0 1 1 -3" />
+    <path d="M3 13l4 0" />
+    <path d="M17 13l4 0" />
+    <path d="M12 20l0 -6" />
+    <path d="M4 19l3.35 -2" />
+    <path d="M20 19l-3.35 -2" />
+    <path d="M4 7l3.75 2.4" />
+    <path d="M20 7l-3.75 2.4" />
+  </g>
+    <text x="508" y="165" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">第 2 步首版　同 warp 每拍发射</text>
+    <text x="474" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="40" font-weight="bold" fill="#C62828">FAIL</text>
+    <text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="474" y="258">iadd3 PASS，但 unit/mix 错 128 项、</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="474" y="280">unit/control_flow 错 212 项</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="474" y="302">只有 iadd3 的话发现不了</text></g>
+  <g id="kpi-3">
+    <path fill="#F4F6F9" d="M860,128 H1216 A8,8 0 0 1 1224,136 V316 A8,8 0 0 1 1216,324 H860 A8,8 0 0 1 852,316 V136 A8,8 0 0 1 860,128 Z" />
+    <rect x="852" y="128" width="4" height="196" fill="#2E7D32" />
+    
+  <g transform="translate(872.0, 146.0) scale(1.0833333333333333)" fill="none" stroke="#2E7D32" stroke-width="2">
+    <path d="M11.46 20.846a12 12 0 0 1 -7.96 -14.846a12 12 0 0 0 8.5 -3a12 12 0 0 0 8.5 3a12 12 0 0 1 -.09 7.06" />
+    <path d="M15 19l2 2l4 -4" />
+  </g>
+    <text x="906" y="165" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">第 2 步修订　刚发射的 warp 屏蔽 1 拍</text>
+    <text x="872" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="40" font-weight="bold" fill="#2E7D32">3/3<tspan font-size="18" fill="#222222"> PASS</tspan></text>
+    <text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="872" y="258">iadd3、mix（0/1604）、control_flow（0/1536）</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="872" y="280">iadd3 kernel 89,228，与第 1 步相同</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="872" y="302">抢占用例还在跑；尚未提交</text></g>
+  <g id="finding-1">
+    <text x="56" y="368" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">发现 1：原版 S2/ITS 默认"发射后空一拍"</text>
+    <path fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1" d="M64,384 H608 A8,8 0 0 1 616,392 V544 A8,8 0 0 1 608,552 H64 A8,8 0 0 1 56,544 V392 A8,8 0 0 1 64,384 Z" />
+    <text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="414">原版单项 head，同一 warp 本来就隔拍发射；</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="438">ITS 的 PC 推进、分支信息都依赖这一拍空档。</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="462">波形上看到 warp 0 连续两拍发射，ITS 选中的</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="486">PC 却都是 8，说明 PC 推进晚了一拍。</text><text font-size="14" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="518">处理：这一步先屏蔽 1 拍保持原时序，</text><text font-size="14" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="540">放开连续发射推迟到第 3 步 S2 重构之后</text></g>
+  <g id="finding-2">
+    <text x="660" y="368" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">发现 2：判据本身也要核对</text>
+    <path fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1" d="M668,384 H1216 A8,8 0 0 1 1224,392 V544 A8,8 0 0 1 1216,552 H668 A8,8 0 0 1 660,544 V392 A8,8 0 0 1 668,384 Z" />
+    <text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="676" y="414">PMU 的 instructions_issued 是 296，第 1 步是 288，</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="676" y="438">起初以为行为变了。</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="676" y="462">查代码发现它数的是 S1 读 IB 的次数，不是 S2 发射数；</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="676" y="486">两项 FIFO 在分支、EXIT 后会多读几条再冲刷掉。</text><text font-size="14" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="676" y="518">处理：判据改为"功能 PASS + kernel 周期相同"，</text><text font-size="14" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="676" y="540">不再用发射数判等价</text></g>
+  <g id="todo">
+    <path fill="#F4F6F9" d="M64,572 H1216 A8,8 0 0 1 1224,580 V636 A8,8 0 0 1 1216,644 H64 A8,8 0 0 1 56,636 V580 A8,8 0 0 1 64,572 Z" />
+    
+  <g transform="translate(76.0, 594.0) scale(1.0833333333333333)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M3.5 5.5l1.5 1.5l2.5 -2.5" />
+    <path d="M3.5 11.5l1.5 1.5l2.5 -2.5" />
+    <path d="M3.5 17.5l1.5 1.5l2.5 -2.5" />
+    <path d="M11 6l9 0" />
+    <path d="M11 12l9 0" />
+    <path d="M11 18l9 0" />
+  </g>
+    <text x="116" y="603" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">还缺的</text>
+    <text x="116" y="629" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">mix、control_flow 在第 1 步模型上的 kernel 周期基线（第 2 步是 115,323 / 106,350）；抢占用例结果；首个出错指令的逐指令定位</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：document/runs/G1/summary.md；runs/G2/；2026-10-09-codex-goals.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">15</text>
+  </g>
+</svg>

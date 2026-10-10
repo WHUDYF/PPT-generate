@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">S5 执行：固定延迟单元原样复用，变长走前门</text>
+    <rect x="1104" y="40" width="120" height="22" rx="11" fill="#2A7F9E"/>
+    <text x="1164" y="56" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已定 · 未实现</text>
+  </g>
+  <g id="goal">
+    <rect x="56" y="96" width="1168" height="44" rx="8" fill="#F4F6F9"/>
+    <rect x="56" y="96" width="4" height="44" fill="#E07A1F"/>
+    <text x="76" y="124" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222"><tspan font-weight="bold" fill="#E07A1F">想做什么　</tspan>把操作数变成结果；v1 只改单元和流水线的接口，不改各执行单元内部的算法和拍数</text>
+  </g>
+  <g id="figure-s5">
+    <rect x="56" y="156" width="724" height="430" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <image href="../images/fig16-s5-execute.png" x="60" y="160" width="716" height="383" preserveAspectRatio="xMidYMid meet"/>
+    <text x="64" y="566" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">图 16　S5：左为固定延迟单元（VALU 6 级、SALU 4 级），右为变长单元与各前门</text>
+  </g>
+  <g id="steps">
+    <text x="808" y="176" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">内部做的三件事</text>
+    <circle cx="824" cy="212" r="13" fill="#1F3A5F"/>
+    <text x="824" y="217" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">1</text>
+    <text x="848" y="206" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">固定延迟：VALU 6 级、SALU 4 级</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="228">全流水，不会被反压（rdy 恒为 1）；</tspan>
+      <tspan x="848" y="248">tap 3 / 4 / 6，每拍最多 2 个结果</tspan>
+    </text>
+    <circle cx="824" cy="284" r="13" fill="#1F3A5F"/>
+    <text x="824" y="289" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">2</text>
+    <text x="848" y="278" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">变长：队头读操作数，再送单元</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="300">访存、SFU/XLANE、CBU 沿用原单元；</tspan>
+      <tspan x="848" y="320">控制、TQ、async 三个前门是新增模块</tspan>
+    </text>
+    <circle cx="824" cy="356" r="13" fill="#1F3A5F"/>
+    <text x="824" y="361" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">3</text>
+    <text x="848" y="350" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">变长 VALU 序列借固定路径读操作数</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="848" y="372">IMAD.WIDE、cvt64、packed、DFMA 系列：</tspan>
+      <tspan x="848" y="392">S4 只预约读口，结果走变长写口，靠 scoreboard</tspan>
+    </text>
+    <rect x="800" y="416" width="424" height="170" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="816" y="442" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#1F3A5F">新增的前门模块</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="816" y="468" font-family="Consolas, monospace">subcore_membar_track</tspan><tspan x="1000" y="468">MEMBAR 的 7 位协议状态</tspan>
+      <tspan x="816" y="490" font-family="Consolas, monospace">subcore_ctrl_fd</tspan><tspan x="1000" y="490">分支 / EXIT，回 S2 改 ITS</tspan>
+      <tspan x="816" y="512" font-family="Consolas, monospace">subcore_tq_fd</tspan><tspan x="1000" y="512">tensor 提交</tspan>
+      <tspan x="816" y="534" font-family="Consolas, monospace">subcore_async_fd</tspan><tspan x="1000" y="534">TMA 异步拷贝</tspan>
+      <tspan x="816" y="562">原版这些逻辑散在 subcore_top 里，S2 组合读它们</tspan>
+    </text>
+  </g>
+  <g id="rules">
+    <rect x="56" y="604" width="570" height="72" rx="8" fill="#F4F6F9"/>
+    <text x="72" y="630" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#1F3A5F">拥有的状态</text>
+    <text x="72" y="654" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">只有各单元内部状态；共享 FP64、tensor、lsu_top、sm_membar_ctl 都不改</text>
+    <rect x="654" y="604" width="570" height="72" rx="8" fill="#FFFFFF" stroke="#2A7F9E" stroke-width="1.5"/>
+    <text x="670" y="630" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#2A7F9E">暂时照搬的分类</text>
+    <text x="670" y="654" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">哪些指令算固定、哪些算变长，先照编译器现状；以后可改成固定延迟</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：subcore-target-design-v1 §5；s5-execute；规范 §11 第 21、23–27 条</text>
+    <text x="1224" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">12</text>
+  </g>
+</svg>

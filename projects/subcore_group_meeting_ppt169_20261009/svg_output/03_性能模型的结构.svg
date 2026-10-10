@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <defs>
+    <marker id="arrowPrimary" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#1F3A5F"/>
+    </marker>
+  </defs>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">性能模型：一条指令在发射那一刻就被"算完"</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">事件驱动的 event_issue_simulation（simulator/binding/）：每个 subcore 在发射拍执行一次 process_issue</text>
+  </g>
+  <g id="flow-select">
+    <rect x="56" y="128" width="640" height="68" rx="8" fill="#F4F6F9"/>
+    <circle cx="82" cy="162" r="14" fill="#1F3A5F"/>
+    <text x="82" y="167" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">1</text>
+    <text x="108" y="152" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">候选：ready(warp, tick)</text>
+    <text x="108" y="178" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">在位、未等屏障、ready_tick 已到、队列 credit 够、取指就绪、等待掩码清零</text>
+    <line x1="376" y1="196" x2="376" y2="212" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrowPrimary)"/>
+    <rect x="56" y="214" width="640" height="68" rx="8" fill="#F4F6F9"/>
+    <circle cx="82" cy="248" r="14" fill="#1F3A5F"/>
+    <text x="82" y="253" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">2</text>
+    <text x="108" y="238" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">再筛：wb_slot_available</text>
+    <text x="108" y="264" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">发射拍 + 延迟 那一拍的写口没被预约，同一 bank 没被占</text>
+    <line x1="376" y1="282" x2="376" y2="298" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrowPrimary)"/>
+    <rect x="56" y="300" width="640" height="50" rx="8" fill="#F4F6F9"/>
+    <circle cx="82" cy="325" r="14" fill="#1F3A5F"/>
+    <text x="82" y="330" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">3</text>
+    <text x="108" y="331" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">选一个 warp<tspan font-size="13" font-weight="normal" fill="#666666">　按 age、last_issued、yield</tspan></text>
+    <line x1="376" y1="350" x2="376" y2="366" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrowPrimary)"/>
+  </g>
+  <g id="flow-compute">
+    <rect x="56" y="368" width="640" height="250" rx="8" fill="#FFFFFF" stroke="#E07A1F" stroke-width="2"/>
+    <circle cx="82" cy="394" r="14" fill="#E07A1F"/>
+    <text x="82" y="399" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">4</text>
+    <text x="108" y="400" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">同一个函数里一次算完<tspan font-size="13" font-weight="normal" fill="#666666">　process_issue，约 760 行</tspan></text>
+    <text x="76" y="436" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#1F3A5F">读冲突</text>
+    <text x="150" y="436" font-family="Consolas, monospace" font-size="13" fill="#222222">rounds = rf_read_rounds(reuse 命中后)　penalty = max(1, rounds) − 1</text>
+    <text x="76" y="468" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#1F3A5F">单元占用</text>
+    <text x="150" y="468" font-family="Consolas, monospace" font-size="13" fill="#222222">pipe_next_free = tick + max(1, rounds)（VALU）或 + 间隔</text>
+    <text x="76" y="500" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#1F3A5F">队列 credit</text>
+    <text x="150" y="500" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#222222">发射当拍扣；释放在 tick + 延迟（访存：SM 接收时）</text>
+    <text x="76" y="532" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#1F3A5F">写回预约</text>
+    <text x="150" y="532" font-family="Consolas, monospace" font-size="13" fill="#222222">reserve_wb_slot(tick + latency)　每拍 ≤ 写口数、每 bank 1 个</text>
+    <text x="76" y="564" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#1F3A5F">依赖</text>
+    <text x="150" y="564" font-family="Consolas, monospace" font-size="13" fill="#222222">allocate_scoreboard　warp.ready_tick = tick + stall + penalty</text>
+    <text x="76" y="600" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">scheduler.cpp:1810 起；读冲突 :1963，单元占用 :2014，写回预约 :2161，ready_tick :2517</text>
+    <line x1="376" y1="618" x2="376" y2="634" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrowPrimary)"/>
+    <rect x="56" y="636" width="640" height="44" rx="8" fill="#F4F6F9"/>
+    <circle cx="82" cy="658" r="14" fill="#1F3A5F"/>
+    <text x="82" y="663" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">5</text>
+    <text x="108" y="664" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">之后只是未来的事件<tspan font-size="13" font-weight="normal" fill="#666666">　完成、还 credit、唤醒，都是 engine.schedule_local(某个 tick)</tspan></text>
+  </g>
+  <g id="traits">
+    <text x="728" y="150" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#1F3A5F">这个结构的四个特点</text>
+    <rect x="728" y="168" width="496" height="116" rx="8" fill="#F4F6F9"/>
+    <rect x="728" y="168" width="4" height="116" fill="#E07A1F"/>
+    <text x="748" y="198" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">没有"级"</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="748" y="226">没有 head、没有 S3 / S4 的寄存器边界；</tspan>
+      <tspan x="748" y="248">所有资源检查和预约都在发射这一个函数里完成</tspan>
+    </text>
+    <rect x="728" y="296" width="496" height="116" rx="8" fill="#F4F6F9"/>
+    <rect x="728" y="296" width="4" height="116" fill="#E07A1F"/>
+    <text x="748" y="326" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">时间是"算"出来的</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="748" y="354">写回拍 = 发射拍 + 延迟，不含读冲突；</tspan>
+      <tspan x="748" y="376">读冲突只推迟这个 warp 自己的 ready_tick</tspan>
+    </text>
+    <rect x="728" y="424" width="496" height="116" rx="8" fill="#F4F6F9"/>
+    <rect x="728" y="424" width="4" height="116" fill="#E07A1F"/>
+    <text x="748" y="454" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">事件没有握手</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="748" y="482">credit 释放、完成都是未来某个 tick 的事件，</tspan>
+      <tspan x="748" y="504">没有反压，也没有"这一拍对方收不收"的问题</tspan>
+    </text>
+    <rect x="728" y="552" width="496" height="116" rx="8" fill="#F4F6F9"/>
+    <rect x="728" y="552" width="4" height="116" fill="#E07A1F"/>
+    <text x="748" y="582" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">指令直接可得</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="748" y="610">下一条指令不经过 IB 和 head，每个 warp 的</tspan>
+      <tspan x="748" y="632">发射间隔就是 max(1, stall)，没有"补 head"这一拍</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：simulator/binding/timing_model_event_issue_scheduler.cpp、_common.cpp（读代码得出）</text>
+    <text x="1224" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">03</text>
+  </g>
+</svg>

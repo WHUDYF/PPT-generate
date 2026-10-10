@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">下一步：先做出一版，再比较，再判断哪些能交给 AI</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">手改的重构版 RTL 是参照物：有了它，才能说清性能模型生成的 RTL 差在哪里</text>
+  </g>
+  <g id="phase-1">
+    <path fill="#F4F6F9" d="M64,136 H412 A8,8 0 0 1 420,144 V528 A8,8 0 0 1 412,536 H64 A8,8 0 0 1 56,528 V144 A8,8 0 0 1 64,136 Z" />
+    <path fill="#1F3A5F" d="M59,136 H417 A3,3 0 0 1 420,139 V139 A3,3 0 0 1 417,142 H59 A3,3 0 0 1 56,139 V139 A3,3 0 0 1 59,136 Z" />
+    <text x="80" y="186" font-family="Consolas, monospace" font-size="32" font-weight="bold" fill="#1F3A5F">01</text>
+    <text x="80" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="bold" fill="#222222">出一版重构后的 RTL</text>
+    <text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="80" y="262">按目标结构把 subcore 整体改完：</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="80" y="286">S0–SW 七个大级、边界寄存、</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="80" y="310">事件通道回传</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="80" y="346">每一步都跑端到端用例，</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="80" y="370">功能 PASS，周期和性能模型对照</text><path fill="#FFFFFF" d="M86,400 H390 A6,6 0 0 1 396,406 V506 A6,6 0 0 1 390,512 H86 A6,6 0 0 1 80,506 V406 A6,6 0 0 1 86,400 Z" />
+    <text font-size="13" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="96" y="426" font-weight="bold">目前</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="96" y="450">第 1 步已提交；第 2 步功能通过，</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="96" y="472">等抢占用例；之后是第 3 步</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="96" y="494">S2–S4 一起改（第一个改拍数的）</text></g>
+  <g id="arrow-1">
+    <path d="M424 336 L448 336" stroke="#1F3A5F" stroke-width="2" />
+    <path d="M448 330 L458 336 L448 342 Z" fill="#1F3A5F" />
+  </g>
+  <g id="phase-2">
+    <path fill="#F4F6F9" d="M468,136 H816 A8,8 0 0 1 824,144 V528 A8,8 0 0 1 816,536 H468 A8,8 0 0 1 460,528 V144 A8,8 0 0 1 468,136 Z" />
+    <path fill="#2A7F9E" d="M463,136 H821 A3,3 0 0 1 824,139 V139 A3,3 0 0 1 821,142 H463 A3,3 0 0 1 460,139 V139 A3,3 0 0 1 463,136 Z" />
+    <text x="484" y="186" font-family="Consolas, monospace" font-size="32" font-weight="bold" fill="#2A7F9E">02</text>
+    <text x="484" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="bold" fill="#222222">对比手改与模型生成</text>
+    <text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="484" y="262">同一组用例、同一套判据，</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="484" y="286">比两份 RTL 差了什么：</text><text font-size="14" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="484" y="322">• 结构：级怎么切、状态归谁</text><text font-size="14" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="484" y="350">• 时序：组合深度、同拍读写</text><text font-size="14" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="484" y="378">• 周期：和性能模型差多少</text><text font-size="14" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="484" y="406">• 可维护性：模块边界、改动面</text><path fill="#FFFFFF" d="M490,430 H794 A6,6 0 0 1 800,436 V506 A6,6 0 0 1 794,512 H490 A6,6 0 0 1 484,506 V436 A6,6 0 0 1 490,430 Z" />
+    <text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="500" y="458">每一处差别记成缺陷条目，</text><text font-size="13" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="500" y="480">并归类：是缺了哪类输入导致的</text></g>
+  <g id="arrow-2">
+    <path d="M828 336 L852 336" stroke="#1F3A5F" stroke-width="2" />
+    <path d="M852 330 L862 336 L852 342 Z" fill="#1F3A5F" />
+  </g>
+  <g id="phase-3">
+    <path fill="#1F3A5F" d="M872,136 H1216 A8,8 0 0 1 1224,144 V528 A8,8 0 0 1 1216,536 H872 A8,8 0 0 1 864,528 V144 A8,8 0 0 1 872,136 Z" />
+    <text x="888" y="186" font-family="Consolas, monospace" font-size="32" font-weight="bold" fill="#E07A1F">03</text>
+    <text x="888" y="226" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="bold" fill="#FFFFFF">确认哪些能交给 AI</text>
+    <text font-size="14" fill-opacity="0.85" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="888" y="262">按差别的类别逐项回答：</text><text font-size="14" fill-opacity="0.85" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="888" y="298">补上什么输入（结构规范、</text><text font-size="14" fill-opacity="0.85" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="888" y="322">流水线图、代码模板）后，</text><text font-size="14" fill-opacity="0.85" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="888" y="346">AI 生成的 RTL 能不能</text><text font-size="14" fill-opacity="0.85" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="888" y="370">达到手改版的水平？</text><path fill="#FFFFFF" fill-opacity="0.12" d="M894,400 H1194 A6,6 0 0 1 1200,406 V506 A6,6 0 0 1 1194,512 H894 A6,6 0 0 1 888,506 V406 A6,6 0 0 1 894,400 Z" />
+    <text font-size="13" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="904" y="426">判据要事先定好：</text><text font-size="13" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="904" y="450">端到端功能 PASS、周期与性能模型</text><text font-size="13" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="904" y="472">的偏差、结构规则违例数、</text><text font-size="13" fill="#FFFFFF" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="904" y="494">需要人工干预的次数</text></g>
+  <g id="discuss">
+    <path fill="#FFFFFF" stroke="#E07A1F" stroke-width="2" d="M64,556 H1216 A8,8 0 0 1 1224,564 V636 A8,8 0 0 1 1216,644 H64 A8,8 0 0 1 56,636 V564 A8,8 0 0 1 64,556 Z" />
+    
+  <g transform="translate(76.0, 574.0)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+    <path d="M12 17l0 .01" />
+    <path d="M12 13.5a1.5 1.5 0 0 1 1 -1.5a2.6 2.6 0 1 0 -3 -4" />
+  </g>
+    <text x="110" y="592" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">想请老师给意见</text>
+    <text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="76" y="622">比较的范围先做整个 subcore 还是先挑一个大级（比如 S2–S4）？"可以交给 AI"的判据，用上面几项是否足够？</text></g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">23</text>
+  </g>
+</svg>

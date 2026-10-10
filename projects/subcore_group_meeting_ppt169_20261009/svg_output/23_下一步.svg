@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">下一步：先做出一版，再比较，再判断哪些能交给 AI</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">手改的重构版 RTL 是参照物：有了它，才能说清性能模型生成的 RTL 差在哪里</text>
+  </g>
+  <g id="phase-1">
+    <rect x="56" y="136" width="364" height="400" rx="8" fill="#F4F6F9"/>
+    <rect x="56" y="136" width="364" height="6" rx="3" fill="#1F3A5F"/>
+    <text x="80" y="186" font-family="Consolas, monospace" font-size="32" font-weight="bold" fill="#1F3A5F">01</text>
+    <text x="80" y="226" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#222222">出一版重构后的 RTL</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="80" y="262">按目标结构把 subcore 整体改完：</tspan>
+      <tspan x="80" y="286">S0–SW 七个大级、边界寄存、</tspan>
+      <tspan x="80" y="310">事件通道回传</tspan>
+      <tspan x="80" y="346">每一步都跑端到端用例，</tspan>
+      <tspan x="80" y="370">功能 PASS，周期和性能模型对照</tspan>
+    </text>
+    <rect x="80" y="400" width="316" height="112" rx="6" fill="#FFFFFF"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="96" y="426" fill="#222222" font-weight="bold">目前</tspan>
+      <tspan x="96" y="450">第 1 步已提交；第 2 步功能通过，</tspan>
+      <tspan x="96" y="472">等抢占用例；之后是第 3 步</tspan>
+      <tspan x="96" y="494">S2–S4 一起改（第一个改拍数的）</tspan>
+    </text>
+  </g>
+  <g id="arrow-1">
+    <path d="M424 336 L448 336" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M448 330 L458 336 L448 342 Z" fill="#1F3A5F"/>
+  </g>
+  <g id="phase-2">
+    <rect x="460" y="136" width="364" height="400" rx="8" fill="#F4F6F9"/>
+    <rect x="460" y="136" width="364" height="6" rx="3" fill="#2A7F9E"/>
+    <text x="484" y="186" font-family="Consolas, monospace" font-size="32" font-weight="bold" fill="#2A7F9E">02</text>
+    <text x="484" y="226" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#222222">对比手改与模型生成</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="484" y="262">同一组用例、同一套判据，</tspan>
+      <tspan x="484" y="286">比两份 RTL 差了什么：</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="484" y="322">• 结构：级怎么切、状态归谁</tspan>
+      <tspan x="484" y="350">• 时序：组合深度、同拍读写</tspan>
+      <tspan x="484" y="378">• 周期：和性能模型差多少</tspan>
+      <tspan x="484" y="406">• 可维护性：模块边界、改动面</tspan>
+    </text>
+    <rect x="484" y="430" width="316" height="82" rx="6" fill="#FFFFFF"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="500" y="458">每一处差别记成缺陷条目，</tspan>
+      <tspan x="500" y="480">并归类：是缺了哪类输入导致的</tspan>
+    </text>
+  </g>
+  <g id="arrow-2">
+    <path d="M828 336 L852 336" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M852 330 L862 336 L852 342 Z" fill="#1F3A5F"/>
+  </g>
+  <g id="phase-3">
+    <rect x="864" y="136" width="360" height="400" rx="8" fill="#1F3A5F"/>
+    <text x="888" y="186" font-family="Consolas, monospace" font-size="32" font-weight="bold" fill="#E07A1F">03</text>
+    <text x="888" y="226" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#FFFFFF">确认哪些能交给 AI</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#FFFFFF" fill-opacity="0.85">
+      <tspan x="888" y="262">按差别的类别逐项回答：</tspan>
+      <tspan x="888" y="298">补上什么输入（结构规范、</tspan>
+      <tspan x="888" y="322">流水线图、代码模板）后，</tspan>
+      <tspan x="888" y="346">AI 生成的 RTL 能不能</tspan>
+      <tspan x="888" y="370">达到手改版的水平？</tspan>
+    </text>
+    <rect x="888" y="400" width="312" height="112" rx="6" fill="#FFFFFF" fill-opacity="0.12"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#FFFFFF">
+      <tspan x="904" y="426">判据要事先定好：</tspan>
+      <tspan x="904" y="450">端到端功能 PASS、周期与性能模型</tspan>
+      <tspan x="904" y="472">的偏差、结构规则违例数、</tspan>
+      <tspan x="904" y="494">需要人工干预的次数</tspan>
+    </text>
+  </g>
+  <g id="discuss">
+    <rect x="56" y="556" width="1168" height="88" rx="8" fill="#FFFFFF" stroke="#E07A1F" stroke-width="2"/>
+    <use data-icon="tabler-outline/help" x="76" y="574" width="24" height="24" fill="#E07A1F" stroke-width="2"/>
+    <text x="110" y="592" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">想请老师给意见</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="76" y="622">比较的范围先做整个 subcore 还是先挑一个大级（比如 S2–S4）？"可以交给 AI"的判据，用上面几项是否足够？</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">23</text>
+  </g>
+</svg>

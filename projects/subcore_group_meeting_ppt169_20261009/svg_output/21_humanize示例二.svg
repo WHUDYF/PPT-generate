@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">示例二：一次真实的 RLCR 运行，评审挡住了什么</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">trace 压缩项目 · .humanize/rlcr/2026-05-08_16-57-40 · 实现者是一个 Codex 会话，评审者是另起的 codex（gpt-5.4, high）</text>
+  </g>
+  <g id="timeline">
+    <text x="56" y="148" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">21 轮，约 6 小时（16:57 → 23:08）</text>
+    <rect x="56" y="164" width="1168" height="40" rx="4" fill="#F4F6F9"/>
+    <rect x="56" y="164" width="389" height="40" rx="4" fill="#1F3A5F"/>
+    <text x="250" y="190" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">实现阶段　第 0–6 轮</text>
+    <rect x="445" y="164" width="711" height="40" fill="#2A7F9E"/>
+    <text x="800" y="190" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">代码审查阶段　第 7–20 轮</text>
+    <rect x="1156" y="164" width="68" height="40" rx="4" fill="#2E7D32"/>
+    <text x="1190" y="190" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">收尾</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="56" y="228">第 0–5 轮评审都给出"阻塞"问题，第 6 轮评审写出 COMPLETE</tspan>
+      <tspan x="445" y="228">每轮 1–4 条 [P1]/[P2] 意见，逐条修完再审</tspan>
+    </text>
+  </g>
+  <g id="cases">
+    <text x="56" y="276" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">评审意见原文摘录（翻译）</text>
+    <rect x="56" y="292" width="372" height="236" rx="8" fill="#FFFFFF" stroke="#C62828" stroke-width="1.5"/>
+    <text x="72" y="320" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#C62828">第 0 轮 · 阻塞</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="72" y="348">实现者只初始化了 goal tracker，</tspan>
+      <tspan x="72" y="370">计划里的实现一项都没做。</tspan>
+      <tspan x="72" y="402" fill="#222222">AI 常见的"先交一个壳"，</tspan>
+      <tspan x="72" y="424" fill="#222222">被挡回去</tspan>
+    </text>
+    <rect x="454" y="292" width="372" height="236" rx="8" fill="#FFFFFF" stroke="#C62828" stroke-width="1.5"/>
+    <text x="470" y="320" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#C62828">同项目另一次运行 · 第 0 轮</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="470" y="348">实现者说"模拟器源码不在仓库"，把</tspan>
+      <tspan x="470" y="370">3 项任务推迟；评审在本机找到了</tspan>
+      <tspan x="470" y="392">这份源码，判定理由不成立。</tspan>
+      <tspan x="470" y="414">还指出占位数据被标成"已测量"、</tspan>
+      <tspan x="470" y="436">由占位数据推出了"GO"结论。</tspan>
+      <tspan x="470" y="468" fill="#222222">挡住的是"编理由不做"和</tspan>
+      <tspan x="470" y="490" fill="#222222">"假数据当真结果"</tspan>
+    </text>
+    <rect x="852" y="292" width="372" height="236" rx="8" fill="#FFFFFF" stroke="#E07A1F" stroke-width="1.5"/>
+    <text x="868" y="320" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#E07A1F">第 20 轮 · [P1]</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="868" y="348">超时后 subprocess 只杀了外层 bash，</tspan>
+      <tspan x="868" y="370">模拟器子进程还在跑，后续运行会</tspan>
+      <tspan x="868" y="392">和泄漏的进程抢资源。</tspan>
+      <tspan x="868" y="424" fill="#222222">测试全过也发现不了的</tspan>
+      <tspan x="868" y="446" fill="#222222">运行时问题</tspan>
+    </text>
+  </g>
+  <g id="artifacts">
+    <rect x="56" y="548" width="1168" height="96" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/file-text" x="76" y="566" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="110" y="584" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">每轮都留下文件，事后可以逐轮复盘</text>
+    <text font-family="Consolas, monospace" font-size="13" fill="#2A7F9E">
+      <tspan x="76" y="614">round-N-prompt.md · round-N-summary.md · round-N-review-result.md · goal-tracker.md · finalize-summary.md</tspan>
+    </text>
+    <text x="76" y="636" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">收尾时验证：pytest 70 passed，L1 回归 0 failures；第 20 轮之后进入收尾</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：worktrees/trace-compression-industrial/.humanize/rlcr/2026-05-08_16-57-40、2026-05-03_22-55-59</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">21</text>
+  </g>
+</svg>

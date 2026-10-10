@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">怎么验证整体改完的 RTL：分步改，每步跑端到端用例</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">不写单元测试；每一步都要能在完整 SoC 上跑通 CUDA 用例，并留下可重复的工件</text>
+  </g>
+  <g id="steps-col">
+    <text x="56" y="150" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">按 v1 实现顺序分 6 步，判据随步骤变</text>
+    <rect x="56" y="166" width="560" height="36" fill="#1F3A5F"/>
+    <text x="72" y="190" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">步骤</text>
+    <text x="300" y="190" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">怎么判断改对了</text>
+    <text x="72" y="230" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">1 隐式 SB 搬出（保持行为）</text>
+    <text x="300" y="230" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">波形逐信号 0 差异，拍数相同</text>
+    <line x1="56" y1="246" x2="616" y2="246" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="72" y="274" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">2 S1 两项 head FIFO</text>
+    <text x="300" y="274" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">功能 PASS，kernel 拍数与第 1 步相同</text>
+    <line x1="56" y1="290" x2="616" y2="290" stroke="#D8DEE6" stroke-width="1"/>
+    <rect x="56" y="291" width="560" height="88" fill="#E07A1F" fill-opacity="0.08"/>
+    <text x="72" y="318" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">3 S2–S4 一起改</text>
+    <text x="72" y="340" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">4 前门　5 访存侧</text>
+    <text x="72" y="362" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">6 写法整理</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="300" y="318">拍数会变：先看功能 PASS，</tspan>
+      <tspan x="300" y="340">再和性能模型比周期；差距超出</tspan>
+      <tspan x="300" y="362">v1 第 8 节已知差异的，就要查</tspan>
+    </text>
+    <line x1="56" y1="379" x2="616" y2="379" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="56" y="418" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">用例：soc-core 集合，每类覆盖一个风险点</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="56" y="446"><tspan font-family="Consolas, monospace" fill="#222222">local/iadd3</tspan>　依赖链、读口冲突</tspan>
+      <tspan x="56" y="470"><tspan font-family="Consolas, monospace" fill="#222222">unit/control_flow</tspan>、<tspan font-family="Consolas, monospace" fill="#222222">convergence_regions</tspan>　分支与 ITS</tspan>
+      <tspan x="56" y="494"><tspan font-family="Consolas, monospace" fill="#222222">unit/mix</tspan>　混合指令　<tspan font-family="Consolas, monospace" fill="#222222">memory_order</tspan>　MEMBAR</tspan>
+      <tspan x="56" y="518"><tspan font-family="Consolas, monospace" fill="#222222">double_math</tspan>　FP64　<tspan font-family="Consolas, monospace" fill="#222222">tcgen_throughput</tspan>、<tspan font-family="Consolas, monospace" fill="#222222">tma</tspan>　TQ / async</tspan>
+      <tspan x="56" y="542"><tspan font-family="Consolas, monospace" fill="#222222">cp/timeslice_preemption</tspan>　上下文保存与恢复（约 2 小时）</tspan>
+    </text>
+  </g>
+  <g id="methods">
+    <text x="660" y="150" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">两种比较工具</text>
+    <rect x="660" y="166" width="564" height="120" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="676" y="194" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">A/B 拍数比较 <tspan font-family="Consolas, monospace" font-weight="normal" fill="#666666">model_compare.sh</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="676" y="222">参考模型和被测模型并行跑同一组用例</tspan>
+      <tspan x="676" y="246">比每个 kernel 的 PASS / FAIL 和周期数</tspan>
+      <tspan x="676" y="270">需要时同时抓一段波形</tspan>
+    </text>
+    <rect x="660" y="298" width="564" height="120" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="676" y="326" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">逐信号波形比较 <tspan font-family="Consolas, monospace" font-weight="normal" fill="#666666">wave_compare.py</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="676" y="354">u_subcore 下约 10 万个信号，逐个比变化序列</tspan>
+      <tspan x="676" y="378">新增或改名的信号单独列出</tspan>
+      <tspan x="676" y="402">只用于"保持行为"的步骤</tspan>
+    </text>
+    <rect x="660" y="430" width="564" height="112" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/alert-triangle" x="676" y="444" width="22" height="22" fill="#C62828" stroke-width="2"/>
+    <text x="706" y="461" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">先要让仿真结果可重复</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="676" y="490">同一个模型跑两次，拍数会落在两条时间线之一</tspan>
+      <tspan x="676" y="512">（runtime 线程调度引起）；比较时统一开</tspan>
+      <tspan x="676" y="534"><tspan font-family="Consolas, monospace" fill="#E07A1F">CURRYGPU_LOCKSTEP=1</tspan>，结果才能逐拍对上</tspan>
+    </text>
+  </g>
+  <g id="artifact">
+    <rect x="56" y="572" width="1168" height="72" rx="8" fill="#1F3A5F"/>
+    <use data-icon="tabler-outline/file-text" x="76" y="594" width="26" height="26" fill="#FFFFFF" stroke-width="2"/>
+    <text x="116" y="603" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">每一步留下的工件　<tspan font-family="Consolas, monospace" font-weight="normal">document/runs/&lt;步骤&gt;/</tspan></text>
+    <text x="116" y="629" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#FFFFFF" fill-opacity="0.85">完整命令、构建和运行日志、各用例的总周期与 kernel 周期、模型 sha256、比较报告；拿同一组命令能复现同样的数</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：subcore-target-design-v1 §9–§10；test/cmake/currygpu.cmake</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">14</text>
+  </g>
+</svg>

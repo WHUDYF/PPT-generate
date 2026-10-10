@@ -3,13 +3,13 @@
   <g id="header">
     <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
     <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">S0 取指：去掉全局锁，L0I 数据进 SRAM 分三级</text>
-    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">现状平均每拍 ≤ 1 条正好等于发射上限；目标让多 warp 取指带宽到每拍 2 条</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222"><tspan font-weight="bold" fill="#E07A1F">想做什么　</tspan>按 PC 从 L0I 取指令送进 IB；去掉全局锁，多 warp 时取指带宽到每拍 2 条</text>
   </g>
   <g id="compare-head">
     <rect x="56" y="128" width="500" height="36" fill="#1F3A5F"/>
     <text x="72" y="152" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">项</text>
     <text x="150" y="152" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">现状（读 RTL）</text>
-    <text x="356" y="152" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">目标（10-08 定）</text>
+    <text x="356" y="152" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">目标</text>
   </g>
   <g id="row-stage">
     <text x="72" y="196" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">小级</text>

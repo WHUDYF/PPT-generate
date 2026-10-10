@@ -8,7 +8,7 @@
 | ---- | ----- |
 | **Project Name** | curryGPU subcore 流水线结构整理与 AI 生成 RTL 的启示 |
 | **Canvas Format** | PPT 16:9 (1280×720) |
-| **Page Count** | 16 |
+| **Page Count** | 23 |
 | **Design Style** | B) General Consulting + clean technical |
 | **Target Audience** | 课题组组会：体系结构 / 硬件方向同学与老师 |
 | **Use Case** | 组会汇报，20–25 分钟 |
@@ -104,33 +104,19 @@ All four are dense diagrams → `no-crop`. Group D coverage: P07 uses #46 (lens 
 
 ## IX. Content Outline
 
-Part 0 — 开场
-- **P01 封面** (anchor): 标题"curryGPU subcore 流水线结构整理"；副标题"从读 RTL 到可验证的重构，以及 AI 生成 RTL 的启示"；汇报人 dyf · 2026-10-10。
-- **P02 目录** (anchor, agenda_list): 01 背景与动机 / 02 subcore 目标结构与实现 / 03 验证 / 04 AI 生成 RTL 的观察 / 05 下一步。
+- **P01 封面** (anchor)；**P02 目录** (anchor, agenda_list)：背景 / 目标结构 / 验证 / AI 生成 RTL / 用 AI 写代码：humanize / 下一步。
+- **Part 1 背景**
+  - P03 性能模型的结构：事件驱动，发射那一刻一次算完（候选 → 选 warp → 同一函数里算读冲突、占用、credit、写回预约、scoreboard、ready_tick）。
+  - P04 为什么照它生成 RTL 会让流水线混乱：模型一个函数 vs RTL 需要的多个级；四组对照。
+- **Part 2 目标结构**
+  - P05 章节页 (breathing)：大流水线套小流水线。P06 结构原则。P07 目标流水线总图（图 11）。
+  - P08 S0、P09 S1/S2、P10 S3、P11 S4、P12 S5、P13 SW：每页顶部一行"这一级想做什么"，左图（12–17 号 drawio），右为级内步骤与要点。
+- **Part 3 验证**：P14 怎么验证整体改完的 RTL（用例、比较方法、工件、分工）；P15 目前的结果与发现。
+- **Part 4 AI 生成 RTL**：P16 观察 1–4；P17 观察 5–8；P18 有效做法与研究框架。
+- **Part 5 用 AI 写代码：humanize**：P19 总览与流程；P20 示例一：想法 → draft → plan；P21 示例二：一次真实的 RLCR 运行；P22 怎么用。
+- **P23 下一步**：先出一版重构后的 RTL；对比手改 RTL 与性能模型生成 RTL 的差别；再讨论怎么确认这份工作可以由 AI 代替。
 
-Part 1 — 背景
-- **P03 为什么要重新整理** (dense): 左上 subcore 位置（GPU→GPC→TPC→SM→4 subcore，16 warp slot）；fig10 现状图；四个问题卡：组合长链 35–45 级、跨级组合读、hold 位散落于 6000+ 行 subcore_top、死逻辑与隐式约定（单 warp 峰值 IPC 0.5）；底注 PR #38 只统一写法未统一结构。
-- **P04 一周时间线** (dense, timeline): 10-04 研究框架 + SB 契约；10-05 读 RTL 划分流水线、同步 1558 提交、规范初稿；10-06/07 EDA 环境 + iadd3 基线；10-08 SRAM 三级、S0 规范、Phase 2 提交；10-08/09 d1 + lockstep；10-09 S1/S2 发射条件定稿。
-
-Part 2 — subcore 结构与实现
-- **P05 章节页** (breathing): "大流水线套小流水线" + 一句话：向前只走寄存器、向后只走寄存事件、每份状态一个主人。
-- **P06 结构原则** (dense): 左：小级握手模板表（rdy/handshake/ena/vld）；右：三条边界规则 + S2 唯一单拍环白名单（7 项）+ 一大级一模块。
-- **P07 目标流水线** (dense): fig11 大图，lens 框住 S2；底部 7 级色条 S0…SW 一行职责。
-- **P08 S0 取指** (dense): 左文：现状 vs 目标对照（全局锁每 2 拍查 1 次 → 按 warp 在途位；c0 组合大锥 → tag/SRAM/写 IB 三级；延迟 3→4 拍）；右 fig12。
-- **P09 S1/S2 发射** (dense): 左 fig13；右：2 项 head FIFO（32×255 位≈1 KB，同 warp 每拍发射）；发射 = 选中 & credit_ok & rdy_s3；显式 SB + 隐式 SB 表（6 列）。
-- **P10 S3/S4/SW 与事件通道** (dense): 左：allocate 四项检查 → 过了 allocate 拍数全固定、无结果队列（对比 MICRO 2025）；右：事件通道表（5 行，ev_complete 现状同拍组合标红）。
-- **P11 已落地的改动** (dense): 两栏：Phase 2 `0fe1c31d4`（S1 ANSI+分节、vld/rdy/handshake_s0；sel_case 一次编码；8 个 sched_* 文件；+3834/−3747；lint 少 8 警告）| d1 未提交（subcore_issue_hold.v 142 行；setmax/membar/cctl/ERRBAR 搬入；+40/−48）。
-
-Part 3 — 验证
-- **P12 验证方法与结果** (dense, kpi_cards): KPI：100,158 信号 0 差异；5/5 负载 PMU 逐行相同；35→17 分钟；348,288 基线拍数不变。下方：方法（逐信号比 vs A/B 拍数比）+ lockstep 原因一行 + 待补（d1 wave_compare、sm_context）。
-
-Part 4 — AI 生成 RTL
-- **P13 观察（上）** (dense): 4 卡：模型缺结构层；风格脚本引入组合环（872e78e2）；契约推翻验证计划（IADD3 测不到 SB）；结论随代码过时（1558 提交）。每卡：现象 + 启示。
-- **P14 观察（下）** (dense): 4 卡：AI 会讲错→依据可追溯（MEMBAR 更正）；先找已有机制（FSM→hold 表→显式/隐式 SB）；测量基础设施不确定（lockstep）；死逻辑靠结构规则暴露。
-- **P15 方法论与研究框架** (dense, vertical_list): 5 条做法；右侧 4 级消融条件 nl → +model → +style → +diagram，缺陷根因 7 类；状态：只有模板。
-
-Part 5 — 收尾
-- **P16 下一步与待讨论** (dense): 三栏：近期（提交 d1、d2 分支/ITS 进 S2、ctx 格式）| 改拍数的结构改动（S2–S4 一起重构、2 项 FIFO、ev_complete +1、MEMBAR 拆分、S0 三级）| 想请大家讨论（F：拉长流水线是否接受；单 warp 取指 0.67；AI 实验第一个模块选哪个）。
+---
 
 ## X. Speaker Notes Requirements
 

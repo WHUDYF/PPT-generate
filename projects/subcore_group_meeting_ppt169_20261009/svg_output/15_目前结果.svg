@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">目前的结果：第 1 步通过，第 2 步暴露了一个隐藏依赖</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">数据来自 2 SM 模型 curry2，lockstep 下运行；工件在 document/runs/G1、G2</text>
+  </g>
+  <g id="kpi-1">
+    <rect x="56" y="128" width="372" height="196" rx="8" fill="#F4F6F9"/>
+    <rect x="56" y="128" width="4" height="196" fill="#2E7D32"/>
+    <use data-icon="tabler-outline/checks" x="76" y="146" width="26" height="26" fill="#2E7D32" stroke-width="2"/>
+    <text x="110" y="165" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">第 1 步　隐式 SB 搬出</text>
+    <text x="76" y="226" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="40" font-weight="bold" fill="#2E7D32">0<tspan font-size="18" fill="#222222"> 差异</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="76" y="258">u_subcore 公共信号 100,031 个逐个相同</tspan>
+      <tspan x="76" y="280">iadd3 总周期 349,783、kernel 89,228 不变</tspan>
+      <tspan x="76" y="302">抢占用例 PASS；已提交 8c17f5d73</tspan>
+    </text>
+  </g>
+  <g id="kpi-2">
+    <rect x="454" y="128" width="372" height="196" rx="8" fill="#F4F6F9"/>
+    <rect x="454" y="128" width="4" height="196" fill="#C62828"/>
+    <use data-icon="tabler-outline/bug" x="474" y="146" width="26" height="26" fill="#C62828" stroke-width="2"/>
+    <text x="508" y="165" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">第 2 步首版　同 warp 每拍发射</text>
+    <text x="474" y="226" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="40" font-weight="bold" fill="#C62828">FAIL</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="474" y="258">iadd3 PASS，但 unit/mix 错 128 项、</tspan>
+      <tspan x="474" y="280">unit/control_flow 错 212 项</tspan>
+      <tspan x="474" y="302">只有 iadd3 的话发现不了</tspan>
+    </text>
+  </g>
+  <g id="kpi-3">
+    <rect x="852" y="128" width="372" height="196" rx="8" fill="#F4F6F9"/>
+    <rect x="852" y="128" width="4" height="196" fill="#2E7D32"/>
+    <use data-icon="tabler-outline/shield-check" x="872" y="146" width="26" height="26" fill="#2E7D32" stroke-width="2"/>
+    <text x="906" y="165" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">第 2 步修订　刚发射的 warp 屏蔽 1 拍</text>
+    <text x="872" y="226" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="40" font-weight="bold" fill="#2E7D32">3/3<tspan font-size="18" fill="#222222"> PASS</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="872" y="258">iadd3、mix（0/1604）、control_flow（0/1536）</tspan>
+      <tspan x="872" y="280">iadd3 kernel 89,228，与第 1 步相同</tspan>
+      <tspan x="872" y="302">抢占用例还在跑；尚未提交</tspan>
+    </text>
+  </g>
+  <g id="finding-1">
+    <text x="56" y="368" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">发现 1：原版 S2/ITS 默认"发射后空一拍"</text>
+    <rect x="56" y="384" width="560" height="168" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="72" y="414">原版单项 head，同一 warp 本来就隔拍发射；</tspan>
+      <tspan x="72" y="438">ITS 的 PC 推进、分支信息都依赖这一拍空档。</tspan>
+      <tspan x="72" y="462">波形上看到 warp 0 连续两拍发射，ITS 选中的</tspan>
+      <tspan x="72" y="486">PC 却都是 8，说明 PC 推进晚了一拍。</tspan>
+      <tspan x="72" y="518" fill="#222222">处理：这一步先屏蔽 1 拍保持原时序，</tspan>
+      <tspan x="72" y="540" fill="#222222">放开连续发射推迟到第 3 步 S2 重构之后</tspan>
+    </text>
+  </g>
+  <g id="finding-2">
+    <text x="660" y="368" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">发现 2：判据本身也要核对</text>
+    <rect x="660" y="384" width="564" height="168" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="676" y="414">PMU 的 instructions_issued 是 296，第 1 步是 288，</tspan>
+      <tspan x="676" y="438">起初以为行为变了。</tspan>
+      <tspan x="676" y="462">查代码发现它数的是 S1 读 IB 的次数，不是 S2 发射数；</tspan>
+      <tspan x="676" y="486">两项 FIFO 在分支、EXIT 后会多读几条再冲刷掉。</tspan>
+      <tspan x="676" y="518" fill="#222222">处理：判据改为"功能 PASS + kernel 周期相同"，</tspan>
+      <tspan x="676" y="540" fill="#222222">不再用发射数判等价</tspan>
+    </text>
+  </g>
+  <g id="todo">
+    <rect x="56" y="572" width="1168" height="72" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/list-check" x="76" y="594" width="26" height="26" fill="#E07A1F" stroke-width="2"/>
+    <text x="116" y="603" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">还缺的</text>
+    <text x="116" y="629" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">mix、control_flow 在第 1 步模型上的 kernel 周期基线（第 2 步是 115,323 / 106,350）；抢占用例结果；首个出错指令的逐指令定位</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：document/runs/G1/summary.md；runs/G2/；2026-10-09-codex-goals.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">15</text>
+  </g>
+</svg>

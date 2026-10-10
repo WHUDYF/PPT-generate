@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">humanize：一个 AI 写，另一个 AI 独立审，直到验收标准全满足</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">装在 Codex / Claude Code 上的一组 skill；核心是 RLCR 循环（Ralph-Loop with Codex Review）</text>
+  </g>
+  <g id="flow">
+    <rect x="56" y="136" width="256" height="150" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/bulb" x="76" y="154" width="26" height="26" fill="#E07A1F" stroke-width="2"/>
+    <text x="110" y="173" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#1F3A5F">gen-idea</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="76" y="206">一句想法 → 草稿</tspan>
+      <tspan x="76" y="230">并行探索 N 个方向，每条</tspan>
+      <tspan x="76" y="252">都要给出仓库里的证据</tspan>
+      <tspan x="76" y="274">只写草稿，不改代码</tspan>
+    </text>
+    <path d="M312 211 L340 211" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M340 205 L350 211 L340 217 Z" fill="#1F3A5F"/>
+    <rect x="352" y="136" width="256" height="150" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/list-check" x="372" y="154" width="26" height="26" fill="#1F3A5F" stroke-width="2"/>
+    <text x="406" y="173" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#1F3A5F">gen-plan</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="372" y="206">草稿 → 结构化计划</tspan>
+      <tspan x="372" y="230">目标、验收标准 AC-x</tspan>
+      <tspan x="372" y="252">（正反两类测试）、范围</tspan>
+      <tspan x="372" y="274">上下界、里程碑</tspan>
+    </text>
+    <path d="M608 211 L636 211" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M636 205 L646 211 L636 217 Z" fill="#1F3A5F"/>
+    <rect x="648" y="136" width="256" height="150" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/message-circle" x="668" y="154" width="26" height="26" fill="#1F3A5F" stroke-width="2"/>
+    <text x="702" y="173" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#1F3A5F">refine-plan</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="668" y="206">人在计划里写批注</tspan>
+      <tspan x="668" y="230">CMT: … ENDCMT</tspan>
+      <tspan x="668" y="252">AI 逐条回答或修改，</tspan>
+      <tspan x="668" y="274">留一份问答记录</tspan>
+    </text>
+    <path d="M904 211 L932 211" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M932 205 L942 211 L932 217 Z" fill="#1F3A5F"/>
+    <rect x="944" y="136" width="280" height="150" rx="8" fill="#1F3A5F"/>
+    <use data-icon="tabler-outline/repeat" x="964" y="154" width="26" height="26" fill="#FFFFFF" stroke-width="2"/>
+    <text x="998" y="173" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#FFFFFF">rlcr</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#FFFFFF" fill-opacity="0.85">
+      <tspan x="964" y="206">按计划实现 + 独立评审</tspan>
+      <tspan x="964" y="230">的循环，直到评审说</tspan>
+      <tspan x="964" y="252">COMPLETE 且代码审查</tspan>
+      <tspan x="964" y="274">没有问题</tspan>
+    </text>
+  </g>
+  <g id="loop">
+    <text x="56" y="330" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">RLCR 一轮怎么走</text>
+    <rect x="56" y="346" width="200" height="72" rx="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <text x="156" y="376" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">实现者</text>
+    <text x="156" y="400" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">读本轮 prompt，改代码、提交</text>
+    <path d="M256 382 L284 382" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M284 376 L294 382 L284 388 Z" fill="#1F3A5F"/>
+    <rect x="296" y="346" width="200" height="72" rx="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <text x="396" y="376" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">写 summary</text>
+    <text x="396" y="400" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">做了什么、改了哪些文件</text>
+    <path d="M496 382 L524 382" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M524 376 L534 382 L524 388 Z" fill="#1F3A5F"/>
+    <rect x="536" y="346" width="200" height="72" rx="8" fill="#FFFFFF" stroke="#E07A1F" stroke-width="2"/>
+    <text x="636" y="376" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">Stop hook 拦截</text>
+    <text x="636" y="400" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">AI 想退出时自动触发</text>
+    <path d="M736 382 L764 382" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M764 376 L774 382 L764 388 Z" fill="#1F3A5F"/>
+    <rect x="776" y="346" width="200" height="72" rx="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <text x="876" y="376" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">评审者（另一模型）</text>
+    <text x="876" y="400" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">对照计划和代码挑问题</text>
+    <path d="M976 382 L1004 382" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M1004 376 L1014 382 L1004 388 Z" fill="#1F3A5F"/>
+    <rect x="1016" y="346" width="208" height="72" rx="8" fill="#2E7D32"/>
+    <text x="1120" y="376" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">无问题才放行</text>
+    <text x="1120" y="400" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#FFFFFF">否则意见变成下一轮 prompt</text>
+    <path d="M876 418 L876 444 L156 444 L156 428" stroke="#C62828" stroke-width="2" fill="none" stroke-dasharray="6,4"/>
+    <path d="M150 428 L156 418 L162 428 Z" fill="#C62828"/>
+    <text x="516" y="466" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#C62828">有问题：评审意见写进 round-(N+1)-prompt.md，实现者继续</text>
+  </g>
+  <g id="guards">
+    <rect x="56" y="490" width="372" height="154" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/target" x="76" y="508" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="110" y="526" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">防止目标漂移</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="76" y="556">goal-tracker.md：目标和 AC 在第 0 轮写定，</tspan>
+      <tspan x="76" y="578">之后不许改；推迟的任务必须写理由</tspan>
+      <tspan x="76" y="606">每 5 轮做一次全面对齐检查</tspan>
+    </text>
+    <rect x="454" y="490" width="372" height="154" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/lock" x="474" y="508" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="508" y="526" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">防止 AI 自己宣布完成</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="474" y="556">退出由 hook 判断：要求 summary 存在、</tspan>
+      <tspan x="474" y="578">工作区干净、没有未完成任务</tspan>
+      <tspan x="474" y="606">不许手改状态文件或自己跑取消脚本</tspan>
+    </text>
+    <rect x="852" y="490" width="372" height="154" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/eye" x="872" y="508" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="906" y="526" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222">两个阶段</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="872" y="556">实现阶段：评审看 summary 是否完成计划</tspan>
+      <tspan x="872" y="578">审查阶段：codex review 对比 base 分支，</tspan>
+      <tspan x="872" y="606">意见按 [P0]–[P9] 分级，清零才结束</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：~/.codex/skills/humanize*/SKILL.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">19</text>
+  </g>
+</svg>

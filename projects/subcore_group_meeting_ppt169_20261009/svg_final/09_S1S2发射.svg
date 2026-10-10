@@ -3,7 +3,7 @@
   <g id="header">
     <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
     <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">S1/S2：2 项 head FIFO，发射条件 = 显式 SB + 隐式 SB</text>
-    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">机制与原版相同，只整理归属；同一 warp 可以每拍发射，与性能模型 max(1, stall) 对齐</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222"><tspan font-weight="bold" fill="#E07A1F">想做什么　</tspan>S1 从 IB 取队头并预译码；S2 每拍从 16 个 warp 里选一条能发的发出去</text>
   </g>
   <g id="figure-s1s2">
     <path fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1" d="M64,128 H596 A8,8 0 0 1 604,136 V520 A8,8 0 0 1 596,528 H64 A8,8 0 0 1 56,520 V136 A8,8 0 0 1 64,128 Z" />
@@ -13,8 +13,8 @@
   <g id="head-fifo">
     <path fill="#F4F6F9" d="M64,544 H596 A8,8 0 0 1 604,552 V636 A8,8 0 0 1 596,644 H64 A8,8 0 0 1 56,636 V552 A8,8 0 0 1 64,544 Z" />
     <text x="72" y="572" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">S1 head：每 warp 2 项 FIFO（触发器）</text>
-    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222" x="72" y="598"><tspan>16 × 2 × 255 位 ≈ <tspan fill="#E07A1F" font-weight="bold">1 KB</tspan>；S2 每拍同时读 16 个 warp 的第 0 项，SRAM 做不到</tspan>
-      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222" x="72" y="620">按 ev_head_consumed 以 credit 补充：现有 + 未处理事件 ≤ 2</text></g>
+    <text font-size="14" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="598"><tspan>16 × 2 × 255 位 ≈ <tspan fill="#E07A1F" font-weight="bold">1 KB</tspan>；S2 每拍同时读 16 个 warp 的第 0 项，SRAM 做不到</tspan>
+      </text><text font-size="14" fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="72" y="620">按 ev_head_consumed 以 credit 补充：现有 + 未处理事件 ≤ 2</text></g>
   <g id="issue-rule">
     <path fill="#1F3A5F" d="M636,128 H1216 A8,8 0 0 1 1224,136 V184 A8,8 0 0 1 1216,192 H636 A8,8 0 0 1 628,184 V136 A8,8 0 0 1 636,128 Z" />
     <text x="648" y="156" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#FFFFFF" fill-opacity="0.75">S2 发射（§11 第 14 条）</text>
@@ -64,7 +64,7 @@
     <path d="M9.7 17l4.6 0" />
   </g>
     <text x="674" y="575" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#222222">原则：多步的功能状态归执行它的单元，S2 只留一位关卡</text>
-    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="644" y="602">显式 SB：编译器分配，每 warp 6 个计数器，按 wait mask 等待</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666" x="644" y="624">原版只有 ACQBULK、ERRBAR 完全符合；MEMBAR 的 7 位协议状态待拆</text></g>
+    <text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="644" y="602">显式 SB：编译器分配，每 warp 6 个计数器，按 wait mask 等待</text><text font-size="14" fill="#666666" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" x="644" y="624">原版只有 ACQBULK、ERRBAR 完全符合；MEMBAR 的 7 位协议状态待拆</text></g>
   <g id="footer">
     <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：document/2026-10-09-s1-s2-issue-conditions.md</text>
     <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">09</text>

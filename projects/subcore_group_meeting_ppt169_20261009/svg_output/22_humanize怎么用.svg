@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">怎么用：四步，人只管想法、计划和最后验收</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">以 Codex CLI 为例；前提是装好 codex，并运行 humanize 的安装脚本（会装好 Stop hook）</text>
+  </g>
+  <g id="step-1">
+    <circle cx="80" cy="152" r="16" fill="#1F3A5F"/>
+    <text x="80" y="158" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">1</text>
+    <text x="108" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">把想法变成草稿</text>
+    <rect x="108" y="170" width="508" height="34" rx="4" fill="#F4F6F9"/>
+    <text x="120" y="192" font-family="Consolas, monospace" font-size="13" fill="#222222">$humanize-gen-idea "想研究的问题" --n 6</text>
+    <text x="108" y="226" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">人：读草稿，选方向；不满意就改草稿再来</text>
+  </g>
+  <g id="step-2">
+    <circle cx="80" cy="270" r="16" fill="#1F3A5F"/>
+    <text x="80" y="276" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">2</text>
+    <text x="108" y="276" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">生成计划，定验收标准</text>
+    <rect x="108" y="288" width="508" height="34" rx="4" fill="#F4F6F9"/>
+    <text x="120" y="310" font-family="Consolas, monospace" font-size="13" fill="#222222">$humanize-gen-plan --input draft.md --output plan.md</text>
+    <text x="108" y="344" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">人：回答 AI 的澄清问题；重点检查每条 AC 能不能被测出来</text>
+  </g>
+  <g id="step-3">
+    <circle cx="80" cy="388" r="16" fill="#1F3A5F"/>
+    <text x="80" y="394" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">3</text>
+    <text x="108" y="394" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">（可选）批注计划</text>
+    <rect x="108" y="406" width="508" height="34" rx="4" fill="#F4F6F9"/>
+    <text x="120" y="428" font-family="Consolas, monospace" font-size="13" fill="#222222">CMT: 这里为什么不用 X？ ENDCMT  → $humanize-refine-plan</text>
+    <text x="108" y="462" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">人：在 plan.md 里直接写疑问，AI 回答并改计划，留问答记录</text>
+  </g>
+  <g id="step-4">
+    <circle cx="80" cy="506" r="16" fill="#E07A1F"/>
+    <text x="80" y="512" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">4</text>
+    <text x="108" y="512" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">启动循环，等它跑完</text>
+    <rect x="108" y="524" width="508" height="34" rx="4" fill="#F4F6F9"/>
+    <text x="120" y="546" font-family="Consolas, monospace" font-size="13" fill="#222222">$humanize-rlcr plan.md --max 42 --base-branch main</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="108" y="580">人：中途看 round-N-review-result.md；评审提出的开放问题</tspan>
+      <tspan x="108" y="600">默认会问人；结束后自己再审一遍 diff 和测试结果</tspan>
+    </text>
+  </g>
+  <g id="tips">
+    <rect x="660" y="128" width="564" height="300" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/bulb" x="680" y="146" width="24" height="24" fill="#E07A1F" stroke-width="2"/>
+    <text x="714" y="164" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">用下来的经验</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="680" y="198"><tspan fill="#222222" font-weight="bold">计划写得越具体，循环越短。</tspan>AC 含糊时，</tspan>
+      <tspan x="680" y="220">评审和实现者会来回争"算不算完成"</tspan>
+      <tspan x="680" y="254"><tspan fill="#222222" font-weight="bold">评审要用不同的模型。</tspan>同一个模型自己审自己，</tspan>
+      <tspan x="680" y="276">容易认同自己的理由</tspan>
+      <tspan x="680" y="310"><tspan fill="#222222" font-weight="bold">验证命令写进 AC。</tspan>"测试通过"要写成具体命令</tspan>
+      <tspan x="680" y="332">和预期输出，评审才能逐条核对</tspan>
+      <tspan x="680" y="366"><tspan fill="#222222" font-weight="bold">它不替人做设计决定。</tspan>做不通时让它停下</tspan>
+      <tspan x="680" y="388">写问题，而不是自己改目标</tspan>
+    </text>
+  </g>
+  <g id="tools">
+    <rect x="660" y="444" width="564" height="200" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <use data-icon="tabler-outline/terminal-2" x="680" y="462" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="714" y="480" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">换别的工具能不能用</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="680" y="514"><tspan fill="#222222">Codex、Kimi：</tspan>安装脚本直接支持</tspan>
+      <tspan x="680" y="538"><tspan fill="#222222">Claude Code、opencode：</tspan>本机没装对应版本，</tspan>
+      <tspan x="680" y="562">没有验证过</tspan>
+      <tspan x="680" y="596">做法本身不绑工具：写带 AC 的计划，一个 agent</tspan>
+      <tspan x="680" y="618">实现，换一个模型按 AC 审，不过就继续</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · subcore 组会 · 2026-10-10　|　依据：humanize/SKILL.md、humanize-rlcr/SKILL.md、scripts/install-skill.sh</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">22</text>
+  </g>
+</svg>
