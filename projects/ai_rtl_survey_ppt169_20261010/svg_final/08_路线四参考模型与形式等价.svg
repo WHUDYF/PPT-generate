@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">路线四：参考模型 + 形式等价——"模型就够"的对照组</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">把软件模型当可执行规格，用等价检查兜底；对数据通路有效，控制与时序契约不在范围内</text>
+  </g>
+  <g id="flow">
+    <path fill="#F4F6F9" stroke="#D8DEE6" stroke-width="1" d="M64,140 H268 A8,8 0 0 1 276,148 V224 A8,8 0 0 1 268,232 H64 A8,8 0 0 1 56,224 V148 A8,8 0 0 1 64,140 Z" />
+    
+  <g transform="translate(76.0, 158.0)" fill="none" stroke="#2A7F9E" stroke-width="2">
+    <path d="M7 8l-4 4l4 4" />
+    <path d="M17 8l4 4l-4 4" />
+    <path d="M14 4l-4 16" />
+  </g>
+    <text x="108" y="177" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">软件参考模型</text>
+    <text x="76" y="212" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">C / C++ / Python / Dafny</text>
+    <line x1="276" y1="186" x2="328" y2="186" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrow)" />
+    <path fill="#F4F6F9" stroke="#D8DEE6" stroke-width="1" d="M344,140 H548 A8,8 0 0 1 556,148 V224 A8,8 0 0 1 548,232 H344 A8,8 0 0 1 336,224 V148 A8,8 0 0 1 344,140 Z" />
+    
+  <g transform="translate(356.0, 158.0)" fill="none" stroke="#2A7F9E" stroke-width="2">
+    <path d="M6 6a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2l0 -4" />
+    <path d="M12 2v2" />
+    <path d="M9 12v9" />
+    <path d="M15 12v9" />
+    <path d="M5 16l4 -2" />
+    <path d="M15 14l4 2" />
+    <path d="M9 18h6" />
+    <path d="M10 8v.01" />
+    <path d="M14 8v.01" />
+  </g>
+    <text x="388" y="177" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">LLM / HLS 生成</text>
+    <text x="356" y="212" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">planning → RTL</text>
+    <line x1="556" y1="186" x2="608" y2="186" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrow)" />
+    <path fill="#F4F6F9" stroke="#D8DEE6" stroke-width="1" d="M624,140 H828 A8,8 0 0 1 836,148 V224 A8,8 0 0 1 828,232 H624 A8,8 0 0 1 616,224 V148 A8,8 0 0 1 624,140 Z" />
+    
+  <g transform="translate(636.0, 158.0)" fill="none" stroke="#2A7F9E" stroke-width="2">
+    <path d="M4 6a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M16 18a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+    <path d="M11 6h5a2 2 0 0 1 2 2v8" />
+    <path d="M14 9l-3 -3l3 -3" />
+    <path d="M13 18h-5a2 2 0 0 1 -2 -2v-8" />
+    <path d="M10 15l3 3l-3 3" />
+  </g>
+    <text x="668" y="177" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">等价检查</text>
+    <text x="636" y="212" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">反例回灌修复</text>
+    <path fill="#FFFFFF" stroke="#C62828" stroke-width="1.5" d="M876,140 H1216 A8,8 0 0 1 1224,148 V224 A8,8 0 0 1 1216,232 H876 A8,8 0 0 1 868,224 V148 A8,8 0 0 1 876,140 Z" />
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="888" y="174"><tspan><tspan fill="#C62828" font-weight="bold">看不到的：</tspan>哪一级、谁拥有状态、</tspan>
+      </text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="888" y="200">发射间隔、stall、事件晚 1 拍可见</text><defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><polygon points="0,0 10,5 0,10" fill="#1F3A5F" /></marker>
+    </defs>
+  </g>
+  <g id="works">
+    <rect x="56" y="260" width="1168" height="38" fill="#1F3A5F" />
+    <text x="72" y="285" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">工作</text>
+    <text x="272" y="285" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">做法</text>
+    <text x="832" y="285" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#FFFFFF">覆盖范围 / 局限</text>
+    <rect x="56" y="298" width="1168" height="56" fill="#F4F6F9" />
+    <text x="72" y="324" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">FormalRTL</text>
+    <text x="72" y="344" font-family="Consolas, monospace" font-size="12" fill="#666666">2603.08738</text>
+    <text x="272" y="332" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">软件参考模型作形式规格，多 agent：规划 + 生成 + 形式等价</text>
+    <text x="832" y="332" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">工业级数据通路（自述）</text>
+    <text x="72" y="380" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">AutoVeriFix+</text>
+    <text x="72" y="400" font-family="Consolas, monospace" font-size="12" fill="#666666">2603.11489</text>
+    <text x="272" y="388" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">Python 参考模型 + concolic 周期轨迹，定位并修复状态转移错误</text>
+    <text x="832" y="388" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">有周期轨迹，但时序由模型给定</text>
+    <rect x="56" y="410" width="1168" height="56" fill="#F4F6F9" />
+    <text x="72" y="436" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">C2HLSC / HLSmith</text>
+    <text x="72" y="456" font-family="Consolas, monospace" font-size="12" fill="#666666">2406.09233 · 2608.06791</text>
+    <text x="272" y="444" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">LLM 把 C 改写成可综合的 HLS C，时序交给 HLS 调度</text>
+    <text x="832" y="444" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">流水结构不由人或 LLM 决定</text>
+    <text x="72" y="492" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">SymRTLO</text>
+    <text x="72" y="512" font-family="Consolas, monospace" font-size="12" fill="#666666">NeurIPS 2025 · 2504.10369</text>
+    <text x="272" y="500" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">LLM 重写 RTL 做 PPA 优化，等价检查保证行为不变</text>
+    <text x="832" y="500" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#222222">最像我们的"保持行为重构"</text>
+    <line x1="56" y1="522" x2="1224" y2="522" stroke="#D8DEE6" stroke-width="1" />
+  </g>
+  <g id="insight">
+    <path fill="#FFFFFF" stroke="#E07A1F" stroke-width="2" d="M64,544 H1216 A8,8 0 0 1 1224,552 V636 A8,8 0 0 1 1216,644 H64 A8,8 0 0 1 56,636 V552 A8,8 0 0 1 64,544 Z" />
+    
+  <g transform="translate(80.0, 566.0) scale(1.0833333333333333)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M11 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+    <path d="M7 12a5 5 0 1 0 10 0a5 5 0 1 0 -10 0" />
+    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+  </g>
+    <text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="120" y="584"><tspan>这正是我们消融里的 <tspan font-family="Consolas, monospace" font-weight="bold" fill="#1F3A5F">model</tspan> 条件：给性能模型，不给结构框架。</tspan>
+      </text><text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="120" y="614">预期它在 subcore 上能对齐功能，但会漏掉"同 warp 发射间隔 ≥ 2"这类契约——和 G2 首轮的失败模式一致。</text></g>
+  <g id="footer">
+    <text x="56" y="694" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">8</text>
+  </g>
+</svg>

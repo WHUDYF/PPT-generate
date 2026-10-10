@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">可作 baseline 的组合：benchmark × 方法 × 模型</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">三层各取一组，回答"换任务 / 换方法 / 换模型各带来多少差异"；我们的 subcore 任务放在最上面</text>
+  </g>
+  <g id="layer-ours">
+    <path fill="#E07A1F" d="M64,128 H1216 A8,8 0 0 1 1224,136 V204 A8,8 0 0 1 1216,212 H64 A8,8 0 0 1 56,204 V136 A8,8 0 0 1 64,128 Z" />
+    
+  <g transform="translate(80.0, 156.0) scale(1.1666666666666667)" fill="none" stroke="#FFFFFF" stroke-width="2">
+    <path d="M5 6a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1l0 -12" />
+    <path d="M9 9h6v6h-6l0 -6" />
+    <path d="M3 10h2" />
+    <path d="M3 14h2" />
+    <path d="M10 3v2" />
+    <path d="M14 3v2" />
+    <path d="M21 10h-2" />
+    <path d="M21 14h-2" />
+    <path d="M14 21v-2" />
+    <path d="M10 21v-2" />
+  </g>
+    <text x="120" y="164" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="bold" fill="#FFFFFF">我们的任务：curryGPU subcore 模块（流水级 + 隐式时序契约）</text>
+    <text x="120" y="192" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#FFFFFF">判据：端到端 PASS + 逐信号波形等价 + lockstep 拍数 —— 现有 benchmark 都没有这一层</text>
+  </g>
+  <g id="layer-bench">
+    <text x="56" y="248" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">Benchmark 层</text>
+    <path fill="#F4F6F9" d="M64,260 H420 A8,8 0 0 1 428,268 V348 A8,8 0 0 1 420,356 H64 A8,8 0 0 1 56,348 V268 A8,8 0 0 1 64,260 Z" />
+    <text x="76" y="290" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">下限：VerilogEval v2 · RTLLM v2</text>
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="76" y="316">证明方法 / 模型有基本能力；</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="76" y="338">社区默认报数，便于对齐</text><path fill="#F4F6F9" d="M462,260 H818 A8,8 0 0 1 826,268 V348 A8,8 0 0 1 818,356 H462 A8,8 0 0 1 454,348 V268 A8,8 0 0 1 462,260 Z" />
+    <text x="474" y="290" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">工业通用：CVDP</text>
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="474" y="316">783 题 13 类，有 agentic 形式；</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="474" y="338">开源（NVlabs/cvdp_benchmark）</text><path fill="#F4F6F9" d="M860,260 H1216 A8,8 0 0 1 1224,268 V348 A8,8 0 0 1 1216,356 H860 A8,8 0 0 1 852,348 V268 A8,8 0 0 1 860,260 Z" />
+    <text x="872" y="290" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">流水线：ArchXBench · ChipVerilog</text>
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="872" y="316">L4+ 所有模型失败；ChipVerilog 含</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="872" y="338">OR1200 / MIPS 核（开源情况待查）</text></g>
+  <g id="layer-method">
+    <text x="56" y="392" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">方法层（对应消融条件）</text>
+    <path fill="#F4F6F9" d="M64,404 H420 A8,8 0 0 1 428,412 V492 A8,8 0 0 1 420,500 H64 A8,8 0 0 1 56,492 V412 A8,8 0 0 1 64,404 Z" />
+    <text x="76" y="434" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">直接生成 + agent 调试</text>
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="76" y="460"><tspan>对应 <tspan font-family="Consolas, monospace" fill="#222222">nl</tspan>；可加 SeqFeed 式</tspan></text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="76" y="482">波形反馈作为验证侧增强</text><path fill="#F4F6F9" d="M462,404 H818 A8,8 0 0 1 826,412 V492 A8,8 0 0 1 818,500 H462 A8,8 0 0 1 454,492 V412 A8,8 0 0 1 462,404 Z" />
+    <text x="474" y="434" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">参考模型路线（FormalRTL 式）</text>
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="474" y="460"><tspan>对应 <tspan font-family="Consolas, monospace" fill="#222222">model</tspan>：给性能模型代码，</tspan></text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="474" y="482">不给结构框架</text><path fill="#F4F6F9" d="M860,404 H1216 A8,8 0 0 1 1224,412 V492 A8,8 0 0 1 1216,500 H860 A8,8 0 0 1 852,492 V412 A8,8 0 0 1 860,404 Z" />
+    <text x="872" y="434" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">结构 IR 路线（VeriGraphi / HINT）</text>
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="872" y="460">拓扑 / 意图层，无流水契约；与</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="872" y="482"><tspan><tspan font-family="Consolas, monospace" fill="#222222">model+style+diagram</tspan> 直接对比</tspan></text></g>
+  <g id="layer-model">
+    <text x="56" y="536" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">模型层</text>
+    <path fill="#F4F6F9" d="M64,548 H618 A8,8 0 0 1 626,556 V636 A8,8 0 0 1 618,644 H64 A8,8 0 0 1 56,636 V556 A8,8 0 0 1 64,548 Z" />
+    <text x="76" y="578" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">开源 7B：CodeV-R1 · VeriReason</text>
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="76" y="604">Verilog 专用 RL 训练；本地可跑，可复现</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="76" y="626">测"专用小模型在流水线任务上掉多少"</text><path fill="#F4F6F9" d="M662,548 H1216 A8,8 0 0 1 1224,556 V636 A8,8 0 0 1 1216,644 H662 A8,8 0 0 1 654,636 V556 A8,8 0 0 1 662,548 Z" />
+    <text x="674" y="578" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">商用前沿模型（Claude / GPT / DeepSeek）</text>
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="674" y="604">我们实际在用的 agent 设置；同时检验 Representation</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="674" y="626">Bottleneck 的结论：换模型的差距是否小于换表示</text></g>
+  <g id="footer">
+    <text x="56" y="694" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">14</text>
+  </g>
+</svg>

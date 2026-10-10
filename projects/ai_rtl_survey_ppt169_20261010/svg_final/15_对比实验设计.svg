@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">我们的对比实验：同一模块、逐级加输入、加 baseline 方法</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">模块有参考实现和 0 差异比对工具，能区分"功能对"和"结构 / 时序对"</text>
+  </g>
+  <g id="modules">
+    <path fill="#F4F6F9" d="M64,132 H408 A8,8 0 0 1 416,140 V360 A8,8 0 0 1 408,368 H64 A8,8 0 0 1 56,360 V140 A8,8 0 0 1 64,132 Z" />
+    
+  <g transform="translate(76.0, 152.0)" fill="none" stroke="#2A7F9E" stroke-width="2">
+    <path d="M5 6a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1l0 -12" />
+    <path d="M9 9h6v6h-6l0 -6" />
+    <path d="M3 10h2" />
+    <path d="M3 14h2" />
+    <path d="M10 3v2" />
+    <path d="M14 3v2" />
+    <path d="M21 10h-2" />
+    <path d="M21 14h-2" />
+    <path d="M14 21v-2" />
+    <path d="M10 21v-2" />
+  </g>
+    <text x="110" y="171" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">被测模块</text>
+    <text font-size="15" font-family="Consolas, monospace" fill="#1F3A5F" x="76" y="210" font-weight="bold">subcore_issue_hold</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="76" y="234">142 行，隐式 SB 置位 / 清除 / 同拍优先级</text><text font-size="15" font-family="Consolas, monospace" fill="#1F3A5F" x="76" y="274" font-weight="bold">subcore_decode</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="76" y="298">S1 2 项 head FIFO，含 G2 的契约陷阱</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="76" y="334"><tspan>参考：<tspan font-family="Consolas, monospace" fill="#222222">8c17f5d73</tspan>、<tspan font-family="Consolas, monospace" fill="#222222">6e71a8d31</tspan></tspan>
+    </text></g>
+  <g id="conditions">
+    <text x="448" y="150" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">条件（逐级叠加，已在 ai-rtl-study 中定义）</text>
+    <path fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1" d="M454,166 H622 A6,6 0 0 1 628,172 V218 A6,6 0 0 1 622,224 H454 A6,6 0 0 1 448,218 V172 A6,6 0 0 1 454,166 Z" />
+    <text x="464" y="192" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#222222">nl</text>
+    <text x="464" y="212" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">只给自然语言</text>
+    <path fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1" d="M648,166 H816 A6,6 0 0 1 822,172 V218 A6,6 0 0 1 816,224 H648 A6,6 0 0 1 642,218 V172 A6,6 0 0 1 648,166 Z" />
+    <text x="658" y="192" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#222222">model</text>
+    <text x="658" y="212" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">+ 功能 / 性能模型</text>
+    <path fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1" d="M842,166 H1010 A6,6 0 0 1 1016,172 V218 A6,6 0 0 1 1010,224 H842 A6,6 0 0 1 836,218 V172 A6,6 0 0 1 842,166 Z" />
+    <text x="852" y="192" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#222222">+style</text>
+    <text x="852" y="212" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">+ 结构规范</text>
+    <path fill="#FFFFFF" stroke="#E07A1F" stroke-width="2" d="M1036,166 H1218 A6,6 0 0 1 1224,172 V218 A6,6 0 0 1 1218,224 H1036 A6,6 0 0 1 1030,218 V172 A6,6 0 0 1 1036,166 Z" />
+    <text x="1046" y="192" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#E07A1F">+diagram</text>
+    <text x="1046" y="212" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">+ 流水线图（11 号）</text>
+    <text x="448" y="260" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">外部 baseline 方法（同一模块上跑）</text>
+    <path fill="#F4F6F9" d="M454,276 H816 A6,6 0 0 1 822,282 V362 A6,6 0 0 1 816,368 H454 A6,6 0 0 1 448,362 V282 A6,6 0 0 1 454,276 Z" />
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="464" y="302" font-weight="bold">参考模型 + 等价（FormalRTL 式）</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="464" y="326">结构 IR（VeriGraphi / 分层 IR 式）</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="464" y="350">波形反馈（SeqFeed 式）</text><path fill="#F4F6F9" d="M842,276 H1218 A6,6 0 0 1 1224,282 V362 A6,6 0 0 1 1218,368 H842 A6,6 0 0 1 836,362 V282 A6,6 0 0 1 842,276 Z" />
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="852" y="302" font-weight="bold">模型：CodeV-R1 / VeriReason 7B</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="852" y="326">+ 一个商用前沿模型</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="852" y="350">每个条件重复 ≥ 3 次（E 记录的重复序号）</text></g>
+  <g id="metrics">
+    <text x="56" y="408" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">指标：从"能编译"一路到"时序契约没破"</text>
+    <path fill="#F4F6F9" d="M64,424 H264 A8,8 0 0 1 272,432 V544 A8,8 0 0 1 264,552 H64 A8,8 0 0 1 56,544 V432 A8,8 0 0 1 64,424 Z" />
+    <text x="72" y="452" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#999999">1</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="72" y="484" font-weight="bold">lint / 编译</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="72" y="508">Verilator，WIDTHTRUNC</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="72" y="528">为构建错误</text><path fill="#F4F6F9" d="M296,424 H496 A8,8 0 0 1 504,432 V544 A8,8 0 0 1 496,552 H296 A8,8 0 0 1 288,544 V432 A8,8 0 0 1 296,424 Z" />
+    <text x="304" y="452" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#999999">2</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="304" y="484" font-weight="bold">端到端 PASS</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="304" y="508">iadd3 · mix ·</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="304" y="528">control_flow · cp</text><path fill="#F4F6F9" d="M528,424 H728 A8,8 0 0 1 736,432 V544 A8,8 0 0 1 728,552 H528 A8,8 0 0 1 520,544 V432 A8,8 0 0 1 528,424 Z" />
+    <text x="536" y="452" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#2A7F9E">3</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="536" y="484" font-weight="bold">波形等价</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="536" y="508">u_subcore 约 10 万信号</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="536" y="528">差异数 + lockstep 拍数</text><path fill="#F4F6F9" d="M760,424 H960 A8,8 0 0 1 968,432 V544 A8,8 0 0 1 960,552 H760 A8,8 0 0 1 752,544 V432 A8,8 0 0 1 760,424 Z" />
+    <text x="768" y="452" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#E07A1F">4</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="768" y="484" font-weight="bold">契约违例</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="768" y="508">挖出的断言失败数、</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="768" y="528">首个错误拍</text><path fill="#F4F6F9" d="M992,424 H1216 A8,8 0 0 1 1224,432 V544 A8,8 0 0 1 1216,552 H992 A8,8 0 0 1 984,544 V432 A8,8 0 0 1 992,424 Z" />
+    <text x="1000" y="452" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1F3A5F">5</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="1000" y="484" font-weight="bold">代价</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="1000" y="508">轮数、token、人工</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="1000" y="528">干预次数与分钟数</text></g>
+  <g id="hypothesis">
+    <path fill="#FFFFFF" stroke="#E07A1F" stroke-width="2" d="M64,572 H1216 A8,8 0 0 1 1224,580 V636 A8,8 0 0 1 1216,644 H64 A8,8 0 0 1 56,636 V580 A8,8 0 0 1 64,572 Z" />
+    
+  <g transform="translate(76.0, 594.0) scale(1.0833333333333333)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M9 3l6 0" />
+    <path d="M10 9l4 0" />
+    <path d="M10 3v6l-4 11a.7 .7 0 0 0 .5 1h11a.7 .7 0 0 0 .5 -1l-4 -11v-6" />
+  </g>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="116" y="600"><tspan>假设：<tspan font-family="Consolas, monospace">model</tspan> 与外部 baseline 主要栽在指标 3、4（<tspan font-family="Consolas, monospace">structure</tspan> / <tspan font-family="Consolas, monospace">cycle-semantics</tspan> 类缺陷），</tspan>
+      </text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="116" y="626">加规范和图后这两类明显减少；剩下的时序契约类缺陷需要验证框架才能挡住</text></g>
+  <g id="footer">
+    <text x="56" y="694" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">15</text>
+  </g>
+</svg>

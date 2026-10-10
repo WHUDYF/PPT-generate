@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">空白汇总：没有工作同时覆盖结构、契约与验证闭环</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">按论文自述定性打分；"我们"一行是目标，尚未实现</text>
+  </g>
+  <g id="table-head">
+    <rect x="56" y="128" width="1168" height="56" fill="#1F3A5F"/>
+    <text x="72" y="162" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">代表工作</text>
+    <text x="440" y="152" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">流水级结构</text>
+    <text x="440" y="172" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">级 / 边界寄存器</text>
+    <text x="620" y="152" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">状态归属</text>
+    <text x="620" y="172" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">事件通道</text>
+    <text x="800" y="152" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">时序契约</text>
+    <text x="800" y="172" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">跨周期约束</text>
+    <text x="980" y="152" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">验证闭环</text>
+    <text x="980" y="172" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">反馈回生成</text>
+    <text x="1140" y="152" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">周期级判据</text>
+    <text x="1140" y="172" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">拍数 / 波形等价</text>
+  </g>
+  <g id="row-direct">
+    <text x="72" y="220" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">直接生成 / 微调模型</text>
+    <text x="72" y="240" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">CodeV-R1 · VeriReason</text>
+    <circle cx="440" cy="224" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <circle cx="620" cy="224" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <circle cx="800" cy="224" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <circle cx="980" cy="224" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 980 224 L 980 213 A 11 11 0 0 1 991 224 Z" fill="#1F3A5F"/>
+    <circle cx="1140" cy="224" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <line x1="56" y1="254" x2="1224" y2="254" stroke="#D8DEE6" stroke-width="1"/>
+  </g>
+  <g id="row-graph">
+    <rect x="56" y="254" width="1168" height="64" fill="#F4F6F9"/>
+    <text x="72" y="284" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">VeriGraphi / 分层 IR</text>
+    <text x="72" y="304" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">模块拓扑 + 端口规格</text>
+    <circle cx="440" cy="288" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 440 288 L 440 277 A 11 11 0 0 1 451 288 Z" fill="#1F3A5F"/>
+    <circle cx="620" cy="288" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 620 288 L 620 277 A 11 11 0 0 1 631 288 Z" fill="#1F3A5F"/>
+    <circle cx="800" cy="288" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <circle cx="980" cy="288" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 980 288 L 980 277 A 11 11 0 0 1 980 299 Z" fill="#1F3A5F"/>
+    <circle cx="1140" cy="288" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+  </g>
+  <g id="row-hint">
+    <text x="72" y="348" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">HINT</text>
+    <text x="72" y="368" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">微架构意图层（算子级）</text>
+    <circle cx="440" cy="352" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 440 352 L 440 341 A 11 11 0 0 1 440 363 Z" fill="#1F3A5F"/>
+    <circle cx="620" cy="352" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 620 352 L 620 341 A 11 11 0 0 1 631 352 Z" fill="#1F3A5F"/>
+    <circle cx="800" cy="352" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 800 352 L 800 341 A 11 11 0 0 1 811 352 Z" fill="#1F3A5F"/>
+    <circle cx="980" cy="352" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 980 352 L 980 341 A 11 11 0 0 1 980 363 Z" fill="#1F3A5F"/>
+    <circle cx="1140" cy="352" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <line x1="56" y1="382" x2="1224" y2="382" stroke="#D8DEE6" stroke-width="1"/>
+  </g>
+  <g id="row-formal">
+    <rect x="56" y="382" width="1168" height="64" fill="#F4F6F9"/>
+    <text x="72" y="412" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">FormalRTL / AutoVeriFix+</text>
+    <text x="72" y="432" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">参考模型 + 形式等价</text>
+    <circle cx="440" cy="416" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <circle cx="620" cy="416" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <circle cx="800" cy="416" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 800 416 L 800 405 A 11 11 0 0 1 811 416 Z" fill="#1F3A5F"/>
+    <circle cx="980" cy="416" r="11" fill="#1F3A5F"/>
+    <circle cx="1140" cy="416" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 1140 416 L 1140 405 A 11 11 0 0 1 1140 427 Z" fill="#1F3A5F"/>
+  </g>
+  <g id="row-seqfeed">
+    <text x="72" y="476" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">SeqFeed / DUET</text>
+    <text x="72" y="496" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">波形 / 时序反馈</text>
+    <circle cx="440" cy="480" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <circle cx="620" cy="480" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <circle cx="800" cy="480" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 800 480 L 800 469 A 11 11 0 0 1 800 491 Z" fill="#1F3A5F"/>
+    <circle cx="980" cy="480" r="11" fill="#1F3A5F"/>
+    <circle cx="1140" cy="480" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 1140 480 L 1140 469 A 11 11 0 0 1 1151 480 Z" fill="#1F3A5F"/>
+    <line x1="56" y1="510" x2="1224" y2="510" stroke="#D8DEE6" stroke-width="1"/>
+  </g>
+  <g id="row-anvil">
+    <rect x="56" y="510" width="1168" height="64" fill="#F4F6F9"/>
+    <text x="72" y="540" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">Anvil / PDL（非 LLM）</text>
+    <text x="72" y="560" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">时序契约语言</text>
+    <circle cx="440" cy="544" r="11" fill="#1F3A5F"/>
+    <circle cx="620" cy="544" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 620 544 L 620 533 A 11 11 0 0 1 620 555 Z" fill="#1F3A5F"/>
+    <circle cx="800" cy="544" r="11" fill="#1F3A5F"/>
+    <circle cx="980" cy="544" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <circle cx="1140" cy="544" r="11" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2"/>
+    <path d="M 1140 544 L 1140 533 A 11 11 0 0 1 1140 555 Z" fill="#1F3A5F"/>
+  </g>
+  <g id="row-ours">
+    <rect x="56" y="574" width="1168" height="64" fill="#FFFFFF" stroke="#E07A1F" stroke-width="2"/>
+    <text x="72" y="604" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#E07A1F">我们（目标）</text>
+    <text x="72" y="624" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">规范 + 11 号图 + 波形 / lockstep</text>
+    <circle cx="440" cy="608" r="11" fill="#E07A1F"/>
+    <circle cx="620" cy="608" r="11" fill="#E07A1F"/>
+    <circle cx="800" cy="608" r="11" fill="#FFFFFF" stroke="#E07A1F" stroke-width="2"/>
+    <path d="M 800 608 L 800 597 A 11 11 0 0 1 800 619 Z" fill="#E07A1F"/>
+    <circle cx="980" cy="608" r="11" fill="#FFFFFF" stroke="#E07A1F" stroke-width="2"/>
+    <path d="M 980 608 L 980 597 A 11 11 0 1 1 969 608 Z" fill="#E07A1F"/>
+    <circle cx="1140" cy="608" r="11" fill="#E07A1F"/>
+  </g>
+  <g id="legend">
+    <circle cx="64" cy="660" r="6" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <text x="76" y="665" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">无</text>
+    <circle cx="116" cy="660" r="6" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <path d="M 116 660 L 116 654 A 6 6 0 0 1 122 660 Z" fill="#1F3A5F"/>
+    <text x="128" y="665" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">少量</text>
+    <circle cx="180" cy="660" r="6" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5"/>
+    <path d="M 180 660 L 180 654 A 6 6 0 0 1 180 666 Z" fill="#1F3A5F"/>
+    <text x="192" y="665" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">部分</text>
+    <circle cx="244" cy="660" r="6" fill="#1F3A5F"/>
+    <text x="256" y="665" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">完整</text>
+    <text x="320" y="665" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">我们的时序契约现在只有"部分"：G2 的契约是事后从失败里读出来的，下一步要显式化</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="694" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">13</text>
+  </g>
+</svg>

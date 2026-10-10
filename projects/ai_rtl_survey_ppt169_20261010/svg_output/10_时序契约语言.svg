@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">时序契约语言：已能写成类型，但只给人用</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">PL 社区把"流水级"和"信号何时有效"做成一等结构；没有一篇研究 LLM 会怎样违反这类契约</text>
+  </g>
+  <g id="table">
+    <rect x="56" y="132" width="780" height="38" fill="#1F3A5F"/>
+    <text x="72" y="157" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">语言</text>
+    <text x="252" y="157" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">把什么做成一等结构</text>
+    <text x="612" y="157" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">边界</text>
+    <rect x="56" y="170" width="780" height="68" fill="#F4F6F9"/>
+    <text x="72" y="198" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">Anvil</text>
+    <text x="72" y="220" font-family="Consolas, monospace" font-size="12" fill="#666666">ASPLOS 2026 · 2503.19447</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="252" y="198">模块间时序契约写进类型，静态排除</tspan><tspan x="252" y="220">时序冒险；可按运行时事件参数化</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="612" y="198">最贴近动态 stall</tspan><tspan x="612" y="220">无 LLM</tspan></text>
+    <text x="72" y="266" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">Filament</text>
+    <text x="72" y="288" font-family="Consolas, monospace" font-size="12" fill="#666666">PLDI 2023 · 2304.10646</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="252" y="266">timeline 类型：每个信号在哪几拍</tspan><tspan x="252" y="288">有效，编译期检查</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="612" y="266">只覆盖静态调度</tspan><tspan x="612" y="288">不含 warp 动态发射</tspan></text>
+    <rect x="56" y="306" width="780" height="68" fill="#F4F6F9"/>
+    <text x="72" y="334" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">PDL</text>
+    <text x="72" y="356" font-family="Consolas, monospace" font-size="12" fill="#666666">Cornell · PLDI 2022（会议待核）</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="252" y="334">按顺序语义写，自动生成带 stall /</tspan><tspan x="252" y="356">冒险处理的流水线；级是语法单位</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="612" y="334">面向处理器流水</tspan><tspan x="612" y="356">无 LLM</tspan></text>
+    <text x="72" y="402" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">Kôika</text>
+    <text x="72" y="424" font-family="Consolas, monospace" font-size="12" fill="#666666">MIT · PLDI 2020</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="252" y="402">规则式 HDL，带周期级调度语义，</tspan><tspan x="252" y="424">Coq 证明</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="612" y="402">Bluespec 一脉</tspan><tspan x="612" y="424">无 LLM</tspan></text>
+    <rect x="56" y="442" width="780" height="68" fill="#F4F6F9"/>
+    <text x="72" y="470" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">Latency-insensitive</text>
+    <text x="72" y="492" font-family="Consolas, monospace" font-size="12" fill="#666666">Carloni · TCAD 2001（待核）</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="252" y="470">valid / ready 通道让正确性与延迟</tspan><tspan x="252" y="492">无关</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="612" y="470">"队列是桥梁"的</tspan><tspan x="612" y="492">理论来源</tspan></text>
+    <text x="56" y="540" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">ReChisel / ChiseLLM：LLM 生成 Chisel，只换语法层，不带结构契约（2505.19734 · 2504.19144）</text>
+  </g>
+  <g id="contract-example">
+    <rect x="868" y="132" width="356" height="512" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/clock" x="892" y="154" width="26" height="26" fill="#E07A1F" stroke-width="2"/>
+    <text x="928" y="174" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">我们遇到的契约</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="892" y="214">原 RTL 隐含：</tspan>
+      <tspan x="892" y="240" font-weight="bold" fill="#1F3A5F">同一 warp 两次发射间隔 ≥ 2 拍</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="892" y="276">依赖它的地方：</tspan>
+      <tspan x="892" y="300">ITS 推进读寄存后的</tspan>
+      <tspan x="892" y="322"><tspan font-family="Consolas, monospace" fill="#222222">sched_issue_valid_q</tspan></tspan>
+      <tspan x="892" y="344"><tspan font-family="Consolas, monospace" fill="#222222">bra_hold</tspan> 来自寄存的 <tspan font-family="Consolas, monospace" fill="#222222">bra_state_q</tspan></tspan>
+    </text>
+    <line x1="892" y1="368" x2="1200" y2="368" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="892" y="396">用 Filament 式写法会是：</tspan>
+    </text>
+    <rect x="892" y="410" width="308" height="64" rx="4" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family="Consolas, monospace" font-size="13" fill="#1F3A5F">
+      <tspan x="904" y="436">issue[w] @ t  ⇒</tspan>
+      <tspan x="904" y="458">  ¬issue[w] @ t+1</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="892" y="506">2 项 FIFO 有意打破它；若契约</tspan>
+      <tspan x="892" y="530">是显式的，依赖方会在编译 / 断言</tspan>
+      <tspan x="892" y="554">时报出，而不是等端到端用例</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#E07A1F">
+      <tspan x="892" y="594">空白：契约语言 × LLM 生成</tspan>
+      <tspan x="892" y="618">两条线还没有交叉</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="694" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">10</text>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="cover-decor">
+    <rect x="0" y="0" width="420" height="720" fill="#1F3A5F"/>
+    <rect x="420" y="0" width="8" height="720" fill="#E07A1F"/>
+    <rect x="64" y="200" width="56" height="56" rx="6" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.5"/>
+    <rect x="132" y="200" width="56" height="56" rx="6" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.5"/>
+    <rect x="200" y="200" width="56" height="56" rx="6" fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.5"/>
+    <rect x="268" y="200" width="56" height="56" rx="6" fill="#E07A1F" fill-opacity="0.9"/>
+    <line x1="120" y1="228" x2="132" y2="228" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="2"/>
+    <line x1="188" y1="228" x2="200" y2="228" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="2"/>
+    <line x1="256" y1="228" x2="268" y2="228" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="2"/>
+    <text font-family="Consolas, monospace" font-size="14" fill="#FFFFFF" fill-opacity="0.7">
+      <tspan x="64" y="300">NL → topology → model/IR</tspan>
+      <tspan x="64" y="322">→ intent → pipeline + contract</tspan>
+    </text>
+    <text x="64" y="640" font-family="Consolas, monospace" font-size="13" fill="#FFFFFF" fill-opacity="0.55">curryGPU · subcore</text>
+  </g>
+  <g id="cover-title">
+    <text x="500" y="270" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" fill="#2A7F9E" font-weight="bold">文献调研</text>
+    <text x="500" y="340" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="52" font-weight="bold" fill="#1F3A5F">AI 生成 RTL</text>
+    <text x="500" y="410" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="40" font-weight="bold" fill="#222222">现有思路与可对比的 baseline</text>
+    <rect x="500" y="440" width="80" height="4" fill="#E07A1F"/>
+    <text x="500" y="486" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" fill="#666666">为 subcore 的"结构框架 + 验证框架"找对照组</text>
+  </g>
+  <g id="cover-footer">
+    <text x="500" y="620" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">dyf · 课题组组会 · 2026-10</text>
+    <text x="500" y="648" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">文献检索截至 2026-10 初，重点引用条目已用 arXiv API 核实</text>
+  </g>
+</svg>

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">路线一：数据与模型——在模块级题目上已接近饱和</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">训练数据和奖励都来自模块级 testbench，多级流水能力基本没有被测过</text>
+  </g>
+  <g id="table">
+    <rect x="56" y="132" width="760" height="40" fill="#1F3A5F"/>
+    <text x="72" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">模型</text>
+    <text x="232" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">机构 · arXiv</text>
+    <text x="432" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">怎么造数据 / 怎么训练</text>
+    <rect x="56" y="172" width="760" height="58" fill="#F4F6F9"/>
+    <text x="72" y="207" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">RTLCoder</text>
+    <text x="232" y="207" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">HKUST · 2312.08617</text>
+    <text x="432" y="207" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">27K 条合成数据 + 质量感知训练，7B</text>
+    <text x="72" y="265" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">CodeV</text>
+    <text x="232" y="265" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">中科院计算所 · 2407.10424</text>
+    <text x="432" y="265" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">真实代码多级摘要 → "描述→代码"对</text>
+    <rect x="56" y="288" width="760" height="58" fill="#F4F6F9"/>
+    <text x="72" y="323" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">OriGen</text>
+    <text x="232" y="323" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">PKU · 2407.16237</text>
+    <text x="432" y="323" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">代码到代码增强 + 编译器反馈自修正</text>
+    <text x="72" y="381" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">CraftRTL</text>
+    <text x="232" y="381" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">NVIDIA · 2409.12993</text>
+    <text x="432" y="381" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">K-map / FSM / 波形的构造即正确数据 + 注错</text>
+    <rect x="56" y="404" width="760" height="58" fill="#F4F6F9"/>
+    <text x="72" y="439" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">VeriReason</text>
+    <text x="232" y="439" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">2505.11849</text>
+    <text x="432" y="439" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">SFT + GRPO，奖励 = testbench 结果</text>
+    <text x="72" y="497" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">CodeV-R1</text>
+    <text x="232" y="497" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">中科院计算所 · 2505.24183</text>
+    <text x="432" y="497" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">蒸馏 + RLVR，规则生成 testbench 判等价</text>
+    <line x1="56" y1="520" x2="816" y2="520" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="56" y="546">另有 VeriGen（NYU）、ChipNeMo（NVIDIA，未开源）、BetterV、MG-Verilog、AutoVCoder、VeriThoughts</tspan>
+      <tspan x="56" y="568">除 ChipNeMo 外多数开源；CodeV-R1、VeriReason 均有 7B 权重，可直接跑我们的任务</tspan>
+    </text>
+  </g>
+  <g id="kpi">
+    <rect x="848" y="132" width="376" height="236" rx="8" fill="#F4F6F9"/>
+    <text x="872" y="168" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">VerilogEval v2 已报结果</text>
+    <text x="872" y="226" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="44" font-weight="bold" fill="#1F3A5F">89–98%</text>
+    <text x="872" y="256" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">前沿模型 / agent 流程</text>
+    <line x1="872" y1="276" x2="1200" y2="276" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="872" y="304">开源 7B：CodeV-R1 <tspan font-weight="bold" fill="#E07A1F">68.6%</tspan>（v2）</tspan>
+      <tspan x="872" y="328">RTLLM <tspan font-weight="bold" fill="#E07A1F">72.9%</tspan>；VeriReason <tspan font-weight="bold" fill="#E07A1F">83.1%</tspan></tspan>
+      <tspan x="872" y="352" fill="#666666" font-size="13">（VerilogEval-Machine）</tspan>
+    </text>
+  </g>
+  <g id="insight">
+    <rect x="848" y="388" width="376" height="256" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <use data-icon="tabler-outline/bulb" x="872" y="408" width="24" height="24" fill="#E07A1F" stroke-width="2"/>
+    <text x="906" y="427" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#222222">对我们意味着什么</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="872" y="464">分数高不代表能做流水线：题目多是</tspan>
+      <tspan x="872" y="488">HDLBits 式组合或小时序电路</tspan>
+      <tspan x="872" y="524">可作<tspan font-weight="bold" fill="#1F3A5F">模型层 baseline</tspan>：同一个</tspan>
+      <tspan x="872" y="548">subcore 模块上，比较"换模型"与</tspan>
+      <tspan x="872" y="572">"换中间表示"各带来多少差异</tspan>
+    </text>
+    <text x="872" y="616" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">数字来自各论文自报，评测设置不完全相同</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="694" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">4</text>
+  </g>
+</svg>

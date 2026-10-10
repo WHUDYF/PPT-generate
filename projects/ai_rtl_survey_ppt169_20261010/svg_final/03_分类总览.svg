@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">按"给 LLM 的中间表示"排一条轴</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">越往上结构越显式、能做的设计越大；第 4 级只有算子级工作，第 5 级目前空白</text>
+  </g>
+  <g id="takeaway">
+    <path fill="#F4F6F9" d="M72,136 H496 A8,8 0 0 1 504,144 V256 A8,8 0 0 1 496,264 H72 A8,8 0 0 1 64,256 V144 A8,8 0 0 1 72,136 Z" />
+    
+  <g transform="translate(84.0, 156.0) scale(1.0833333333333333)" fill="none" stroke="#2A7F9E" stroke-width="2">
+    <path d="M12 4l-8 4l8 4l8 -4l-8 -4" />
+    <path d="M4 12l8 4l8 -4" />
+    <path d="M4 16l8 4l8 -4" />
+  </g>
+    <text x="120" y="176" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">四条生成路线 + 一条验证线</text>
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="84" y="208">① 数据与模型　② agent 流程（贯穿各级）</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="84" y="232">③ 结构化中间层　④ 参考模型 + 形式等价</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="84" y="256">验证线：SVA / testbench / 波形反馈 / 契约语言</text></g>
+  <g id="step-1">
+    <polygon points="64,570 84,556 292,556 272,570" fill="#999999" fill-opacity="0.55" />
+    <rect x="64" y="570" width="208" height="50" fill="#999999" />
+    <polygon points="272,570 292,556 292,606 272,620" fill="#999999" fill-opacity="0.8" />
+    <text x="80" y="602" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">L1 自然语言规格</text>
+    <text x="64" y="444" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" font-weight="bold" fill="#999999">路线 ① ②</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="64" y="470">Chip-Chat、RTLCoder</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="64" y="492">CodeV-R1、VeriReason</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="64" y="514">VerilogEval / CVDP 题型</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="64" y="536">单模块为主</text></g>
+  <g id="step-2">
+    <polygon points="296,510 316,496 524,496 504,510" fill="#2A7F9E" fill-opacity="0.35" />
+    <rect x="296" y="510" width="208" height="110" fill="#2A7F9E" fill-opacity="0.7" />
+    <polygon points="504,510 524,496 524,606 504,620" fill="#2A7F9E" fill-opacity="0.85" />
+    <text x="312" y="542" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">L2 模块拓扑 / 端口图</text>
+    <text x="312" y="566" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#FFFFFF">层次、端口、连线</text>
+    <text x="296" y="384" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" font-weight="bold" fill="#2A7F9E">路线 ③</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="296" y="410">ROME、SysVCoder</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="296" y="432">VeriGraphi（RV32I）</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="296" y="454">分层 IR + 多 agent</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="296" y="476">多模块 / 小处理器</text></g>
+  <g id="step-3">
+    <polygon points="528,450 548,436 756,436 736,450" fill="#2A7F9E" fill-opacity="0.55" />
+    <rect x="528" y="450" width="208" height="170" fill="#2A7F9E" />
+    <polygon points="736,450 756,436 756,606 736,620" fill="#1F3A5F" fill-opacity="0.7" />
+    <text x="544" y="482" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">L3 参考模型 / IR</text>
+    <text x="544" y="506" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#FFFFFF">C / Python 模型、nOP IR</text>
+    <text x="528" y="324" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" font-weight="bold" fill="#2A7F9E">路线 ④ ③</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="528" y="350">FormalRTL、AutoVeriFix+</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="528" y="372">C2HLSC、SymRTLO</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="528" y="394">AGON（OoO 核）</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="528" y="416">数据通路为主</text></g>
+  <g id="step-4">
+    <polygon points="760,390 780,376 988,376 968,390" fill="#1F3A5F" fill-opacity="0.55" />
+    <rect x="760" y="390" width="208" height="230" fill="#1F3A5F" />
+    <polygon points="968,390 988,376 988,606 968,620" fill="#1F3A5F" fill-opacity="0.8" />
+    <text x="776" y="422" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">L4 微架构意图层</text>
+    <text x="776" y="446" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#FFFFFF">显式微架构、RTL 前检查</text>
+    <text x="760" y="264" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" font-weight="bold" fill="#1F3A5F">路线 ③</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="760" y="290">HINT（2026）</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="760" y="312">7 个算子 + Vortex VPU</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="760" y="334">无流水契约、无验证框架</text></g>
+  <g id="step-5">
+    <polygon points="992,330 1012,316 1220,316 1200,330" fill="#E07A1F" fill-opacity="0.55" />
+    <rect x="992" y="330" width="208" height="290" fill="#E07A1F" />
+    <polygon points="1200,330 1220,316 1220,606 1200,620" fill="#E07A1F" fill-opacity="0.8" />
+    <text x="1008" y="362" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#FFFFFF">L5 流水级 + 契约</text>
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" x="1008" y="388">级与边界寄存器</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" x="1008" y="410">状态归属、事件通道</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" x="1008" y="432">时序契约</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" x="1008" y="454">+ 验证框架闭环</text><text x="992" y="204" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" font-weight="bold" fill="#E07A1F">目标位置</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="992" y="230" font-weight="bold">curryGPU subcore</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="992" y="252">Anvil / PDL：给人用</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="992" y="274">的语言，未接 LLM</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="992" y="296">LLM 生成侧空白</text></g>
+  <g id="axis-note">
+    <line x1="64" y1="644" x2="1220" y2="644" stroke="#D8DEE6" stroke-width="1" />
+    <text x="64" y="664" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">台阶高度 = 中间表示中显式写出的结构量（定性）；各级代表工作详见后续页</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="694" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">3</text>
+  </g>
+</svg>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">路线三：先给结构再生成——与我们最接近</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">结构都停在模块拓扑、端口、算子这一层；没有流水级、状态归属、事件通道</text>
+  </g>
+  <g id="card-rome">
+    <path fill="#F4F6F9" d="M64,132 H416 A8,8 0 0 1 424,140 V368 A8,8 0 0 1 416,376 H64 A8,8 0 0 1 56,368 V140 A8,8 0 0 1 64,132 Z" />
+    <text x="76" y="166" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">ROME</text>
+    <text x="76" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">NYU · MLCAD 2024 · 2407.18276</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="76" y="222">层次化提示：把处理器按模块</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="76" y="246">层次拆开，逐个生成再组装</text><line x1="76" y1="300" x2="404" y2="300" stroke="#D8DEE6" stroke-width="1" />
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="76" y="328">结构 = 模块层次</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="76" y="352">验证 = 每个模块的 testbench</text></g>
+  <g id="card-sysv">
+    <path fill="#F4F6F9" d="M464,132 H816 A8,8 0 0 1 824,140 V368 A8,8 0 0 1 816,376 H464 A8,8 0 0 1 456,368 V140 A8,8 0 0 1 464,132 Z" />
+    <text x="476" y="166" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">SysVCoder</text>
+    <text x="476" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">APPT 2026 · 2504.20653</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="476" y="222">先生成系统级 IR，再生成 RTL；</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="476" y="246">配 60 个系统级设计（SysVDB）</text><line x1="476" y1="300" x2="804" y2="300" stroke="#D8DEE6" stroke-width="1" />
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="476" y="328">结构 = 系统级模块与连接</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="476" y="352">验证 = 功能仿真</text></g>
+  <g id="card-verigraphi">
+    <path fill="#F4F6F9" d="M864,132 H1216 A8,8 0 0 1 1224,140 V368 A8,8 0 0 1 1216,376 H864 A8,8 0 0 1 856,368 V140 A8,8 0 0 1 864,132 Z" />
+    <text x="876" y="166" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">VeriGraphi</text>
+    <text x="876" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">2026 · 2604.14550</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="876" y="222">规格 → 知识图谱（层次、端口、</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="876" y="246">连线、依赖）→ 逐子模块生成；</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="876" y="270"><tspan>案例：<tspan font-weight="bold">RV32I 处理器</tspan></tspan>
+    </text><line x1="876" y1="300" x2="1204" y2="300" stroke="#D8DEE6" stroke-width="1" />
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="876" y="328">结构 = 端口级接口 + 连线语义</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="876" y="352">验证 = 接口一致性 + 仿真</text></g>
+  <g id="card-hir">
+    <path fill="#F4F6F9" d="M64,400 H416 A8,8 0 0 1 424,408 V636 A8,8 0 0 1 416,644 H64 A8,8 0 0 1 56,636 V408 A8,8 0 0 1 64,400 Z" />
+    <text x="76" y="434" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">分层 IR + 多 agent</text>
+    <text x="76" y="456" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">2026 · 2608.30659</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="76" y="490">Architectural Sketch（拓扑）+</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="76" y="514">Operational Spec（每模块功能与</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="76" y="538">接口）；VerilogEval pass@5 95.5%</text><line x1="76" y1="568" x2="404" y2="568" stroke="#D8DEE6" stroke-width="1" />
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="76" y="596">结构 = 拓扑 + 每模块规格</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="76" y="620">验证 = agent 选探针信号调试</text></g>
+  <g id="card-agon">
+    <path fill="#F4F6F9" d="M464,400 H816 A8,8 0 0 1 824,408 V636 A8,8 0 0 1 816,644 H464 A8,8 0 0 1 456,636 V408 A8,8 0 0 1 464,400 Z" />
+    <text x="476" y="434" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">AGON</text>
+    <text x="476" y="456" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">ICT/CAS · 2024 · 2412.20954</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="476" y="490">ISA 文档 → nano-operator IR →</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="476" y="514"><tspan>定制<tspan font-weight="bold">乱序核</tspan>；功能与性能优化</tspan>
+      </text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="476" y="538">解耦，平均比 BOOM 快 2.35×</text><line x1="476" y1="568" x2="804" y2="568" stroke="#D8DEE6" stroke-width="1" />
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="476" y="596">结构 = 固定的 OoO 模板 + nOP</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="476" y="620">不是通用的流水结构描述</text></g>
+  <g id="card-hint">
+    <path fill="#FFFFFF" stroke="#E07A1F" stroke-width="2" d="M864,400 H1216 A8,8 0 0 1 1224,408 V636 A8,8 0 0 1 1216,644 H864 A8,8 0 0 1 856,636 V408 A8,8 0 0 1 864,400 Z" />
+    <text x="876" y="434" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">HINT</text>
+    <text x="876" y="456" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">2026 · 2608.07625</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="876" y="490">行为规格与 RTL 之间加一层可执行</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="876" y="514">的"硬件意图"：显式微架构、RTL</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="876" y="538">前可检查、给出 lowering 义务</text><line x1="876" y1="568" x2="1204" y2="568" stroke="#D8DEE6" stroke-width="1" />
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="876" y="596">方向与我们几乎相同，但只做到</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" x="876" y="620">算子 / VPU，没有流水时序契约</text></g>
+  <g id="footer">
+    <text x="56" y="694" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">6</text>
+  </g>
+</svg>

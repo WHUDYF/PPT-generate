@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">验证线：LLM 看不出跨周期行为，断言依附信号而非结构</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">三类工作都把模块当黑盒；SeqFeed / DUET 直接证明时序信息是 agent 的短板</text>
+  </g>
+  <g id="col-sva">
+    <path fill="#2A7F9E" d="M64,132 H416 A8,8 0 0 1 424,140 V164 A8,8 0 0 1 416,172 H64 A8,8 0 0 1 56,164 V140 A8,8 0 0 1 64,132 Z" />
+    <text x="76" y="158" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFFFFF">断言 / SVA 生成</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="56" y="204" font-weight="bold">AssertLLM</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="56" y="226">2402.00386 · 规格 → 结构抽取 → SVA</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="56" y="262" font-weight="bold">FVEval</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="56" y="284">NVIDIA · 2410.23299 · 形式验证基准</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="56" y="320" font-weight="bold">AssertionBench / HierSVA</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="56" y="342">2406.18627 · 2606.13706 · 开始考虑层次</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="56" y="378" font-weight="bold">AutoSVA（非 LLM）</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="56" y="400">Princeton · 2104.04003 · 按接口事务定义属性</text></g>
+  <g id="col-tb">
+    <path fill="#2A7F9E" d="M464,132 H816 A8,8 0 0 1 824,140 V164 A8,8 0 0 1 816,172 H464 A8,8 0 0 1 456,164 V140 A8,8 0 0 1 464,132 Z" />
+    <text x="476" y="158" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFFFFF">testbench / 调试</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="456" y="204" font-weight="bold">LLM4DV · AutoBench · CorrectBench</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="456" y="226">激励 / testbench 生成与自校正</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="456" y="262" font-weight="bold">FVDebug</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="456" y="284">NVIDIA · 2510.15906 · 反例 → 因果 DAG</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="456" y="320" font-weight="bold">Veri-Sure</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="456" y="342">2601.19747 · "设计契约"= 接口 / 功能级</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="456" y="378" font-weight="bold">SpecLoop · NoTB</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="456" y="400">等价检查 / 多模型共识代替 testbench</text></g>
+  <g id="col-wave">
+    <path fill="#E07A1F" d="M864,132 H1216 A8,8 0 0 1 1224,140 V164 A8,8 0 0 1 1216,172 H864 A8,8 0 0 1 856,164 V140 A8,8 0 0 1 864,132 Z" />
+    <text x="876" y="158" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFFFFF">波形 / 时序反馈（最相关）</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="856" y="204" font-weight="bold">SeqFeed</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="856" y="226">2608.16934 · SQL 式波形查询 + 跨周期依赖图</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="856" y="262" font-weight="bold">DUET</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="856" y="284">2512.06247 · agent 提假设，仿真 / FV 验证</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="856" y="320" font-weight="bold">Back to the Future</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" x="856" y="342">2610.06790 · 仿真 dump 进 SQLite 供 agent 查</text></g>
+  <g id="quote">
+    <path fill="#F4F6F9" d="M64,436 H1216 A8,8 0 0 1 1224,444 V524 A8,8 0 0 1 1216,532 H64 A8,8 0 0 1 56,524 V444 A8,8 0 0 1 64,436 Z" />
+    <text x="80" y="472" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">SeqFeed 摘要原话（意译）</text>
+    <text x="80" y="506" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#222222">RTL 代码不暴露某次执行的周期级行为，完整波形又太大太杂——<tspan font-weight="bold" fill="#1F3A5F">时序信息很难传给 agent</tspan></text>
+  </g>
+  <g id="insight">
+    
+  <g transform="translate(56.0, 560.0)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7" />
+    <path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" />
+    <path d="M9.7 17l4.6 0" />
+  </g>
+    <text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="92" y="578"><tspan>它们按"信号"组织反馈；我们有结构框架，可以按<tspan font-weight="bold" fill="#E07A1F">流水级和事件通道</tspan>组织反馈与断言</tspan>
+      </text><text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="92" y="606">（例如"S2 发射 → +1 拍 ev_head_consumed"）。SeqFeed 可作验证侧 baseline。</text></g>
+  <g id="footer">
+    <text x="56" y="694" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">9</text>
+  </g>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">可作 baseline 的组合：benchmark × 方法 × 模型</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">三层各取一组，回答"换任务 / 换方法 / 换模型各带来多少差异"；我们的 subcore 任务放在最上面</text>
+  </g>
+  <g id="layer-ours">
+    <rect x="56" y="128" width="1168" height="84" rx="8" fill="#E07A1F"/>
+    <use data-icon="tabler-outline/cpu" x="80" y="156" width="28" height="28" fill="#FFFFFF" stroke-width="2"/>
+    <text x="120" y="164" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#FFFFFF">我们的任务：curryGPU subcore 模块（流水级 + 隐式时序契约）</text>
+    <text x="120" y="192" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#FFFFFF">判据：端到端 PASS + 逐信号波形等价 + lockstep 拍数 —— 现有 benchmark 都没有这一层</text>
+  </g>
+  <g id="layer-bench">
+    <text x="56" y="248" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">Benchmark 层</text>
+    <rect x="56" y="260" width="372" height="96" rx="8" fill="#F4F6F9"/>
+    <text x="76" y="290" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">下限：VerilogEval v2 · RTLLM v2</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="76" y="316">证明方法 / 模型有基本能力；</tspan><tspan x="76" y="338">社区默认报数，便于对齐</tspan></text>
+    <rect x="454" y="260" width="372" height="96" rx="8" fill="#F4F6F9"/>
+    <text x="474" y="290" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">工业通用：CVDP</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="474" y="316">783 题 13 类，有 agentic 形式；</tspan><tspan x="474" y="338">开源（NVlabs/cvdp_benchmark）</tspan></text>
+    <rect x="852" y="260" width="372" height="96" rx="8" fill="#F4F6F9"/>
+    <text x="872" y="290" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">流水线：ArchXBench · ChipVerilog</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="872" y="316">L4+ 所有模型失败；ChipVerilog 含</tspan><tspan x="872" y="338">OR1200 / MIPS 核（开源情况待查）</tspan></text>
+  </g>
+  <g id="layer-method">
+    <text x="56" y="392" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">方法层（对应消融条件）</text>
+    <rect x="56" y="404" width="372" height="96" rx="8" fill="#F4F6F9"/>
+    <text x="76" y="434" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">直接生成 + agent 调试</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="76" y="460">对应 <tspan font-family="Consolas, monospace" fill="#222222">nl</tspan>；可加 SeqFeed 式</tspan><tspan x="76" y="482">波形反馈作为验证侧增强</tspan></text>
+    <rect x="454" y="404" width="372" height="96" rx="8" fill="#F4F6F9"/>
+    <text x="474" y="434" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">参考模型路线（FormalRTL 式）</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="474" y="460">对应 <tspan font-family="Consolas, monospace" fill="#222222">model</tspan>：给性能模型代码，</tspan><tspan x="474" y="482">不给结构框架</tspan></text>
+    <rect x="852" y="404" width="372" height="96" rx="8" fill="#F4F6F9"/>
+    <text x="872" y="434" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">结构 IR 路线（VeriGraphi / HINT）</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="872" y="460">拓扑 / 意图层，无流水契约；与</tspan><tspan x="872" y="482"><tspan font-family="Consolas, monospace" fill="#222222">model+style+diagram</tspan> 直接对比</tspan></text>
+  </g>
+  <g id="layer-model">
+    <text x="56" y="536" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">模型层</text>
+    <rect x="56" y="548" width="570" height="96" rx="8" fill="#F4F6F9"/>
+    <text x="76" y="578" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">开源 7B：CodeV-R1 · VeriReason</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="76" y="604">Verilog 专用 RL 训练；本地可跑，可复现</tspan><tspan x="76" y="626">测"专用小模型在流水线任务上掉多少"</tspan></text>
+    <rect x="654" y="548" width="570" height="96" rx="8" fill="#F4F6F9"/>
+    <text x="674" y="578" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">商用前沿模型（Claude / GPT / DeepSeek）</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="674" y="604">我们实际在用的 agent 设置；同时检验 Representation</tspan><tspan x="674" y="626">Bottleneck 的结论：换模型的差距是否小于换表示</tspan></text>
+  </g>
+  <g id="footer">
+    <text x="56" y="694" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">14</text>
+  </g>
+</svg>

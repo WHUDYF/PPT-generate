@@ -14,6 +14,7 @@ Generated presentation materials and supporting documents.
 ### PPT Master Projects
 
 - `projects/digital_economy_numerical_v2_ppt169_20260522/`
+- `projects/ai_rtl_survey_ppt169_20261010/` — AI 生成 RTL 文献综述与 baseline 调研（15 页；第 5 页 agent 流程待补）
 
 ### Documents
 

@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">断言 / 不变量挖掘：工具成熟，但缺微架构先验</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">从仿真轨迹挖时序断言已有 15 年；模板要靠人先想到，没有人用流水结构约束搜索空间</text>
+  </g>
+  <g id="timeline">
+    <line x1="80" y1="210" x2="1200" y2="210" stroke="#D8DEE6" stroke-width="3" />
+    <circle cx="140" cy="210" r="9" fill="#999999" />
+    <text x="140" y="180" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">2005</text>
+    <text x="140" y="244" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">IODINE</text>
+    <text x="140" y="266" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">Daikon 式用于硬件</text>
+    <circle cx="340" cy="210" r="9" fill="#999999" />
+    <text x="340" y="180" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">2010</text>
+    <text x="340" y="244" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">GoldMine</text>
+    <text x="340" y="266" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">决策树 + 静态分析</text>
+    <circle cx="540" cy="210" r="9" fill="#2A7F9E" />
+    <text x="540" y="180" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">2017–2022</text>
+    <text x="540" y="244" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">A-TEAM · HARM</text>
+    <text x="540" y="266" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">模板 + 提示挖 LTL（TCAD 2022）</text>
+    <circle cx="760" cy="210" r="9" fill="#2A7F9E" />
+    <text x="760" y="180" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">2020–2026</text>
+    <text x="760" y="244" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">FlowMiner · Isadora</text>
+    <text x="760" y="266" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">SoC 消息流 / 信息流</text>
+    <circle cx="960" cy="210" r="9" fill="#2A7F9E" />
+    <text x="960" y="180" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">2026</text>
+    <text x="960" y="244" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">GR1MINE</text>
+    <text x="960" y="266" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">SAT 学 GR(1)</text>
+    <circle cx="1150" cy="210" r="11" fill="#E07A1F" />
+    <text x="1150" y="180" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">2026</text>
+    <text x="1150" y="244" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#E07A1F">NeuroAssertion</text>
+    <text x="1150" y="266" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">LLM + 轨迹挖掘</text>
+    <text x="56" y="300" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#999999">IODINE、GoldMine、A-TEAM 的年份与会议凭记忆，未在线核实；HARM 已通过仓库与 DOI 确认；NeuroAssertion：MLCAD 2026 · 2608.18482</text>
+  </g>
+  <g id="compare-left">
+    <path fill="#F4F6F9" d="M64,332 H608 A8,8 0 0 1 616,340 V636 A8,8 0 0 1 608,644 H64 A8,8 0 0 1 56,636 V340 A8,8 0 0 1 64,332 Z" />
+    <text x="80" y="368" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#222222">现有做法</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="80" y="406">候选空间 = 所有信号 × 通用时序模板</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="80" y="436">HARM 需要用户给"提示"，才能挖到</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="80" y="460">"同 warp 不连续发射"这类断言</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="80" y="490">NeuroAssertion：形式探索生成轨迹 →</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="80" y="514">SyGuS 挖掘 → LLM 修复，但不读设计结构</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#C62828" x="80" y="560">10 万个信号的 subcore：候选爆炸，误报多</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#C62828" x="80" y="586">挖出的断言也不知道"该不该被这次重构打破"</text></g>
+  <g id="compare-right">
+    <path fill="#FFFFFF" stroke="#E07A1F" stroke-width="2" d="M656,332 H1216 A8,8 0 0 1 1224,340 V636 A8,8 0 0 1 1216,644 H656 A8,8 0 0 1 648,636 V340 A8,8 0 0 1 656,332 Z" />
+    <text x="672" y="368" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#E07A1F">可补的点：结构先验 + 重构意图</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="672" y="406">1. 按流水级、边界寄存器、事件通道生成模板：</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="692" y="430">同 warp 事件间隔、A 后 k 拍内必有 B、互斥</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="672" y="466">2. 在基线波形上挖掘（已有 FST + wave_compare）</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="672" y="502">3. 按重构意图分两类：</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="692" y="526">要打破的（发射间隔）/ 必须保持的 → 转断言</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="672" y="562">4. 新模型上第一个失败的断言 = 依赖点</text><text x="672" y="610" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">评估：G2 首轮模型重放，看能否在 iadd3（PASS）里就报出</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="694" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">11</text>
+  </g>
+</svg>

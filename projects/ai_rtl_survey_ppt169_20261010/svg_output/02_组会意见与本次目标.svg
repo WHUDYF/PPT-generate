@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">组会意见：先找到能对比的 baseline</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">本次只做调研：别人怎么让 AI 设计 RTL，哪些能拿来和我们比</text>
+  </g>
+  <g id="questions">
+    <rect x="56" y="132" width="460" height="512" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/search" x="80" y="156" width="28" height="28" fill="#2A7F9E" stroke-width="2"/>
+    <text x="118" y="178" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#222222">调研回答三个问题</text>
+    <text x="80" y="236" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="28" font-weight="bold" fill="#E07A1F">01</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" fill="#222222">
+      <tspan x="128" y="232" font-weight="bold">给 LLM 的输入是什么？</tspan>
+      <tspan x="128" y="258" font-size="15" fill="#666666">自然语言、模块拓扑、参考模型、IR、波形</tspan>
+    </text>
+    <text x="80" y="336" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="28" font-weight="bold" fill="#E07A1F">02</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" fill="#222222">
+      <tspan x="128" y="332" font-weight="bold">做到了多大的设计？</tspan>
+      <tspan x="128" y="358" font-size="15" fill="#666666">单模块、多模块、处理器核、SoC</tspan>
+    </text>
+    <text x="80" y="436" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="28" font-weight="bold" fill="#E07A1F">03</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" fill="#222222">
+      <tspan x="128" y="432" font-weight="bold">怎么判定生成得对？</tspan>
+      <tspan x="128" y="458" font-size="15" fill="#666666">testbench、形式等价、断言、周期数</tspan>
+    </text>
+    <line x1="80" y1="500" x2="492" y2="500" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">
+      <tspan x="80" y="532">范围：2023–2026，arXiv 为主，约 80 篇</tspan>
+      <tspan x="80" y="558">分三路检索：生成流程 / 验证与中间表示 /</tspan>
+      <tspan x="80" y="584">benchmark 与模型</tspan>
+    </text>
+  </g>
+  <g id="thesis">
+    <text x="548" y="160" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#222222">我们的论点（待用 baseline 检验）</text>
+    <rect x="548" y="180" width="676" height="76" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <rect x="548" y="180" width="6" height="76" fill="#999999"/>
+    <text x="572" y="212" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#222222">性能模型</text>
+    <text x="572" y="238" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">做什么、多少拍 —— 没有"级"的概念</text>
+    <rect x="548" y="268" width="676" height="76" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <rect x="548" y="268" width="6" height="76" fill="#2A7F9E"/>
+    <text x="572" y="300" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#222222">结构框架</text>
+    <text x="572" y="326" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">在哪一级、谁拥有状态、怎么握手、事件通道</text>
+    <rect x="548" y="356" width="676" height="76" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <rect x="548" y="356" width="6" height="76" fill="#E07A1F"/>
+    <text x="572" y="388" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#222222">验证框架</text>
+    <text x="572" y="414" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">逐信号波形等价、lockstep A/B、时序契约</text>
+  </g>
+  <g id="evidence">
+    <rect x="548" y="456" width="676" height="188" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/alert-triangle" x="572" y="476" width="24" height="24" fill="#C62828" stroke-width="2"/>
+    <text x="606" y="495" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#222222">已有证据：G2 首轮（S1 改 2 项 head FIFO）</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="572" y="530">同一 warp 可连续两拍发射，打破原 RTL 未写下的契约"发射后至少空一拍"</tspan>
+      <tspan x="572" y="558"><tspan font-family="Consolas, monospace">unit_mix</tspan> <tspan fill="#C62828" font-weight="bold">64</tspan> 处错，<tspan font-family="Consolas, monospace">unit_control_flow</tspan> <tspan fill="#C62828" font-weight="bold">212</tspan> 处错</tspan>
+      <tspan x="572" y="586"><tspan font-family="Consolas, monospace">iadd3</tspan> PASS 把错误盖住：波形里同 warp 两拍发射，ITS PC 都是 8</tspan>
+    </text>
+    <text x="572" y="622" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#E07A1F">问题：只有自家一个案例，需要外部 baseline 才站得住</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="694" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">2</text>
+  </g>
+</svg>

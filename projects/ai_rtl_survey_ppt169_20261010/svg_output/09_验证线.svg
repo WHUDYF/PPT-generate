@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">验证线：LLM 看不出跨周期行为，断言依附信号而非结构</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">三类工作都把模块当黑盒；SeqFeed / DUET 直接证明时序信息是 agent 的短板</text>
+  </g>
+  <g id="col-sva">
+    <rect x="56" y="132" width="368" height="40" rx="8" fill="#2A7F9E"/>
+    <text x="76" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#FFFFFF">断言 / SVA 生成</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="56" y="204" font-weight="bold">AssertLLM</tspan>
+      <tspan x="56" y="226" font-size="13" fill="#666666">2402.00386 · 规格 → 结构抽取 → SVA</tspan>
+      <tspan x="56" y="262" font-weight="bold">FVEval</tspan>
+      <tspan x="56" y="284" font-size="13" fill="#666666">NVIDIA · 2410.23299 · 形式验证基准</tspan>
+      <tspan x="56" y="320" font-weight="bold">AssertionBench / HierSVA</tspan>
+      <tspan x="56" y="342" font-size="13" fill="#666666">2406.18627 · 2606.13706 · 开始考虑层次</tspan>
+      <tspan x="56" y="378" font-weight="bold">AutoSVA（非 LLM）</tspan>
+      <tspan x="56" y="400" font-size="13" fill="#666666">Princeton · 2104.04003 · 按接口事务定义属性</tspan>
+    </text>
+  </g>
+  <g id="col-tb">
+    <rect x="456" y="132" width="368" height="40" rx="8" fill="#2A7F9E"/>
+    <text x="476" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#FFFFFF">testbench / 调试</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="456" y="204" font-weight="bold">LLM4DV · AutoBench · CorrectBench</tspan>
+      <tspan x="456" y="226" font-size="13" fill="#666666">激励 / testbench 生成与自校正</tspan>
+      <tspan x="456" y="262" font-weight="bold">FVDebug</tspan>
+      <tspan x="456" y="284" font-size="13" fill="#666666">NVIDIA · 2510.15906 · 反例 → 因果 DAG</tspan>
+      <tspan x="456" y="320" font-weight="bold">Veri-Sure</tspan>
+      <tspan x="456" y="342" font-size="13" fill="#666666">2601.19747 · "设计契约"= 接口 / 功能级</tspan>
+      <tspan x="456" y="378" font-weight="bold">SpecLoop · NoTB</tspan>
+      <tspan x="456" y="400" font-size="13" fill="#666666">等价检查 / 多模型共识代替 testbench</tspan>
+    </text>
+  </g>
+  <g id="col-wave">
+    <rect x="856" y="132" width="368" height="40" rx="8" fill="#E07A1F"/>
+    <text x="876" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#FFFFFF">波形 / 时序反馈（最相关）</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="856" y="204" font-weight="bold">SeqFeed</tspan>
+      <tspan x="856" y="226" font-size="13" fill="#666666">2608.16934 · SQL 式波形查询 + 跨周期依赖图</tspan>
+      <tspan x="856" y="262" font-weight="bold">DUET</tspan>
+      <tspan x="856" y="284" font-size="13" fill="#666666">2512.06247 · agent 提假设，仿真 / FV 验证</tspan>
+      <tspan x="856" y="320" font-weight="bold">Back to the Future</tspan>
+      <tspan x="856" y="342" font-size="13" fill="#666666">2610.06790 · 仿真 dump 进 SQLite 供 agent 查</tspan>
+    </text>
+  </g>
+  <g id="quote">
+    <rect x="56" y="436" width="1168" height="96" rx="8" fill="#F4F6F9"/>
+    <text x="80" y="472" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">SeqFeed 摘要原话（意译）</text>
+    <text x="80" y="506" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" fill="#222222">RTL 代码不暴露某次执行的周期级行为，完整波形又太大太杂——<tspan font-weight="bold" fill="#1F3A5F">时序信息很难传给 agent</tspan></text>
+  </g>
+  <g id="insight">
+    <use data-icon="tabler-outline/bulb" x="56" y="560" width="24" height="24" fill="#E07A1F" stroke-width="2"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">
+      <tspan x="92" y="578">它们按"信号"组织反馈；我们有结构框架，可以按<tspan font-weight="bold" fill="#E07A1F">流水级和事件通道</tspan>组织反馈与断言</tspan>
+      <tspan x="92" y="606">（例如"S2 发射 → +1 拍 ev_head_consumed"）。SeqFeed 可作验证侧 baseline。</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="694" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">9</text>
+  </g>
+</svg>

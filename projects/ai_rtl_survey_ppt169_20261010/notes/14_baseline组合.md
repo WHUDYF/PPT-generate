@@ -1,0 +1,1 @@
+所以 baseline 我建议分三层。benchmark 层用 VerilogEval 和 RTLLM 做下限，CVDP 做工业通用对照，ArchXBench 和 ChipVerilog 做流水线对照。方法层的三种外部方法分别对应我们消融里的 nl、model 和加图的条件。模型层用开源的 CodeV-R1、VeriReason，再加我们实际在用的商用模型。最上面是我们自己的 subcore 任务，用端到端、波形等价和 lockstep 拍数来判定，这一层现有 benchmark 都没有。

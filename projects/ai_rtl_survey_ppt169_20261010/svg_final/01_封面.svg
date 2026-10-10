@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="cover-decor">
+    <rect x="0" y="0" width="420" height="720" fill="#1F3A5F" />
+    <rect x="420" y="0" width="8" height="720" fill="#E07A1F" />
+    <path fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.5" d="M70,200 H114 A6,6 0 0 1 120,206 V250 A6,6 0 0 1 114,256 H70 A6,6 0 0 1 64,250 V206 A6,6 0 0 1 70,200 Z" />
+    <path fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.5" d="M138,200 H182 A6,6 0 0 1 188,206 V250 A6,6 0 0 1 182,256 H138 A6,6 0 0 1 132,250 V206 A6,6 0 0 1 138,200 Z" />
+    <path fill="#FFFFFF" fill-opacity="0.08" stroke="#FFFFFF" stroke-opacity="0.35" stroke-width="1.5" d="M206,200 H250 A6,6 0 0 1 256,206 V250 A6,6 0 0 1 250,256 H206 A6,6 0 0 1 200,250 V206 A6,6 0 0 1 206,200 Z" />
+    <path fill="#E07A1F" fill-opacity="0.9" d="M274,200 H318 A6,6 0 0 1 324,206 V250 A6,6 0 0 1 318,256 H274 A6,6 0 0 1 268,250 V206 A6,6 0 0 1 274,200 Z" />
+    <line x1="120" y1="228" x2="132" y2="228" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="2" />
+    <line x1="188" y1="228" x2="200" y2="228" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="2" />
+    <line x1="256" y1="228" x2="268" y2="228" stroke="#FFFFFF" stroke-opacity="0.5" stroke-width="2" />
+    <text fill-opacity="0.7" font-size="14" font-family="Consolas, monospace" fill="#FFFFFF" x="64" y="300">NL → topology → model/IR</text><text fill-opacity="0.7" font-size="14" font-family="Consolas, monospace" fill="#FFFFFF" x="64" y="322">→ intent → pipeline + contract</text><text x="64" y="640" font-family="Consolas, monospace" font-size="13" fill="#FFFFFF" fill-opacity="0.55">curryGPU · subcore</text>
+  </g>
+  <g id="cover-title">
+    <text x="500" y="270" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" fill="#2A7F9E" font-weight="bold">文献调研</text>
+    <text x="500" y="340" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="52" font-weight="bold" fill="#1F3A5F">AI 生成 RTL</text>
+    <text x="500" y="410" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="40" font-weight="bold" fill="#222222">现有思路与可对比的 baseline</text>
+    <rect x="500" y="440" width="80" height="4" fill="#E07A1F" />
+    <text x="500" y="486" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#666666">为 subcore 的"结构框架 + 验证框架"找对照组</text>
+  </g>
+  <g id="cover-footer">
+    <text x="500" y="620" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">dyf · 课题组组会 · 2026-10</text>
+    <text x="500" y="648" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#999999">文献检索截至 2026-10 初，重点引用条目已用 arXiv API 核实</text>
+  </g>
+</svg>

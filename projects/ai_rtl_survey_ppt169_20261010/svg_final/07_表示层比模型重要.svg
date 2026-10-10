@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="74" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">两个外部证据：表示层比模型更重要</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">与"性能模型不够、要补结构层"的论点同向，但都还没到流水线与时序契约</text>
+  </g>
+  <g id="evidence-bottleneck">
+    <text x="56" y="168" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#2A7F9E" font-weight="bold">From NL to Silicon: The Representation Bottleneck · 2026 · 2604.17097</text>
+    <text x="56" y="268" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="88" font-weight="bold" fill="#1F3A5F">3%–88%</text>
+    <text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="56" y="312">换中间表示（Verilog、VHDL、Chisel、Bluespec、PyMTL3、HLS C），</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="56" y="340">仿真通过率从 3% 变到 88%</text><text x="760" y="268" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="88" font-weight="bold" fill="#999999">&lt;1.25×</text>
+    <text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="760" y="312">同一种表示下换模型（3 个前沿模型），</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="760" y="340">差距通常不到 1.25 倍</text><text x="56" y="378" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">202 个任务，编译 → 仿真 → iCE40 综合 → LLM 修复。注意：这里的"表示"是语言，不是结构描述</text>
+  </g>
+  <line x1="56" y1="410" x2="1224" y2="410" stroke="#D8DEE6" stroke-width="1" />
+  <g id="evidence-hint">
+    <text x="56" y="452" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#2A7F9E" font-weight="bold">HINT: Executable Hardware-Intent Representation Layer · 2026 · 2608.07625</text>
+    <text x="56" y="530" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="64" font-weight="bold" fill="#E07A1F">7/7</text>
+    <text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="56" y="566">经意图层：7 个算子都得到</text><text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="56" y="590">合约合规、可综合的 RTL</text><text x="400" y="530" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="64" font-weight="bold" fill="#999999">5/5 · 1/5</text>
+    <text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="400" y="566">直接 C→RTL 5/5（适用的 5 个）；</text><text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="400" y="590">C2HLSC 1/5。面积比直接生成小 8.9%–86.1%</text><path fill="#F4F6F9" d="M868,470 H1216 A8,8 0 0 1 1224,478 V622 A8,8 0 0 1 1216,630 H868 A8,8 0 0 1 860,622 V478 A8,8 0 0 1 868,470 Z" />
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="880" y="504" font-weight="bold">留给我们的位置</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="880" y="536">HINT 的意图层到算子 / VPU 为止；</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="880" y="562">多 warp 发射、stall、隐式 SB 这类</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="880" y="588"><tspan><tspan fill="#E07A1F" font-weight="bold">周期级时序契约</tspan>不在它的表示里</tspan>
+    </text></g>
+  <g id="footer">
+    <text x="56" y="694" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">7</text>
+  </g>
+</svg>

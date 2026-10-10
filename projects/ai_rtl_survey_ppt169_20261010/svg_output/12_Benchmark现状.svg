@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="44" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="74" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">Benchmark 现状：一到流水线、层次化就断崖</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">各 benchmark 上已报告的最好结果；指标与设置不同，只看趋势，不能横向比较</text>
+  </g>
+  <g id="chartArea">
+    <line x1="400" y1="140" x2="400" y2="604" stroke="#D8DEE6" stroke-width="1"/>
+    <line x1="560" y1="140" x2="560" y2="604" stroke="#D8DEE6" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="720" y1="140" x2="720" y2="604" stroke="#D8DEE6" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="880" y1="140" x2="880" y2="604" stroke="#D8DEE6" stroke-width="1" stroke-dasharray="4,4"/>
+    <line x1="1040" y1="140" x2="1040" y2="604" stroke="#D8DEE6" stroke-width="1"/>
+    <line x1="400" y1="604" x2="1040" y2="604" stroke="#999999" stroke-width="1"/>
+    <text x="400" y="626" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">0</text>
+    <text x="560" y="626" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">25</text>
+    <text x="720" y="626" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">50</text>
+    <text x="880" y="626" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">75</text>
+    <text x="1040" y="626" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">100 %</text>
+    <!-- chart-plot-area: 400,140,1040,604 -->
+    <text x="384" y="166" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">VerilogEval · 分层 IR（pass@5）</text>
+    <rect x="400" y="148" width="611" height="28" fill="#999999"/>
+    <text x="1019" y="168" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#666666">95.5</text>
+    <text x="384" y="222" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">HWE-Bench · 小核修复</text>
+    <rect x="400" y="204" width="576" height="28" fill="#999999"/>
+    <text x="984" y="224" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#666666">&gt;90</text>
+    <text x="384" y="278" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">RTLLM · CodeV-R1 7B</text>
+    <rect x="400" y="260" width="467" height="28" fill="#999999"/>
+    <text x="875" y="280" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#666666">72.9</text>
+    <text x="384" y="334" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">HWE-Bench · SoC 修复</text>
+    <rect x="400" y="316" width="416" height="28" fill="#2A7F9E"/>
+    <text x="824" y="336" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#2A7F9E">&lt;65</text>
+    <text x="384" y="390" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">ArchXBench · 全部 30 题（pass@5）</text>
+    <rect x="400" y="372" width="341" height="28" fill="#2A7F9E"/>
+    <text x="749" y="392" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#2A7F9E">53（16/30）</text>
+    <text x="384" y="446" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">CVDP · 代码生成（pass@1）</text>
+    <rect x="400" y="428" width="218" height="28" fill="#1F3A5F"/>
+    <text x="626" y="448" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#1F3A5F">≤34</text>
+    <text x="384" y="502" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">RTL-BenchLS · repo-issue</text>
+    <rect x="400" y="484" width="77" height="28" fill="#1F3A5F"/>
+    <text x="485" y="504" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#1F3A5F">12</text>
+    <text x="384" y="558" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#C62828">ArchXBench · L4 及以上</text>
+    <rect x="400" y="540" width="3" height="28" fill="#C62828"/>
+    <text x="412" y="560" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#C62828">0（所有模型）</text>
+  </g>
+  <g id="side-notes">
+    <rect x="1064" y="140" width="160" height="464" rx="8" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="1078" y="170" font-weight="bold">共同缺口</tspan>
+      <tspan x="1078" y="204">正确性只看端口</tspan>
+      <tspan x="1078" y="226">I/O 等价</tspan>
+      <tspan x="1078" y="262">不检查级边界、</tspan>
+      <tspan x="1078" y="284">状态归属、握手</tspan>
+      <tspan x="1078" y="320">没有把周期数或</tspan>
+      <tspan x="1078" y="342">"与性能模型一致"</tspan>
+      <tspan x="1078" y="364">当指标</tspan>
+      <tspan x="1078" y="400" fill="#E07A1F" font-weight="bold">最接近的任务：</tspan>
+      <tspan x="1078" y="422">ArchXBench L4+</tspan>
+      <tspan x="1078" y="444">ChipVerilog</tspan>
+      <tspan x="1078" y="466">（OR1200、MIPS）</tspan>
+    </text>
+  </g>
+  <g id="legend">
+    <rect x="56" y="644" width="12" height="12" fill="#999999"/>
+    <text x="74" y="655" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">模块级 / 小核</text>
+    <rect x="186" y="644" width="12" height="12" fill="#2A7F9E"/>
+    <text x="204" y="655" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">层次化 / SoC</text>
+    <rect x="316" y="644" width="12" height="12" fill="#1F3A5F"/>
+    <text x="334" y="655" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">工业题 / 仓库级</text>
+    <text x="480" y="655" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#999999">来源：2608.30659、2604.14709、2505.24183、2508.06047、2506.14074、2606.08976</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="694" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · AI 生成 RTL 综述 · 2026-10</text>
+    <text x="1224" y="694" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">12</text>
+  </g>
+</svg>
