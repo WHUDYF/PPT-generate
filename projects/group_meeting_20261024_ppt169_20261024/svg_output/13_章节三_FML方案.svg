@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#1F3A5F"/>
+  <g id="bg-decor">
+    <text x="1224" y="660" text-anchor="end" font-family="Consolas, monospace" font-size="90" font-weight="bold" fill="#FFFFFF" fill-opacity="0.06">03</text>
+  </g>
+  <g id="chapter-title">
+    <text x="120" y="228" font-family="Consolas, monospace" font-size="18" fill="#E07A1F">PART 03 · 方案</text>
+    <text x="120" y="310" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="48" font-weight="bold" fill="#FFFFFF">以 FML 为中间 IR，把流程固定下来</text>
+    <rect x="120" y="340" width="96" height="4" fill="#E07A1F"/>
+  </g>
+  <g id="rules">
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" fill="#FFFFFF">
+      <tspan x="120" y="410"><tspan fill="#E07A1F" font-weight="bold">标准</tspan>从一张图，换成一个能跑的周期级模型</tspan>
+      <tspan x="120" y="456"><tspan fill="#E07A1F" font-weight="bold">图、约束清单、契约</tspan>都从模型派生</tspan>
+      <tspan x="120" y="502"><tspan fill="#E07A1F" font-weight="bold">RTL</tspan>的每一步都和模型逐拍比对</tspan>
+    </text>
+    <text x="120" y="580" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#FFFFFF" fill-opacity="0.65">这部分是提议；S1 head FIFO 原型 10-23 已跑通（fml-rtl-proto）</text>
+  </g>
+</svg>

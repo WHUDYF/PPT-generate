@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">目标流水线 v2：7 个大级 + 变长路径的前门</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">11 号图 v2（10-21 版，PPT-generate 上 26 次修订）；固定延迟走主干，变长指令在 S3 推进队列交给前门</text>
+  </g>
+  <g id="figure">
+    <rect x="56" y="122" width="596" height="540" rx="6" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <image href="../images/fig11-v2.png" x="60" y="126" width="588" height="529" preserveAspectRatio="xMidYMid meet"/>
+  </g>
+  <g id="stages">
+    <text x="684" y="146" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">主干：每级一个模块</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="684" y="176"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">S0</tspan>　取指，每 subcore 一份（本轮未搬）</tspan>
+      <tspan x="684" y="202"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">S1</tspan>　IB 读 + 译码一拍，标出目标前门</tspan>
+      <tspan x="684" y="228"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">S2</tspan>　单拍发射环：eligible → pick → issue</tspan>
+      <tspan x="684" y="254"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">S3</tspan>　payload 译码、取 lane mask、分流</tspan>
+      <tspan x="684" y="280"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">S4</tspan>　allocate 预约 + 读 0–3 拍操作数</tspan>
+      <tspan x="684" y="306"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">S5</tspan>　固定延迟单元：VALU 6 级、SALU 4 级</tspan>
+      <tspan x="684" y="332"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">SW</tspan>　RF、谓词、URF 写口仲裁</tspan>
+    </text>
+  </g>
+  <g id="frontdoors">
+    <rect x="684" y="356" width="540" height="168" rx="8" fill="#F4F6F9"/>
+    <text x="704" y="386" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">前门：每类变长指令一个模块</text>
+    <text font-family="Consolas, monospace" font-size="14" fill="#222222">
+      <tspan x="704" y="416">fd_mem　fd_sfx　fd_cbu　fd_fp64</tspan>
+      <tspan x="704" y="440">fd_valu_var　ctrl_fd　frontdoor(TQ/async)</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="704" y="472">队列是 S3 和前门之间的桥，不归任何一级；</tspan>
+      <tspan x="704" y="496">跨前门的写口 / 事件仲裁统一归 SW。</tspan>
+    </text>
+  </g>
+  <g id="rule">
+    <use data-icon="tabler-outline/lock" x="684" y="548" width="26" height="26" fill="#E07A1F" stroke-width="2"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="720" y="566">反向只走<tspan fill="#E07A1F" font-weight="bold">寄存的事件通道</tspan>，目的级下一拍看到；</tspan>
+      <tspan x="720" y="592">唯一的例外是 S3 / S4 在途掩码送 S2 的<tspan fill="#E07A1F" font-weight="bold">完成信号</tspan>。</tspan>
+      <tspan x="720" y="626" fill="#666666">顶层不再持有状态，也不再做上下文扫描。</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　图：currygpu_subcore_ppt169_20261004/sources/11-target-pipeline-v2.drawio（4e2b425）</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">5</text>
+  </g>
+</svg>

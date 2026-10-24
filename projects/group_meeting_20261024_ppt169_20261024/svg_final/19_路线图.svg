@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="76" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">路线图：从一级原型，到整条流水线以 FML 为标准</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">提议，顺序可讨论；原则是每一阶段都能单独产出可用的东西，RTL 重构不停</text>
+  </g>
+  <g id="track">
+    <line x1="148" y1="176" x2="1132" y2="176" stroke="#D8DEE6" stroke-width="4" />
+    <line x1="148" y1="176" x2="244" y2="176" stroke="#2E7D32" stroke-width="4" />
+  </g>
+  <g id="stage-0">
+    <circle cx="148" cy="176" r="12" fill="#2E7D32" />
+    <text x="148" y="148" text-anchor="middle" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#2E7D32">阶段 0 · 已完成</text>
+    <path fill="#FFFFFF" stroke="#2E7D32" stroke-width="2" d="M64,204 H232 A8,8 0 0 1 240,212 V496 A8,8 0 0 1 232,504 H64 A8,8 0 0 1 56,496 V212 A8,8 0 0 1 64,204 Z" />
+    <text x="72" y="234" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">S1 原型</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="72" y="264">S1 控制逐拍一致</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="72" y="288">契约 monitor</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="72" y="312">lockstep 回放</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="72" y="336">40 行级规则</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#2E7D32" font-size="13" x="72" y="380" font-weight="bold">10-23</text></g>
+  <g id="stage-1">
+    <circle cx="345" cy="176" r="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="3" />
+    <text x="345" y="148" text-anchor="middle" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#1F3A5F">阶段 1</text>
+    <path fill="#F4F6F9" d="M261,204 H429 A8,8 0 0 1 437,212 V496 A8,8 0 0 1 429,504 H261 A8,8 0 0 1 253,496 V212 A8,8 0 0 1 261,204 Z" />
+    <text x="269" y="234" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">子集规则 + S2</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="269" y="264">定义可落 RTL 子集：</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="269" y="288">view / commit、位宽、</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="269" y="312">级注解、ghost</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="269" y="346">S2（含 ITS）的边界规格，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="269" y="370">在边界上与 RTL 比对</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="269" y="414">产出：E15 批次可先在</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="269" y="436">模型上改、再写 RTL</text></g>
+  <g id="stage-2">
+    <circle cx="542" cy="176" r="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="3" />
+    <text x="542" y="148" text-anchor="middle" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#1F3A5F">阶段 2</text>
+    <path fill="#F4F6F9" d="M458,204 H626 A8,8 0 0 1 634,212 V496 A8,8 0 0 1 626,504 H458 A8,8 0 0 1 450,496 V212 A8,8 0 0 1 458,204 Z" />
+    <text x="466" y="234" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">契约库</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="466" y="264">把 E22（隔拍发射）、</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="466" y="288">ev_complete +1、credit</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="466" y="312">守恒等写成 monitor</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="466" y="346">期望值标来源（性能</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="466" y="370">模型 / 实卡 / 人定）</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="466" y="414">产出：在 A8、b4 上回</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="466" y="436">放，看能否直接定位</text></g>
+  <g id="stage-3">
+    <circle cx="739" cy="176" r="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="3" />
+    <text x="739" y="148" text-anchor="middle" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#1F3A5F">阶段 3</text>
+    <path fill="#F4F6F9" d="M655,204 H823 A8,8 0 0 1 831,212 V496 A8,8 0 0 1 823,504 H655 A8,8 0 0 1 647,496 V212 A8,8 0 0 1 655,204 Z" />
+    <text x="663" y="234" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">派生视图</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="663" y="264">从 FML 程序生成</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="663" y="288">drawio 审查图和给 AI</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="663" y="312">的约束清单</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="663" y="346">替代手写的</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="663" y="370">subcore_structure.py</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="663" y="414">产出：图和行为是</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="663" y="436">同一份东西</text></g>
+  <g id="stage-4">
+    <circle cx="936" cy="176" r="10" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="3" />
+    <text x="936" y="148" text-anchor="middle" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#1F3A5F">阶段 4</text>
+    <path fill="#F4F6F9" d="M852,204 H1020 A8,8 0 0 1 1028,212 V496 A8,8 0 0 1 1020,504 H852 A8,8 0 0 1 844,496 V212 A8,8 0 0 1 852,204 Z" />
+    <text x="860" y="234" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">铺满整条流水线</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="860" y="264">S3、S4（预约表）、S5、</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="860" y="288">SW、7 个前门</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="860" y="322">lockstep 接进门禁，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="860" y="346">真实 kernel 激励</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="860" y="414">产出：每个 RTL 提交</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="860" y="436">都和模型逐拍比</text></g>
+  <g id="stage-5">
+    <circle cx="1132" cy="176" r="10" fill="#FFFFFF" stroke="#2A7F9E" stroke-width="3" stroke-dasharray="4,4" />
+    <text x="1132" y="148" text-anchor="middle" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#2A7F9E">阶段 5 · 探索</text>
+    <path fill="#FFFFFF" stroke="#2A7F9E" stroke-width="1.5" stroke-dasharray="4,4" d="M1049,204 H1216 A8,8 0 0 1 1224,212 V496 A8,8 0 0 1 1216,504 H1049 A8,8 0 0 1 1041,496 V212 A8,8 0 0 1 1049,204 Z" />
+    <text x="1057" y="234" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">生成与对接</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="1057" y="264">从边界规格生成 RTL</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="1057" y="288">骨架；级内行为不生成</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="1057" y="322">FML 模型能否兼作</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="1057" y="346">性能模型？</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="1057" y="414">产出：性能模型与</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="1057" y="436">RTL 之间有了桥</text></g>
+  <g id="risks">
+    <path fill="#F4F6F9" d="M64,528 H1216 A8,8 0 0 1 1224,536 V640 A8,8 0 0 1 1216,648 H64 A8,8 0 0 1 56,640 V536 A8,8 0 0 1 64,528 Z" />
+    
+  <g transform="translate(76.0, 546.0)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M12 9v4" />
+    <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+    <path d="M12 16h.01" />
+  </g>
+    <text x="110" y="564" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">要先想清楚的风险</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="76" y="596"><tspan>· 模型和 RTL 都由 AI 写，可能<tspan fill="#C62828" font-weight="bold">同错</tspan>：lockstep 只证明一致，不证明对 —— 仍要 ISS / 实卡做外部真值</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="76" y="622">· 写模型的成本：S1 约 250 行；S4、前门会大得多，需要估算 · 模型本身也要被审：从模型生成的图给人看</text></g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　提议</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">19</text>
+  </g>
+</svg>

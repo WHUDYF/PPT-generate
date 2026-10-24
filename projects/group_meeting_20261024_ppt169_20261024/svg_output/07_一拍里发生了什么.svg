@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <marker id="arrP" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1F3A5F"/>
+    </marker>
+    <marker id="arrW" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#C62828"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">原写法：一个函数翻译成一拍，功能对，但看不出流水级</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">性能模型在发射那一刻用一个函数算完所有判断；AI 照它翻译，就成了下面这一拍：今天的 S2、S3、S4 allocate 挤在一起</text>
+  </g>
+  <g id="cycle-frame">
+    <rect x="56" y="122" width="1168" height="212" rx="8" fill="#F4F6F9"/>
+    <rect x="72" y="132" width="6" height="190" fill="#1F3A5F"/>
+    <rect x="1202" y="132" width="6" height="190" fill="#1F3A5F"/>
+    <text x="84" y="326" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">时钟沿 t</text>
+    <text x="1196" y="326" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">时钟沿 t+1</text>
+  </g>
+  <g id="chain">
+    <rect x="96" y="146" width="104" height="56" rx="6" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="148" y="170" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">head 寄存器</text>
+    <text x="148" y="190" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">×16 warp</text>
+    <line x1="200" y1="174" x2="218" y2="174" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <rect x="222" y="146" width="104" height="56" rx="6" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="274" y="170" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">eligible</text>
+    <text x="274" y="190" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">×16 判定</text>
+    <line x1="326" y1="174" x2="344" y2="174" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <rect x="348" y="146" width="104" height="56" rx="6" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="400" y="170" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">pick</text>
+    <text x="400" y="190" text-anchor="middle" font-family="Consolas, monospace" font-size="12" fill="#666666">→ sel_slot</text>
+    <line x1="452" y1="174" x2="470" y2="174" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <rect x="474" y="146" width="136" height="56" rx="6" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text x="542" y="170" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">按 sel_slot 选字段</text>
+    <text x="542" y="190" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">读口数、目标单元、地址</text>
+    <line x1="610" y1="174" x2="628" y2="174" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <rect x="632" y="146" width="150" height="56" rx="6" fill="#FFFFFF" stroke="#C62828" stroke-width="2"/>
+    <text x="707" y="170" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#C62828">sched_allocate</text>
+    <text x="707" y="190" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">rd / wb / fu / const 检查</text>
+    <line x1="782" y1="174" x2="800" y2="174" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <rect x="804" y="146" width="112" height="56" rx="6" fill="#E07A1F"/>
+    <text x="860" y="179" text-anchor="middle" font-family="Consolas, monospace" font-size="14" font-weight="bold" fill="#FFFFFF">issue_valid</text>
+    <line x1="916" y1="174" x2="934" y2="174" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <rect x="938" y="140" width="250" height="100" rx="6" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#222222">
+      <tspan x="952" y="162">同一拍内：</tspan>
+      <tspan x="952" y="182">· ITS 接受、推进 PC</tspan>
+      <tspan x="952" y="200">· scoreboard +1</tspan>
+      <tspan x="952" y="218">· 指令发给 exec，RF 读地址 =</tspan>
+      <tspan x="964" y="234" font-family="Consolas, monospace" font-size="12">sel_rd0_addr</tspan>
+    </text>
+  </g>
+  <g id="feedback">
+    <rect x="474" y="264" width="380" height="50" rx="6" fill="#FFFFFF" stroke="#C62828" stroke-width="1.5"/>
+    <text x="490" y="286" font-family="Consolas, monospace" font-size="13" font-weight="bold" fill="#C62828">exec_pipe_top 内部状态</text>
+    <text x="490" y="304" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">pair、collect、访存响应、LSU 满……</text>
+    <line x1="707" y1="264" x2="707" y2="206" stroke="#C62828" stroke-width="2" marker-end="url(#arrW)"/>
+    <text x="716" y="236" font-family="Consolas, monospace" font-size="12" fill="#C62828">fu_busy / rd_busy / wb_busy</text>
+    <text x="716" y="252" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#C62828">always @(*) 组合输出</text>
+    <polyline points="1063,240 1063,289 858,289" fill="none" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <text x="900" y="282" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#1F3A5F">同拍启动单元</text>
+    <text x="96" y="262" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#C62828">资源冲突靠"现查"：S2 当拍看 exe</text>
+    <text x="96" y="284" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#C62828">的 busy 决定发不发，中间插不了寄存器</text>
+  </g>
+  <g id="code-model">
+    <rect x="56" y="352" width="568" height="240" rx="8" fill="#2A7F9E"/>
+    <text x="76" y="378" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">蓝本：性能模型 process_issue()，一个函数约 810 行</text>
+    <text font-family="Consolas, monospace" font-size="13" fill="#FFFFFF">
+      <tspan x="76" y="406">ready_candidates(tick);    <tspan fill="#D8DEE6">// S2：哪些 warp 可发</tspan></tspan>
+      <tspan x="76" y="426">policy-&gt;select(...);      <tspan fill="#D8DEE6">// S2：选一个</tspan></tspan>
+      <tspan x="76" y="446">allocate_blocked(...);    <tspan fill="#D8DEE6">// S4：预约不上就不发</tspan></tspan>
+      <tspan x="76" y="466">reserve_op_timing(...);   <tspan fill="#D8DEE6">// 读几轮、哪拍写回</tspan></tspan>
+      <tspan x="76" y="486">consume_queue_credit(...); <tspan fill="#D8DEE6">// 前门 credit 何时还</tspan></tspan>
+      <tspan x="76" y="506">allocate_scoreboard(...); <tspan fill="#D8DEE6">// 依赖何时释放</tspan></tspan>
+      <tspan x="76" y="526">warp.ready_tick = tick + stall + ...;</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#FFFFFF">
+      <tspan x="76" y="556">后面几级在模型里不是"一级"，只是一个时间偏移：</tspan>
+      <tspan x="76" y="576">例如"发射后两拍到达队列头（S3、写队列）" = <tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">tick + 2</tspan></tspan>
+    </text>
+  </g>
+  <g id="code-rtl">
+    <rect x="656" y="352" width="568" height="240" rx="8" fill="#1F3A5F"/>
+    <text x="676" y="378" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#E07A1F">翻译成 RTL：同一拍组合（8c17f5d73）</text>
+    <text font-family="Consolas, monospace" font-size="13" fill="#FFFFFF">
+      <tspan x="676" y="406" fill="#999999">// sched_allocate.v:124–130</tspan>
+      <tspan x="676" y="426">rd_ok = rd_free_count &gt;= sel_read_ports_i;</tspan>
+      <tspan x="676" y="446">fu_ok = !fu_busy_i[sel_target_i];</tspan>
+      <tspan x="676" y="466" fill="#E07A1F">issue_valid_o = sel_valid_i &amp;&amp; rd_ok &amp;&amp; wb_ok</tspan>
+      <tspan x="790" y="486" fill="#E07A1F">&amp;&amp; fu_ok &amp;&amp; const_ok &amp;&amp; ...;</tspan>
+      <tspan x="676" y="512" fill="#999999">// exec_pipe_top.v:5064–5070，always @(*)</tspan>
+      <tspan x="676" y="532">assign wb_busy_o = wb_en;</tspan>
+      <tspan x="676" y="552">fu_busy_o[0] = |pair_pending_q || ...</tspan>
+      <tspan x="776" y="572">|| mem_response_pending_q || ...;</tspan>
+    </text>
+  </g>
+  <g id="takeaway">
+    <rect x="56" y="606" width="1168" height="44" rx="8" fill="#FFFFFF" stroke="#E07A1F" stroke-width="1.5"/>
+    <text x="76" y="634" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">模型里"未来第几拍"在 RTL 里变成了"现在忙不忙"：功能正确、性能也够，但<tspan fill="#E07A1F" font-weight="bold">划不出级边界</tspan>，是可维护性和可验证性的问题。</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　代码：simulator/binding/timing_model_event_issue_scheduler.cpp:1876–2686；8c17f5d73 的 sched_allocate.v、exec_pipe_top.v</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">7</text>
+  </g>
+</svg>

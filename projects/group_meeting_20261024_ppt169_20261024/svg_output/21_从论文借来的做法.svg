@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">从论文里借来的做法</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">每个机制单独都有先例；我们做的是把它们搬到"AI 逐步重构 RTL"的回路里，并按流水级组织</text>
+  </g>
+  <g id="table-head">
+    <rect x="56" y="122" width="1168" height="34" fill="#1F3A5F"/>
+    <text x="72" y="145" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">来源</text>
+    <text x="300" y="145" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">读到的点子</text>
+    <text x="660" y="145" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">我们怎么用</text>
+    <text x="1208" y="145" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">状态</text>
+  </g>
+  <g id="row-1">
+    <rect x="56" y="156" width="1168" height="54" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="72" y="180" font-weight="bold">Reflexion / JITTAC</tspan><tspan x="72" y="200" font-size="12" fill="#999999">软件架构一致性；静态分析 baseline</tspan></text>
+    <text x="300" y="188" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">冻结基线，只拦新增违规</text>
+    <text x="660" y="188" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">结构检查门禁：基线只能缩小（六级 243 行）</text>
+    <rect x="1140" y="173" width="68" height="22" rx="10" fill="#E07A1F"/>
+    <text x="1174" y="189" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已用</text>
+  </g>
+  <g id="row-2">
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="72" y="234" font-weight="bold">LEC unmapped points</tspan><tspan x="72" y="254" font-size="12" fill="#999999">Conformal / Formality</tspan></text>
+    <text x="300" y="242" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">只在一边出现的触发器算 "Extra"</text>
+    <text x="660" y="242" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">封闭世界：网表里有、IR 没认领的一律"未登记"</text>
+    <rect x="1140" y="227" width="68" height="22" rx="10" fill="#E07A1F"/>
+    <text x="1174" y="243" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已用</text>
+  </g>
+  <g id="row-3">
+    <rect x="56" y="264" width="1168" height="54" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="72" y="288" font-weight="bold">Spec-Driven HW Evolution</tspan><tspan x="72" y="308" font-size="12" fill="#999999">§4.5</tspan></text>
+    <text x="300" y="296" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">隔离子代理防漂移；自底向上逐层修</text>
+    <text x="660" y="296" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">一次只改一级、一条一个提交；作外部佐证</text>
+    <rect x="1140" y="281" width="68" height="22" rx="10" fill="#E07A1F"/>
+    <text x="1174" y="297" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已用</text>
+  </g>
+  <g id="row-4">
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="72" y="342" font-weight="bold">HINT</tspan><tspan x="72" y="362" font-size="12" fill="#999999">arXiv 2608.07625</tspan></text>
+    <text x="300" y="350" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">IR 里声明每个单元"拥有的状态"</text>
+    <text x="660" y="350" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">每级状态归属；再加网表上的结构封闭世界（它没有）</text>
+    <rect x="1140" y="335" width="68" height="22" rx="10" fill="#E07A1F"/>
+    <text x="1174" y="351" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">已用</text>
+  </g>
+  <g id="row-5">
+    <rect x="56" y="372" width="1168" height="54" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="72" y="396" font-weight="bold">Hawkeye</tspan><tspan x="72" y="416" font-size="12" fill="#999999">上下文组织</tspan></text>
+    <text x="300" y="404" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">上下文按最小可组合粒度给，太大会污染</text>
+    <text x="660" y="404" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">给 AI 的约束清单按级切，一级一份</text>
+    <rect x="1140" y="389" width="68" height="22" rx="10" fill="#2A7F9E"/>
+    <text x="1174" y="405" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">部分</text>
+  </g>
+  <g id="row-6">
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="72" y="450" font-weight="bold">Spec-Driven HW Evolution</tspan><tspan x="72" y="470" font-size="12" fill="#999999">§4.2–4.3</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="300" y="450">用变异区分"已验证"和"盲区"；</tspan><tspan x="300" y="470">契约本身也要测（是否空洞）</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="660" y="450">逃逸分析：对每条需求注入变异，度量检查强度；</tspan><tspan x="660" y="470" fill="#666666">区别：它只保留盲区，我们的盲区要阻断验收</tspan></text>
+    <rect x="1140" y="443" width="68" height="22" rx="10" fill="#FFFFFF" stroke="#2A7F9E" stroke-width="1.5"/>
+    <text x="1174" y="459" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#2A7F9E">计划</text>
+  </g>
+  <g id="row-7">
+    <rect x="56" y="480" width="1168" height="54" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="72" y="504" font-weight="bold">AmpereOne 性能验证</tspan><tspan x="72" y="524" font-size="12" fill="#999999">MICRO'26，图 7</tspan></text>
+    <text x="300" y="512" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">累计周期漂移图：按指令序号画累计周期差</text>
+    <text x="660" y="512" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">新旧 RTL 之间画，先定位"从哪段指令开始慢"</text>
+    <rect x="1140" y="497" width="68" height="22" rx="10" fill="#FFFFFF" stroke="#2A7F9E" stroke-width="1.5"/>
+    <text x="1174" y="513" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#2A7F9E">计划</text>
+  </g>
+  <g id="row-8">
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="72" y="558" font-weight="bold">Specification Grounding</tspan><tspan x="72" y="578" font-size="12" fill="#999999">软件侧，+38 个百分点</tspan></text>
+    <text x="300" y="566" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">生成前先把规格交给模型</text>
+    <text x="660" y="566" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">约束清单改由 FML 边界规格派生（阶段 3）</text>
+    <rect x="1140" y="551" width="68" height="22" rx="10" fill="#FFFFFF" stroke="#2A7F9E" stroke-width="1.5"/>
+    <text x="1174" y="567" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#2A7F9E">计划</text>
+  </g>
+  <g id="row-9">
+    <rect x="56" y="588" width="1168" height="54" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="72" y="612" font-weight="bold">PipeCheck / RTL2MµPATH</tspan><tspan x="72" y="632" font-size="12" fill="#999999">µhb 顺序公理</tspan></text>
+    <text x="300" y="620" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">用顺序公理描述跨级事件先后</text>
+    <text x="660" y="620" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">跨级时序契约的写法（如"释放不早于写回"）</text>
+    <rect x="1140" y="605" width="68" height="22" rx="10" fill="#FFFFFF" stroke="#999999" stroke-width="1.5"/>
+    <text x="1174" y="621" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#999999">待评估</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：survey/08、10、11、12、14-novelty/A</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">21</text>
+  </g>
+</svg>

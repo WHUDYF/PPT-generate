@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">流水结构不清晰，麻烦出在维护和验证上</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">原写法功能一直是对的，重构后整体周期也基本不变 —— 问题不在性能，而在"改不动、查不清"</text>
+  </g>
+  <g id="col-head">
+    <text x="56" y="140" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#999999">问题</text>
+    <text x="316" y="140" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#999999">原代码里的样子</text>
+    <text x="796" y="140" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#999999">带来的麻烦 / 实例</text>
+  </g>
+  <g id="row-1">
+    <rect x="56" y="150" width="244" height="154" rx="8" fill="#2A7F9E"/>
+    <text x="76" y="180" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF" fill-opacity="0.85">① 可维护性</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#FFFFFF">
+      <tspan x="76" y="212">划不出级边界，</tspan>
+      <tspan x="76" y="238">改一处牵动几处</tspan>
+    </text>
+    <rect x="316" y="150" width="460" height="154" rx="8" fill="#1F3A5F"/>
+    <text font-family="Consolas, monospace" font-size="13" fill="#FFFFFF">
+      <tspan x="334" y="178" fill="#999999">// 资源冲突"现查"：exe 当拍组合给出 busy</tspan>
+      <tspan x="334" y="202">assign wb_busy_o = wb_en;</tspan>
+      <tspan x="334" y="222">fu_busy_o[0] = |pair_pending_q || ... ;</tspan>
+      <tspan x="334" y="242">fu_ok = !fu_busy_i[sel_target_i];</tspan>
+      <tspan x="334" y="266" fill="#999999">// S2 发不发取决于 exe 此刻的状态，</tspan>
+      <tspan x="334" y="286" fill="#999999">// 所以 S2 和 exe 之间插不了寄存器</tspan>
+    </text>
+    <rect x="792" y="150" width="432" height="154" rx="8" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="812" y="180">想加一级寄存器，得先把"现查 busy"整套换掉</tspan>
+      <tspan x="812" y="210" font-weight="bold">实例：G3b 加 S2/S3 reg</tspan>
+      <tspan x="812" y="232">第一步只能先用"保守 allocate"兜住（84bf17d56），</tspan>
+      <tspan x="812" y="254">下一步换成 S4 预约表才算稳（5ada43467）</tspan>
+      <tspan x="812" y="286" fill="#666666">busy 粒度粗也是真的，但对整体周期影响很小</tspan>
+    </text>
+  </g>
+  <g id="row-2">
+    <rect x="56" y="318" width="244" height="154" rx="8" fill="#E07A1F"/>
+    <text x="76" y="348" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF" fill-opacity="0.9">② 可验证性</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#FFFFFF">
+      <tspan x="76" y="380">状态没有主人，</tspan>
+      <tspan x="76" y="406">出错说不清哪一级</tspan>
+    </text>
+    <rect x="316" y="318" width="460" height="154" rx="8" fill="#1F3A5F"/>
+    <text font-family="Consolas, monospace" font-size="13" fill="#FFFFFF">
+      <tspan x="334" y="346" fill="#999999">// subcore_top.v，6169 行，顶层自己持有：</tspan>
+      <tspan x="334" y="368">ITS、分支 / CONV 序列、SETMAXNREG 状态、</tspan>
+      <tspan x="334" y="388">RF init 记账、读代理仲裁、上下文扫描</tspan>
+      <tspan x="334" y="414" fill="#999999">// exec_pipe_top.v，5121 行：</tspan>
+      <tspan x="334" y="434">分发 + 读口 + collect + 执行单元 + 写回仲裁</tspan>
+      <tspan x="334" y="456" fill="#999999">// S4 有 11 个输出经 exe 绕回自己（U1）</tspan>
+    </text>
+    <rect x="792" y="318" width="432" height="154" rx="8" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="812" y="348">没有可以单独检查的"一级"：每条状态谁写、</tspan>
+      <tspan x="812" y="370">每根线从哪级到哪级，都没有边界可对照</tspan>
+      <tspan x="812" y="402">验证只剩端到端用例：<tspan fill="#C62828" font-weight="bold">只知道结果错了，</tspan></tspan>
+      <tspan x="812" y="424"><tspan fill="#C62828" font-weight="bold">不知道错在哪</tspan>；mix 最后报 128 处输出不一致，</tspan>
+      <tspan x="812" y="446">给不出第一条出错的指令</tspan>
+    </text>
+  </g>
+  <g id="row-3">
+    <rect x="56" y="486" width="244" height="154" rx="8" fill="#C62828"/>
+    <text x="76" y="516" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF" fill-opacity="0.9">③ 可验证性 · 真出过事</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#FFFFFF">
+      <tspan x="76" y="548">约束是隐式的，</tspan>
+      <tspan x="76" y="574">一改就坏</tspan>
+    </text>
+    <rect x="316" y="486" width="460" height="154" rx="8" fill="#1F3A5F"/>
+    <text font-family="Consolas, monospace" font-size="13" fill="#FFFFFF">
+      <tspan x="334" y="514" fill="#999999">// subcore_decode.v：每 warp 一个 head</tspan>
+      <tspan x="334" y="536">head 空了才补 → 同一 warp <tspan fill="#E07A1F">隔拍</tspan>才发一条</tspan>
+      <tspan x="334" y="560" fill="#999999">// its_top：发射后下一拍才推进 PC</tspan>
+      <tspan x="334" y="582">sched_issue_valid_q → its_cbu_advance_*</tspan>
+      <tspan x="334" y="606" fill="#999999">// 两者正好对上，但没有任何文档写过</tspan>
+      <tspan x="334" y="626" fill="#999999">// "同 warp 至少隔一拍"这条约束</tspan>
+    </text>
+    <rect x="792" y="486" width="432" height="154" rx="8" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="812" y="516" font-weight="bold">实例：G2 把 head 改成两项 FIFO</tspan>
+      <tspan x="812" y="540">同一 warp 可以连拍发射了，但 ITS 的 PC</tspan>
+      <tspan x="812" y="562"><tspan fill="#C62828" font-weight="bold">晚一拍</tspan>，同一个 PC 发了两次</tspan>
+      <tspan x="812" y="594">iadd3 <tspan fill="#2E7D32">PASS</tspan>；mix / control_flow 才报错，</tspan>
+      <tspan x="812" y="616">最后靠看波形才找到原因</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：8c17f5d73 源码；84bf17d56、5ada43467；runs/G2；fml-rtl-proto/README.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">8</text>
+  </g>
+</svg>

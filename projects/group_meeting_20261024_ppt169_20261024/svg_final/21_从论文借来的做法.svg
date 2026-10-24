@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="76" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">从论文里借来的做法</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">每个机制单独都有先例；我们做的是把它们搬到"AI 逐步重构 RTL"的回路里，并按流水级组织</text>
+  </g>
+  <g id="table-head">
+    <rect x="56" y="122" width="1168" height="34" fill="#1F3A5F" />
+    <text x="72" y="145" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">来源</text>
+    <text x="300" y="145" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">读到的点子</text>
+    <text x="660" y="145" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">我们怎么用</text>
+    <text x="1208" y="145" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF">状态</text>
+  </g>
+  <g id="row-1">
+    <rect x="56" y="156" width="1168" height="54" fill="#F4F6F9" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="72" y="180" font-weight="bold">Reflexion / JITTAC</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="12" x="72" y="200">软件架构一致性；静态分析 baseline</text><text x="300" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">冻结基线，只拦新增违规</text>
+    <text x="660" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">结构检查门禁：基线只能缩小（六级 243 行）</text>
+    <path fill="#E07A1F" d="M1150,173 H1198 A10,10 0 0 1 1208,183 V185 A10,10 0 0 1 1198,195 H1150 A10,10 0 0 1 1140,185 V183 A10,10 0 0 1 1150,173 Z" />
+    <text x="1174" y="189" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#FFFFFF">已用</text>
+  </g>
+  <g id="row-2">
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="72" y="234" font-weight="bold">LEC unmapped points</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="12" x="72" y="254">Conformal / Formality</text><text x="300" y="242" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">只在一边出现的触发器算 "Extra"</text>
+    <text x="660" y="242" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">封闭世界：网表里有、IR 没认领的一律"未登记"</text>
+    <path fill="#E07A1F" d="M1150,227 H1198 A10,10 0 0 1 1208,237 V239 A10,10 0 0 1 1198,249 H1150 A10,10 0 0 1 1140,239 V237 A10,10 0 0 1 1150,227 Z" />
+    <text x="1174" y="243" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#FFFFFF">已用</text>
+  </g>
+  <g id="row-3">
+    <rect x="56" y="264" width="1168" height="54" fill="#F4F6F9" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="72" y="288" font-weight="bold">Spec-Driven HW Evolution</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="12" x="72" y="308">§4.5</text><text x="300" y="296" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">隔离子代理防漂移；自底向上逐层修</text>
+    <text x="660" y="296" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">一次只改一级、一条一个提交；作外部佐证</text>
+    <path fill="#E07A1F" d="M1150,281 H1198 A10,10 0 0 1 1208,291 V293 A10,10 0 0 1 1198,303 H1150 A10,10 0 0 1 1140,293 V291 A10,10 0 0 1 1150,281 Z" />
+    <text x="1174" y="297" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#FFFFFF">已用</text>
+  </g>
+  <g id="row-4">
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="72" y="342" font-weight="bold">HINT</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="12" x="72" y="362">arXiv 2608.07625</text><text x="300" y="350" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">IR 里声明每个单元"拥有的状态"</text>
+    <text x="660" y="350" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">每级状态归属；再加网表上的结构封闭世界（它没有）</text>
+    <path fill="#E07A1F" d="M1150,335 H1198 A10,10 0 0 1 1208,345 V347 A10,10 0 0 1 1198,357 H1150 A10,10 0 0 1 1140,347 V345 A10,10 0 0 1 1150,335 Z" />
+    <text x="1174" y="351" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#FFFFFF">已用</text>
+  </g>
+  <g id="row-5">
+    <rect x="56" y="372" width="1168" height="54" fill="#F4F6F9" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="72" y="396" font-weight="bold">Hawkeye</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="12" x="72" y="416">上下文组织</text><text x="300" y="404" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">上下文按最小可组合粒度给，太大会污染</text>
+    <text x="660" y="404" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">给 AI 的约束清单按级切，一级一份</text>
+    <path fill="#2A7F9E" d="M1150,389 H1198 A10,10 0 0 1 1208,399 V401 A10,10 0 0 1 1198,411 H1150 A10,10 0 0 1 1140,401 V399 A10,10 0 0 1 1150,389 Z" />
+    <text x="1174" y="405" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#FFFFFF">部分</text>
+  </g>
+  <g id="row-6">
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="72" y="450" font-weight="bold">Spec-Driven HW Evolution</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="12" x="72" y="470">§4.2–4.3</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="300" y="450">用变异区分"已验证"和"盲区"；</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="300" y="470">契约本身也要测（是否空洞）</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="660" y="450">逃逸分析：对每条需求注入变异，度量检查强度；</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="14" x="660" y="470">区别：它只保留盲区，我们的盲区要阻断验收</text><path fill="#FFFFFF" stroke="#2A7F9E" stroke-width="1.5" d="M1150,443 H1198 A10,10 0 0 1 1208,453 V455 A10,10 0 0 1 1198,465 H1150 A10,10 0 0 1 1140,455 V453 A10,10 0 0 1 1150,443 Z" />
+    <text x="1174" y="459" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#2A7F9E">计划</text>
+  </g>
+  <g id="row-7">
+    <rect x="56" y="480" width="1168" height="54" fill="#F4F6F9" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="72" y="504" font-weight="bold">AmpereOne 性能验证</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="12" x="72" y="524">MICRO'26，图 7</text><text x="300" y="512" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">累计周期漂移图：按指令序号画累计周期差</text>
+    <text x="660" y="512" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">新旧 RTL 之间画，先定位"从哪段指令开始慢"</text>
+    <path fill="#FFFFFF" stroke="#2A7F9E" stroke-width="1.5" d="M1150,497 H1198 A10,10 0 0 1 1208,507 V509 A10,10 0 0 1 1198,519 H1150 A10,10 0 0 1 1140,509 V507 A10,10 0 0 1 1150,497 Z" />
+    <text x="1174" y="513" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#2A7F9E">计划</text>
+  </g>
+  <g id="row-8">
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="72" y="558" font-weight="bold">Specification Grounding</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="12" x="72" y="578">软件侧，+38 个百分点</text><text x="300" y="566" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">生成前先把规格交给模型</text>
+    <text x="660" y="566" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">约束清单改由 FML 边界规格派生（阶段 3）</text>
+    <path fill="#FFFFFF" stroke="#2A7F9E" stroke-width="1.5" d="M1150,551 H1198 A10,10 0 0 1 1208,561 V563 A10,10 0 0 1 1198,573 H1150 A10,10 0 0 1 1140,563 V561 A10,10 0 0 1 1150,551 Z" />
+    <text x="1174" y="567" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#2A7F9E">计划</text>
+  </g>
+  <g id="row-9">
+    <rect x="56" y="588" width="1168" height="54" fill="#F4F6F9" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="72" y="612" font-weight="bold">PipeCheck / RTL2MµPATH</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="12" x="72" y="632">µhb 顺序公理</text><text x="300" y="620" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">用顺序公理描述跨级事件先后</text>
+    <text x="660" y="620" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">跨级时序契约的写法（如"释放不早于写回"）</text>
+    <path fill="#FFFFFF" stroke="#999999" stroke-width="1.5" d="M1150,605 H1198 A10,10 0 0 1 1208,615 V617 A10,10 0 0 1 1198,627 H1150 A10,10 0 0 1 1140,617 V615 A10,10 0 0 1 1150,605 Z" />
+    <text x="1174" y="621" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#999999">待评估</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：survey/08、10、11、12、14-novelty/A</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">21</text>
+  </g>
+</svg>

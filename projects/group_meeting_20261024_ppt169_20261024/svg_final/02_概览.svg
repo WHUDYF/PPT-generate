@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <marker id="arrP" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1F3A5F" />
+    </marker>
+  </defs>
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="76" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">今天讲的一条线：从"对照图重构"到"流程化"</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">两周的重构做完了一轮，暴露出流程上的问题；用 FML 做中间 IR 是我们想到的解法，S1 原型已经跑通</text>
+  </g>
+  <g id="step-1">
+    <path fill="#F4F6F9" d="M64,128 H314 A8,8 0 0 1 322,136 V420 A8,8 0 0 1 314,428 H64 A8,8 0 0 1 56,420 V136 A8,8 0 0 1 64,128 Z" />
+    <rect x="56" y="128" width="266" height="4" fill="#1F3A5F" />
+    <text x="76" y="164" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#E07A1F">01 · 怎么做的</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-weight="bold" font-size="17" x="76" y="198">先画 drawio 目标图，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-weight="bold" font-size="17" x="76" y="224">AI 对照图逐条改 RTL</text><text x="76" y="300" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#1F3A5F">130</text>
+    <text x="76" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">个提交，每个都过三道检查</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="13" x="76" y="380">修改清单 63 条，已关闭 23 条</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="13" x="76" y="402">第 3–5 页</text></g>
+  <line x1="324" y1="278" x2="350" y2="278" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)" />
+  <g id="step-2">
+    <path fill="#F4F6F9" d="M364,128 H614 A8,8 0 0 1 622,136 V420 A8,8 0 0 1 614,428 H364 A8,8 0 0 1 356,420 V136 A8,8 0 0 1 364,128 Z" />
+    <rect x="356" y="128" width="266" height="4" fill="#1F3A5F" />
+    <text x="376" y="164" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#E07A1F">02 · 区别与优势</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-weight="bold" font-size="17" x="376" y="198">一级一个模块，边界寄存，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-weight="bold" font-size="17" x="376" y="224">反向只走事件</text><text x="376" y="300" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#E07A1F">−43%</text>
+    <text x="376" y="326" font-family="Consolas, monospace" font-size="14" fill="#666666">subcore_top 6169 → 3486 行</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="13" x="376" y="380">结构检查六级 0 不一致；周期不变差</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="13" x="376" y="402">第 6–10 页</text></g>
+  <line x1="624" y1="278" x2="650" y2="278" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)" />
+  <g id="step-3">
+    <path fill="#FFFFFF" stroke="#C62828" stroke-width="1.5" d="M664,128 H914 A8,8 0 0 1 922,136 V420 A8,8 0 0 1 914,428 H664 A8,8 0 0 1 656,420 V136 A8,8 0 0 1 664,128 Z" />
+    <text x="676" y="164" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#C62828">03 · 痛点</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-weight="bold" font-size="17" x="676" y="198">图不能执行，时序契约</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-weight="bold" font-size="17" x="676" y="224">没有载体</text><text x="676" y="300" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#C62828">6</text>
+    <text x="676" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#666666">个功能全过、问题照样漏掉的案例</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="13" x="676" y="380">30 条设计决定是写 RTL 时才冒出来的</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#999999" font-size="13" x="676" y="402">第 11–12 页</text></g>
+  <line x1="924" y1="278" x2="950" y2="278" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)" />
+  <g id="step-4">
+    <path fill="#1F3A5F" d="M964,128 H1216 A8,8 0 0 1 1224,136 V420 A8,8 0 0 1 1216,428 H964 A8,8 0 0 1 956,420 V136 A8,8 0 0 1 964,128 Z" />
+    <text x="976" y="164" font-family="Consolas, monospace" font-size="15" font-weight="bold" fill="#E07A1F">04 · 方案</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-weight="bold" font-size="17" x="976" y="198">FML 可执行模型作中间 IR，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-weight="bold" font-size="17" x="976" y="224">RTL 与它逐拍比对</text><text x="976" y="300" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#E07A1F">第 48 拍</text>
+    <text x="976" y="326" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#FFFFFF">S1 原型上抓到 G2 错误，1 秒内</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" fill-opacity="0.7" font-size="13" x="976" y="380">RTL 端到端当时判 PASS</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" fill-opacity="0.7" font-size="13" x="976" y="402">第 13–19 页</text></g>
+  <g id="thesis">
+    <path fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1" d="M64,456 H1216 A8,8 0 0 1 1224,464 V640 A8,8 0 0 1 1216,648 H64 A8,8 0 0 1 56,640 V464 A8,8 0 0 1 64,456 Z" />
+    
+  <g transform="translate(80.0, 480.0) scale(1.1666666666666667)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7" />
+    <path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" />
+    <path d="M9.7 17l4.6 0" />
+  </g>
+    <text x="122" y="501" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F3A5F">一句话</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="18" x="80" y="544"><tspan>现在的"标准"是一张 drawio 图，它只说<tspan fill="#1F3A5F" font-weight="bold">有什么、怎么连</tspan>，不说<tspan fill="#C62828" font-weight="bold">每一拍做什么</tspan>；</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="18" x="80" y="578">把标准换成一个能跑、能和 RTL 逐拍比的 FML 模型，图、约束清单、契约都从它派生，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="18" x="80" y="612">AI 写 RTL 的每一步就都有了可以机械判定的验收依据。</text></g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">2</text>
+  </g>
+</svg>

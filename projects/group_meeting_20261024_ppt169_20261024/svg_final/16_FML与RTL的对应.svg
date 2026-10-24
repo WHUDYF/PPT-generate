@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="76" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">FML 规格写到哪一层：边界逐拍精确，级内可以抽象</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">IR 的核心：每一级拥有什么状态、两级之间传什么；它是规格，不是另一种 RTL</text>
+  </g>
+  <g id="spec">
+    <path fill="#1F3A5F" d="M64,124 H412 A8,8 0 0 1 420,132 V576 A8,8 0 0 1 412,584 H64 A8,8 0 0 1 56,576 V132 A8,8 0 0 1 64,124 Z" />
+    
+  <g transform="translate(76.0, 142.0)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6" />
+    <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+    <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+  </g>
+    <text x="110" y="160" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFFFFF">FML 规格必须写清</text>
+    <text x="76" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#E07A1F">RTL 在这些地方和模型逐拍比</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="15" x="76" y="228" font-weight="bold">级边界</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="13" x="76" y="252" fill-opacity="0.8">每拍跨过边界的是什么：S1 → S2 的</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="13" x="76" y="272" fill-opacity="0.8">head 视图、S2 → S3 的发射……</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="15" x="76" y="312" font-weight="bold">状态归属</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="13" x="76" y="336" fill-opacity="0.8">每份状态的主人，谁能写；</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="13" x="76" y="356" fill-opacity="0.8">由 view / commit 的写法保证</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="15" x="76" y="396" font-weight="bold">事件通道</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="13" x="76" y="420" fill-opacity="0.8">源、目的、延迟 1 拍</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="15" x="76" y="460" font-weight="bold">契约</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="13" x="76" y="484" fill-opacity="0.8">只读 monitor；可带 RTL 没有的</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#FFFFFF" font-size="13" x="76" y="504" fill-opacity="0.8">辅助字段（如 Entry::pc）</text></g>
+  <g id="rtl-own">
+    <path fill="#F4F6F9" d="M444,124 H792 A8,8 0 0 1 800,132 V576 A8,8 0 0 1 792,584 H444 A8,8 0 0 1 436,576 V132 A8,8 0 0 1 444,124 Z" />
+    
+  <g transform="translate(456.0, 142.0)" fill="none" stroke="#1F3A5F" stroke-width="2">
+    <path d="M5 6a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1l0 -12" />
+    <path d="M9 9h6v6h-6l0 -6" />
+    <path d="M3 10h2" />
+    <path d="M3 14h2" />
+    <path d="M10 3v2" />
+    <path d="M14 3v2" />
+    <path d="M21 10h-2" />
+    <path d="M21 14h-2" />
+    <path d="M14 21v-2" />
+    <path d="M10 21v-2" />
+  </g>
+    <text x="490" y="160" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">留给 RTL 自己决定</text>
+    <text x="456" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#666666">FML 只描述效果，不描述做法</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="456" y="228" font-weight="bold">级内怎么实现</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="456" y="252">例：S4 预约表用什么数据结构，FML 只</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="456" y="272">规定"这一拍能否预约成功、第几拍写回"</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="456" y="312" font-weight="bold">数据通路</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="456" y="336">译码、ALU 等；原型里译码器就是</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="456" y="356">拿 RTL 当 oracle，没有移植</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="456" y="396" font-weight="bold">物理实现</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="456" y="420">位宽打包、SRAM 还是触发器、</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="456" y="440">时序优化</text><path fill="#FFFFFF" stroke="#2A7F9E" stroke-width="1.5" d="M462,472 H774 A6,6 0 0 1 780,478 V558 A6,6 0 0 1 774,564 H462 A6,6 0 0 1 456,558 V478 A6,6 0 0 1 462,472 Z" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#2A7F9E" font-size="13" x="472" y="498" font-weight="bold">所以模型和 RTL 是两份不同粒度的描述</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="472" y="522">模型短、好审；RTL 由 AI 独立写；</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="472" y="544">两边在边界上对得上，比对才有意义</text></g>
+  <g id="code">
+    <path fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1" d="M824,124 H1216 A8,8 0 0 1 1224,132 V576 A8,8 0 0 1 1216,584 H824 A8,8 0 0 1 816,576 V132 A8,8 0 0 1 824,124 Z" />
+    <text x="836" y="152" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" font-weight="bold" fill="#1F3A5F">关键写法：读法决定边界</text>
+    <path fill="#1F3A5F" d="M842,166 H1198 A6,6 0 0 1 1204,172 V372 A6,6 0 0 1 1198,378 H842 A6,6 0 0 1 836,372 V172 A6,6 0 0 1 842,166 Z" />
+    <text font-family="Consolas, monospace" fill="#999999" font-size="12" x="850" y="188">// 组合输出：只读寄存器旧值 + 本拍输入</text><text font-family="Consolas, monospace" fill="#FFFFFF" font-size="12" x="850" y="206"><tspan>fn view(regs: <tspan fill="#E07A1F">&amp;S1Regs</tspan>,</tspan>
+      </text><text font-family="Consolas, monospace" fill="#FFFFFF" font-size="12" x="907" y="222"><tspan>env: <tspan fill="#E07A1F">&amp;'latest EnvIn</tspan>,</tspan>
+      </text><text font-family="Consolas, monospace" fill="#FFFFFF" font-size="12" x="907" y="238">view: &amp;mut HeadView, ..)</text><text font-family="Consolas, monospace" fill="#999999" font-size="12" x="850" y="258">// G2a：刚发射的 warp 对 S2 隐藏一拍</text><text font-family="Consolas, monospace" fill="#FFFFFF" font-size="12" x="850" y="274">let hidden = regs.issue_valid_q</text><text font-family="Consolas, monospace" fill="#FFFFFF" font-size="12" x="878" y="290">&amp;&amp; regs.issue_slot_q == w;</text><text font-family="Consolas, monospace" fill="#999999" font-size="12" x="850" y="314">// 时钟沿：写寄存器</text><text font-family="Consolas, monospace" fill="#FFFFFF" font-size="12" x="850" y="332"><tspan>fn commit(regs: <tspan fill="#E07A1F">&amp;mut S1Regs</tspan>,</tspan>
+      </text><text font-family="Consolas, monospace" fill="#FFFFFF" font-size="12" x="921" y="348"><tspan>issue: <tspan fill="#E07A1F">&amp;'latest Issue</tspan>, ..)</tspan>
+    </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="836" y="404"><tspan><tspan font-family="Consolas, monospace" fill="#E07A1F">&amp;T</tspan> = 拍前的值（触发器 Q）</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="836" y="426"><tspan><tspan font-family="Consolas, monospace" fill="#E07A1F">&amp;'latest T</tspan> = 本拍刚写完的值（组合路径）</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="836" y="448">view 写连线，commit 写寄存器</text><path fill="#F4F6F9" d="M842,466 H1198 A6,6 0 0 1 1204,472 V558 A6,6 0 0 1 1198,564 H842 A6,6 0 0 1 836,558 V472 A6,6 0 0 1 842,466 Z" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#C62828" font-size="13" x="850" y="490" font-weight="bold">注：S1 原型故意写到了逐信号精确</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="850" y="512">目的是先证明 FML 能和 RTL 完全一致</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="850" y="532">（第 17 页实验 B）；这不是目标粒度，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="850" y="552">正式规格只要求边界精确</text></g>
+  <g id="takeaway">
+    <path fill="#FFFFFF" stroke="#E07A1F" stroke-width="1.5" d="M64,602 H1216 A8,8 0 0 1 1224,610 V642 A8,8 0 0 1 1216,650 H64 A8,8 0 0 1 56,642 V610 A8,8 0 0 1 64,602 Z" />
+    <text x="76" y="632" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">规格比实现<tspan fill="#E07A1F" font-weight="bold">抽象</tspan>、和实现<tspan fill="#E07A1F" font-weight="bold">独立</tspan>，lockstep 检查的才是设计，而不只是"翻译对不对"。</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　代码：fml-rtl-proto/model/src/s1.rs（ce2e086，节选）</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">16</text>
+  </g>
+</svg>

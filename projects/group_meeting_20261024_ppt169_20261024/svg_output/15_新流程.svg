@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <marker id="arrP" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1F3A5F"/>
+    </marker>
+    <marker id="arrW" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#C62828"/>
+    </marker>
+    <marker id="arrS" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#2A7F9E"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">新流程：FML 模型是唯一来源，其余都从它派生</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">和第 4 页比：标准从"图"换成"能跑的边界规格"，验收多了"在级边界上和模型逐拍比"这一道</text>
+  </g>
+  <g id="decision">
+    <rect x="56" y="134" width="190" height="104" rx="8" fill="#F4F6F9" stroke="#1F3A5F" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/notebook" x="72" y="148" width="22" height="22" fill="#1F3A5F" stroke-width="2"/>
+    <text x="102" y="166" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">设计决策</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">
+      <tspan x="72" y="194">规范条目、修改清单</tspan>
+      <tspan x="72" y="214">每条带来源（实卡 / 人定 /</tspan>
+      <tspan x="72" y="232">原版 RTL 现状）</tspan>
+    </text>
+    <line x1="246" y1="186" x2="284" y2="186" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+  </g>
+  <g id="fml-model">
+    <rect x="290" y="126" width="300" height="120" rx="8" fill="#1F3A5F"/>
+    <use data-icon="tabler-outline/file-code" x="308" y="142" width="26" height="26" fill="#E07A1F" stroke-width="2"/>
+    <text x="344" y="162" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#FFFFFF">FML 结构模型</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#FFFFFF">
+      <tspan x="308" y="192">一级一个模块；状态只由主人的 commit 写；</tspan>
+      <tspan x="308" y="214">级间队列、事件通道、每拍行为都写成代码；</tspan>
+      <tspan x="308" y="236" fill="#E07A1F">写完先自己跑：契约、加载检查</tspan>
+    </text>
+    <line x1="590" y1="186" x2="634" y2="186" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+  </g>
+  <g id="derived">
+    <rect x="640" y="126" width="270" height="36" rx="6" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/route" x="652" y="133" width="22" height="22" fill="#1F3A5F" stroke-width="2"/>
+    <text x="682" y="150" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">审查视图（drawio）→ 给人看</text>
+    <rect x="640" y="168" width="270" height="36" rx="6" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/list-check" x="652" y="175" width="22" height="22" fill="#1F3A5F" stroke-width="2"/>
+    <text x="682" y="192" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">约束清单、接口 → 给 AI</text>
+    <rect x="640" y="210" width="270" height="36" rx="6" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/shield-check" x="652" y="217" width="22" height="22" fill="#1F3A5F" stroke-width="2"/>
+    <text x="682" y="234" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">契约 monitor、结构规则 → 门禁</text>
+  </g>
+  <g id="oracle">
+    <rect x="950" y="126" width="274" height="120" rx="8" fill="#FFFFFF" stroke="#2A7F9E" stroke-width="1.5" stroke-dasharray="4,4"/>
+    <use data-icon="tabler-outline/scale" x="966" y="142" width="22" height="22" fill="#2A7F9E" stroke-width="2"/>
+    <text x="996" y="160" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#2A7F9E">参考：ISS / 性能模型</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="966" y="190">ISS 管"做对没有"；</tspan>
+      <tspan x="966" y="212">性能模型给契约的期望值</tspan>
+      <tspan x="966" y="234">（多少拍）</tspan>
+    </text>
+    <line x1="950" y1="228" x2="916" y2="228" stroke="#2A7F9E" stroke-width="2" stroke-dasharray="4,4" marker-end="url(#arrS)"/>
+  </g>
+  <g id="rtl">
+    <line x1="440" y1="246" x2="440" y2="294" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <text x="452" y="276" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">按级、按清单</text>
+    <rect x="290" y="300" width="300" height="104" rx="8" fill="#F4F6F9" stroke="#1F3A5F" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/robot" x="308" y="316" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="342" y="334" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">AI 按级写 RTL</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="308" y="364">一次只改一级，接口按模型的边界；</tspan>
+      <tspan x="308" y="386">先保行为的搬迁，再改拍数</tspan>
+    </text>
+    <polyline points="290,352 268,352 268,214 286,214" fill="none" stroke="#C62828" stroke-width="2" stroke-dasharray="8,4" marker-end="url(#arrW)"/>
+    <text x="64" y="300" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#C62828">实现中发现设计问题：</text>
+    <text x="64" y="320" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#C62828">改模型，不是改图</text>
+    <line x1="590" y1="352" x2="634" y2="352" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <line x1="775" y1="246" x2="775" y2="290" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+  </g>
+  <g id="gate">
+    <rect x="640" y="296" width="584" height="112" rx="8" fill="#2E7D32"/>
+    <text x="660" y="324" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#FFFFFF">门禁：四项全过才提交</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#FFFFFF">
+      <tspan x="660" y="354"><tspan font-weight="bold">①</tspan> 级边界上与 FML 逐拍 lockstep（新增）</tspan>
+      <tspan x="660" y="382"><tspan font-weight="bold">②</tspan> 契约 monitor 0 违例（新增）</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#FFFFFF">
+      <tspan x="950" y="354"><tspan font-weight="bold">③</tspan> 网表结构检查（已有）</tspan>
+      <tspan x="950" y="382"><tspan font-weight="bold">④</tspan> 功能用例 + ISS（已有）</tspan>
+    </text>
+  </g>
+  <g id="compare">
+    <text x="56" y="446" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">现在 vs 提议</text>
+    <rect x="56" y="458" width="1168" height="30" fill="#1F3A5F"/>
+    <text x="72" y="478" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">环节</text>
+    <text x="300" y="478" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">现在（drawio 为标准）</text>
+    <text x="760" y="478" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#E07A1F">提议（FML 为标准）</text>
+    <rect x="56" y="488" width="1168" height="32" fill="#F4F6F9"/>
+    <text x="72" y="509" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">图从哪来</text>
+    <text x="300" y="509" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">Python 结构数据 + 排版脚本，和行为无关</text>
+    <text x="760" y="509" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">从模型确定性派生，图和行为是同一份东西</text>
+    <text x="72" y="541" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">设计问题何时暴露</text>
+    <text x="300" y="541" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">写 RTL 时（30 条 E / R）</text>
+    <text x="760" y="541" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">写模型、跑模型时；加载即拒组合环</text>
+    <rect x="56" y="552" width="1168" height="32" fill="#F4F6F9"/>
+    <text x="72" y="573" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">时序约束</text>
+    <text x="300" y="573" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">写在规范文档里，靠人记</text>
+    <text x="760" y="573" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">只读 monitor，每次运行都查</text>
+    <text x="72" y="605" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">行为是否对</text>
+    <text x="300" y="605" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">端到端用例，构建一次几分钟，出错只知道结果不对</text>
+    <text x="760" y="605" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">在级边界上 lockstep，直接给出第一拍、第一个信号</text>
+    <rect x="56" y="616" width="1168" height="32" fill="#F4F6F9"/>
+    <text x="72" y="637" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">AI 的输入</text>
+    <text x="300" y="637" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">看图 + 读清单，自己理解每拍行为</text>
+    <text x="760" y="637" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">边界规格 + 边界上必须逐拍一致；级内自己实现</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　提议；依据：2026-10-14-structure-ir-spec.md §3；fml-rtl-proto</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">15</text>
+  </g>
+</svg>

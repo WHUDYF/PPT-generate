@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="76" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">想请大家讨论的问题，以及下一步</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">左边需要老师和同学给意见；右边是接下来两周的安排</text>
+  </g>
+  <g id="questions">
+    <path fill="#F4F6F9" d="M64,122 H648 A8,8 0 0 1 656,130 V640 A8,8 0 0 1 648,648 H64 A8,8 0 0 1 56,640 V130 A8,8 0 0 1 64,122 Z" />
+    
+  <g transform="translate(76.0, 140.0) scale(1.0833333333333333)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M8 9h8" />
+    <path d="M8 13h6" />
+    <path d="M14 18h-1l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3h12a3 3 0 0 1 3 3v4.5" />
+    <path d="M19 22v.01" />
+    <path d="M19 19a2.003 2.003 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" />
+  </g>
+    <text x="112" y="159" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">讨论</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="76" y="202"><tspan font-weight="bold"><tspan fill="#E07A1F">1</tspan>　FML 当中间 IR 合不合适</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="14" x="100" y="226">对比 Chisel / SystemC / 继续用 Python 结构数据：</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="14" x="100" y="248">我们看重的是"读法即寄存器 / 连线"和加载时检查</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="76" y="290"><tspan font-weight="bold"><tspan fill="#E07A1F">2</tspan>　FML 规格和性能模型怎么分工</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="14" x="100" y="314">倾向不合一：模型管多少拍，FML 管每级状态和级间传输</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="76" y="356"><tspan font-weight="bold"><tspan fill="#E07A1F">3</tspan>　边界事务怎么定义</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="14" x="100" y="380">比每拍的边界信号，还是比事务序列？S4 这类级怎么写</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="76" y="422"><tspan font-weight="bold"><tspan fill="#E07A1F">4</tspan>　模型和 RTL 都由 AI 写，怎么防同错</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="14" x="100" y="446">模型由人审（审派生出来的图），数值语义以实卡为准</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="76" y="488"><tspan font-weight="bold"><tspan fill="#E07A1F">5</tspan>　论文定位与投稿形式</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="14" x="100" y="512">"验收 + 逃逸分析"能否站住；先投短文还是等主实验</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="76" y="554"><tspan font-weight="bold"><tspan fill="#E07A1F">6</tspan>　外部案例</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="14" x="100" y="578">只有一个设计且 RTL 全由 AI 写；XiangShan 后端</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="14" x="100" y="600">+ difftest 是否足够</text></g>
+  <g id="next-rtl">
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M688,122 H1216 A8,8 0 0 1 1224,130 V328 A8,8 0 0 1 1216,336 H688 A8,8 0 0 1 680,328 V130 A8,8 0 0 1 688,122 Z" />
+    
+  <g transform="translate(700.0, 140.0) scale(1.0833333333333333)" fill="none" stroke="#1F3A5F" stroke-width="2">
+    <path d="M5 6a1 1 0 0 1 1 -1h12a1 1 0 0 1 1 1v12a1 1 0 0 1 -1 1h-12a1 1 0 0 1 -1 -1l0 -12" />
+    <path d="M9 9h6v6h-6l0 -6" />
+    <path d="M3 10h2" />
+    <path d="M3 14h2" />
+    <path d="M10 3v2" />
+    <path d="M14 3v2" />
+    <path d="M21 10h-2" />
+    <path d="M21 14h-2" />
+    <path d="M14 21v-2" />
+    <path d="M10 21v-2" />
+  </g>
+    <text x="736" y="159" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">RTL 重构（继续按现流程）</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="700" y="196"><tspan><tspan font-weight="bold" fill="#E07A1F">①</tspan> E15 批次：redirect 归 S2，控制前门 + ITS 收尾</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="700" y="228"><tspan><tspan font-weight="bold" fill="#E07A1F">②</tspan> 清掉 S1–SW 剩下的偏差；常量前门 fd_const</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="700" y="260"><tspan><tspan font-weight="bold" fill="#E07A1F">③</tspan> 补覆盖：多 warp MEMBAR / ERRBAR、防饿死触发</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="700" y="292"><tspan><tspan font-weight="bold" fill="#E07A1F">④</tspan> 最后：S0 搬迁、E22 同 warp 背靠背发射</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="700" y="320">E15 和 E22 都牵涉 ITS，适合作 FML 阶段 1 的第一个用户</text></g>
+  <g id="next-fml">
+    <path fill="#FFFFFF" stroke="#E07A1F" stroke-width="2" d="M688,352 H1216 A8,8 0 0 1 1224,360 V640 A8,8 0 0 1 1216,648 H688 A8,8 0 0 1 680,640 V360 A8,8 0 0 1 688,352 Z" />
+    
+  <g transform="translate(700.0, 370.0) scale(1.0833333333333333)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M14 3v4a1 1 0 0 0 1 1h4" />
+    <path d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2" />
+    <path d="M10 13l-1 2l1 2" />
+    <path d="M14 13l1 2l-1 2" />
+  </g>
+    <text x="736" y="389" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">FML 方案（阶段 1）</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="700" y="426"><tspan><tspan font-weight="bold" fill="#2A7F9E">①</tspan> 写下"可落 RTL 子集"规则：view / commit、</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="724" y="448">位宽、级注解、ghost 标记，做成检查脚本</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="700" y="482"><tspan><tspan font-weight="bold" fill="#2A7F9E">②</tspan> S2（含 ITS）写成边界规格，用真实 kernel</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="724" y="504">的边界 trace 和当前 RTL lockstep</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="700" y="538"><tspan><tspan font-weight="bold" fill="#2A7F9E">③</tspan> 把 E22、ev_complete、credit 写成第一批契约</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="700" y="572"><tspan><tspan font-weight="bold" fill="#2A7F9E">④</tspan> 在 A8 上回放：契约能否直接指出</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="724" y="594">"WARPSYNC 分叉 9 拍"</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="700" y="628">研究线同步：系统整理逃逸案例，做"需求 → 检查"覆盖表</text></g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　谢谢！</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">22</text>
+  </g>
+</svg>

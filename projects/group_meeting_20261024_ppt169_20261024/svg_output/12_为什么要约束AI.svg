@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">为什么要约束 AI：长程实现会偏移</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">文献里有人提到，我们自己的两周记录里也看得到；方案的出发点就是把 AI 的实现范围框住</text>
+  </g>
+  <g id="external">
+    <rect x="56" y="122" width="428" height="460" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/book" x="76" y="140" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="110" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">外部证据</text>
+    <text x="464" y="158" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#999999">[ ] 内为阅读深度</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="76" y="194" font-weight="bold">Spec-Driven HW Evolution <tspan font-weight="normal" font-size="12" fill="#999999">[全文]</tspan></tspan>
+      <tspan x="76" y="216" font-size="13" fill="#666666">用隔离子代理防"指令漂移"；消融去掉后直接失败</tspan>
+      <tspan x="76" y="250" font-weight="bold">IncreRTL <tspan font-weight="normal" font-size="12" fill="#999999">[只核过术语]</tspan></tspan>
+      <tspan x="76" y="272" font-size="13" fill="#666666">"structural drift"：增量生成 RTL 时结构逐步偏离</tspan>
+      <tspan x="76" y="306" font-weight="bold">nano-kpu / HSCO-Bench / Hawkeye <tspan font-weight="normal" font-size="12" fill="#999999">[全文 / 源码]</tspan></tspan>
+      <tspan x="76" y="328" font-size="13" fill="#666666">零件都对，拼起来出问题；上下文太大会污染</tspan>
+      <tspan x="76" y="362" font-weight="bold">HINT、Representation Bottleneck <tspan font-weight="normal" font-size="12" fill="#999999">[全文]</tspan></tspan>
+      <tspan x="76" y="384" font-size="13" fill="#666666">换表示 3% → 88%；换更强模型提升 &lt; 1.25×</tspan>
+      <tspan x="76" y="418" font-weight="bold">CodeSpec <tspan font-weight="normal" font-size="12" fill="#999999">[方法部分，软件侧]</tspan></tspan>
+      <tspan x="76" y="440" font-size="13" fill="#666666">可执行架构规格，在长程开发中反复检查</tspan>
+      <tspan x="76" y="474" font-weight="bold">软件架构一致性 <tspan font-weight="normal" font-size="12" fill="#999999">[原文 / 检索片段]</tspan></tspan>
+      <tspan x="76" y="496" font-size="13" fill="#666666">人写代码也会偏离架构（Rosik 2011）；</tspan>
+      <tspan x="76" y="516" font-size="13" fill="#666666">JITTAC：4 个月后删掉的违规不到 50%；</tspan>
+      <tspan x="76" y="536" font-size="13" fill="#666666">SAVE LiFe：每步实时检查，违规少约 60%</tspan>
+    </text>
+  </g>
+  <g id="ours">
+    <rect x="500" y="122" width="364" height="460" rx="8" fill="#FFFFFF" stroke="#C62828" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/alert-triangle" x="520" y="140" width="24" height="24" fill="#C62828" stroke-width="2"/>
+    <text x="554" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">我们自己的证据</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="520" y="196" font-weight="bold" fill="#E07A1F">结构偏移</tspan>
+      <tspan x="520" y="220" font-size="13">0ffa993ed 自称"行为不变"，功能、md5</tspan>
+      <tspan x="520" y="240" font-size="13">都一样，结构却偏离了设计图，并且</tspan>
+      <tspan x="520" y="260" font-size="13">跨了好几个提交</tspan>
+      <tspan x="520" y="298" font-weight="bold" fill="#E07A1F">决策偏移</tspan>
+      <tspan x="520" y="322" font-size="13">30 条决定（E1–E24、R1–R6）在实现中</tspan>
+      <tspan x="520" y="342" font-size="13">新定；10 月日志里用户明确批准的只有 4.8%</tspan>
+      <tspan x="520" y="380" font-weight="bold" fill="#E07A1F">知识偏移</tspan>
+      <tspan x="520" y="404" font-size="13">7 月台账：上游修订后 50% 的下游没跟改；</tspan>
+      <tspan x="520" y="424" font-size="13">AI 写的核实报告 verify-b5 有错，一路</tspan>
+      <tspan x="520" y="444" font-size="13">扩散到 b5 漏判 fault</tspan>
+      <tspan x="520" y="482" font-weight="bold" fill="#E07A1F">隐式约束被打破</tspan>
+      <tspan x="520" y="506" font-size="13">G2：没写下来的"隔拍发射"被改掉，</tspan>
+      <tspan x="520" y="526" font-size="13">iadd3 PASS，PC 晚一拍</tspan>
+    </text>
+  </g>
+  <g id="coverage">
+    <rect x="880" y="122" width="344" height="460" rx="8" fill="#1F3A5F"/>
+    <use data-icon="tabler-outline/target" x="900" y="140" width="24" height="24" fill="#E07A1F" stroke-width="2"/>
+    <text x="934" y="158" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#FFFFFF">方案管住哪一类</text>
+    <rect x="900" y="180" width="304" height="104" rx="6" fill="#FFFFFF"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="916" y="206" font-weight="bold">结构偏移 <tspan fill="#2E7D32">· 主要目标</tspan></tspan>
+      <tspan x="916" y="230" font-size="13" fill="#666666">边界规格 + 封闭世界门禁 +</tspan>
+      <tspan x="916" y="250" font-size="13" fill="#666666">边界 lockstep：越界即拦</tspan>
+    </text>
+    <rect x="900" y="296" width="304" height="104" rx="6" fill="#FFFFFF"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="916" y="322" font-weight="bold">决策偏移 <tspan fill="#2A7F9E">· 部分</tspan></tspan>
+      <tspan x="916" y="346" font-size="13" fill="#666666">偏差必须引用登记过的条目；</tspan>
+      <tspan x="916" y="366" font-size="13" fill="#666666">设计改动先改规格再改 RTL</tspan>
+    </text>
+    <rect x="900" y="412" width="304" height="104" rx="6" fill="#FFFFFF" fill-opacity="0.85"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="916" y="438" font-weight="bold">知识偏移 <tspan fill="#999999">· 不在本方案</tspan></tspan>
+      <tspan x="916" y="462" font-size="13" fill="#666666">来源、修订如何传播：</tspan>
+      <tspan x="916" y="482" font-size="13" fill="#666666">留给第二篇（决策台账实证）</tspan>
+    </text>
+    <text x="900" y="556" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#FFFFFF" fill-opacity="0.8">隐式约束 → 写成契约，归入结构偏移</text>
+  </g>
+  <g id="takeaway">
+    <rect x="56" y="598" width="1168" height="52" rx="8" fill="#FFFFFF" stroke="#E07A1F" stroke-width="1.5"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="76" y="620">偏移不是 AI 独有：规格和实现分开维护，人也会偏；AI 只是让它<tspan fill="#E07A1F" font-weight="bold">更快、规模更大</tspan>。</tspan>
+      <tspan x="76" y="642">所以约束分两道：<tspan fill="#1F3A5F" font-weight="bold">写之前</tspan>规定每级能拥有什么、能传什么；<tspan fill="#1F3A5F" font-weight="bold">写之后</tspan>封闭世界门禁 + lockstep，越界就拦。</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：survey/08、10、11、14-novelty/A；2026-10-20-paper2-empirical-draft.md；ledger-oct</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">12</text>
+  </g>
+</svg>

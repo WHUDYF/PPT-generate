@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">这样做的优势：能检查、能定位、能对齐、不变慢</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">结构清楚之后，验证从"整体跑通没有"变成"每一级是否和图一致"</text>
+  </g>
+  <g id="adv-check">
+    <rect x="56" y="124" width="568" height="236" rx="8" fill="#F4F6F9"/>
+    <rect x="56" y="124" width="4" height="236" fill="#2E7D32"/>
+    <use data-icon="tabler-outline/search" x="76" y="142" width="26" height="26" fill="#2E7D32" stroke-width="2"/>
+    <text x="112" y="161" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#1F3A5F">能检查</text>
+    <text x="76" y="216" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="36" font-weight="bold" fill="#2E7D32">0<tspan font-size="17" font-weight="normal" fill="#222222">　S1–SW 六级结构"不一致"</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="76" y="252">同一份结构数据既出图又查网表：层次、边界寄存器、表长、连线</tspan>
+      <tspan x="76" y="276">网表里冒出 IR 没登记的触发器或连线，门禁直接拦下</tspan>
+      <tspan x="76" y="308" fill="#222222">首次跑就报出 5 个功能测试看不见的结构分歧（U1–U5），</tspan>
+      <tspan x="76" y="332" fill="#222222">其中一个来自自称"行为不变"的提交</tspan>
+    </text>
+  </g>
+  <g id="adv-locate">
+    <rect x="656" y="124" width="568" height="236" rx="8" fill="#F4F6F9"/>
+    <rect x="656" y="124" width="4" height="236" fill="#1F3A5F"/>
+    <use data-icon="tabler-outline/target" x="676" y="142" width="26" height="26" fill="#1F3A5F" stroke-width="2"/>
+    <text x="712" y="161" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#1F3A5F">能定位</text>
+    <text x="676" y="216" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="36" font-weight="bold" fill="#1F3A5F">第 2–3 条<tspan font-size="17" font-weight="normal" fill="#222222">　指令处报出分歧</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="676" y="252">发射 trace 绑在 subcore_top 上，按线程和 ISS 比第一处分歧；</tspan>
+      <tspan x="676" y="276">对 G2 错误版本直接指向"ITS PC 推进晚一拍"</tspan>
+      <tspan x="676" y="308" fill="#222222">边界清楚后，"哪一级错了"可以回答；顺带挖出多个</tspan>
+      <tspan x="676" y="332" fill="#222222">真实 bug（读后写漏洞、X 传播、ELECT 选错 lane 等）</tspan>
+    </text>
+  </g>
+  <g id="adv-align">
+    <rect x="56" y="380" width="568" height="236" rx="8" fill="#F4F6F9"/>
+    <rect x="56" y="380" width="4" height="236" fill="#2A7F9E"/>
+    <use data-icon="tabler-outline/git-compare" x="76" y="398" width="26" height="26" fill="#2A7F9E" stroke-width="2"/>
+    <text x="112" y="417" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#1F3A5F">能和性能模型对齐</text>
+    <text x="76" y="472" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="36" font-weight="bold" fill="#2A7F9E">≈ 0<tspan font-size="17" font-weight="normal" fill="#222222">　多数同步项的周期中位变化</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="76" y="508">RTL 的结构决定（预约、credit、ELECT 延迟）可以逐项同步回模型；</tspan>
+      <tspan x="76" y="532">模型发射事件与 ISS 逐条对齐 0 不一致</tspan>
+      <tspan x="76" y="564" fill="#222222">7–14× 的周期差拆开后，统一口径下 iadd3 只差</tspan>
+      <tspan x="76" y="588" fill="#222222">1.2–1.3×，剩下的差距能指到具体路径</tspan>
+    </text>
+  </g>
+  <g id="adv-perf">
+    <rect x="656" y="380" width="568" height="236" rx="8" fill="#F4F6F9"/>
+    <rect x="656" y="380" width="4" height="236" fill="#E07A1F"/>
+    <use data-icon="tabler-outline/chart-bar" x="676" y="398" width="26" height="26" fill="#E07A1F" stroke-width="2"/>
+    <text x="712" y="417" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#1F3A5F">没有变慢，部分变快</text>
+    <text x="676" y="472" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="36" font-weight="bold" fill="#E07A1F">−7.9%<tspan font-size="17" font-weight="normal" fill="#222222">　carry2_mw 周期</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="676" y="508">port_pressure −7.2%（固定 VALU 不再被变长序列挡住）；</tspan>
+      <tspan x="676" y="532">其余 sm_kernel 在 ±1.3% 内，SoC 周期基本不变</tspan>
+      <tspan x="676" y="564" fill="#222222">加了级间寄存器，但去掉了全局反压和空发，</tspan>
+      <tspan x="676" y="588" fill="#222222">两者大致抵消</tspan>
+    </text>
+  </g>
+  <g id="cost">
+    <use data-icon="tabler-outline/scale" x="56" y="630" width="22" height="22" fill="#999999" stroke-width="2"/>
+    <text x="88" y="647" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">代价：代码总量 +8%；同 warp 仍两拍一条（E22），pred_branch_mw 暂时 +0.6%，等 E15 批次收回</text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：runs/progress.md；runs/C1/summary.md；runs/perf-gap；runs/cycles/last.tsv</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">10</text>
+  </g>
+</svg>

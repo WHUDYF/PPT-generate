@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF" />
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F" />
+    <text x="76" y="76" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="30" font-weight="bold" fill="#1F3A5F">为什么要约束 AI：长程实现会偏移</text>
+    <text x="76" y="104" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#666666">文献里有人提到，我们自己的两周记录里也看得到；方案的出发点就是把 AI 的实现范围框住</text>
+  </g>
+  <g id="external">
+    <path fill="#F4F6F9" d="M64,122 H476 A8,8 0 0 1 484,130 V574 A8,8 0 0 1 476,582 H64 A8,8 0 0 1 56,574 V130 A8,8 0 0 1 64,122 Z" />
+    
+  <g transform="translate(76.0, 140.0)" fill="none" stroke="#1F3A5F" stroke-width="2">
+    <path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+    <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" />
+    <path d="M3 6l0 13" />
+    <path d="M12 6l0 13" />
+    <path d="M21 6l0 13" />
+  </g>
+    <text x="110" y="158" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">外部证据</text>
+    <text x="464" y="158" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#999999">[ ] 内为阅读深度</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="76" y="194"><tspan font-weight="bold">Spec-Driven HW Evolution <tspan font-weight="normal" font-size="12" fill="#999999">[全文]</tspan></tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="76" y="216">用隔离子代理防"指令漂移"；消融去掉后直接失败</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="76" y="250"><tspan font-weight="bold">IncreRTL <tspan font-weight="normal" font-size="12" fill="#999999">[只核过术语]</tspan></tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="76" y="272">"structural drift"：增量生成 RTL 时结构逐步偏离</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="76" y="306"><tspan font-weight="bold">nano-kpu / HSCO-Bench / Hawkeye <tspan font-weight="normal" font-size="12" fill="#999999">[全文 / 源码]</tspan></tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="76" y="328">零件都对，拼起来出问题；上下文太大会污染</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="76" y="362"><tspan font-weight="bold">HINT、Representation Bottleneck <tspan font-weight="normal" font-size="12" fill="#999999">[全文]</tspan></tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="76" y="384">换表示 3% → 88%；换更强模型提升 &lt; 1.25×</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="76" y="418"><tspan font-weight="bold">CodeSpec <tspan font-weight="normal" font-size="12" fill="#999999">[方法部分，软件侧]</tspan></tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="76" y="440">可执行架构规格，在长程开发中反复检查</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="76" y="474"><tspan font-weight="bold">软件架构一致性 <tspan font-weight="normal" font-size="12" fill="#999999">[原文 / 检索片段]</tspan></tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="76" y="496">人写代码也会偏离架构（Rosik 2011）；</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="76" y="516">JITTAC：4 个月后删掉的违规不到 50%；</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="76" y="536">SAVE LiFe：每步实时检查，违规少约 60%</text></g>
+  <g id="ours">
+    <path fill="#FFFFFF" stroke="#C62828" stroke-width="1.5" d="M508,122 H856 A8,8 0 0 1 864,130 V574 A8,8 0 0 1 856,582 H508 A8,8 0 0 1 500,574 V130 A8,8 0 0 1 508,122 Z" />
+    
+  <g transform="translate(520.0, 140.0)" fill="none" stroke="#C62828" stroke-width="2">
+    <path d="M12 9v4" />
+    <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+    <path d="M12 16h.01" />
+  </g>
+    <text x="554" y="158" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">我们自己的证据</text>
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" font-size="14" x="520" y="196" font-weight="bold">结构偏移</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="520" y="220">0ffa993ed 自称"行为不变"，功能、md5</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="520" y="240">都一样，结构却偏离了设计图，并且</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="520" y="260">跨了好几个提交</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" font-size="14" x="520" y="298" font-weight="bold">决策偏移</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="520" y="322">30 条决定（E1–E24、R1–R6）在实现中</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="520" y="342">新定；10 月日志里用户明确批准的只有 4.8%</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" font-size="14" x="520" y="380" font-weight="bold">知识偏移</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="520" y="404">7 月台账：上游修订后 50% 的下游没跟改；</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="520" y="424">AI 写的核实报告 verify-b5 有错，一路</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="520" y="444">扩散到 b5 漏判 fault</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#E07A1F" font-size="14" x="520" y="482" font-weight="bold">隐式约束被打破</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="520" y="506">G2：没写下来的"隔拍发射"被改掉，</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="13" x="520" y="526">iadd3 PASS，PC 晚一拍</text></g>
+  <g id="coverage">
+    <path fill="#1F3A5F" d="M888,122 H1216 A8,8 0 0 1 1224,130 V574 A8,8 0 0 1 1216,582 H888 A8,8 0 0 1 880,574 V130 A8,8 0 0 1 888,122 Z" />
+    
+  <g transform="translate(900.0, 140.0)" fill="none" stroke="#E07A1F" stroke-width="2">
+    <path d="M11 12a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
+    <path d="M7 12a5 5 0 1 0 10 0a5 5 0 1 0 -10 0" />
+    <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+  </g>
+    <text x="934" y="158" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#FFFFFF">方案管住哪一类</text>
+    <path fill="#FFFFFF" d="M906,180 H1198 A6,6 0 0 1 1204,186 V278 A6,6 0 0 1 1198,284 H906 A6,6 0 0 1 900,278 V186 A6,6 0 0 1 906,180 Z" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="916" y="206"><tspan font-weight="bold">结构偏移 <tspan fill="#2E7D32">· 主要目标</tspan></tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="916" y="230">边界规格 + 封闭世界门禁 +</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="916" y="250">边界 lockstep：越界即拦</text><path fill="#FFFFFF" d="M906,296 H1198 A6,6 0 0 1 1204,302 V394 A6,6 0 0 1 1198,400 H906 A6,6 0 0 1 900,394 V302 A6,6 0 0 1 906,296 Z" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="916" y="322"><tspan font-weight="bold">决策偏移 <tspan fill="#2A7F9E">· 部分</tspan></tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="916" y="346">偏差必须引用登记过的条目；</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="916" y="366">设计改动先改规格再改 RTL</text><path fill="#FFFFFF" fill-opacity="0.85" d="M906,412 H1198 A6,6 0 0 1 1204,418 V510 A6,6 0 0 1 1198,516 H906 A6,6 0 0 1 900,510 V418 A6,6 0 0 1 906,412 Z" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="14" x="916" y="438"><tspan font-weight="bold">知识偏移 <tspan fill="#999999">· 不在本方案</tspan></tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="916" y="462">来源、修订如何传播：</text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#666666" font-size="13" x="916" y="482">留给第二篇（决策台账实证）</text><text x="900" y="556" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#FFFFFF" fill-opacity="0.8">隐式约束 → 写成契约，归入结构偏移</text>
+  </g>
+  <g id="takeaway">
+    <path fill="#FFFFFF" stroke="#E07A1F" stroke-width="1.5" d="M64,598 H1216 A8,8 0 0 1 1224,606 V642 A8,8 0 0 1 1216,650 H64 A8,8 0 0 1 56,642 V606 A8,8 0 0 1 64,598 Z" />
+    <text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="76" y="620"><tspan>偏移不是 AI 独有：规格和实现分开维护，人也会偏；AI 只是让它<tspan fill="#E07A1F" font-weight="bold">更快、规模更大</tspan>。</tspan>
+      </text><text font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" font-size="15" x="76" y="642"><tspan>所以约束分两道：<tspan fill="#1F3A5F" font-weight="bold">写之前</tspan>规定每级能拥有什么、能传什么；<tspan fill="#1F3A5F" font-weight="bold">写之后</tspan>封闭世界门禁 + lockstep，越界就拦。</tspan>
+    </text></g>
+  <g id="footer">
+    <text x="56" y="696" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：survey/08、10、11、14-novelty/A；2026-10-20-paper2-empirical-draft.md；ledger-oct</text>
+    <text x="1224" y="696" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#999999">12</text>
+  </g>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">同一个问题，之前怎么写，之后怎么写</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">与第 7、8 页对应；重构后整体周期基本不变 —— 收益在结构清晰、可以按级验证，不在性能</text>
+  </g>
+  <g id="row-header">
+    <rect x="56" y="122" width="180" height="36" fill="#F4F6F9"/>
+    <text x="72" y="146" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#666666">问题</text>
+    <rect x="244" y="122" width="460" height="36" fill="#999999"/>
+    <text x="260" y="146" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">之前（8c17f5d73）</text>
+    <rect x="712" y="122" width="512" height="36" fill="#1F3A5F"/>
+    <text x="728" y="146" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#FFFFFF">之后（80ef456d2）</text>
+  </g>
+  <g id="row-chain">
+    <rect x="56" y="162" width="1168" height="86" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222"><tspan x="72" y="196">一拍组合链</tspan><tspan x="72" y="220" font-size="12" font-weight="normal" fill="#999999">第 7 页</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="260" y="190">选 warp、查资源、ITS、分发、RF 读地址</tspan><tspan x="260" y="212">全在发射这一拍里组合完成</tspan><tspan x="260" y="234" font-family="Consolas, monospace" font-size="12">issue_valid = sel &amp;&amp; rd_ok &amp;&amp; wb_ok &amp;&amp; fu_ok &amp;&amp; …</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="728" y="190">按级切开：S2 只做 eligible → pick → issue，</tspan><tspan x="728" y="212">发射条件只剩<tspan fill="#E07A1F" font-weight="bold">选中 &amp; credit 够 &amp; S3 收得下</tspan></tspan><tspan x="728" y="234" fill="#666666">S2/S3 reg、dispatch reg、S4 两个小级都是寄存器</tspan></text>
+  </g>
+  <g id="row-1">
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222"><tspan x="72" y="282">① 现查 busy，</tspan><tspan x="72" y="304">划不出边界</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="260" y="276">exe 用 always @(*) 算 fu_busy / rd_busy，</tspan><tspan x="260" y="298">当拍组合送回 S2；访存响应一来，</tspan><tspan x="260" y="320">读口、LSU、AGU、SFU 一起"忙"</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="728" y="276">固定路径：S4 提前预约好拍数，S5 / SW 的 <tspan fill="#E07A1F" font-weight="bold">rdy 恒为 1</tspan></tspan><tspan x="728" y="298">变长路径：S2 按 credit 发射，推入队列一定成功；</tspan><tspan x="728" y="320" fill="#666666">忙只影响自己那个前门。fu_busy、fp64_busy 已删除</tspan></text>
+  </g>
+  <g id="row-2">
+    <rect x="56" y="336" width="1168" height="86" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222"><tspan x="72" y="370">资源检查</tspan><tspan x="72" y="392" font-size="12" font-weight="normal" fill="#999999">（同属 ①）</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="260" y="364">选中的 warp 查不过就整拍空发；</tspan><tspan x="260" y="386">读口按"空几个"、写口按"现在空不空"</tspan><tspan x="260" y="408" font-family="Consolas, monospace" font-size="12">rd_ok = rd_free_count &gt;= sel_read_ports_i</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="728" y="364">S2 不再查读口 / 写口；S4 allocate 用<tspan fill="#E07A1F" font-weight="bold">预约表</tspan>：</tspan><tspan x="728" y="386">每个 bank 一张读口表，按写口（B0、B1、P、URF、UP）</tspan><tspan x="728" y="408">一张写回拍表，读写都有防饿死保留</tspan></text>
+  </g>
+  <g id="row-3">
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222"><tspan x="72" y="456">② 状态没有主人</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="260" y="450">ITS、分支序列、SETMAXNREG、walker 都在</tspan><tspan x="260" y="472">subcore_top（6169 行），顶层统一扫上下文</tspan><tspan x="260" y="494">exe 5121 行，S4 的输出经 exe 绕回自己</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="728" y="450">每份状态一个主人，只有主人能写：ITS 归 S2，</tspan><tspan x="728" y="472">RF 阵列归 SW，分支序列归控制前门</tspan><tspan x="728" y="494" fill="#666666">顶层 3486 行（−43%），只连线、只串上下文链</tspan></text>
+  </g>
+  <g id="row-4">
+    <rect x="56" y="510" width="1168" height="86" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" font-weight="bold" fill="#222222"><tspan x="72" y="544">③ 约束没写下来</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666"><tspan x="260" y="538">单项 head 让同 warp 隔拍才发，ITS 的</tspan><tspan x="260" y="560">PC 推进依赖它；没有任何文档写过</tspan><tspan x="260" y="582">反向信号跨级当拍读（busy、warp_mask_o）</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="728" y="538">写进规范和结构数据（E22），作为已知差距登记</tspan><tspan x="728" y="560">反向只走<tspan fill="#E07A1F" font-weight="bold">寄存的事件通道</tspan>，下一拍才看到</tspan><tspan x="728" y="582" fill="#666666">结构检查对未登记的触发器、连线直接报错</tspan></text>
+  </g>
+  <g id="summary">
+    <rect x="56" y="608" width="1168" height="42" rx="8" fill="#1F3A5F"/>
+    <text x="76" y="635" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#FFFFFF">代价：代码总量 +8%（多了级间寄存器和预约表）；换来的是<tspan fill="#E07A1F" font-weight="bold">每一级有边界、有主人，可以单独检查、单独替换</tspan></text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：git diff 8c17f5d73..80ef456d2 -- rtl/src；2026-10-16-fig11-v2-changes.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">9</text>
+  </g>
+</svg>

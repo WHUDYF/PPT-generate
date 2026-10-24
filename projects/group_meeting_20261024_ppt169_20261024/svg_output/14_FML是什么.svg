@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">FML 是什么，为什么适合当这一层</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">定位：性能模型管"做什么、多少拍"；FML 规格管"在哪一级做、每级拥有什么状态、两级之间传什么"</text>
+  </g>
+  <g id="what">
+    <text x="56" y="148" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">四个特点</text>
+    <rect x="56" y="162" width="500" height="112" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/hierarchy" x="74" y="178" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="108" y="196" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">模块 + 状态 + task</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="74" y="226">task 由时钟（整数皮秒）或事件（带最小延迟）触发，</tspan>
+      <tspan x="74" y="250">时钟和离散事件在同一个模型里</tspan>
+    </text>
+    <rect x="56" y="286" width="500" height="112" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/lock" x="74" y="302" width="24" height="24" fill="#E07A1F" stroke-width="2"/>
+    <text x="108" y="320" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">访存方式写进签名</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="74" y="350">每个 task 声明读"拍前的值"、读"本拍最新值"或写；</tspan>
+      <tspan x="74" y="374">VM 据此推出全部顺序，有歧义（组合环）<tspan fill="#C62828" font-weight="bold">加载时就拒绝</tspan></tspan>
+    </text>
+    <rect x="56" y="410" width="500" height="112" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/arrows-split" x="74" y="426" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="108" y="444" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">并行而确定</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="74" y="474">不论几个 worker，结束状态、事件都完全相同；</tspan>
+      <tspan x="74" y="498">可以拿声明的顺序检查一次运行的轨迹</tspan>
+    </text>
+    <rect x="56" y="534" width="500" height="112" rx="8" fill="#F4F6F9"/>
+    <use data-icon="tabler-outline/git-merge" x="74" y="550" width="24" height="24" fill="#1F3A5F" stroke-width="2"/>
+    <text x="108" y="568" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#222222">边界开放</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="74" y="598">外部端口可接 trace、功能模型或联合仿真的 RTL；</tspan>
+      <tspan x="74" y="622">Fifo 等组件可自定义；支持不停机快照</tspan>
+    </text>
+  </g>
+  <g id="compare">
+    <text x="588" y="148" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">和现在手里的几种"标准"比</text>
+    <rect x="588" y="162" width="636" height="40" fill="#1F3A5F"/>
+    <text x="604" y="188" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">需要的能力</text>
+    <text x="864" y="188" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">drawio + 结构数据</text>
+    <text x="1012" y="188" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#FFFFFF">性能模型</text>
+    <text x="1148" y="188" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" font-weight="bold" fill="#E07A1F">FML</text>
+    <rect x="588" y="202" width="636" height="44" fill="#F4F6F9"/>
+    <text x="604" y="230" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">描述级、状态主人、连线</text>
+    <text x="864" y="230" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#2E7D32">✓</text>
+    <text x="1012" y="230" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">✗ 一个函数</text>
+    <text x="1148" y="230" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#2E7D32">✓</text>
+    <text x="604" y="274" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">每拍行为可执行</text>
+    <text x="864" y="274" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">✗</text>
+    <text x="1012" y="274" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">事件级，非逐拍</text>
+    <text x="1148" y="274" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#2E7D32">✓</text>
+    <rect x="588" y="290" width="636" height="44" fill="#F4F6F9"/>
+    <text x="604" y="318" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">区分寄存器 / 连线</text>
+    <text x="864" y="318" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">标注</text>
+    <text x="1012" y="318" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">✗</text>
+    <text x="1148" y="318" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#2E7D32" font-weight="bold">由读法决定</text>
+    <text x="604" y="362" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">组合环 / 反向组合检查</text>
+    <text x="864" y="362" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">网表上事后查</text>
+    <text x="1012" y="362" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">✗</text>
+    <text x="1148" y="362" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#2E7D32" font-weight="bold">加载时</text>
+    <rect x="588" y="378" width="636" height="44" fill="#F4F6F9"/>
+    <text x="604" y="406" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">挂时序契约</text>
+    <text x="864" y="406" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">✗</text>
+    <text x="1012" y="406" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">要改模型代码</text>
+    <text x="1148" y="406" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#2E7D32" font-weight="bold">只读 monitor</text>
+    <text x="604" y="450" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">和 RTL 逐拍比对</text>
+    <text x="864" y="450" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">✗</text>
+    <text x="1012" y="450" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">只能比周期总数</text>
+    <text x="1148" y="450" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#2E7D32" font-weight="bold">原型已验证</text>
+    <rect x="588" y="466" width="636" height="44" fill="#F4F6F9"/>
+    <text x="604" y="494" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">生成给人看的图</text>
+    <text x="864" y="494" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#2E7D32">✓</text>
+    <text x="1012" y="494" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">✗</text>
+    <text x="1148" y="494" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#2A7F9E">待做</text>
+    <rect x="1080" y="162" width="136" height="348" rx="4" fill="none" stroke="#E07A1F" stroke-width="2"/>
+    <rect x="588" y="530" width="636" height="116" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <use data-icon="tabler-outline/bulb" x="606" y="548" width="24" height="24" fill="#E07A1F" stroke-width="2"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="640" y="566">关键的一点：FML 里"读拍前的值 / 读本拍最新值"</tspan>
+      <tspan x="640" y="592">正好对应 RTL 的<tspan fill="#E07A1F" font-weight="bold">寄存器 / 组合连线</tspan>。</tspan>
+      <tspan x="606" y="624" fill="#666666">所以写模型的同时就把级边界写清楚了，不需要另外标。</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：fml/README.zh-CN.md；fml-rtl-proto/README.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">14</text>
+  </g>
+</svg>

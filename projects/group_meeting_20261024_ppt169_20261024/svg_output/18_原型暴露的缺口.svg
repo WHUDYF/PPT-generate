@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">原型说明了什么、没说明什么、缺什么</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">下一步要定义一个"能落到 RTL 的 FML 子集"：写进子集的模型，才能当 RTL 的标准</text>
+  </g>
+  <g id="shows">
+    <rect x="56" y="124" width="372" height="270" rx="8" fill="#F4F6F9"/>
+    <rect x="56" y="124" width="4" height="270" fill="#2E7D32"/>
+    <use data-icon="tabler-outline/checks" x="76" y="142" width="24" height="24" fill="#2E7D32" stroke-width="2"/>
+    <text x="110" y="160" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">说明了</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="76" y="198">· FML 能把 S1 控制写到和 RTL 逐拍一致</tspan>
+      <tspan x="92" y="220" fill="#666666">15 × 20 万拍，约 250 行</tspan>
+      <tspan x="76" y="254">· 契约写成只读 monitor，1 秒内抓到 G2</tspan>
+      <tspan x="76" y="288">· lockstep 能把分歧定位到第一拍和信号</tspan>
+      <tspan x="76" y="322">· 把契约写下来，会暴露不精确的契约</tspan>
+      <tspan x="92" y="344" fill="#666666">C1"隔拍发射"在有 hold 时不成立</tspan>
+    </text>
+  </g>
+  <g id="not-shown">
+    <rect x="56" y="410" width="372" height="238" rx="8" fill="#F4F6F9"/>
+    <rect x="56" y="410" width="4" height="238" fill="#C62828"/>
+    <use data-icon="tabler-outline/alert-triangle" x="76" y="428" width="24" height="24" fill="#C62828" stroke-width="2"/>
+    <text x="110" y="446" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">还没说明</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="76" y="484">· S2、ITS、IB 是抽象的，不和 RTL 逐拍一致</tspan>
+      <tspan x="76" y="514">· 激励是随机的，不是真实 kernel</tspan>
+      <tspan x="76" y="544">· 译码字段没比（译码器当 oracle）</tspan>
+      <tspan x="76" y="574">· <tspan fill="#C62828" font-weight="bold">边界级规格只在 S1 上试过</tspan>：S4 这类</tspan>
+      <tspan x="92" y="596">有预约、多拍读窗口的级，边界事务还没定义</tspan>
+      <tspan x="76" y="626" fill="#666666">· G2 RTL 是复原的（原文件已不存在）</tspan>
+    </text>
+  </g>
+  <g id="subset">
+    <text x="460" y="148" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">原型里的摩擦 → "可落到 RTL 的子集"要补的规则</text>
+    <rect x="460" y="162" width="764" height="34" fill="#1F3A5F"/>
+    <text x="476" y="185" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">遇到的摩擦</text>
+    <text x="830" y="185" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">要补的规则 / 注解</text>
+    <rect x="460" y="196" width="764" height="64" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="476" y="222">"view 写连线、commit 写寄存器"</tspan><tspan x="476" y="244" fill="#666666">只是手工约定</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="830" y="222">变成可检查的子集规则</tspan><tspan x="830" y="244" fill="#666666">违反就不能当 RTL 标准</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="476" y="286">没有位宽：u8 / u16 / u128 只是容器</tspan><tspan x="476" y="308" fill="#666666">HEAD_BITS 等字段宽度不准</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="830" y="286">位宽注解，和 RTL 参数对齐</tspan><tspan x="830" y="308" fill="#666666">结构检查顺带查宽度</tspan></text>
+    <rect x="460" y="324" width="764" height="64" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="476" y="350">级的信息不在 IR 里</tspan><tspan x="476" y="372" fill="#666666">现在靠命令行传 Split=1 S2=2</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="830" y="350">级注解写进模块</tspan><tspan x="830" y="372" fill="#666666">结构规则直接读</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="476" y="414">辅助字段（Entry::pc）</tspan><tspan x="476" y="436" fill="#666666">只为契约服务，RTL 不该有</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="830" y="414">ghost 标记</tspan><tspan x="830" y="436" fill="#666666">保证永远不落到 RTL</tspan></text>
+    <rect x="460" y="452" width="764" height="64" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="476" y="478">模块里的定长数组被当成列</tspan><tspan x="476" y="500" fill="#666666">要包成 Plain 结构体</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="830" y="478">写成子集的固定写法</tspan><tspan x="830" y="500" fill="#666666">或请 FML 支持</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="476" y="542">组合环检查是 task 粒度</tspan><tspan x="476" y="564" fill="#666666">无关输出放一起会误报</tspan></text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222"><tspan x="830" y="542">规定每个输出组一个 view task</tspan><tspan x="830" y="564" fill="#666666">加 40 行级规则层</tspan></text>
+    <rect x="460" y="584" width="764" height="64" rx="8" fill="#FFFFFF" stroke="#E07A1F" stroke-width="1.5"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="480" y="610">有了这个子集，就可以从边界规格<tspan fill="#E07A1F" font-weight="bold">生成 RTL 骨架</tspan>（端口、级间寄存器、握手、</tspan>
+      <tspan x="480" y="634">状态声明）；级内行为<tspan fill="#E07A1F" font-weight="bold">不生成</tspan>，由 AI 写，在边界上和模型 lockstep。</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：fml-rtl-proto/README.md "What this shows" 与 "Friction"</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">18</text>
+  </g>
+</svg>

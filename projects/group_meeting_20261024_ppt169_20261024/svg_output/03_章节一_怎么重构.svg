@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#1F3A5F"/>
+  <g id="bg-decor">
+    <text x="1224" y="660" text-anchor="end" font-family="Consolas, monospace" font-size="90" font-weight="bold" fill="#FFFFFF" fill-opacity="0.06">01</text>
+  </g>
+  <g id="chapter-title">
+    <text x="120" y="228" font-family="Consolas, monospace" font-size="18" fill="#E07A1F">PART 01 · 我们是怎么重构的</text>
+    <text x="120" y="310" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="48" font-weight="bold" fill="#FFFFFF">先有图，再对照图改 RTL</text>
+    <rect x="120" y="340" width="96" height="4" fill="#E07A1F"/>
+  </g>
+  <g id="rules">
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" fill="#FFFFFF">
+      <tspan x="120" y="410"><tspan fill="#E07A1F" font-weight="bold">图</tspan>：11 号目标流水线图 v2，由一份结构数据生成</tspan>
+      <tspan x="120" y="456"><tspan fill="#E07A1F" font-weight="bold">改</tspan>：按修改清单一条一条改，一条一个提交</tspan>
+      <tspan x="120" y="502"><tspan fill="#E07A1F" font-weight="bold">验</tspan>：每个提交过功能、断言、结构三道检查</tspan>
+    </text>
+  </g>
+</svg>

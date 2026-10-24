@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">但这套流程有痛点：标准本身不能执行</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">drawio 图和结构数据只说"有什么、怎么连"；"每一拍做什么"仍然只在文档和人脑里</text>
+  </g>
+  <g id="pain-1">
+    <rect x="56" y="124" width="560" height="118" rx="8" fill="#F4F6F9"/>
+    <text x="76" y="154" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#C62828">① 图只能静态比对</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="76" y="184">结构检查比的是网表"连没连、有没有寄存"，</tspan>
+      <tspan x="76" y="208">不知道寄存器里该是什么值；行为对不对只能靠端到端用例</tspan>
+    </text>
+  </g>
+  <g id="pain-2">
+    <rect x="56" y="254" width="560" height="118" rx="8" fill="#F4F6F9"/>
+    <text x="76" y="284" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#C62828">② 时序契约没有载体</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="76" y="314">A8 之后慢 6–7%：WARPSYNC 分叉每次 6 → 9 拍，</tspan>
+      <tspan x="76" y="338">E12–E15 几轮假设都没找到，最后靠人工统计停留拍数</tspan>
+    </text>
+  </g>
+  <g id="pain-3">
+    <rect x="56" y="384" width="560" height="118" rx="8" fill="#F4F6F9"/>
+    <text x="76" y="414" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#C62828">③ 设计问题到写 RTL 时才暴露</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="76" y="444">E1–E24、R1–R6 共 30 条决定是实现中新定或反推的；</tspan>
+      <tspan x="76" y="468">每次都要停下、改图、再继续 —— 图没法先"跑一下"</tspan>
+    </text>
+  </g>
+  <g id="pain-4">
+    <rect x="56" y="514" width="560" height="118" rx="8" fill="#F4F6F9"/>
+    <text x="76" y="544" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#C62828">④ 隐式契约一碰就坏</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="76" y="574">"同 warp 隔拍发射"没写在任何地方；G2 首版</tspan>
+      <tspan x="76" y="598">改了 head FIFO，iadd3 PASS，构建一次要 623 s</tspan>
+    </text>
+  </g>
+  <g id="cases">
+    <text x="648" y="148" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">证据：6 个"功能验证通过、问题照样漏掉"</text>
+    <rect x="648" y="164" width="576" height="32" fill="#1F3A5F"/>
+    <text x="664" y="186" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">类</text>
+    <text x="730" y="186" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">案例</text>
+    <text x="1000" y="186" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#FFFFFF">后来谁抓住</text>
+    <rect x="648" y="196" width="576" height="76" fill="#F4F6F9"/>
+    <text x="664" y="240" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#E07A1F">结构</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="730" y="224">S4 allocate 搬家，自称行为不变</tspan>
+      <tspan x="730" y="256">两项 head FIFO，PC 晚一拍</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="1000" y="224">结构检查</tspan>
+      <tspan x="1000" y="256">逐指令比对</tspan>
+    </text>
+    <text x="664" y="316" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#2A7F9E">时序</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="730" y="300">A8 控制前门，慢 6–7%</tspan>
+      <tspan x="730" y="332">b4 访存 bank，慢 8.53%</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="1000" y="300">周期对比 + 人工</tspan>
+      <tspan x="1000" y="332">周期对比</tspan>
+    </text>
+    <rect x="648" y="348" width="576" height="76" fill="#F4F6F9"/>
+    <text x="664" y="392" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" font-weight="bold" fill="#C62828">验证失效</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="730" y="376">旧脚本把有 fault 的运行判 PASS</tspan>
+      <tspan x="730" y="408">断言文件静默失效</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#666666">
+      <tspan x="1000" y="376">事后人工发现</tspan>
+      <tspan x="1000" y="408">新增 assert_check</tspan>
+    </text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#666666">
+      <tspan x="648" y="452">时序类落在性能模型误差之内，只看"聚合周期 ±10%"抓不到；</tspan>
+      <tspan x="648" y="474">每一个都是事后、靠人、在端到端层面才发现的。</tspan>
+    </text>
+  </g>
+  <g id="need">
+    <rect x="648" y="500" width="576" height="132" rx="8" fill="#1F3A5F"/>
+    <use data-icon="tabler-outline/bulb" x="668" y="520" width="26" height="26" fill="#E07A1F" stroke-width="2"/>
+    <text x="704" y="539" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#FFFFFF">需要的是一个中间层，它要</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#FFFFFF">
+      <tspan x="668" y="572"><tspan fill="#E07A1F" font-weight="bold">能执行</tspan>：每拍行为写清楚，写 RTL 之前先跑</tspan>
+      <tspan x="668" y="598"><tspan fill="#E07A1F" font-weight="bold">能挂契约</tspan>：时序约束是可检查的代码</tspan>
+      <tspan x="668" y="624"><tspan fill="#E07A1F" font-weight="bold">能和 RTL 逐拍比</tspan>：出错直接给出第一拍、第一个信号</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：2026-10-20-paper-draft-v2.md §1.2；runs/cycles/log.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">11</text>
+  </g>
+</svg>

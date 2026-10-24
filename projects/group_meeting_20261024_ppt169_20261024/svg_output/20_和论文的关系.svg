@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">和论文的关系：FML 是"结构 IR 作需求规格"的载体</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">论文 v2（10-20）主线：以结构 IR 为需求规格，验收 AI 生成的大规模 RTL</text>
+  </g>
+  <g id="thesis">
+    <rect x="56" y="124" width="560" height="300" rx="8" fill="#F4F6F9"/>
+    <text x="76" y="156" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">论文的四件事，FML 各补哪一块</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="76" y="194" font-weight="bold">① 需求带来源和状态</tspan>
+      <tspan x="96" y="216" fill="#666666">done / target / deviation；FML 模块上加注解即可</tspan>
+      <tspan x="76" y="252" font-weight="bold">② 封闭世界</tspan>
+      <tspan x="96" y="274" fill="#666666">网表里 IR 没认领的触发器、连线一律报错（已有）</tspan>
+      <tspan x="76" y="310" font-weight="bold">③ 三类检查</tspan>
+      <tspan x="96" y="332" fill="#666666">逐指令比对、网表结构检查已有；<tspan fill="#E07A1F" font-weight="bold">事务间时序契约</tspan></tspan>
+      <tspan x="96" y="354" fill="#666666">原来缺载体 —— FML monitor 正好补上</tspan>
+      <tspan x="76" y="390" font-weight="bold">④ 逃逸分析（建议作主贡献）</tspan>
+      <tspan x="96" y="412" fill="#666666">每层检查各抓住什么；第 11 页的 6 个案例是起点</tspan>
+    </text>
+  </g>
+  <g id="novelty">
+    <rect x="56" y="440" width="560" height="208" rx="8" fill="#1F3A5F"/>
+    <use data-icon="tabler-outline/target" x="76" y="460" width="24" height="24" fill="#E07A1F" stroke-width="2"/>
+    <text x="110" y="478" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#FFFFFF">新意检索的结论</text>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#FFFFFF">
+      <tspan x="76" y="512">每个单独机制都有先例；检索范围内没找到的是</tspan>
+      <tspan x="76" y="536">组合与实证：用一份可执行结构 IR，在 AI 逐步</tspan>
+      <tspan x="76" y="560">重构约 10 万行 GPU RTL 的每一步上，同时管住</tspan>
+      <tspan x="76" y="584">结构、功能、时序三类需求，规格本身受门禁保护。</tspan>
+      <tspan x="76" y="622" fill="#E07A1F">代价：6 个真实案例不够，要补跨层变异矩阵</tspan>
+    </text>
+  </g>
+  <g id="related">
+    <text x="648" y="148" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">最接近的工作</text>
+    <rect x="648" y="164" width="576" height="146" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="668" y="194" font-weight="bold">HINT<tspan font-size="12" font-weight="normal" font-family="Consolas, monospace" fill="#999999">  2608.07625</tspan></tspan>
+      <tspan x="668" y="222" font-size="14" fill="#666666">LLM 先写结构 IR 再生成 RTL；算子 / VPU 级，固定 latency；</tspan>
+      <tspan x="668" y="246" font-size="14" fill="#666666">IR 不可执行到逐拍，不处理反压和事务间关系；</tspan>
+      <tspan x="668" y="270" font-size="14" fill="#C62828">做的是生成，不是验收已有 RTL</tspan>
+      <tspan x="668" y="294" font-size="13" fill="#2A7F9E">→ 我们的 IR 是能和 RTL 逐拍比的模型</tspan>
+    </text>
+    <rect x="648" y="322" width="576" height="146" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="668" y="352" font-weight="bold">Spec-Driven HW Evolution<tspan font-size="12" font-weight="normal" font-family="Consolas, monospace" fill="#999999">  2608.12684</tspan></tspan>
+      <tspan x="668" y="380" font-size="14" fill="#666666">人审的可执行契约 + hw-cbmc，增量修改已有 RTL；</tspan>
+      <tspan x="668" y="404" font-size="14" fill="#666666">契约只到单事务 IO 等价，<tspan fill="#C62828">有意不约束结构</tspan>；</tspan>
+      <tspan x="668" y="428" font-size="14" fill="#666666">只有约 2.2K 行 TPU 单案例</tspan>
+      <tspan x="668" y="452" font-size="13" fill="#2A7F9E">→ 我们管结构 + 时序，规模约 10 万行</tspan>
+    </text>
+    <rect x="648" y="480" width="576" height="168" rx="8" fill="#FFFFFF" stroke="#D8DEE6" stroke-width="1"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="668" y="510" font-weight="bold">AmpereOne 性能验证<tspan font-size="12" font-weight="normal" font-family="Consolas, monospace" fill="#999999">  MICRO'26</tspan></tspan>
+      <tspan x="668" y="538" font-size="14" fill="#666666">RTL / 性能模型 / 实卡三方对齐；</tspan>
+      <tspan x="668" y="562" font-size="14" fill="#666666">判据是聚合 IPC：90% 的测试在 ±10% 内，</tspan>
+      <tspan x="668" y="586" font-size="14" fill="#C62828">抓不到 A8 / b4 这种 6–8% 的回归，也定位不到原因</tspan>
+      <tspan x="668" y="614" font-size="13" fill="#2A7F9E">→ 我们在事务级写契约（"WARPSYNC 分叉 ≤ 6 拍"），</tspan>
+      <tspan x="668" y="634" font-size="13" fill="#2A7F9E">违例时直接给出拍和信号</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：2026-10-20-paper-draft-v2.md；survey/14-novelty.md</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">20</text>
+  </g>
+</svg>

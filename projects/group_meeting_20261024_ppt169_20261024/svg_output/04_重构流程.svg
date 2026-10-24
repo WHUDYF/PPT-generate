@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <marker id="arrP" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#1F3A5F"/>
+    </marker>
+    <marker id="arrW" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#C62828"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="720" fill="#FFFFFF"/>
+  <g id="header">
+    <rect x="56" y="46" width="6" height="36" fill="#1F3A5F"/>
+    <text x="76" y="76" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="30" font-weight="bold" fill="#1F3A5F">重构流程：图是标准，AI 对照图逐条实现</text>
+    <text x="76" y="104" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#666666">10-16 起的做法；图和清单在 PPT-generate，RTL 在 curryGPU 分支 subcore-pipeline-structure</text>
+  </g>
+  <g id="flow">
+    <rect x="56" y="150" width="190" height="96" rx="8" fill="#1F3A5F"/>
+    <use data-icon="tabler-outline/database" x="72" y="164" width="22" height="22" fill="#E07A1F" stroke-width="2"/>
+    <text x="102" y="182" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#FFFFFF">结构数据</text>
+    <text x="72" y="212" font-family="Consolas, monospace" font-size="12" fill="#FFFFFF" fill-opacity="0.85">subcore_structure.py</text>
+    <text x="72" y="232" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF" fill-opacity="0.85">每项带出处和状态</text>
+    <line x1="246" y1="198" x2="276" y2="198" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <rect x="282" y="150" width="190" height="96" rx="8" fill="#F4F6F9" stroke="#1F3A5F" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/route" x="298" y="164" width="22" height="22" fill="#1F3A5F" stroke-width="2"/>
+    <text x="328" y="182" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">drawio 目标图</text>
+    <text x="298" y="212" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">11 号图 v2，脚本只排版</text>
+    <text x="298" y="232" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">26 次修订</text>
+    <line x1="472" y1="198" x2="502" y2="198" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <rect x="508" y="150" width="190" height="96" rx="8" fill="#F4F6F9" stroke="#1F3A5F" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/list-check" x="524" y="164" width="22" height="22" fill="#1F3A5F" stroke-width="2"/>
+    <text x="554" y="182" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">修改清单</text>
+    <text x="524" y="212" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">图与 RTL 的差，分 A–D 四类</text>
+    <text x="524" y="232" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">共 63 条</text>
+    <line x1="698" y1="198" x2="728" y2="198" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <rect x="734" y="150" width="210" height="96" rx="8" fill="#F4F6F9" stroke="#1F3A5F" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/robot" x="750" y="164" width="22" height="22" fill="#1F3A5F" stroke-width="2"/>
+    <text x="780" y="182" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">AI 对照实现</text>
+    <text x="750" y="212" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">一条一个提交；先保行为的</text>
+    <text x="750" y="232" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#666666">搬迁，再做改拍数的改动</text>
+    <line x1="944" y1="198" x2="974" y2="198" stroke="#1F3A5F" stroke-width="2" marker-end="url(#arrP)"/>
+    <rect x="980" y="150" width="244" height="96" rx="8" fill="#2E7D32"/>
+    <use data-icon="tabler-outline/shield-check" x="996" y="164" width="22" height="22" fill="#FFFFFF" stroke-width="2"/>
+    <text x="1026" y="182" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#FFFFFF">三道检查 → 提交</text>
+    <text x="996" y="212" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">功能（14 + 5 用例，lockstep）</text>
+    <text x="996" y="232" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#FFFFFF">断言（50 个文件）· 网表结构检查</text>
+    <polyline points="839,246 839,292 151,292 151,250" fill="none" stroke="#C62828" stroke-width="2" stroke-dasharray="8,4" marker-end="url(#arrW)"/>
+    <rect x="310" y="276" width="390" height="30" rx="4" fill="#FFFFFF"/>
+    <text x="320" y="297" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C62828">实现中发现设计问题：先改结构数据、重新出图，再继续</text>
+  </g>
+  <g id="col-graph">
+    <text x="56" y="350" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">图里写了什么</text>
+    <rect x="56" y="364" width="364" height="160" rx="8" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="76" y="394">· 7 个大级、各自的小级和级间寄存器</tspan>
+      <tspan x="76" y="420">· 每份状态归哪一级（黄色块 = 存储）</tspan>
+      <tspan x="76" y="446">· 变长路径的队列和前门</tspan>
+      <tspan x="76" y="472">· 反向事件通道及来源</tspan>
+      <tspan x="76" y="498" fill="#666666">每项标 done / target / deviation</tspan>
+    </text>
+  </g>
+  <g id="col-list">
+    <text x="452" y="350" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">清单怎么来</text>
+    <rect x="452" y="364" width="364" height="160" rx="8" fill="#F4F6F9"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="472" y="394"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">A</tspan>　按分级图同步总图</tspan>
+      <tspan x="472" y="420"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">B</tspan>　RTL 新加的约束：留还是删</tspan>
+      <tspan x="472" y="446"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">C</tspan>　顶层"没有主人"的功能归哪级</tspan>
+      <tspan x="472" y="472"><tspan font-family="Consolas, monospace" fill="#E07A1F" font-weight="bold">D</tspan>　RTL 与图不一致：登记后逐条处理</tspan>
+      <tspan x="472" y="498" fill="#666666">实现中又新增 E1–E24、R1–R6</tspan>
+    </text>
+  </g>
+  <g id="col-example">
+    <text x="848" y="350" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">一条走一遍：E24</text>
+    <rect x="848" y="364" width="376" height="160" rx="8" fill="#FFFFFF" stroke="#E07A1F" stroke-width="1.5"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#222222">
+      <tspan x="868" y="394">① 定：变长 VALU 走 credit，取 1</tspan>
+      <tspan x="868" y="420">② 改结构数据、重新出图（3 个图提交）</tspan>
+      <tspan x="868" y="446">③ RTL：S1 标 valu_var 位，S2 按 credit 发</tspan>
+      <tspan x="868" y="472">④ 验收：功能全过，port_pressure <tspan fill="#2E7D32" font-weight="bold">−7.2%</tspan></tspan>
+      <tspan x="868" y="498" font-family="Consolas, monospace" font-size="12" fill="#999999">005fd20 · 508ac6f · b48efef → fecf774c8</tspan>
+    </text>
+  </g>
+  <g id="takeaway">
+    <rect x="56" y="548" width="1168" height="100" rx="8" fill="#1F3A5F"/>
+    <use data-icon="tabler-outline/bulb" x="80" y="572" width="26" height="26" fill="#E07A1F" stroke-width="2"/>
+    <text font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" fill="#FFFFFF">
+      <tspan x="120" y="590">要点：<tspan fill="#E07A1F" font-weight="bold">图先于代码</tspan>。AI 不自己决定结构，只把图翻译成 RTL；</tspan>
+      <tspan x="120" y="622">图和 RTL 对不上时，要么改 RTL，要么先改图并留下记录 —— 两边始终能对照。</tspan>
+    </text>
+  </g>
+  <g id="footer">
+    <text x="56" y="696" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">curryGPU · 组会 · 2026-10-24　|　依据：2026-10-16-fig11-v2-changes.md；runs/progress.md；fecf774c8</text>
+    <text x="1224" y="696" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="11" fill="#999999">4</text>
+  </g>
+</svg>
