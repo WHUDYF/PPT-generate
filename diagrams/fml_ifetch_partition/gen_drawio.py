@@ -35,7 +35,7 @@ TASKFILL = "#EAF2FB"
 text(20, 30, 1600, 26, "curryGPU 取指子系统 ifetch_top   →   FML 模块与 task 切分（草案）", 17, True)
 text(20, 64, 2300, 16, "参数（与 RTL 相同）   Subcores=4   WarpsPerSubcore=12   Instr=128b   Line=1024b=8 instr   L0I=64 行全相联 / subcore   L1I=4 way × 128 set   MissQ=48+16   IB=8/warp   Dispatch=2 instr/拍   FillBeat=256b × 4   时钟=SM 核心时钟（一个 fml::Clock）")
 text(20, 84, 2300, 16, "FML 层次   Sm → Ifetch ×1 → { Frontend ×4（含 warp 状态、取指仲裁、L0I）,  Ib ×4,  L1i ×1（含 tag / data / miss queue / 预取窗口） };   上游 subcore_top ×4（S1.decode、S2.issue）、sm_top cta_dispatch；下游 lsu_top 指令 TLB、L2 访存出口")
-text(20, 104, 2300, 16, "访问模式   &T = 读本拍开始时的值（RTL 寄存器输出，不建立先后）     &'latest T = 读本拍其他 task 写完之后的值（RTL 同拍组合通路，建立先后）     &mut T = 写（每个状态只有一个写者）。下图的列 = 由访问模式推导出的一个时钟沿内的先后层次，不是手工指定的顺序")
+text(20, 104, 2300, 16, "访问模式   &T = 读写者写之前的值（读者排在写者之前）     &'latest T = 读写者写完之后的值（读者排在写者之后）     每个位置只有一个版本（FML 决定 D2.12），两种读法都建立先后，只是方向相反     &mut T = 写（每个状态只有一个写者）。下图的列 = 由访问模式推导出的一个时钟沿内的先后层次，不是手工指定的顺序")
 text(20, 124, 2300, 16, "依据   ifetch_top.drawio（curryGPU docs/design/uarch）；fr_ready 组合式 ifetch_l1i.v:322；redirect 同拍参与 lookup_response_live ifetch_frontend.v:251；IB 同拍推送/弹出/旁路 ifetch_ib.v:45-50、flush ifetch_ib.v:182")
 
 # ---------- big box + stage columns ----------
@@ -108,10 +108,10 @@ box("ib_t", 1487, 330, 596, 130,
     size=9, stroke=BLUE, fill=TASKFILL, mono=True, sw=2)
 box("ib_view", 1487, 472, 596, 90,
     "IbView = { count[12], deadline[12], head_instr[12] }\n"
-    "别人只用 & 读它（本拍开始时的寄存器值）：\n"
+    "别人只用 & 读它（Ib.step 写之前的值）：\n"
     "  • Frontend 用 count / deadline 算 has_room 和仲裁 key\n"
     "  • S1.decode 读 head_instr 取指令\n"
-    "所以 Frontend、S1.decode 与 Ib.step 之间不需要额外顺序")
+    "& 让 Frontend、S1.decode 排在 Ib.step 之前，与 &'latest 请求方向一致")
 
 # ---------- L1i ----------
 box("l1i", 265, 640, 1830, 355, "L1i        FML module   ×1 per SM（4 subcore 共享）——一个模块、两个 task   ①", size=11, bold=True, stroke=RED)
@@ -165,7 +165,7 @@ edge("e_tlb", "l1_cap", "tlb", "", "write", ex=(1, 0.4), en=(0, 0.5))
 edge("e_l2", "l1_cap", "l2", "", "write", ex=(1, 0.8), en=(0, 0.5))
 
 # ---------- legend ----------
-box("lg", 20, 640, 205, 170, "图例\n\n黑框   FML module（拥有状态）\n蓝底粗框   FML task\n虚线框   Ifetch 之外的 task\n\n蓝粗箭头   &'latest（定先后）\n灰虚箭头   &（上一拍，不定先后）\n黑细箭头   fml::Fifo 端口\n\n蓝/红框编号 → 下方说明", size=9)
+box("lg", 20, 640, 205, 170, "图例\n\n黑框   FML module（拥有状态）\n蓝底粗框   FML task\n虚线框   Ifetch 之外的 task\n\n蓝粗箭头   &'latest（定先后）\n灰虚箭头   &（读者在写者之前）\n黑细箭头   fml::Fifo 端口\n\n蓝/红框编号 → 下方说明", size=9)
 
 # ---------- order DAG ----------
 box("dag", 20, 1035, 520, 120,
@@ -184,8 +184,8 @@ co = [
   "Frontend 推送 / flush，S1.decode 弹出，count==0 或同拍弹出时还有写旁路（ifetch_ib.v:45-50）。FML 每个状态只能有一个写者：两端只写 PushReq / PopReq，Ib.step 用 &'latest 读二者，按 flush > 推送 / 弹出 / 旁路更新。"),
  (BLUE, "③ redirect 必须同拍可见 → &'latest",
   "lookup_response_live 直接用 redirect_valid_i 作废本拍的 L0I 响应（ifetch_frontend.v:251），epoch 同拍 +1。若写成 &，Frontend 晚一拍看到重定向，被作废的响应会写进 IB，周期级不再与 RTL 一致。"),
- ("#000000", "④ L1I 回送流来自寄存器 → & 即可",
-  "stream_*_q 每拍出 1 beat（4 拍一行），是 L1I 的寄存器输出。Frontend 用 & 读，不建立先后：4 个 Frontend 与 L1i.capture 可以并行。IbView 同理。能用 & 的地方都用 &，这是并行度的来源。"),
+ ("#000000", "④ L1I 回送流来自寄存器 → & 即可（但 & 也定先后）",
+  "stream_*_q 是 L1I 的寄存器输出，Frontend 用 & 读。FML 每个位置只有一个版本，& 的含义是「读者排在写者之前」：它建立 Frontend → L1i.capture 的边，与 FrReq 的 &'latest 方向一致，不成环。IbView 同理。并行来自 4 个 Frontend / 4 个 Ib 之间互不相交的状态，不来自 &。"),
  (RED, "⑤ launch / retire / exit 的时序待核",
   "它们同样参与 lookup_response_live 和 IB flush。若 sm_top 给出的是寄存器输出，用 &；若是同拍组合（cta_dispatch 当拍决定），要用 &'latest，把 cta_dispatch 排在 Frontend 之前。需要对照 sm_top.v:1901 一带确认。"),
  (RED, "⑥ FML 目前没有、需要外挂的部分",
