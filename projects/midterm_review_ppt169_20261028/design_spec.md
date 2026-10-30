@@ -8,7 +8,7 @@
 | ---- | ----- |
 | **Project Name** | 硕士中期考核汇报 |
 | **Canvas Format** | PPT 16:9 (1280×720) |
-| **Page Count** | 14 |
+| **Page Count** | 15 |
 | **Design Style** | B) General Consulting + 极简学术汇报（白底、无装饰） |
 | **Target Audience** | 学院中期考核评委（导师组），背景横跨体系结构 / EDA / AI，熟悉程度不一 |
 | **Use Case** | 硕士中期考核，汇报 10 分钟 + 提问 3 分钟 |
@@ -143,13 +143,12 @@ Catalog read: 71 templates
 | Page | Template | Path | Summary-quote (verbatim from `charts_index.json`) | Usage |
 | ---- | -------- | ---- | ------------------------------------------------- | ----- |
 | P02 | timeline | `templates/charts/timeline.svg` | "Pick for 3-8 milestone events on a horizontal time axis (no duration). Skip for tasks with start/end ranges (use gantt_chart) or vertical layout (use roadmap_vertical)." | 一年里程碑横轴，三条线分色标在轴上下 |
-| P10 | layered_architecture | `templates/charts/layered_architecture.svg` | "Pick for 3-4 horizontal architecture layers (presentation/service/data), 2-4 module cards per layer, each card = title + 1-line description (description required, even if source brief). Skip if no per-module descriptions (use icon_grid) or no horizontal layering (use module_composition)." | 六层流程条带（压缩为纵向 6 条），右侧标注项目 A–D 覆盖层 |
-| P13 | vertical_list | `templates/charts/vertical_list.svg` | "Pick for 3-6 numbered key points each with a short description — design principles, core tenets, action items, key takeaways, recommendations, executive summary points. Skip for icon-style cards (use icon_grid) or sequential steps (use numbered_steps)." | 五条方法论收获 |
+| P12 | layered_architecture | `templates/charts/layered_architecture.svg` | "Pick for 3-4 horizontal architecture layers (presentation/service/data), 2-4 module cards per layer, each card = title + 1-line description (description required, even if source brief). Skip if no per-module descriptions (use icon_grid) or no horizontal layering (use module_composition)." | 六层流程条带（压缩为纵向 6 条），右侧标注项目 A–D 覆盖层 |
 
 **Runners-up considered**:
 
 - `gantt_chart` | rejected for P02: 早期阶段起止日期不精确，用里程碑而非时长
-- `pyramid_chart` | rejected for P10: 六层是流程先后而非层级重要性
+- `pyramid_chart` | rejected for P12: 六层是流程先后而非层级重要性
 - `icon_grid` | rejected for P13: 要求极简、不用图标卡片
 - `roadmap_vertical` | rejected for P14: 页面需要"已完成 / 后续"两栏对照，自由设计
 
@@ -168,22 +167,23 @@ Catalog read: 71 templates
 
 ## IX. Content Outline
 
-> v2（2026-10-30）：按逐页讨论修订。公司项目脱敏为 A–D；A 为学习项目；签核量产层删除；FML 与 GPGPU-Sim 移植注明由合作者开发；后续计划不写日期。
+> v3（2026-10-30）：以已实现内容为主，减少未实现的设想。公司项目脱敏为 A–D；FML 与 GPGPU-Sim 移植注明由合作者开发；后续计划不写日期。
 
 - **P01 封面**
-- **P02 一年工作总览**：三条线 + 时间轴（2025 项目 A 学习、2025 下半年 GPU 入门、2026.01 项目 D、2026.03 项目 B、2026.06 trace 压缩（探索·暂缓）、2026.06–09 项目 C、2026.10 subcore 重构、2026.10 结构规范 · FML 实验）
-- **P03 GPU 体系结构**：架构总览图 + 层次 / 流水线 / 产出
-- **P04 为什么重构**：旧 RTL 功能正确但结构不清晰的四个问题；目标 7 级结构与三条原则；底部灰条：前期探索（暂缓，需定制 NPU 经验）
-- **P05 重构方法与结果**：方法四步；六个数字；顺带修掉的两个真实缺陷；过渡到第二部分
-- **P06 领域现状**：四条路线（按给模型的输入从低到高）；benchmark 断崖；规律与空白
-- **P07 问题的提出**：功能全过、问题照样漏（结构偏离案例、时序回归、验证失效）
-- **P08 核心思路与原型**：结构规格（以 FML 为底座）；没登记就报错；三类检查（时序 = 边界逐周期 lockstep）；逃逸分析；curryGPU 原型结果
-- **P09 GPGPU-Sim 实证**：FML 底座（合作者开发）；路线 B 流程；136 万周期 / 435→42 级 / 551 万周期；B3 接口缺口
-- **P10 设计—验证五层框架**：规格 / 设计 / 验证 / 多模式仿真 / 可测性；A–D 覆盖矩阵
-- **P11 设计侧**：项目 A（学习）SoC 集成；项目 B 负责验证 scoreboard，学习模块写法，完成信号写法借鉴到 GPU 重构
-- **P12 验证侧**：项目 C 负责 AL 通道 / timing_check / 看门狗；项目 D 参与数模混仿
-- **P13 收获**：五条收获 + 公司流程 → 研究的对应表
-- **P14 总结与后续计划**：已完成六项；后续四条方向（不写日期）
+- **P02 一年工作总览**：三条线 + 时间轴
+- **P03 GPU 体系结构**
+- **P04 为什么重构**：旧 RTL 四个结构问题；目标结构图；前期探索（暂缓）
+- **P05 subcore 实现**：7 个大级模块；S4 四张预约表；变长路径队列与 credit；级间事件通道
+- **P06 重构方法与结果**
+- **P07 领域现状**（简讲）
+- **P08 问题的提出**：三类漏检的真实案例
+- **P09 已实现的检查工具**：逐指令比对、网表结构检查、断言与验收门禁
+- **P10 FML 框架结构**：模块 / 事件 / task；适合作结构规格的四点；GPGPU-Sim 移植（合作者）
+- **P11 路线 B 实验**：边界规格结构（Fetch / Decode、同拍路径、偏差）；实验流程与结果；两个发现
+- **P12 设计—验证五层框架**
+- **P13 设计侧**：A（学习）、B（验证 scoreboard）
+- **P14 验证侧**：验证环境目录结构与 tc_base 写法；C 负责的验证；D 数模混仿
+- **P15 总结与后续计划**：已完成；公司流程的启发；四条后续方向
 
 ---
 

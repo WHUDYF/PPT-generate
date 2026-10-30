@@ -21,7 +21,7 @@
     <path d="M10 21v-2" />
   </g>
     <text x="104" y="158" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#1F3A5F">GPU 学习</text>
-    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" x="60" y="198">研究对象：体系结构 → 模拟器与</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" x="60" y="224">性能模型 → RTL 实现</text></g>
+    <text font-size="17" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="198">研究对象：体系结构 → 模拟器与</text><text font-size="17" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="224">性能模型 → RTL 实现</text></g>
 
   <g id="lane-company">
     
@@ -33,7 +33,7 @@
     <path d="M14 17h1" />
   </g>
     <text x="504" y="158" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#5B7BA6">公司学习</text>
-    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" x="460" y="198">工程参照：参与 3 个、学习 1 个</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" x="460" y="224">芯片项目的设计—验证流程</text></g>
+    <text font-size="17" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="460" y="198">工程参照：参与 3 个、学习 1 个</text><text font-size="17" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="460" y="224">芯片项目的设计—验证流程</text></g>
 
   <g id="lane-ai">
     
@@ -43,7 +43,7 @@
     <path d="M9.7 17l4.6 0" />
   </g>
     <text x="904" y="158" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#C8102E">AI for EDA</text>
-    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" x="860" y="198">研究问题：AI 写大规模 RTL 时，</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" x="860" y="224">缺少一层可检查的规格与验收</text></g>
+    <text font-size="17" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="860" y="198">研究问题：AI 写大规模 RTL 时，</text><text font-size="17" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="860" y="224">缺少一层可检查的规格与验收</text></g>
 
   <g id="timeline-track">
     <text x="60" y="290" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">时间线（轴上方：研究线；轴下方：公司项目；空心点：学习或暂缓）</text>

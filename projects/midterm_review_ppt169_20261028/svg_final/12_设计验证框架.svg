@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="78" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">公司学习：芯片设计—验证的五层流程</text>
+    <text x="1220" y="78" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">三 · 公司学习</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="matrix-head">
+    <text x="975" y="132" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#9CA3AF">A</text>
+    <text x="975" y="146" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="11" fill="#9CA3AF">学习</text>
+    <text x="1055" y="132" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F3A5F">B</text>
+    <text x="1135" y="132" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F3A5F">C</text>
+    <text x="1205" y="132" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F3A5F">D</text>
+  </g>
+
+  <g id="layer-1">
+    <rect x="60" y="154" width="44" height="82" fill="#C8102E" />
+    <text x="82" y="202" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">1</text>
+    <rect x="104" y="154" width="816" height="82" fill="#F5F7FA" stroke="#C8102E" stroke-width="1.5" />
+    <text x="124" y="202" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">规格</text>
+    <text x="270" y="202" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">系统说明 · 寄存器表（复位值 / 读写 mask）· 指令集表 · 数模接口表 → <tspan font-weight="bold" fill="#C8102E">唯一来源</tspan></text>
+    <circle cx="1135" cy="195" r="9" fill="#1F3A5F" />
+    <circle cx="1205" cy="195" r="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="layer-2">
+    <rect x="60" y="248" width="44" height="82" fill="#1F3A5F" />
+    <text x="82" y="296" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">2</text>
+    <rect x="104" y="248" width="816" height="82" fill="#F5F7FA" />
+    <text x="124" y="296" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">设计</text>
+    <text x="270" y="296" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">RTL 按 IP 分目录 + filelist · 第三方 IP 集成 · 工艺单元分层 · 模拟行为模型</text>
+    <circle cx="975" cy="289" r="9" fill="#9CA3AF" />
+    <circle cx="1055" cy="289" r="9" fill="#1F3A5F" />
+    <circle cx="1135" cy="289" r="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2" />
+    <circle cx="1205" cy="289" r="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="layer-3">
+    <rect x="60" y="342" width="44" height="82" fill="#1F3A5F" />
+    <text x="82" y="390" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">3</text>
+    <rect x="104" y="342" width="816" height="82" fill="#F5F7FA" />
+    <text x="124" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">验证</text>
+    <text x="270" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">验证环境（VIP / 寄存器访问层）→ tc_base 基类 → 每目录一个 case → 回归 → 集群</text>
+    <circle cx="1055" cy="383" r="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2" />
+    <circle cx="1135" cy="383" r="9" fill="#1F3A5F" />
+    <circle cx="1205" cy="383" r="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="layer-4">
+    <rect x="60" y="436" width="44" height="82" fill="#1F3A5F" />
+    <text x="82" y="484" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">4</text>
+    <rect x="104" y="436" width="816" height="82" fill="#F5F7FA" />
+    <text x="124" y="484" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">多模式仿真</text>
+    <text x="270" y="484" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">同一 testbench：RTL 前仿 / 门级后仿（带 SDF，多 corner）/ 数模混仿</text>
+    <circle cx="1135" cy="477" r="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2" />
+    <circle cx="1205" cy="477" r="9" fill="#1F3A5F" />
+  </g>
+
+  <g id="layer-5">
+    <rect x="60" y="530" width="44" height="82" fill="#1F3A5F" />
+    <text x="82" y="578" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">5</text>
+    <rect x="104" y="530" width="816" height="82" fill="#F5F7FA" />
+    <text x="124" y="578" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">可测性</text>
+    <text x="270" y="578" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">MBIST · Flash BIST · bypass 通路 · ATPG（stuck-at / Iddq）· trim</text>
+    <circle cx="975" cy="571" r="8" fill="#FFFFFF" stroke="#9CA3AF" stroke-width="2" />
+    <circle cx="1135" cy="571" r="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2" />
+    <circle cx="1205" cy="571" r="8" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="legend">
+    <circle cx="68" cy="644" r="7" fill="#1F3A5F" />
+    <circle cx="68" cy="668" r="6" fill="#FFFFFF" stroke="#1F3A5F" stroke-width="2" />
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="84" y="649">重点　　A：RISC-V MCU SoC（学习，灰色）　B：图像处理 DSP</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="84" y="673">涉及　　C：混合信号光感芯片　　　　　　　D：潜望式 OIS 驱动 SoC</text></g>
+
+  <g id="footer">
+    <text x="1220" y="702" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">12</text>
+  </g>
+</svg>

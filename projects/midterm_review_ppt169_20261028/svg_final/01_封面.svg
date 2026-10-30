@@ -9,5 +9,5 @@
 
   <g id="cover-info">
     <line x1="156" y1="420" x2="760" y2="420" stroke="#E5E7EB" stroke-width="1" />
-    <text fill="#6B7280" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" x="156" y="466">汇报人：________　　导师：________</text><text fill="#6B7280" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" x="156" y="504">2026 年 10 月</text></g>
+    <text font-size="20" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="156" y="466">汇报人：________　　导师：________</text><text font-size="20" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="156" y="504">2026 年 10 月</text></g>
 </svg>

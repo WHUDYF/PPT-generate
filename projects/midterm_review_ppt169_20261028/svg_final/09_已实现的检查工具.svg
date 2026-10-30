@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="78" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">已实现的检查工具：抓住功能测试漏掉的问题</text>
+    <text x="1220" y="78" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">二 · AI for EDA</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="col-head">
+    <text x="60" y="134" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#6B7280">工具 · 针对的问题</text>
+    <text x="440" y="134" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#6B7280">怎么做</text>
+    <text x="850" y="134" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#6B7280">在 curryGPU 上的结果</text>
+    <line x1="60" y1="146" x2="1220" y2="146" stroke="#1F3A5F" stroke-width="1.5" />
+  </g>
+
+  <g id="tool-c1">
+    <text x="60" y="186" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1F3A5F">① 逐指令比对</text>
+    <text x="60" y="214" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">功能：控制流走错</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="440" y="186">逐线程比较 RTL 与功能模型执行的指令序列，</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="440" y="210">只报告第一处分歧，直接定位到出错的指令</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="186">一个有错的发射改动：3 个用例都在</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="210"><tspan>kernel 第 <tspan font-weight="bold" fill="#C8102E">2–3 条指令</tspan>处报出分歧</tspan>
+      </text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="850" y="234">当前 RTL 跑 6 次，0 个分歧线程</text><line x1="60" y1="262" x2="1220" y2="262" stroke="#E5E7EB" stroke-width="1" />
+  </g>
+
+  <g id="tool-struct">
+    <text x="60" y="302" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1F3A5F">② 网表结构检查</text>
+    <text x="60" y="330" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">结构：逻辑放错级、多出连线</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="440" y="302">一份结构数据同时生成流水线图、给 AI 的约束</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="440" y="326">清单和检查器；读 Verilator 网表，核对层次、</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="440" y="350">边界寄存器、预约表长度、允许 / 禁止的连线；</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="440" y="374">没在结构数据里登记的触发器和连线一律报出</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="302"><tspan>人为注入 16 种缺陷：<tspan font-weight="bold" fill="#C8102E">全部拦下</tspan></tspan>
+      </text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="326"><tspan>首次跑真实 RTL：发现 <tspan font-weight="bold" fill="#C8102E">5 处</tspan>结构分歧，</tspan>
+      </text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="350">其中一处就是上页的“结构偏离”</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="850" y="374">S1–SW 六级接入门禁，只拦新增问题</text><line x1="60" y1="418" x2="1220" y2="418" stroke="#E5E7EB" stroke-width="1" />
+  </g>
+
+  <g id="tool-gate">
+    <text x="60" y="458" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1F3A5F">③ 断言与验收门禁</text>
+    <text x="60" y="486" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">检查本身失效</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="440" y="458">检查每个断言文件是否真的被编译、被运行；</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="440" y="482">验收改为“没有硬件故障 + 用例自己打印 PASS”，</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="440" y="506">每次提交都跑完整验收并记录周期</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="458"><tspan>断言文件 17 个 → <tspan font-weight="bold" fill="#1F3A5F">50 个全部运行</tspan></tspan>
+      </text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="482">堵住了“脚本判 PASS、实际有故障”的漏洞</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="850" y="506">约 80 次验收，周期变化逐条记录</text><line x1="60" y1="550" x2="1220" y2="550" stroke="#E5E7EB" stroke-width="1" />
+  </g>
+
+  <g id="note">
+    <rect x="60" y="590" width="1160" height="62" fill="#F5F7FA" />
+    <text x="84" y="628" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#222222">三种工具都已在 curryGPU subcore 上日常运行；<tspan font-weight="bold" fill="#1F3A5F">时序方面的逐周期检查</tspan>，用后两页的 FML 边界规格来做</text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">9</text>
+  </g>
+</svg>

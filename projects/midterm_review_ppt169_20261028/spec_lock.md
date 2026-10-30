@@ -43,19 +43,19 @@
 - P04: dense
 - P05: dense
 - P06: dense
-- P07: breathing
-- P08: dense
+- P07: dense
+- P08: breathing
 - P09: dense
-- P10: anchor
+- P10: dense
 - P11: dense
-- P12: dense
-- P13: breathing
-- P14: anchor
+- P12: anchor
+- P13: dense
+- P14: dense
+- P15: anchor
 
 ## page_charts
 - P02: timeline
-- P10: layered_architecture
-- P13: vertical_list
+- P12: layered_architecture
 
 ## forbidden
 - Mixing icon libraries

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#5B7BA6" />
+    </marker>
+    <marker id="arrowAcc" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#C8102E" />
+    </marker>
+  </defs>
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="78" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">路线 B 实验：在 GPGPU-Sim 上写边界规格，让 AI 写 RTL</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="spec-title">
+    <text x="60" y="146" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">边界规格长什么样</text>
+    <text x="250" y="146" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#6B7280">以取指 / 译码级为例，4 个 subcore 各一份</text>
+  </g>
+
+  <g id="spec-diagram">
+    <rect x="60" y="164" width="560" height="190" fill="#F5F7FA" />
+    <text x="76" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#6B7280">一个 subcore（16 个 warp）</text>
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M100,210 H282 A4,4 0 0 1 286,214 V306 A4,4 0 0 1 282,310 H100 A4,4 0 0 1 96,306 V214 A4,4 0 0 1 100,210 Z" />
+    <text x="112" y="236" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">Fetch</text>
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="112" y="262">拥有：取指缓冲</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="112" y="282">16 个 warp 轮询选一个</text><path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M404,210 H586 A4,4 0 0 1 590,214 V306 A4,4 0 0 1 586,310 H404 A4,4 0 0 1 400,306 V214 A4,4 0 0 1 404,210 Z" />
+    <text x="416" y="236" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">Decode</text>
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="416" y="262">拥有：指令缓冲、</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="416" y="282">trace 位置、在途计数</text><line x1="286" y1="236" x2="394" y2="236" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <text x="340" y="228" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#5B7BA6">寄存后传递</text>
+    <line x1="400" y1="288" x2="292" y2="288" stroke="#C8102E" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrowAcc)" />
+    <text x="346" y="306" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#C8102E">B1 同拍（已声明）</text>
+    <text x="96" y="338" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#6B7280">输入：发射级的消耗（B2，同拍）、完成信号　　输出：exit / finish 脉冲</text>
+  </g>
+
+  <g id="spec-content">
+    <text x="60" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#222222">规格里写明：</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="420">· 每个模块拥有哪些寄存器，每拍按什么顺序更新</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="446">· 允许的同拍路径（B1、B2），其余一律经寄存器</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="472">· 相对参照模型的偏差及代价（如 D2：周期 +0.026%）</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="498">· 位宽、取值范围与不关心值</text></g>
+
+  <g id="flow">
+    <line x1="660" y1="126" x2="660" y2="510" stroke="#E5E7EB" stroke-width="1" />
+    <text x="690" y="146" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">实验流程与结果</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="690" y="180">规格先对 GPGPU-Sim 逐周期对齐 → 只把规格和接口</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="690" y="204">交给 AI，独立写 RTL → 在边界上逐周期 lockstep 比对</text></g>
+
+  <g id="kpi-spec">
+    <text x="690" y="272" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">136 万</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="262">个周期：取指 / 译码规格</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="284">与参照逐周期一致</text></g>
+
+  <g id="kpi-levels">
+    <text x="690" y="354" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#C8102E">435→42</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="344">级：综合后最长逻辑路径</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="366">（按 subcore 拆分边界后）</text></g>
+
+  <g id="kpi-integ">
+    <text x="690" y="436" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">551 万</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="426">个周期：取指 + 译码 + 发射 +</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="850" y="448">计分板集成后 lockstep 通过</text></g>
+
+  <g id="findings">
+    <rect x="60" y="540" width="1160" height="112" fill="#F5F7FA" />
+    <text x="84" y="574" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">两个发现</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="84" y="606">· 切出边界时，暴露出顺序模型里看不见的同拍组合环（一个 warp 结束 → 释放屏障 → 另一个 warp 同拍结束），登记为偏差 D1</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="84" y="634"><tspan>· 每个模块各自验收都通过，<tspan font-weight="bold" fill="#C8102E">集成时才暴露一个接口缺口</tspan>：边界规格本身也需要被检查</tspan>
+    </text></g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">11</text>
+  </g>
+</svg>

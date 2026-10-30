@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#5B7BA6" />
+    </marker>
+  </defs>
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="78" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">subcore 实现：7 个大级、预约表与 credit</text>
+    <text x="1220" y="78" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">一 · GPU 学习</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="pipeline">
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M64,122 H206 A4,4 0 0 1 210,126 V234 A4,4 0 0 1 206,238 H64 A4,4 0 0 1 60,234 V126 A4,4 0 0 1 64,122 Z" />
+    <text x="74" y="148" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">S0 取指</text>
+    <text x="74" y="168" font-family="Consolas, monospace" font-size="12" fill="#5B7BA6">subcore_fetch</text>
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="74" y="194">每个 subcore 一份</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="74" y="214">取指前端</text><line x1="210" y1="180" x2="222" y2="180" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M232,122 H374 A4,4 0 0 1 378,126 V234 A4,4 0 0 1 374,238 H232 A4,4 0 0 1 228,234 V126 A4,4 0 0 1 232,122 Z" />
+    <text x="242" y="148" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">S1 译码</text>
+    <text x="242" y="168" font-family="Consolas, monospace" font-size="12" fill="#5B7BA6">subcore_decode</text>
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="242" y="194">读指令缓冲 + 译码</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="242" y="214">head FIFO：2 项</text><line x1="378" y1="180" x2="390" y2="180" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+
+    <path fill="#F5F7FA" stroke="#1F3A5F" stroke-width="1.5" d="M400,122 H542 A4,4 0 0 1 546,126 V234 A4,4 0 0 1 542,238 H400 A4,4 0 0 1 396,234 V126 A4,4 0 0 1 400,122 Z" />
+    <text x="410" y="148" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">S2 发射</text>
+    <text x="410" y="168" font-family="Consolas, monospace" font-size="12" fill="#5B7BA6">subcore_issue</text>
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="410" y="194">16 个 warp 选一个；</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="410" y="214">需 credit 与下游就绪</text><line x1="546" y1="180" x2="558" y2="180" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M568,122 H710 A4,4 0 0 1 714,126 V234 A4,4 0 0 1 710,238 H568 A4,4 0 0 1 564,234 V126 A4,4 0 0 1 568,122 Z" />
+    <text x="578" y="148" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">S3 分派</text>
+    <text x="578" y="168" font-family="Consolas, monospace" font-size="12" fill="#5B7BA6">subcore_dispatch</text>
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="578" y="194">按通道 + 操作码分流；</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="578" y="214">变长指令推入队列</text><line x1="714" y1="180" x2="726" y2="180" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+
+    <path fill="#F5F7FA" stroke="#1F3A5F" stroke-width="1.5" d="M736,122 H878 A4,4 0 0 1 882,126 V234 A4,4 0 0 1 878,238 H736 A4,4 0 0 1 732,234 V126 A4,4 0 0 1 736,122 Z" />
+    <text x="746" y="148" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">S4 操作数</text>
+    <text x="746" y="168" font-family="Consolas, monospace" font-size="12" fill="#5B7BA6">subcore_operand</text>
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="746" y="194">按拍预约资源，</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="746" y="214">读寄存器 0–3 拍</text><line x1="882" y1="180" x2="894" y2="180" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M904,122 H1046 A4,4 0 0 1 1050,126 V234 A4,4 0 0 1 1046,238 H904 A4,4 0 0 1 900,234 V126 A4,4 0 0 1 904,122 Z" />
+    <text x="914" y="148" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">S5 执行</text>
+    <text x="914" y="168" font-family="Consolas, monospace" font-size="12" fill="#5B7BA6">subcore_exe</text>
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="914" y="194">固定延迟单元：</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="914" y="214">VALU 6 级、SALU 4 级</text><line x1="1050" y1="180" x2="1062" y2="180" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M1072,122 H1216 A4,4 0 0 1 1220,126 V234 A4,4 0 0 1 1216,238 H1072 A4,4 0 0 1 1068,234 V126 A4,4 0 0 1 1072,122 Z" />
+    <text x="1082" y="148" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">SW 写回</text>
+    <text x="1082" y="168" font-family="Consolas, monospace" font-size="12" fill="#5B7BA6">subcore_wb</text>
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="1082" y="194">寄存器堆，</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="1082" y="214">写口仲裁</text><text x="60" y="262" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#6B7280">变长路径（访存、SFU、分支、FP64 等）经 S3 后的队列进入各自的“前门”模块；当前 RTL 已按此结构实现（常量前门除外）</text>
+  </g>
+
+  <g id="col-tables">
+    <line x1="60" y1="286" x2="1220" y2="286" stroke="#E5E7EB" stroke-width="1" />
+    <text x="60" y="322" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1F3A5F">S4 的四张预约表</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="356">① 读口表：每个 bank 一张，带防饿死保留位</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="386">② 写回拍表：按写口分（B0 / B1 / P / URF / UP）</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="416">③ VALU 出口计数：每拍不超过 2</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="446">④ VALU / SALU 入口拍表</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="60" y="490">资源冲突从“同拍看 busy”改为“提前按拍预约”；</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="60" y="512">数据相关仍由 stall + scoreboard 负责</text></g>
+
+  <g id="col-credit">
+    <text x="450" y="322" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1F3A5F">变长路径：队列 + credit</text>
+    <rect x="450" y="338" width="360" height="26" fill="#F5F7FA" />
+    <text x="462" y="356" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1F3A5F">前门</text>
+    <text x="700" y="356" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" font-weight="bold" fill="#1F3A5F">credit</text>
+    <text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="462" y="386">访存 LSU / AGU</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="462" y="410">SFU / 跨 lane</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="462" y="434">控制（分支、收敛、EXIT）</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="462" y="458">张量 TQ / 异步</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="462" y="482">FP64</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="462" y="506">变长 VALU · CBU</text><text font-size="14" font-family="Consolas, monospace" fill="#222222" x="700" y="386">8 / 2</text><text font-size="14" font-family="Consolas, monospace" fill="#222222" x="700" y="410">18</text><text font-size="14" font-family="Consolas, monospace" fill="#222222" x="700" y="434">1</text><text font-size="14" font-family="Consolas, monospace" fill="#222222" x="700" y="458">8 / 2</text><text font-size="14" font-family="Consolas, monospace" fill="#222222" x="700" y="482">5</text><text font-size="14" font-family="Consolas, monospace" fill="#222222" x="700" y="506">1 · 1</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="450" y="544">发射时减 1，前门读完操作数后经事件加回；</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="450" y="566">credit 等于队列深度，所以入队一定成功</text></g>
+
+  <g id="col-events">
+    <line x1="840" y1="304" x2="840" y2="600" stroke="#E5E7EB" stroke-width="1" />
+    <text x="866" y="322" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" font-weight="bold" fill="#1F3A5F">级间事件通道</text>
+    <text x="866" y="348" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#6B7280">源级寄存，目的级下一拍看到</text>
+    <text font-size="13" font-family="Consolas, monospace" fill="#222222" x="866" y="380">ev_head_consumed</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="866" y="404">ev_complete</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="866" y="428">ev_credit_return</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="866" y="452">ev_branch_resolve</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="866" y="476">ev_redirect</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="866" y="500">ev_wb_wait</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#5B7BA6" x="1040" y="380">S2 → S1</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#5B7BA6" x="1040" y="404">SW → S2</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#5B7BA6" x="1040" y="428">前门 → S2</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#5B7BA6" x="1040" y="452">控制前门 → S2</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#5B7BA6" x="1040" y="476">S2 → S0</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#5B7BA6" x="1040" y="500">SW → S4</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="866" y="544">唯一的反向完成信号：</text><text font-size="14" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="866" y="566">S3 / S4 的在途掩码点对点送回 S2</text></g>
+
+  <g id="takeaway">
+    <rect x="60" y="610" width="1160" height="46" fill="#F5F7FA" />
+    <text x="84" y="640" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#222222">核心原则：<tspan font-weight="bold" fill="#1F3A5F">每级持有自己的状态，级间只走寄存过的事件</tspan>——固定路径不反压，变长路径靠 credit</text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">5</text>
+  </g>
+</svg>

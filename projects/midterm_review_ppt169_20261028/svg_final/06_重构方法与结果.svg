@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#5B7BA6" />
+    </marker>
+  </defs>
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="78" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">重构方法与结果：先定结构，再按级搬迁</text>
+    <text x="1220" y="78" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">一 · GPU 学习</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="method-flow">
+    <path fill="#F5F7FA" stroke="#1F3A5F" stroke-width="1.5" d="M64,128 H316 A4,4 0 0 1 320,132 V202 A4,4 0 0 1 316,206 H64 A4,4 0 0 1 60,202 V132 A4,4 0 0 1 64,128 Z" />
+    <text x="80" y="160" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">① 写结构规范</text>
+    <text x="80" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">架构 → 流水线 → RTL，画出目标图</text>
+    <line x1="320" y1="167" x2="354" y2="167" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M364,128 H616 A4,4 0 0 1 620,132 V202 A4,4 0 0 1 616,206 H364 A4,4 0 0 1 360,202 V132 A4,4 0 0 1 364,128 Z" />
+    <text x="380" y="160" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">② 列修改清单</text>
+    <text x="380" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">对照目标图，逐条列出 63 项改动</text>
+    <line x1="620" y1="167" x2="654" y2="167" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M664,128 H916 A4,4 0 0 1 920,132 V202 A4,4 0 0 1 916,206 H664 A4,4 0 0 1 660,202 V132 A4,4 0 0 1 664,128 Z" />
+    <text x="680" y="160" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">③ 行为不变地按级搬迁</text>
+    <text x="680" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">逻辑归到所属的级，顶层只做连线</text>
+    <line x1="920" y1="167" x2="954" y2="167" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M964,128 H1216 A4,4 0 0 1 1220,132 V202 A4,4 0 0 1 1216,206 H964 A4,4 0 0 1 960,202 V132 A4,4 0 0 1 964,128 Z" />
+    <text x="980" y="160" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#1F3A5F">④ 每次提交都验收</text>
+    <text x="980" y="188" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#222222">完整 VCS 验收，逐条记录周期变化</text>
+  </g>
+
+  <g id="kpi-row">
+    <text x="156" y="290" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#1F3A5F">130</text>
+    <text x="156" y="320" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">次提交</text>
+    <text x="350" y="290" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#C8102E">−43%</text>
+    <text x="350" y="320" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">顶层 6169 → 3486 行</text>
+    <text x="544" y="290" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#1F3A5F">16</text>
+    <text x="544" y="320" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">个新建模块</text>
+    <text x="738" y="290" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#1F3A5F">≈80</text>
+    <text x="738" y="320" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">次完整验收</text>
+    <text x="932" y="290" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#1F3A5F">17→50</text>
+    <text x="932" y="320" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">启用的断言文件</text>
+    <text x="1126" y="290" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="36" font-weight="bold" fill="#1F3A5F">−7.9%</text>
+    <text x="1126" y="320" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">carry2_mw 周期</text>
+    <text x="60" y="354" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#9CA3AF">统计区间 2026-10-10 至 10-22，curryGPU subcore-pipeline-structure 分支</text>
+  </g>
+
+  <g id="bugs-title">
+    <line x1="60" y1="378" x2="1220" y2="378" stroke="#E5E7EB" stroke-width="1" />
+    <text x="60" y="416" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">重构中顺带发现并修掉的真实缺陷（举两例）</text>
+  </g>
+
+  <g id="bug-smem">
+    <text x="60" y="456" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">shared memory 读后写漏洞</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="60" y="486">读请求被拒绝重试时，后面同地址的写抢先执行：</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="60" y="510"><tspan>7691 次重试中 <tspan fill="#C8102E" font-weight="bold">96 次</tspan>读到了新值</tspan>
+      </text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="60" y="534">→ 新增 smem_war 用例，修改编译器插入等待</text></g>
+
+  <g id="bug-elect">
+    <line x1="640" y1="440" x2="640" y2="560" stroke="#E5E7EB" stroke-width="1" />
+    <text x="670" y="456" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">多 warp 时 ELECT 选错 lane</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="670" y="486">数据搬运被发起两次，mbarrier 永远等不到完成，</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="670" y="510">只在每个 subcore 有多个 warp 时出现</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="670" y="534">→ 修复并新增多 warp 混合用例</text></g>
+
+  <g id="transition">
+    <rect x="60" y="596" width="1160" height="56" fill="#F5F7FA" />
+    <text x="84" y="631" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" fill="#222222">但重构中也发现：<tspan font-weight="bold" fill="#1F3A5F">有些问题，功能验证全部通过也抓不到</tspan>——这是第二部分研究问题的来源</text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">6</text>
+  </g>
+</svg>

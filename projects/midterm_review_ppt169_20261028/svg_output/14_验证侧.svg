@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="78" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="32" font-weight="bold" fill="#1F3A5F">验证侧：验证环境的结构，与我参与的工作</text>
+    <text x="1220" y="78" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">三 · 公司学习</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2"/>
+  </g>
+
+  <g id="tree-title">
+    <text x="60" y="146" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#1F3A5F">验证环境的目录结构</text>
+    <text x="260" y="146" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#6B7280">以项目 C 为例，已脱敏</text>
+  </g>
+
+  <g id="tree">
+    <rect x="60" y="162" width="580" height="236" fill="#F5F7FA"/>
+    <text x="78" y="190" font-family="Consolas, monospace" font-size="14" fill="#222222">
+      <tspan x="78" dy="0">verification/</tspan>
+      <tspan x="78" dy="24">├─ testbench/tb/top.sv</tspan>
+      <tspan x="78" dy="24">├─ testbench/env/</tspan>
+      <tspan x="78" dy="24">├─ testcase/tc_base.sv</tspan>
+      <tspan x="78" dy="24">├─ testcase/&lt;module&gt;/</tspan>
+      <tspan x="78" dy="24">├─ run/</tspan>
+      <tspan x="78" dy="24">├─ simulation/</tspan>
+      <tspan x="78" dy="24">└─ testplan / caselist</tspan>
+    </text>
+    <text x="330" y="214" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#6B7280">
+      <tspan x="330" dy="0">顶层：DUT + 模拟行为模型 + 接口</tspan>
+      <tspan x="330" dy="24">驱动、参考模型、寄存器宏、时序检查</tspan>
+      <tspan x="330" dy="24">所有 case 的基类</tspan>
+      <tspan x="330" dy="24">按功能分组：AL、时钟、OTP、温度…</tspan>
+      <tspan x="330" dy="24">Makefile、分组清单、回归脚本</tspan>
+      <tspan x="330" dy="24">各仿真器的运行目录</tspan>
+      <tspan x="330" dy="24">测试计划与用例清单（表格）</tspan>
+    </text>
+  </g>
+
+  <g id="tcbase">
+    <rect x="60" y="414" width="580" height="104" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="78" y="440" font-family="Consolas, monospace" font-size="14" fill="#222222">
+      <tspan x="78" dy="0">class al_test extends tc_base;</tspan>
+      <tspan x="98" dy="22">task env_config(); ... endtask</tspan>
+      <tspan x="98" dy="22">task env_run();    ... endtask</tspan>
+      <tspan x="78" dy="22">endclass</tspan>
+    </text>
+    <text x="412" y="462" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#6B7280">
+      <tspan x="412" dy="0">← 配置寄存器</tspan>
+      <tspan x="412" dy="22">← 激励与检查</tspan>
+    </text>
+    <text x="60" y="546" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#6B7280">
+      <tspan x="60" dy="0">Makefile 开关：后仿（带 SDF）· scan 模式 · 工艺角 · 随机种子 · 投集群</tspan>
+    </text>
+  </g>
+
+  <g id="work-c">
+    <line x1="680" y1="126" x2="680" y2="570" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="710" y="146" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#1F3A5F">项目 C · 混合信号光感芯片</text>
+    <text x="710" y="174" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C8102E">我负责的验证</text>
+    <text x="710" y="208" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">
+      <tspan x="710" dy="0"><tspan font-weight="bold">AL 光谱通道</tspan>：数据通路，</tspan>
+      <tspan x="710" dy="24" fill="#6B7280">检查模数转换、滤波后读出的数据</tspan>
+      <tspan x="710" dy="34"><tspan font-weight="bold">时序检查</tspan>：数模控制信号，</tspan>
+      <tspan x="710" dy="24" fill="#6B7280">按时序图检查先后顺序与间隔</tspan>
+      <tspan x="710" dy="34"><tspan font-weight="bold">看门狗（部分）</tspan>：异常恢复，</tspan>
+      <tspan x="710" dy="24" fill="#6B7280">程序跑飞时能否正确复位</tspan>
+    </text>
+  </g>
+
+  <g id="work-d">
+    <line x1="710" y1="388" x2="1220" y2="388" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="710" y="424" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#1F3A5F">项目 D · 潜望式 OIS 驱动 SoC</text>
+    <text x="710" y="452" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="14" fill="#C8102E">我参与：数模混合仿真</text>
+    <text x="710" y="484" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">
+      <tspan x="710" dy="0">· 数字 RTL + 模拟电路网表联合仿真</tspan>
+      <tspan x="710" dy="24">　（Synopsys / Cadence 工具）</tspan>
+      <tspan x="710" dy="28">· 难点在配置：CPU 侧的启动与固件要求、</tspan>
+      <tspan x="710" dy="24">　模拟侧的电路配置，需和两边同事对齐</tspan>
+    </text>
+  </g>
+
+  <g id="takeaway">
+    <rect x="60" y="596" width="1160" height="56" fill="#F5F7FA"/>
+    <text x="84" y="631" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" fill="#222222">共同点：<tspan font-weight="bold" fill="#1F3A5F">规格是唯一来源，验证环境分层</tspan>；同一套环境覆盖前仿、后仿与数模混仿</text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">14</text>
+  </g>
+</svg>

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#5B7BA6" />
+    </marker>
+  </defs>
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="78" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">FML 框架：用模块和事件写周期级规格</text>
+    <text x="1220" y="78" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">二 · AI for EDA</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="struct-title">
+    <text x="60" y="146" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">基本结构</text>
+    <text x="160" y="146" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#6B7280">FML 框架由合作者开发，模型用 Rust 编写</text>
+  </g>
+
+  <g id="struct-diagram">
+    <text x="60" y="210" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" fill="#5B7BA6">时钟</text>
+    <line x1="92" y1="205" x2="124" y2="205" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M134,166 H326 A4,4 0 0 1 330,170 V282 A4,4 0 0 1 326,286 H134 A4,4 0 0 1 130,282 V170 A4,4 0 0 1 134,166 Z" />
+    <text x="146" y="192" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">module A</text>
+    <line x1="146" y1="202" x2="314" y2="202" stroke="#E5E7EB" stroke-width="1" />
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="146" y="224">状态：自己拥有的寄存器</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="146" y="246">task：时钟沿触发</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="146" y="268">出口：EventSource</text><line x1="330" y1="226" x2="414" y2="226" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <text x="372" y="216" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#5B7BA6">事件</text>
+    <text x="372" y="246" text-anchor="middle" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#6B7280">带延迟 / Δ</text>
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M424,166 H616 A4,4 0 0 1 620,170 V282 A4,4 0 0 1 616,286 H424 A4,4 0 0 1 420,282 V170 A4,4 0 0 1 424,166 Z" />
+    <text x="436" y="192" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">module B</text>
+    <line x1="436" y1="202" x2="604" y2="202" stroke="#E5E7EB" stroke-width="1" />
+    <text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="436" y="224">状态：自己拥有的寄存器</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="436" y="246">task：事件到达时触发</text><text font-size="13" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="436" y="268">入口：EventRelay</text></g>
+
+  <g id="code">
+    <rect x="60" y="306" width="560" height="172" fill="#F5F7FA" />
+    <text font-size="13" font-family="Consolas, monospace" fill="#222222" x="76" y="332">#[fml::module]</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="76" y="352">pub struct Producer {</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="104" y="372">#[fml::trigger] pub clock: fml::ClockRelay,</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="104" y="392">#[fml::trigger] pub done: fml::EventSource&lt;u64&gt;,</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="104" y="412">value: u64,</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="76" y="432">}</text><text font-size="13" font-family="Consolas, monospace" fill="#222222" x="76" y="452">#[fml::task(triggers = (clock,), emits = (done,))]</text><text x="60" y="500" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#6B7280">出自 FML 官方示例 event_pipeline：每个时钟沿累加，再过一个 Δ 周期把结果发给下游</text>
+  </g>
+
+  <g id="why">
+    <line x1="660" y1="126" x2="660" y2="510" stroke="#E5E7EB" stroke-width="1" />
+    <text x="690" y="146" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">为什么适合作结构规格</text>
+    <text x="690" y="190" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">① 状态归属写在结构里</text>
+    <text x="690" y="216" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">每个模块只能改自己声明的状态</text>
+    <text x="690" y="262" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">② 级间传递是显式的</text>
+    <text x="690" y="288" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">模块之间只通过事件和接口通信</text>
+    <text x="690" y="334" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">③ 同拍依赖必须说清楚</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="690" y="360">task 声明读的是别人写之前还是之后的值；</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#6B7280" x="690" y="382">虚拟机加载时推出全部顺序，有歧义就拒绝</text><text x="690" y="428" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="17" font-weight="bold" fill="#222222">④ 结果确定，可作比对参照</text>
+    <text x="690" y="454" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">多核并行只改变速度，不改变结果</text>
+  </g>
+
+  <g id="gpgpusim">
+    <rect x="60" y="528" width="1160" height="124" fill="#F5F7FA" />
+    <text x="84" y="562" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1F3A5F">已有成果：用 FML 逐周期复现 GPGPU-Sim（Volta QV100 配置，合作者完成）</text>
+    <text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="84" y="596">结构：80 个 SM（各有流水线与回复网络两个 task）· 命令处理器 · 交叉开关（每个子网一个 task）· 32 个存储分区（2 个 L2 子分区 + DRAM 通道，独立时钟）</text><text font-size="15" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="84" y="624"><tspan>结果：rodinia 11 个基准的统计数据和逐周期事件日志<tspan font-weight="bold" fill="#1F3A5F">与原版完全一致</tspan>；例如 nn 用时 16.0 s → 3.61 s（单线程）→ 0.89 s（8 线程）</tspan>
+    </text></g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">10</text>
+  </g>
+</svg>

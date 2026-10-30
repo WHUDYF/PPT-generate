@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="78" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="32" font-weight="bold" fill="#1F3A5F">总结与后续计划</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2"/>
+  </g>
+
+  <g id="done-title">
+    <text x="60" y="150" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" font-weight="bold" fill="#1F3A5F">已完成</text>
+  </g>
+
+  <g id="done-list">
+    <use data-icon="tabler-outline/check" x="60" y="178" width="22" height="22" fill="#2E7D32" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/check" x="60" y="238" width="22" height="22" fill="#2E7D32" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/check" x="60" y="298" width="22" height="22" fill="#2E7D32" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/check" x="60" y="358" width="22" height="22" fill="#2E7D32" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/check" x="60" y="418" width="22" height="22" fill="#2E7D32" stroke-width="1.5"/>
+    <use data-icon="tabler-outline/check" x="60" y="478" width="22" height="22" fill="#2E7D32" stroke-width="1.5"/>
+    <text x="96" y="196" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" fill="#222222">
+      <tspan x="96" dy="0">GPU 体系结构与模拟器学习，形成整机到流水线的架构图</tspan>
+      <tspan x="96" dy="60">subcore RTL 流水线重构：130 次提交，顶层代码 −43%</tspan>
+      <tspan x="96" dy="60">AI 生成 RTL 领域调研，研究问题收敛</tspan>
+      <tspan x="96" dy="60">检查工具：逐指令比对、网表结构检查（发现 5 处分歧）</tspan>
+      <tspan x="96" dy="60">基于 FML 的路线 B 实验：AI 写的 RTL 通过逐周期验收</tspan>
+      <tspan x="96" dy="60">公司：参与 3 个、学习 1 个芯片项目，掌握设计—验证流程</tspan>
+    </text>
+  </g>
+
+  <g id="plan-title">
+    <line x1="700" y1="126" x2="700" y2="560" stroke="#E5E7EB" stroke-width="1"/>
+    <use data-icon="tabler-outline/target" x="740" y="128" width="26" height="26" fill="#1F3A5F" stroke-width="1.5"/>
+    <text x="776" y="150" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" font-weight="bold" fill="#1F3A5F">后续计划</text>
+  </g>
+
+  <g id="plan-track">
+    <line x1="752" y1="196" x2="752" y2="530" stroke="#5B7BA6" stroke-width="2"/>
+  </g>
+
+  <g id="plan-1">
+    <circle cx="752" cy="196" r="7" fill="#1F3A5F"/>
+    <text x="776" y="202" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">以 FML 为底座，建立结构规范</text>
+    <text x="776" y="228" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">研究 AI 生成 RTL 的实现规范，以及设计知识如何组织与积累</text>
+  </g>
+
+  <g id="plan-2">
+    <circle cx="752" cy="304" r="7" fill="#1F3A5F"/>
+    <text x="776" y="310" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#1F3A5F">建立可量化的验收标准</text>
+    <text x="776" y="336" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">各类检查分别能抓住什么、会漏掉什么；在 Hazard3 上外部验证</text>
+  </g>
+
+  <g id="plan-3">
+    <circle cx="752" cy="412" r="7" fill="#FFFFFF" stroke="#5B7BA6" stroke-width="2"/>
+    <text x="776" y="418" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#5B7BA6">向上延伸：软硬件协同的 AI 架构<tspan font-size="13" font-weight="normal" fill="#9CA3AF">　长期</tspan></text>
+    <text x="776" y="444" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">深入编译器，从 AI for RTL 往上探索架构设计</text>
+  </g>
+
+  <g id="plan-4">
+    <circle cx="752" cy="520" r="9" fill="#C8102E"/>
+    <text x="776" y="526" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#C8102E">学位论文撰写</text>
+  </g>
+
+  <g id="closing">
+    <rect x="60" y="560" width="1160" height="44" fill="#F5F7FA"/>
+    <text x="84" y="588" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#222222">公司流程给研究的启发：<tspan font-weight="bold" fill="#1F3A5F">规格是唯一来源</tspan> → 结构规格作为验收依据；<tspan font-weight="bold" fill="#1F3A5F">验证分层</tspan> → 多类检查；<tspan font-weight="bold" fill="#1F3A5F">接口对齐</tspan> → 写清级间传递什么</text>
+    <text x="640" y="652" text-anchor="middle" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" fill="#6B7280">恳请各位老师批评指正</text>
+  </g>
+
+  <g id="footer">
+    <text x="1220" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">15</text>
+  </g>
+</svg>

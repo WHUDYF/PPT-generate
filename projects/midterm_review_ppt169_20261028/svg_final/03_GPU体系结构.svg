@@ -15,18 +15,18 @@
 
   <g id="point-hierarchy">
     <text x="60" y="574" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">层次结构</text>
-    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="60" y="606">GPU → GPC → TPC → SM → 4 个 subcore</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="60" y="632"><tspan>每个 subcore <tspan fill="#C8102E" font-weight="bold">16</tspan> 个 warp slot</tspan>
+    <text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="606">GPU → GPC → TPC → SM → 4 个 subcore</text><text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="632"><tspan>每个 subcore <tspan fill="#C8102E" font-weight="bold">16</tspan> 个 warp slot</tspan>
     </text></g>
 
   <g id="point-pipeline">
     <line x1="440" y1="556" x2="440" y2="660" stroke="#E5E7EB" stroke-width="1" />
     <text x="464" y="574" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">subcore 流水线</text>
-    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="464" y="606">取指 → 译码 → warp 调度 → ITS</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="464" y="632">→ scoreboard → 读寄存器 → 执行 → 写回</text></g>
+    <text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="464" y="606">取指 → 译码 → warp 调度 → ITS</text><text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="464" y="632">→ scoreboard → 读寄存器 → 执行 → 写回</text></g>
 
   <g id="point-output">
     <line x1="840" y1="556" x2="840" y2="660" stroke="#E5E7EB" stroke-width="1" />
     <text x="864" y="574" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">学习产出</text>
-    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="864" y="606">整机 / ITS / LSU / 寄存器堆子系统图</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="864" y="632">subcore 7 级目标流水线图</text></g>
+    <text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="864" y="606">整机 / ITS / LSU / 寄存器堆子系统图</text><text font-size="16" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="864" y="632">subcore 7 级目标流水线图</text></g>
 
   <g id="footer">
     <text x="60" y="702" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">硕士中期考核</text>

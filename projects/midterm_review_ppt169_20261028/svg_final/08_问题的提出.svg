@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="78" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">问题的提出</text>
+    <text x="1220" y="78" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">二 · AI for EDA</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="statement">
+    <text x="60" y="164" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="18" fill="#6B7280">观察对象：由 agent 编写、约 10.8 万行 Verilog 的 GPU subcore，正在逐步重构</text>
+    <text x="60" y="240" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="40" font-weight="bold" fill="#1F3A5F">功能验证全部通过，问题<tspan fill="#C8102E">照样漏过去</tspan></text>
+  </g>
+
+  <g id="miss-structure">
+    
+  <g transform="translate(60.0, 304.0) scale(1.1666666666666667)" fill="none" stroke="#1F3A5F" stroke-width="1.5">
+    <path d="M12 9v4" />
+    <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+    <path d="M12 16h.01" />
+  </g>
+    <text x="100" y="328" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#222222">结构偏离</text>
+    <text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="374">一次“行为不变”的模块搬迁：</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="404">周期数完全不变，功能比对 0 处不一致，</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="434">但一段逻辑落进了错误的流水级，</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="60" y="464">与设计图不一致，跨越多次提交</text></g>
+
+  <g id="miss-timing">
+    <line x1="440" y1="300" x2="440" y2="520" stroke="#E5E7EB" stroke-width="1" />
+    
+  <g transform="translate(470.0, 304.0) scale(1.1666666666666667)" fill="none" stroke="#1F3A5F" stroke-width="1.5">
+    <path d="M12 9v4" />
+    <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+    <path d="M12 16h.01" />
+  </g>
+    <text x="510" y="328" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#222222">时序回归 6–8%</text>
+    <text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="470" y="374">WARPSYNC 分叉每次 6 拍 → 9 拍；</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="470" y="404">访存响应那一拍挡住全部发射。</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="470" y="434">两次变慢都落在</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="470" y="464">性能模型的误差范围之内</text></g>
+
+  <g id="miss-verification">
+    <line x1="850" y1="300" x2="850" y2="520" stroke="#E5E7EB" stroke-width="1" />
+    
+  <g transform="translate(880.0, 304.0) scale(1.1666666666666667)" fill="none" stroke="#1F3A5F" stroke-width="1.5">
+    <path d="M12 9v4" />
+    <path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0" />
+    <path d="M12 16h.01" />
+  </g>
+    <text x="920" y="328" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="24" font-weight="bold" fill="#222222">验证手段失效</text>
+    <text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="880" y="374">旧验收脚本判 PASS，</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="880" y="404">实际存在 SM fault；</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="880" y="434">删掉一个信号，</text><text font-size="18" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" fill="#222222" x="880" y="464">整份断言静默失效</text></g>
+
+  <g id="conclusion">
+    <line x1="60" y1="572" x2="1220" y2="572" stroke="#E5E7EB" stroke-width="1" />
+    <text x="60" y="624" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" fill="#1F3A5F">需要一层<tspan font-weight="bold">可被检查的规格</tspan>，同时管住结构、功能、时序三类需求，并能发现“检查本身失效”</text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">8</text>
+  </g>
+</svg>
