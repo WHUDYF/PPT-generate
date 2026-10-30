@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="78" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="32" font-weight="bold" fill="#1F3A5F">收获：从工业流程到研究问题</text>
+    <text x="1220" y="78" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">三 · 公司学习</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2"/>
+  </g>
+
+  <g id="item-1">
+    <text x="60" y="168" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="26" font-weight="bold" fill="#5B7BA6">01</text>
+    <text x="114" y="164" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#222222">规格是唯一来源</text>
+    <text x="114" y="190" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">设计与验证从同一张表派生（项目 C）</text>
+  </g>
+
+  <g id="item-2">
+    <text x="60" y="256" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="26" font-weight="bold" fill="#5B7BA6">02</text>
+    <text x="114" y="252" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#222222">验证分层</text>
+    <text x="114" y="278" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">环境 → 基类 → case → 回归（项目 C）</text>
+  </g>
+
+  <g id="item-3">
+    <text x="60" y="344" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="26" font-weight="bold" fill="#5B7BA6">03</text>
+    <text x="114" y="340" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#222222">一套环境，多种模式</text>
+    <text x="114" y="366" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">前仿、后仿、混仿靠配置切换（项目 D）</text>
+  </g>
+
+  <g id="item-4">
+    <text x="60" y="432" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="26" font-weight="bold" fill="#5B7BA6">04</text>
+    <text x="114" y="428" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#222222">可测性前置</text>
+    <text x="114" y="454" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">DFT、BIST、trim 在仿真阶段就先验证</text>
+  </g>
+
+  <g id="item-5">
+    <text x="60" y="520" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="26" font-weight="bold" fill="#5B7BA6">05</text>
+    <text x="114" y="516" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#222222">接口要对齐</text>
+    <text x="114" y="542" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">数模、软硬件之间的细节需跨团队确认（项目 D）</text>
+  </g>
+
+  <g id="mapping">
+    <line x1="560" y1="130" x2="560" y2="560" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="600" y="164" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#6B7280">公司流程</text>
+    <text x="930" y="164" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="17" font-weight="bold" fill="#C8102E">我的研究</text>
+    <line x1="600" y1="182" x2="1220" y2="182" stroke="#1F3A5F" stroke-width="1.5"/>
+    <text x="600" y="236" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" fill="#222222">规格是唯一来源</text>
+    <text x="880" y="236" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" fill="#5B7BA6">→</text>
+    <text x="930" y="236" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#1F3A5F">结构规格作为验收依据</text>
+    <line x1="600" y1="270" x2="1220" y2="270" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="600" y="324" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" fill="#222222">验证分层</text>
+    <text x="880" y="324" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" fill="#5B7BA6">→</text>
+    <text x="930" y="324" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#1F3A5F">功能 / 结构 / 时序三类检查</text>
+    <line x1="600" y1="358" x2="1220" y2="358" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="600" y="412" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" fill="#222222">接口要对齐</text>
+    <text x="880" y="412" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" fill="#5B7BA6">→</text>
+    <text x="930" y="412" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#1F3A5F">规格写清级间传递什么</text>
+    <line x1="600" y1="446" x2="1220" y2="446" stroke="#E5E7EB" stroke-width="1"/>
+  </g>
+
+  <g id="bridge">
+    <rect x="60" y="590" width="1160" height="64" fill="#F5F7FA"/>
+    <text x="84" y="630" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="21" fill="#222222">工业流程靠<tspan font-weight="bold" fill="#1F3A5F">人写的规格 + 分层验证</tspan>保证质量；AI 写 RTL 时，<tspan font-weight="bold" fill="#C8102E">缺的正是这一层</tspan></text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">13</text>
+  </g>
+</svg>

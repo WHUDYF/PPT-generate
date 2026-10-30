@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="78" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="32" font-weight="bold" fill="#1F3A5F">AI 生成 RTL：模块级已饱和，到流水线就断崖</text>
+    <text x="1220" y="78" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">二 · AI for EDA</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2"/>
+  </g>
+
+  <g id="routes-title">
+    <text x="60" y="150" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" font-weight="bold" fill="#1F3A5F">现有工作的四条路线<tspan font-size="14" font-weight="normal" fill="#6B7280">　按给模型的输入，从低到高排列</tspan></text>
+  </g>
+
+  <g id="route-1">
+    <text x="60" y="198" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#5B7BA6">01</text>
+    <text x="100" y="198" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#222222">数据与微调模型</text>
+    <text x="100" y="226" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#6B7280">RTLCoder、CodeV-R1、VeriReason：用模块级 testbench 训练</text>
+  </g>
+
+  <g id="route-2">
+    <text x="60" y="282" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#5B7BA6">02</text>
+    <text x="100" y="282" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#222222">Agent 流程</text>
+    <text x="100" y="310" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#6B7280">VerilogCoder、MAGE：多 agent 生成，靠仿真反馈修正</text>
+  </g>
+
+  <g id="route-3">
+    <text x="60" y="366" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#5B7BA6">03</text>
+    <text x="100" y="366" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#222222">结构化中间层<tspan font-size="15" font-weight="normal" fill="#6B7280">　最接近本研究</tspan></text>
+    <text x="100" y="394" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#6B7280">ROME、SysVCoder、HINT：先写 IR，再生成 RTL</text>
+  </g>
+
+  <g id="route-4">
+    <text x="60" y="450" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#5B7BA6">04</text>
+    <text x="100" y="450" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="19" font-weight="bold" fill="#222222">参考模型 + 形式等价</text>
+    <text x="100" y="478" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#6B7280">FormalRTL 等：只覆盖数据通路，不涉及流水线控制</text>
+  </g>
+
+  <g id="bench-chart">
+    <line x1="640" y1="122" x2="640" y2="500" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="670" y="150" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" font-weight="bold" fill="#1F3A5F">Benchmark 通过率</text>
+    <text x="670" y="198" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">VerilogEval v2 · 单模块</text>
+    <rect x="670" y="208" width="440" height="18" fill="#1F3A5F"/>
+    <text x="1120" y="223" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#1F3A5F">89–98%</text>
+    <text x="670" y="276" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">HWE-Bench · SoC 级 bug 修复</text>
+    <rect x="670" y="286" width="292" height="18" fill="#5B7BA6"/>
+    <text x="972" y="301" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#5B7BA6">&lt; 65%</text>
+    <text x="670" y="354" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">CVDP · 模块到小子系统，pass@1</text>
+    <rect x="670" y="364" width="153" height="18" fill="#5B7BA6"/>
+    <text x="833" y="379" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#5B7BA6">≤ 34%</text>
+    <text x="670" y="432" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">ArchXBench L4 起 · 流水线 / 层次化</text>
+    <line x1="670" y1="442" x2="670" y2="460" stroke="#C8102E" stroke-width="3"/>
+    <text x="684" y="457" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" font-weight="bold" fill="#C8102E">所有模型全部失败</text>
+    <line x1="670" y1="476" x2="1110" y2="476" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="670" y="496" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#9CA3AF">数据来源：各 benchmark 论文（arXiv，2026-10 检索）</text>
+  </g>
+
+  <g id="takeaway">
+    <rect x="60" y="540" width="1160" height="112" fill="#F5F7FA"/>
+    <text x="84" y="582" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" fill="#222222">规律：<tspan font-weight="bold">表示比模型更重要</tspan>——换中间表示，成功率 3% → 88%；换更强的模型，提升不到 1.25 倍</text>
+    <text x="84" y="624" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" fill="#222222">空白：正确性只看端口 I/O 等价，<tspan fill="#C8102E" font-weight="bold">不检查级边界、状态归属、握手与时序</tspan></text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">6</text>
+  </g>
+</svg>

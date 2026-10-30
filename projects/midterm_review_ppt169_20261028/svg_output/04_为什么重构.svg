@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="78" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="32" font-weight="bold" fill="#1F3A5F">RTL 实践：旧 RTL 功能正确，但结构不清晰</text>
+    <text x="1220" y="78" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">一 · GPU 学习</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2"/>
+  </g>
+
+  <g id="issues-title">
+    <text x="60" y="148" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" font-weight="bold" fill="#1F3A5F">读 subcore RTL 发现的四个问题</text>
+  </g>
+
+  <g id="issue-1">
+    <text x="60" y="194" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#5B7BA6">1</text>
+    <text x="86" y="194" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#222222">发射路径是一整条组合链</text>
+    <text x="86" y="222" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">
+      <tspan x="86" dy="0">选 warp → 读寄存器 → 进执行单元同一拍完成，</tspan>
+      <tspan x="86" dy="22">估计 35–45 级逻辑，难以插入级间寄存器</tspan>
+    </text>
+  </g>
+
+  <g id="issue-2">
+    <text x="60" y="290" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#5B7BA6">2</text>
+    <text x="86" y="290" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#222222">跨级组合读取</text>
+    <text x="86" y="318" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">调度器直接读执行单元内部的忙状态</text>
+  </g>
+
+  <g id="issue-3">
+    <text x="60" y="364" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#5B7BA6">3</text>
+    <text x="86" y="364" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#222222">状态散落在顶层</text>
+    <text x="86" y="392" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">
+      <tspan x="86" dy="0">挡住发射的条件散在 6000 多行的顶层里，</tspan>
+      <tspan x="86" dy="22">波形上看不出是谁挡的</tspan>
+    </text>
+  </g>
+
+  <g id="issue-4">
+    <text x="60" y="460" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#5B7BA6">4</text>
+    <text x="86" y="460" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" font-weight="bold" fill="#222222">隐式约定</text>
+    <text x="86" y="488" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">
+      <tspan x="86" dy="0">同一 warp 只能隔拍发射，单 warp 峰值 IPC 0.5，</tspan>
+      <tspan x="86" dy="22">与性能模型不一致</tspan>
+    </text>
+  </g>
+
+  <g id="target">
+    <line x1="540" y1="126" x2="540" y2="560" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="570" y="148" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" font-weight="bold" fill="#1F3A5F">目标结构：7 个大级</text>
+    <rect x="570" y="164" width="560" height="305" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+    <image href="../images/fig11-target-pipeline.png" x="571" y="165" width="558" height="303" preserveAspectRatio="xMidYMid meet"/>
+    <text x="570" y="502" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">
+      <tspan x="570" dy="0">· 每一级持有自己的状态</tspan>
+      <tspan x="570" dy="26">· 级与级之间只走寄存过的事件，不再跨级组合读</tspan>
+      <tspan x="570" dy="26">· 固定延迟路径不反压，变长指令按配额（credit）发射</tspan>
+    </text>
+  </g>
+
+  <g id="explore-strip">
+    <rect x="60" y="596" width="1160" height="64" fill="#F5F7FA"/>
+    <text x="84" y="622" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">
+      <tspan x="84" dy="0"><tspan font-weight="bold">前期探索（暂缓）</tspan>：PyTorchSim 编译与模拟流程；workload trace 压缩（PKA 基线 → GCL 方案）</tspan>
+      <tspan x="84" dy="24">该方向需要定制 NPU 的系统经验支撑，目前暂缓，计划在后续接触机柜级 NPU 后继续推进</tspan>
+    </text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">4</text>
+  </g>
+</svg>

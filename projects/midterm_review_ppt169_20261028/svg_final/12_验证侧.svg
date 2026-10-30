@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <marker id="arrowR" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#5B7BA6" />
+    </marker>
+  </defs>
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="78" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">验证侧：规格驱动的回归与数模混仿</text>
+    <text x="1220" y="78" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">三 · 公司学习</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="c-title">
+    <text x="60" y="146" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1F3A5F">项目 C · 混合信号光感芯片<tspan font-size="15" font-weight="normal" fill="#6B7280">　负责：AL 通道 · 时序检查 · 看门狗验证</tspan></text>
+  </g>
+
+  <g id="c-flow">
+    <path fill="#F5F7FA" stroke="#1F3A5F" stroke-width="1.5" d="M64,166 H256 A4,4 0 0 1 260,170 V250 A4,4 0 0 1 256,254 H64 A4,4 0 0 1 60,250 V170 A4,4 0 0 1 64,166 Z" />
+    <text x="78" y="196" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">规格</text>
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="78" y="222">寄存器表（复位值、</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="78" y="242">读写 mask）· 时序图</text><line x1="260" y1="210" x2="294" y2="210" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M304,166 H496 A4,4 0 0 1 500,170 V250 A4,4 0 0 1 496,254 H304 A4,4 0 0 1 300,250 V170 A4,4 0 0 1 304,166 Z" />
+    <text x="318" y="196" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">两侧同源派生</text>
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="318" y="222">设计：reg_map</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="318" y="242">验证：reg_define 宏</text><line x1="500" y1="210" x2="534" y2="210" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M544,166 H736 A4,4 0 0 1 740,170 V250 A4,4 0 0 1 736,254 H544 A4,4 0 0 1 540,250 V170 A4,4 0 0 1 544,166 Z" />
+    <text x="558" y="196" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">tc_base 基类</text>
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="558" y="222">统一驱动、检查、</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="558" y="242">PASS / FAIL 报告</text><line x1="740" y1="210" x2="774" y2="210" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#C8102E" stroke-width="2" d="M784,166 H976 A4,4 0 0 1 980,170 V250 A4,4 0 0 1 976,254 H784 A4,4 0 0 1 780,250 V170 A4,4 0 0 1 784,166 Z" />
+    <text x="798" y="196" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">按功能分组的 case</text>
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="798" y="222"><tspan><tspan font-weight="bold" fill="#C8102E">AL · 时序 · 看门狗</tspan></tspan></text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="798" y="242">寄存器 · OTP · FIFO …</text><line x1="980" y1="210" x2="1014" y2="210" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M1024,166 H1216 A4,4 0 0 1 1220,170 V250 A4,4 0 0 1 1216,254 H1024 A4,4 0 0 1 1020,250 V170 A4,4 0 0 1 1024,166 Z" />
+    <text x="1038" y="196" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">回归</text>
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="1038" y="222">脚本批量生成命令，</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="1038" y="242">投集群运行</text></g>
+
+  <g id="c-notes">
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="60" y="292">· 我负责的三类验证：数据通路（AL 光谱通道）、时序（timing_check）、异常恢复（看门狗）</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="60" y="320">· 寄存器检查把规格机械地变成检查，规格与 RTL 的偏差在回归中自动暴露</text></g>
+
+  <g id="d-title">
+    <line x1="60" y1="348" x2="1220" y2="348" stroke="#E5E7EB" stroke-width="1" />
+    <text x="60" y="390" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1F3A5F">项目 D · 潜望式 OIS 驱动 SoC<tspan font-size="15" font-weight="normal" fill="#6B7280">　参与：数模混合仿真</tspan></text>
+  </g>
+
+  <g id="d-flow">
+    <path fill="#F5F7FA" stroke="#1F3A5F" stroke-width="1.5" d="M64,410 H316 A4,4 0 0 1 320,414 V494 A4,4 0 0 1 316,498 H64 A4,4 0 0 1 60,494 V414 A4,4 0 0 1 64,410 Z" />
+    <text x="80" y="440" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">规格</text>
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="80" y="466">系统说明 · 寄存器表</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="80" y="486">DSP 指令集 · 数模接口表</text><line x1="320" y1="454" x2="354" y2="454" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M364,410 H616 A4,4 0 0 1 620,414 V494 A4,4 0 0 1 616,498 H364 A4,4 0 0 1 360,494 V414 A4,4 0 0 1 364,410 Z" />
+    <text x="380" y="440" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">软硬件协同 case</text>
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="380" y="466">SV 激励与检查</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="380" y="486">+ CPU 上运行的 C 固件</text><line x1="620" y1="454" x2="654" y2="454" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#C8102E" stroke-width="2" d="M664,410 H916 A4,4 0 0 1 920,414 V494 A4,4 0 0 1 916,498 H664 A4,4 0 0 1 660,494 V414 A4,4 0 0 1 664,410 Z" />
+    <text x="680" y="440" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">数模混仿<tspan font-size="13" font-weight="normal" fill="#C8102E">　我参与</tspan></text>
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="680" y="466">数字 RTL + 模拟电路网表</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="680" y="486">Synopsys / Cadence 工具</text><line x1="920" y1="454" x2="954" y2="454" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowR)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M964,410 H1216 A4,4 0 0 1 1220,414 V494 A4,4 0 0 1 1216,498 H964 A4,4 0 0 1 960,494 V414 A4,4 0 0 1 964,410 Z" />
+    <text x="980" y="440" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1F3A5F">可测性</text>
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="980" y="466">DFT 相关 case</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="14" x="980" y="486">BIST · ATPG 向量仿真</text></g>
+
+  <g id="d-notes">
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="60" y="536">· 平时用模拟模块的行为模型做数字仿真；混仿时换成模拟电路网表，同一套 testbench 不改</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="60" y="564">· 难点在配置：CPU 侧的启动与固件要求、模拟侧的电路配置，需要和两边同事反复对齐</text></g>
+
+  <g id="takeaway">
+    <rect x="60" y="604" width="1160" height="52" fill="#F5F7FA" />
+    <text x="84" y="637" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="19" fill="#222222">共同点：<tspan font-weight="bold" fill="#1F3A5F">规格是唯一来源</tspan>；同一套验证环境，覆盖前仿、后仿与数模混仿</text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">12</text>
+  </g>
+</svg>

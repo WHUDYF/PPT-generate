@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="cover-title">
+    <rect x="120" y="230" width="6" height="128" fill="#1F3A5F"/>
+    <text x="156" y="290" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="52" font-weight="bold" fill="#1F3A5F">硕士中期考核汇报</text>
+    <text x="156" y="346" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="24" fill="#222222">GPU 体系结构 · AI for EDA · 工业级芯片设计验证流程</text>
+  </g>
+
+  <g id="cover-info">
+    <line x1="156" y1="420" x2="760" y2="420" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="156" y="466" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" fill="#6B7280">
+      <tspan x="156" dy="0">汇报人：________　　导师：________</tspan>
+      <tspan x="156" dy="38">2026 年 10 月</tspan>
+    </text>
+  </g>
+</svg>

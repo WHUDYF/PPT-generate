@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="78" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="32" font-weight="bold" fill="#1F3A5F">问题的提出</text>
+    <text x="1220" y="78" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">二 · AI for EDA</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2"/>
+  </g>
+
+  <g id="statement">
+    <text x="60" y="164" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" fill="#6B7280">观察对象：由 agent 编写、约 10.8 万行 Verilog 的 GPU subcore，正在逐步重构</text>
+    <text x="60" y="240" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="40" font-weight="bold" fill="#1F3A5F">功能验证全部通过，问题<tspan fill="#C8102E">照样漏过去</tspan></text>
+  </g>
+
+  <g id="miss-structure">
+    <use data-icon="tabler-outline/alert-triangle" x="60" y="304" width="28" height="28" fill="#1F3A5F" stroke-width="1.5"/>
+    <text x="100" y="328" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="24" font-weight="bold" fill="#222222">结构偏离</text>
+    <text x="60" y="374" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" fill="#222222">
+      <tspan x="60" dy="0">一次“行为不变”的模块搬迁：</tspan>
+      <tspan x="60" dy="30">周期数完全不变，功能比对 0 处不一致，</tspan>
+      <tspan x="60" dy="30">但一段逻辑落进了错误的流水级，</tspan>
+      <tspan x="60" dy="30">与设计图不一致，跨越多次提交</tspan>
+    </text>
+  </g>
+
+  <g id="miss-timing">
+    <line x1="440" y1="300" x2="440" y2="520" stroke="#E5E7EB" stroke-width="1"/>
+    <use data-icon="tabler-outline/alert-triangle" x="470" y="304" width="28" height="28" fill="#1F3A5F" stroke-width="1.5"/>
+    <text x="510" y="328" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="24" font-weight="bold" fill="#222222">时序回归 6–8%</text>
+    <text x="470" y="374" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" fill="#222222">
+      <tspan x="470" dy="0">WARPSYNC 分叉每次 6 拍 → 9 拍；</tspan>
+      <tspan x="470" dy="30">访存响应那一拍挡住全部发射。</tspan>
+      <tspan x="470" dy="30">两次变慢都落在</tspan>
+      <tspan x="470" dy="30">性能模型的误差范围之内</tspan>
+    </text>
+  </g>
+
+  <g id="miss-verification">
+    <line x1="850" y1="300" x2="850" y2="520" stroke="#E5E7EB" stroke-width="1"/>
+    <use data-icon="tabler-outline/alert-triangle" x="880" y="304" width="28" height="28" fill="#1F3A5F" stroke-width="1.5"/>
+    <text x="920" y="328" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="24" font-weight="bold" fill="#222222">验证手段失效</text>
+    <text x="880" y="374" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="18" fill="#222222">
+      <tspan x="880" dy="0">旧验收脚本判 PASS，</tspan>
+      <tspan x="880" dy="30">实际存在 SM fault；</tspan>
+      <tspan x="880" dy="30">删掉一个信号，</tspan>
+      <tspan x="880" dy="30">整份断言静默失效</tspan>
+    </text>
+  </g>
+
+  <g id="conclusion">
+    <line x1="60" y1="572" x2="1220" y2="572" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="60" y="624" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="22" fill="#1F3A5F">需要一层<tspan font-weight="bold">可被检查的规格</tspan>，同时管住结构、功能、时序三类需求，并能发现“检查本身失效”</text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">7</text>
+  </g>
+</svg>

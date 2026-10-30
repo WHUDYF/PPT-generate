@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF"/>
+
+  <g id="header">
+    <text x="60" y="78" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="32" font-weight="bold" fill="#1F3A5F">GPU 学习：从整机到 subcore 流水线</text>
+    <text x="1220" y="78" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="15" fill="#6B7280">一 · GPU 学习</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2"/>
+  </g>
+
+  <g id="figure">
+    <rect x="60" y="122" width="1160" height="396" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+    <image href="../images/01-gpu-sm-subcore-overview.jpg" x="61" y="123" width="1158" height="394" preserveAspectRatio="xMidYMid meet"/>
+    <text x="1220" y="538" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="13" fill="#9CA3AF">curryGPU 三层架构：GPU / SoC → SM → subcore</text>
+  </g>
+
+  <g id="point-hierarchy">
+    <text x="60" y="574" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#1F3A5F">层次结构</text>
+    <text x="60" y="606" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">
+      <tspan x="60" dy="0">GPU → GPC → TPC → SM → 4 个 subcore</tspan>
+      <tspan x="60" dy="26">每个 subcore <tspan fill="#C8102E" font-weight="bold">16</tspan> 个 warp slot</tspan>
+    </text>
+  </g>
+
+  <g id="point-pipeline">
+    <line x1="440" y1="556" x2="440" y2="660" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="464" y="574" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#1F3A5F">subcore 流水线</text>
+    <text x="464" y="606" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">
+      <tspan x="464" dy="0">取指 → 译码 → warp 调度 → ITS</tspan>
+      <tspan x="464" dy="26">→ scoreboard → 读寄存器 → 执行 → 写回</tspan>
+    </text>
+  </g>
+
+  <g id="point-output">
+    <line x1="840" y1="556" x2="840" y2="660" stroke="#E5E7EB" stroke-width="1"/>
+    <text x="864" y="574" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="20" font-weight="bold" fill="#1F3A5F">学习产出</text>
+    <text x="864" y="606" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="16" fill="#222222">
+      <tspan x="864" dy="0">整机 / ITS / LSU / 寄存器堆子系统图</tspan>
+      <tspan x="864" dy="26">subcore 7 级目标流水线图</tspan>
+    </text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family='"Microsoft YaHei", "PingFang SC", Arial, sans-serif' font-size="12" fill="#9CA3AF">3</text>
+  </g>
+</svg>

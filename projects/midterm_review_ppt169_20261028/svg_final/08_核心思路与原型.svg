@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <marker id="arrowDown" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#5B7BA6" />
+    </marker>
+  </defs>
+  <rect id="bg" x="0" y="0" width="1280" height="720" fill="#FFFFFF" />
+
+  <g id="header">
+    <text x="60" y="78" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="32" font-weight="bold" fill="#1F3A5F">核心思路：以结构规格作为需求，验收 AI 生成的 RTL</text>
+    <line x1="60" y1="100" x2="1220" y2="100" stroke="#1F3A5F" stroke-width="2" />
+  </g>
+
+  <g id="step-spec">
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M64,126 H676 A4,4 0 0 1 680,130 V222 A4,4 0 0 1 676,226 H64 A4,4 0 0 1 60,222 V130 A4,4 0 0 1 64,126 Z" />
+    <text x="84" y="162" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">① 结构规格 = 需求规格<tspan font-size="15" font-weight="normal" fill="#6B7280">　以 FML 为底座</tspan></text>
+    <text x="84" y="196" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">来源分级（实测 &gt; 厂商资料 &gt; 人确认的设计决策）· 状态 · 绑定的检查</text>
+  </g>
+
+  <g id="step-closed">
+    <line x1="370" y1="226" x2="370" y2="244" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowDown)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M64,250 H676 A4,4 0 0 1 680,254 V346 A4,4 0 0 1 676,350 H64 A4,4 0 0 1 60,346 V254 A4,4 0 0 1 64,250 Z" />
+    <text x="84" y="286" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">② 封闭世界<tspan font-size="15" font-weight="normal" fill="#6B7280">　没登记就报错</tspan></text>
+    <text x="84" y="320" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">网表里有、规格没认领的触发器和连线一律报“未登记”；基线只缩不增</text>
+  </g>
+
+  <g id="step-checks">
+    <line x1="370" y1="350" x2="370" y2="368" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowDown)" />
+    <path fill="#FFFFFF" stroke="#1F3A5F" stroke-width="1.5" d="M64,374 H676 A4,4 0 0 1 680,378 V470 A4,4 0 0 1 676,474 H64 A4,4 0 0 1 60,470 V378 A4,4 0 0 1 64,374 Z" />
+    <text x="84" y="410" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">③ 三类检查</text>
+    <text x="84" y="444" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222"><tspan font-weight="bold">功能</tspan> 逐指令比对　<tspan font-weight="bold">结构</tspan> 网表结构检查　<tspan font-weight="bold">时序</tspan> 边界逐周期 lockstep</text>
+  </g>
+
+  <g id="step-accept">
+    <line x1="370" y1="474" x2="370" y2="492" stroke="#5B7BA6" stroke-width="1.5" marker-end="url(#arrowDown)" />
+    <path fill="#F5F7FA" stroke="#1F3A5F" stroke-width="1.5" d="M64,498 H676 A4,4 0 0 1 680,502 V594 A4,4 0 0 1 676,598 H64 A4,4 0 0 1 60,594 V502 A4,4 0 0 1 64,498 Z" />
+    <text x="84" y="534" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1F3A5F">④ 验收与逃逸分析（主要贡献）</text>
+    <text x="84" y="568" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">每层检查各抓住了什么？只用功能测试会漏掉多少？</text>
+  </g>
+
+  <g id="proto-title">
+    <line x1="730" y1="126" x2="730" y2="598" stroke="#E5E7EB" stroke-width="1" />
+    <text x="760" y="156" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="22" font-weight="bold" fill="#1F3A5F">原型与初步结果</text>
+    <text fill="#6B7280" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="760" y="192">curryGPU 上：一份结构数据，同时派生</text><text fill="#6B7280" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="760" y="216">流水线图 · 给 AI 的约束清单 · 网表检查器</text></g>
+
+  <g id="kpi-inject">
+    <text x="760" y="284" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="40" font-weight="bold" fill="#1F3A5F">16 / 16</text>
+    <text x="760" y="314" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">注入缺陷全部拦下（6 类 RTL 变异 + 10 类规格篡改）</text>
+  </g>
+
+  <g id="kpi-real">
+    <text x="760" y="398" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="40" font-weight="bold" fill="#C8102E">5 处</text>
+    <text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="760" y="430">真实 RTL 上发现的结构分歧，功能测试都看不见；</text><text fill="#222222" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" x="760" y="456">其中一处正是上页的“结构偏离”</text></g>
+
+  <g id="kpi-gate">
+    <text x="760" y="520" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="40" font-weight="bold" fill="#1F3A5F">6 级</text>
+    <text x="760" y="552" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="16" fill="#222222">S1–SW 全部接入提交门禁，只拦新增问题</text>
+  </g>
+
+  <g id="note">
+    <text x="60" y="636" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="15" fill="#6B7280">与最接近工作的区别：Spec-Driven 只约束单事务 IO 等价；AmpereOne 看聚合 IPC（±10%），抓不到 6–8% 回归；HINT 做生成而非验收</text>
+  </g>
+
+  <g id="note-fml">
+    <text x="60" y="662" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="13" fill="#9CA3AF">注：FML 建模框架由合作者开发；本研究在其上定义结构规格与验收流程</text>
+  </g>
+
+  <g id="footer">
+    <text x="60" y="702" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">硕士中期考核</text>
+    <text x="1220" y="702" text-anchor="end" font-family="&quot;Microsoft YaHei&quot;, &quot;PingFang SC&quot;, Arial, sans-serif" font-size="12" fill="#9CA3AF">8</text>
+  </g>
+</svg>
