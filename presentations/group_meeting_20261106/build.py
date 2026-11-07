@@ -253,16 +253,19 @@ notes(s, "情况 A、B 分别来自实验 2 的测试程序 g2-load-branch、g2-
 s = page("背景 ②：把微架构明确写出来，AI 就写得更好", T1)
 numbered(s, 0.6, 1.4, 6.9, [
     ("HINT（arXiv 2608.07625）的启发", "在规格与 RTL 之间加一层可执行的中间层，写明状态归属、提交纪律；AI 先写这一层，再照着写 RTL"),
-    ("Representation Bottleneck（arXiv 2604.17097）", "6 种中间表示、202 个任务：换表示，仿真通过率 **3% → 88%**；换更强的模型，提升不到 1.25 倍"),
+    ("Representation Bottleneck（arXiv 2604.17097）", "6 种硬件语言、202 道单模块题：HLS C 只有 **3%**，Verilog **88%**；换模型差别不到 1.25 倍。HLS 把时序和接口交给工具决定，AI 看不到也控制不了每拍的行为"),
     ("FML（合作者）", "按部件建模，读别的部件时必须写明读本拍值还是上一拍值——和中间 IR 一样，体现的是实际微架构"),
-], tsize=16, bsize=14, step=1.25)
+], tsize=16, bsize=14, step=1.45)
 vline(s, 7.75, 1.45, 5.4)
 text(s, 8.0, 1.4, 4.7, 4, [("我们比 HINT 多了什么", {"bold": True, "color": NAVY, "size": 16}),
                           "HINT 是**事务级**，原文明确不做周期精确；我们写明本拍还是下一拍",
                           "HINT 没有容器面 / 状态面和因果边；出错时只能说“错在哪一层”",
                           "我们能追到**哪个部件、哪一面、哪一拍、被谁挡住**"], size=14, gap=8)
-strip(s, "目的：让 AI 在**复杂处理器**上也能生成 RTL，并且**更快、更好**——复杂处理器必须处理指令与结构之间的关系")
-notes(s, "注意出处：3% → 88% 和 < 1.25 倍出自 Representation Bottleneck，不是 HINT（旧笔记 survey/08-conclusions 把两者写在一起，引用时要分开）。"
+strip(s, "启发：AI 需要看到**周期级的微架构信息**，但最终仍写它最擅长的 Verilog")
+notes(s, "Representation Bottleneck（Fu 等，arXiv 2604.17097，2026-04）的“IR”指硬件描述语言（Verilog / VHDL / Chisel / Bluespec / PyMTL3 / HLS C），任务是 VerilogEval、RTLLM 的单模块题。"
+         "原文对 HLS C 的分析：AI 写的 C 有 98.7% 能被 Bambu 转成 Verilog，失败主要来自 HLS 生成电路的接口（启动 / 完成握手、存储器总线）与期望的逐拍行为不匹配；“越易用越差”作者主要归因于训练数据。"
+         "“微架构被包装、AI 看不到每拍行为”是我们对这组数据的解读，被问到时要说明。"
+         "也提醒：这组数字只来自 Representation Bottleneck，与 HINT 无关（旧笔记 survey/08-conclusions 把两者写在一起）。"
          "HINT 是 Qiang Xu 组的工作；FML 是合作者的框架。"
          "这一页的逻辑：表示层比模型更重要；我们的表示层在 HINT 的基础上加了周期级的因果与容器面 / 状态面。")
 
