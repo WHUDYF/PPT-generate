@@ -1,6 +1,6 @@
 <!doctype html><meta charset="utf-8"><title>组会 2026-11 预览</title>
 <style>body{font-family:"Microsoft YaHei",sans-serif;max-width:1100px;margin:auto;background:#f5f7fa;color:#222}.s{background:#fff;margin:24px 0;padding:16px;border:1px solid #e5e7eb}img{width:100%}.n{color:#555;font-size:15px;line-height:1.6;margin-top:8px}h1{color:#1f3a5f}</style>
-<h1>组会 2026-11：带因果的结构 IR（15 页，含讲稿备注）</h1>
+<h1>组会 2026-11：带因果的结构 IR（16 页，含讲稿备注）</h1>
 <div class="s" id="p1"><b>第 1 页</b><img src="preview/p-01.png"><div class="n">今天只讲一件事：我们在 RTL 的结构描述里加入因果关系，把内部结构拆成容器面和状态面，用它来让 AI 生成更复杂的 RTL，并且在出错时能追到错从哪里来。</div></div>
 <div class="s" id="p2"><b>第 2 页</b><img src="preview/p-02.png"><div class="n">措辞要准：不是说模拟器没有部件和指令的概念——gem5 的功能单元按指令类型配置，GPGPU-Sim 有流水线寄存器和 scoreboard。我们说的是：指令与部件之间的因果关系隐含在代码执行顺序里。右边三条是我们在 CVA6 模型上逐条核对的结果；对 gem5、GPGPU-Sim 是同类的经验判断，未逐条验证。</div></div>
 <div class="s" id="p3"><b>第 3 页</b><img src="preview/p-03.png"><div class="n">情况 A、B 分别来自实验 2 的测试程序 g2-load-branch、g2-branch-store，参数 i2c2-sb8-fw1-rn1。单向的挡住关系不是写在一个地方的规则，而是“发射时标哪些位”和“发射前查哪一位”两段代码合起来产生的。我第一次整理 IR 时就漏了，是只用 IR 的预测器算错了 38 个情况才暴露出来。</div></div>
@@ -13,6 +13,7 @@
 <div class="s" id="p10"><b>第 10 页</b><img src="preview/p-10.png"><div class="n">用途二的落脚点不是“给人看的报告”，而是给 AI 的反馈：每次比对失败，都告诉 AI 哪个结构、哪一面、哪条边、哪一拍、被谁挡住。前三类 AI 自己修；后三类停下报告——规格错时让 AI 先试着修，它多半能凑出一个“通过”（ImpossibleBench：给“停下”出口后作弊从 54% 降到 9%）。衡量方法对应论文一 RQ1：四种反馈（只给测试结果 / 第一处分歧 / 按模块归因 / 因果归因）下，修正成功率、迭代次数、假修复率。</div></div>
 <div class="s" id="p11"><b>第 11 页</b><img src="preview/p-11.png"><div class="n">HLS 与我们的区别：HLS 输入是不带时序的算法，调度和绑定由工具决定，所以第 4 页 Representation Bottleneck 里 HLS 只有 3%——微架构被工具包起来了。我们相反：流水线切分、每拍谁看到谁、谁挡谁，都由 FML / IR 明确规定，AI 只负责在这个时序约束内写出电路。所以不叫“更高级的 HLS”。BSV / Kôika / Assassyn 严格说不是 HLS，是带时序规则的高层硬件语言：时序同样由人写清，再直接编译。审稿人会问为什么不直接编译：模型为模拟速度写成，有大量抽象（执行单元是计数器、没有数据通路、trace 驱动），不能机械编译；同一时序有多种实现，PPA 不同；我们的重点在检查与归因——待实验支撑。Zeller：Cleve &amp; Zeller 2005 明确说“除测试外不假设任何规格”，这正是和我们的分界。</div></div>
 <div class="s" id="p12"><b>第 12 页</b><img src="preview/p-12.png"><div class="n">测试程序直接生成：单条指令、两两组合、压满资源，在 32 组参数下运行。预测器不调用模型，只按 IR 推算。</div></div>
-<div class="s" id="p13"><b>第 13 页</b><img src="preview/p-13.png"><div class="n">每次修正都有证据、记录在案，旧条目不删、标为已被替代。</div></div>
-<div class="s" id="p14"><b>第 14 页</b><img src="preview/p-14.png"><div class="n">两条线共用同一份因果 IR：既是 AI 生成的规格，也是验证追溯的地图，所以无论哪种结果，IR 和验证这部分都不白做。论文二（IR 不完整时怎么办）、论文三（性能瓶颈）在此基础上展开。</div></div>
-<div class="s" id="p15"><b>第 15 页</b><img src="preview/p-15.png"><div class="n">第一个问题最想听意见。</div></div>
+<div class="s" id="p13"><b>第 13 页</b><img src="preview/p-13.png"><div class="n">三道检查从三个方向互相补：①保证没漏画；②保证每一步都能解释，但“能解释”不等于“说法对”；③最严：只用 IR 推出每条指令的发射拍，推错就逼出 IR 缺的规则。四条规矩保证修正本身不会引入新错。记录见 ~/fml-cva6/docs/ir-changes.md（#1–#7），检查器 scripts/check_ir.py。</div></div>
+<div class="s" id="p14"><b>第 14 页</b><img src="preview/p-14.png"><div class="n">#1：G1 双发射第 60 条，预测错后等待期间 BHT 被提交更新，重新预测为对，惩罚 1 拍而非 6 拍。#2：模型按事件种类记录 BMISS/BHIT，改判时两种都会记；#1 里“气泡不会再加”一句来自复核意见、执行方未核对代码，#3 用新编号改正。#4：取指队列发射时按下一条地址对齐截断。#5/#6：每类指令只检查自己那一位、却占用多个位，分支挡得住存储、加载/存储挡不住分支；检查位用敏感性分析从模型抽取（全部 2^6 种忙标志组合逐一核对）。#7：BHT 初值、清空标志、先弹后压、WAW 挡到提交。两两组合共 5,216 对；全部 1,312 次运行逐条重现发射拍。</div></div>
+<div class="s" id="p15"><b>第 15 页</b><img src="preview/p-15.png"><div class="n">两条线共用同一份因果 IR：既是 AI 生成的规格，也是验证追溯的地图，所以无论哪种结果，IR 和验证这部分都不白做。论文二（IR 不完整时怎么办）、论文三（性能瓶颈）在此基础上展开。</div></div>
+<div class="s" id="p16"><b>第 16 页</b><img src="preview/p-16.png"><div class="n">第一个问题最想听意见。</div></div>
